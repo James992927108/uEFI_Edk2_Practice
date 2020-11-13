@@ -229,12 +229,13 @@ BOOLEAN PrintPrefetchableMem(PCI_TYPE_GENERIC *PciData, UINT64 *PrefetchableMin,
     }
 }
 
-EFI_STATUS EFIAPI ReadPci(EFI_HANDLE *PciIoHandleBuffer, UINTN index, UINTN TotalDevice)
+EFI_STATUS EFIAPI ReadPci(EFI_HANDLE *PciIoHandleBuffer, UINTN TotalDevice)
 {
     EFI_STATUS Status;
     // PCI_IO_DEVICE *Pci;
     EFI_PCI_IO_PROTOCOL *PciIo;
-    Status = gBS->HandleProtocol(PciIoHandleBuffer[index], &gEfiPciIoProtocolGuid, &PciIo);
+    // Step 3. open the handle by gEfiPciIoProtocolGuid
+    Status = gBS->HandleProtocol(PciIoHandleBuffer, &gEfiPciIoProtocolGuid, &PciIo);
     if (EFI_ERROR (Status))
         return Status;
 
@@ -383,16 +384,24 @@ EFI_STATUS EFIAPI UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *Syste
     EFI_STATUS Status;
     UINTN TotalDevice;
     EFI_HANDLE *PciIoHandleBuffer;
+    //Step 1, Find out all Handle with gEfiPciIoProtocolGuid
     Status = gBS->LocateHandleBuffer(ByProtocol, &gEfiPciIoProtocolGuid, NULL, &TotalDevice, &PciIoHandleBuffer);
     if (EFI_ERROR (Status))
         return Status;
     Print(L"Number of PCI : %d\n", TotalDevice);
+    //Step 2, Traverse all the handle which have fined.
     Print(L"--------------------------------\n");
     for (UINTN index = 0; index < TotalDevice; index++)
     {
         Print(L"Device Index :%d\n", index);
-        ReadPci(PciIoHandleBuffer, index, TotalDevice);
+        // pass TotalDevice is use to detect conflict if device is pci-to-pci bridge.
+        ReadPci(PciIoHandleBuffer[index], TotalDevice);
         Print(L"\n");
+    }
+    // step 4, Release EFI_HANDLE
+    if(PciIoHandleBuffer != NULL)
+    {
+        Status = gBS->FreePool(PciIoHandleBuffer);
     }
     return EFI_SUCCESS;
 }
