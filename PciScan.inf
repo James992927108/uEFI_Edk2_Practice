@@ -15,19 +15,14 @@
 [Packages]
   MdePkg/MdePkg.dec
   ShellPkg/ShellPkg.dec
-  MdeModulePkg/MdeModulePkg.dec
-  StdLib/StdLib.dec
-  EdkCompatibilityPkg/EdkCompatibilityPkg.dec
-  IntelFrameworkPkg/IntelFrameworkPkg.dec
-  IntelFrameworkModulePkg/IntelFrameworkModulePkg.dec 
-  
+
 [LibraryClasses]
-  UefiBootServicesTableLib
-  UefiLib
-  UefiApplicationEntryPoint
-  PrintLib
-  DebugLib
-  ShellLib
+  UefiBootServicesTableLib  # MdePkg/MdePkg.dec
+  UefiLib # MdePkg/MdePkg.dec
+  UefiApplicationEntryPoint # MdePkg/MdePkg.dec
+  PrintLib # MdePkg/MdePkg.dec
+  DebugLib # MdePkg/MdePkg.dec
+  ShellLib # ShellPkg/ShellPkg.dec
   
 [Protocols]
   # gEfiPciRootBridgeIoProtocolGuid #metohd 1

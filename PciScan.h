@@ -1,23 +1,26 @@
-#include <Library/UefiLib.h>
-#include <Library/UefiBootServicesTableLib.h>
 
-#include <Library/DebugLib.h> // for use ASSERT_EFI_ERROR
+/*
+ * PciScan.c
+ *
+ *  Created on: 2020年11月09日
+ *      Author: Anthony Teng
+ */
 
-#include <Protocol/PciIo.h>
+//MdePkg
+#include <Include/Library/UefiLib.h>
+#include <Include/Library/UefiBootServicesTableLib.h>
+#include <Include/Library/DebugLib.h> // for use ASSERT_EFI_ERROR
+#include <Include/Protocol/PciIo.h>
+#include <Include/Protocol/PciRootBridgeIo.h> // for use gEfiPciRootBridgeIoProtocolGuid in MdePkg.dec
+#include <Include/IndustryStandard/Pci22.h>  // for use #define PCI_XXXXX_OFFSET
+#include <Include/IndustryStandard/Acpi10.h> // for usse EFI_ACPI_ADDRESS_SPACE_DESCRIPTOR
+#include <Include/AArch64/ProcessorBind.h>
+#include <Include/Uefi/UefiBaseType.h> // for use EFI_ERROR
+#include <Include/Library/PciLib.h> // for use PCI_LIB_ADDRESS, PciReadBuffer
 
-#include <Protocol/PciRootBridgeIo.h> // for use gEfiPciRootBridgeIoProtocolGuid in MdePkg.dec
-
-#include <IndustryStandard/Pci22.h>  // for use #define PCI_XXXXX_OFFSET
-#include <IndustryStandard/Acpi10.h> // for usse EFI_ACPI_ADDRESS_SPACE_DESCRIPTOR
-#include <AArch64/ProcessorBind.h>
-
-#include <Uefi/UefiBaseType.h> // for use EFI_ERROR
-
-#include <Library/ShellLib.h>
-
+//shellPkg
+#include <Include/Library/ShellLib.h>
 #include <Library/UefiShellDebug1CommandsLib/Pci.h>
-
-#include <Library/PciLib.h> // for use PCI_LIB_ADDRESS, PciReadBuffer
 
 #define PCI_Type_0_MAX_BAR 0x0006
 #define PCI_Type_1_MAX_BAR 0x0002
