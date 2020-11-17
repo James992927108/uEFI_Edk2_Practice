@@ -1,0 +1,27 @@
+##
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = MyPciScan_v3
+  FILE_GUID                      = 8cfdb267-ceed-4e72-b541-a44ce670c037
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = UefiMain
+
+[Sources]  
+ PciScan_v3.c
+ PciScan_v3.h
+  
+[Packages]
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec
+
+[LibraryClasses]
+  UefiBootServicesTableLib  # MdePkg/MdePkg.dec
+  UefiLib # MdePkg/MdePkg.dec
+  UefiApplicationEntryPoint # MdePkg/MdePkg.dec
+  PrintLib # MdePkg/MdePkg.dec
+  IoLib # MdePkg/MdePkg.dec, for use IoWriteXX, IoReadXX
+  
+  ShellLib # ShellPkg/ShellPkg.dec
+[Protocols]
