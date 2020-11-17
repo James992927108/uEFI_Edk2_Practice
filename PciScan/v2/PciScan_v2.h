@@ -1,6 +1,6 @@
 
 /*
- * PciScan.c
+ *  PciScan.h
  *
  *  Created on: 2020年11月09日
  *      Author: Anthony Teng

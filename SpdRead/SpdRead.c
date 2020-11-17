@@ -54,7 +54,7 @@ BOOLEAN GetSMBusIoPort(UINT32 *SMBusIoPort)
     }
     else
     {
-        Print(L"1.No Find SMBus Io Port\n");
+        Print(L"1.No find any SMBus Io port\n");
         return FALSE;
     }
 }
@@ -65,7 +65,7 @@ INTN ShellAppMain(IN UINTN Argc, IN CHAR16 *Argv)
 
     if (!GetSMBusIoPort(&SMBusIoPort))
     {
-        Print(L"2.No Find SMBus Io Port\n");
+        Print(L"2.No find any SMBus Io port\n");
 
         return 0;
     }

@@ -1,0 +1,42 @@
+## @file
+# Brief Description of UEFI HelloEfi
+#
+# Copyright for UEFI HelloEfi
+#
+# License for UEFI HelloEfi
+#
+##
+
+[Defines]
+ INF_VERSION = 0x00010005
+ BASE_NAME = HelloEfi
+ FILE_GUID = E5ED0865-48BA-4D67-3333-54BF91DB2032 #自行create一個新的GUID
+ MODULE_TYPE = UEFI_APPLICATION
+ VERSION_STRING = 1.0
+ ENTRY_POINT = UefiMain
+#
+# The following information is for reference only and not 
+# required by the build tools.
+#
+# VALID_ARCHITECTURES = IA32 X64 IPF EBC Etc...
+#
+
+[Sources]
+ HelloEfi.c
+
+[Packages]
+ MdePkg/MdePkg.dec
+
+[LibraryClasses]
+ UefiApplicationEntryPoint
+ UefiLib
+
+[Guids]
+
+[Ppis]
+
+[Protocols]
+
+[FeaturePcd]
+
+[Pcd]

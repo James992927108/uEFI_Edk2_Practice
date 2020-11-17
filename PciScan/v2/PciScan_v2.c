@@ -1,12 +1,12 @@
 
 /*
- * PciScan.c
+ *  PciScan.c
  *
  *  Created on: 2020年11月09日
  *      Author: Anthony Teng
  */
 
-#include "PciScan.h"
+#include "PciScan_v2.h"
 
 BOOLEAN GetBit(UINT32 num, UINT32 index)
 {
@@ -30,7 +30,7 @@ EFI_STATUS BarExisted(IN EFI_PCI_IO_PROTOCOL *PciIo, IN UINTN Offset, OUT UINT32
     UINT32 Value;
     EFI_STATUS Status;
 
-    PciIo->Pci.Read(PciIo, EfiPciIoWidthUint32, (UINT8)Offset, 1, &OriginalValue);
+    Status = PciIo->Pci.Read(PciIo, EfiPciIoWidthUint32, (UINT8)Offset, 1, &OriginalValue);
     if (EFI_ERROR (Status))
         return Status;
     // Print(L"OriginalValue %08x\n", OriginalValue);

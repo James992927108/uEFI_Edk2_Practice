@@ -1,0 +1,18 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = MyShell
+  FILE_GUID                      = BD3B6261-F593-443d-93B1-E45F1C8B640F
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = ShellCEntryLib
+[Sources]
+  Shell.c
+  
+[Packages]
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec
+
+[LibraryClasses]
+  ShellCEntryLib
+  UefiBootServicesTableLib
+  UefiLib
