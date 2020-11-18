@@ -14,6 +14,8 @@
 //ShellPkg
 #include <Include/Library/ShellCommandLib.h>
 
+#include "SMBusOffset.h"
+
 #define PCI_CONFIG_ADDRESS 0xCF8
 #define PCI_CONFIG_DATA    0xCFC
 
