@@ -1,0 +1,23 @@
+#define SMB_HST_STS 0x000
+#define SMB_HST_CNT 0x002
+#define SMB_HST_CMD 0x003
+#define SMB_HST_ADD 0x004
+#define SMB_HST_DAT_0 0x005
+#define SMB_HST_DAT_1 0x006
+#define SMB_HST_BLK_DAT 0x007
+#define SMB_PEC 0x008
+#define SMB_RCV_SLVA 0x009
+#define SMB_SLV_DAT 0x00A
+#define SMB_AUX_STS 0x00C
+#define SMB_AUX_CTL 0x00D
+#define SMB_SMLINK_PIN_CTL 0x00E
+#define SMB_SMBUS_PIN_CTL 0x00F
+#define SMB_SLV_STS 0x010
+#define SMB_SLV_CMD 0x011
+#define SMB_NTFY_DADDR 0x014
+#define SMB_NTFY_DLOW 0x016
+#define SMB_NTFY_DHIGH 0x017
+
+#define SLAVE_ENABLE 0x01
+
+#define SMB_SIZE 0x100
