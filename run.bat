@@ -20,8 +20,8 @@ call build
 @REM call build -q -s
 @REM call build -DDEBUG_ON_SERIAL_PORT=TRUE -DSOURCE_DEBUG_ENABLE
 @REM call build run
-del /F z:\MySpdRead.efi 
-del /F f:\MySpdRead.efi 
+@REM del /F z:\MySpdRead.efi 
+@REM del /F f:\MySpdRead.efi 
 
-copy E:\EDK2\UDK2018\Build\AppPkg\RELEASE_VS2015x86\X64\MySpdRead.efi  z:\
-copy E:\EDK2\UDK2018\Build\AppPkg\RELEASE_VS2015x86\X64\MySpdRead.efi  f:\
+@REM copy E:\EDK2\UDK2018\Build\AppPkg\RELEASE_VS2015x86\X64\MySpdRead.efi  z:\
+@REM copy E:\EDK2\UDK2018\Build\AppPkg\RELEASE_VS2015x86\X64\MySpdRead.efi  f:\
