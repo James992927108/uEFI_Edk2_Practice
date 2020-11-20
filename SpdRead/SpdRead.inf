@@ -6,7 +6,7 @@
   FILE_GUID                      = 9B09C366-18E5-49d4-BAC5-444EF4DD1611
   MODULE_TYPE                    = UEFI_APPLICATION
   VERSION_STRING                 = 1.0
-  ENTRY_POINT                    = ShellCEntryLib
+  ENTRY_POINT                    = UefiMain
 
 [Sources]  
   SpdRead.c
@@ -17,12 +17,13 @@
   ShellPkg/ShellPkg.dec
 
 [LibraryClasses]
+  UefiApplicationEntryPoint # MdePkg/MdePkg.dec
   UefiBootServicesTableLib  # MdePkg/MdePkg.dec
   UefiLib # MdePkg/MdePkg.dec
   PrintLib # MdePkg/MdePkg.dec
   IoLib # MdePkg/MdePkg.dec
 
   ShellLib # ShellPkg/ShellPkg.dec
-  ShellCEntryLib # ShellPkg/ShellPkg.dec
+  # ShellCEntryLib # ShellPkg/ShellPkg.dec
   ShellCommandLib #ShellPkg/ShellPkg.dec
 [Protocols]

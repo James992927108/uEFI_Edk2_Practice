@@ -12,7 +12,8 @@
 #include <Include/Library/UefiLIb.h>
 #include <IndustryStandard/Pci22.h> // for use #define PCI_XXXXX_OFFSET
 //ShellPkg
-#include <Include/Library/ShellCommandLib.h>
+#include <Include/Library/ShellLib.h> // .inf:ShellLib, fot use ShellPromptForResponse()
+#include <Include/Library/ShellCommandLib.h> //.inf: ShellCommandLib, for use DumpHex()
 
 #include "SMBusOffset.h"
 

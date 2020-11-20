@@ -17,4 +17,4 @@
   ShellCEntryLib
   LibC
   LibStdio
-  PciLib
+  PciLib # MdePkg/MdePkg.dec

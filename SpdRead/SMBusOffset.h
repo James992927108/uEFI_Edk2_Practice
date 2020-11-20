@@ -1,7 +1,7 @@
 #define SMB_HST_STS 0x000
 #define SMB_HST_CNT 0x002
 #define SMB_HST_CMD 0x003
-#define SMB_HST_ADD 0x004
+#define SMB_XMIT_SLVA 0x004
 #define SMB_HST_DAT_0 0x005
 #define SMB_HST_DAT_1 0x006
 #define SMB_HST_BLK_DAT 0x007
