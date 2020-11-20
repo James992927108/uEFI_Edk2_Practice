@@ -1,0 +1,14 @@
+{
+    "C_Cpp.errorSquiggles": "Disabled",
+    "files.associations": {
+        "*.mak": "makefile",
+        "*.sdl": "makefile",
+        "xlocale": "c",
+        "xiosbase": "c",
+        "initializer_list": "c",
+        "type_traits": "c",
+        "vector": "c",
+        "xstring": "c",
+        "xutility": "c"
+    }
+}
