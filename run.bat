@@ -16,7 +16,7 @@ echo Run edksetup.bat
 @REM call edksetup.bat --nt32
 call edksetup.bat
 @REM call build cleanall
-call build 
+@REM call build 
 @REM call build -q -s
 @REM call build -DDEBUG_ON_SERIAL_PORT=TRUE -DSOURCE_DEBUG_ENABLE
 @REM call build run
