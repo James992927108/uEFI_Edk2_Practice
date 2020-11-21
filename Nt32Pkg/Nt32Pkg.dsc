@@ -456,18 +456,6 @@
   Nt32Pkg/WinNtSimpleFileSystemDxe/WinNtSimpleFileSystemDxe.inf
   MdeModulePkg/Application/HelloWorld/HelloWorld.inf
 
-  DEFINE MYPAKG_PATH = MyPkg/Application
-  $(MYPAKG_PATH)/HelloWorld/HelloWorld.inf
-  $(MYPAKG_PATH)/Hello/Hello.inf
-  $(MYPAKG_PATH)/PciScan/PciScan.inf 
-  # {
-  #   <LibraryClasses>
-  #   PciLib|MdeModulePkg\Bus\Pci\PciBusDxe\PciBusDxe.inf
-  # }
-  $(MYPAKG_PATH)/UefiMain/UefiMain.inf
-  $(MYPAKG_PATH)/Shell/Shell.inf
-  
-
   #
   # Network stack drivers
   # To test network drivers, need network Io driver(SnpNt32Io.dll), please refer to NETWORK-IO Subproject.
