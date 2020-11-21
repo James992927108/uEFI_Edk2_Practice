@@ -19,7 +19,7 @@ PLATFORM_NAME = AppPkg
 PLATFORM_GUID = 0458dade-8b6e-4e45-b773-1b27cbda3e06
 PLATFORM_VERSION = 0.01
 PLATFORM_RELATIVE_DIR = MyPkg
-PLATFORM_DIR = g:\uefi_edk2_practice\MyPkg
+PLATFORM_DIR = d:\uefi_edk2_practice\MyPkg
 PLATFORM_OUTPUT_DIR = Build\AppPkg
 
 #
@@ -35,7 +35,7 @@ MODULE_FILE_BASE_NAME = BaseCpuLib
 BASE_NAME = $(MODULE_NAME)
 MODULE_RELATIVE_DIR = MdePkg\Library\BaseCpuLib
 PACKAGE_RELATIVE_DIR = Library\BaseCpuLib
-MODULE_DIR = g:\uefi_edk2_practice\MdePkg\Library\BaseCpuLib
+MODULE_DIR = d:\uefi_edk2_practice\MdePkg\Library\BaseCpuLib
 FFS_OUTPUT_DIR = 
 
 MODULE_ENTRY_POINT = _ModuleEntryPoint
@@ -60,13 +60,13 @@ TARGET = RELEASE
 #
 # Build Directory Macro Definition
 #
-# PLATFORM_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
-BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+# PLATFORM_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
 BIN_DIR = $(BUILD_DIR)\X64
 LIB_DIR = $(BIN_DIR)
-MODULE_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib
-OUTPUT_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT
-DEBUG_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\DEBUG
+MODULE_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib
+OUTPUT_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT
+DEBUG_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\DEBUG
 DEST_DIR_OUTPUT = $(OUTPUT_DIR)
 DEST_DIR_DEBUG = $(DEBUG_DIR)
 
@@ -131,7 +131,7 @@ RC = c:\Program Files (x86)\Windows Kits\8.1\bin\x64\rc.exe
 ASM = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\x86_amd64\ml64.exe
 ASM_FLAGS = /nologo /c /WX /W3 /Cx /Zd
 
-ASL = G:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
+ASL = D:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
 ASL_FLAGS = 
 ASL_OUTFLAGS =  -p
 
@@ -189,7 +189,7 @@ MAKE = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\nmake.exe
 ASMLINK = C:\WINDDK\3790.1830\bin\bin16\link16.exe
 ASMLINK_FLAGS = /nologo /tiny
 
-NASM = G:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
+NASM = D:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
 NASM_FLAGS = -Ox -f win64
 
 
@@ -210,7 +210,7 @@ INC =  \
     /I$(WORKSPACE)\MdePkg\Include \
     /I$(WORKSPACE)\MdePkg\Include\X64
 
-OBJECT_FILES_LIST = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\object_files.lst
+OBJECT_FILES_LIST = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\object_files.lst
 
 
 COMMON_DEPS = 
@@ -222,7 +222,7 @@ FORCE_REBUILD = force_build
 INIT_TARGET = init
 PCH_TARGET =
 BC_TARGET = 
-CODA_TARGET = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\BaseCpuLib.lib \
+CODA_TARGET = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\BaseCpuLib.lib \
               
 
 #
@@ -299,22 +299,22 @@ $(OUTPUT_DIR)\X64\CpuFlushTlb.obj : $(DEBUG_DIR)\AutoGen.h
 $(OUTPUT_DIR)\X64\CpuFlushTlb.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
 $(OUTPUT_DIR)\X64\CpuFlushTlb.obj : $(WORKSPACE)\MdePkg\Include\Base.h
 $(OUTPUT_DIR)\X64\CpuFlushTlb.obj : $(WORKSPACE)\MdePkg\Library\BaseCpuLib\X64\CpuFlushTlb.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseCpuLib\X64\CpuFlushTlb.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\X64\CpuFlushTlb.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\X64\CpuFlushTlb.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\X64\CpuFlushTlb.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseCpuLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\X64\CpuFlushTlb.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\X64\CpuFlushTlb.iii
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseCpuLib\X64\CpuFlushTlb.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\X64\CpuFlushTlb.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\X64\CpuFlushTlb.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\X64\CpuFlushTlb.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseCpuLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\X64\CpuFlushTlb.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\X64\CpuFlushTlb.iii
 
 $(OUTPUT_DIR)\X64\CpuSleep.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\X64\CpuSleep.obj : $(DEBUG_DIR)\AutoGen.h
 $(OUTPUT_DIR)\X64\CpuSleep.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
 $(OUTPUT_DIR)\X64\CpuSleep.obj : $(WORKSPACE)\MdePkg\Include\Base.h
 $(OUTPUT_DIR)\X64\CpuSleep.obj : $(WORKSPACE)\MdePkg\Library\BaseCpuLib\X64\CpuSleep.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseCpuLib\X64\CpuSleep.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\X64\CpuSleep.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\X64\CpuSleep.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\X64\CpuSleep.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseCpuLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\X64\CpuSleep.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\X64\CpuSleep.iii
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseCpuLib\X64\CpuSleep.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\X64\CpuSleep.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\X64\CpuSleep.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\X64\CpuSleep.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseCpuLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\X64\CpuSleep.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\X64\CpuSleep.iii
 
 $(OUTPUT_DIR)\BaseCpuLib.lib : $(OBJECT_FILES)
 $(OUTPUT_DIR)\BaseCpuLib.lib : $(OBJECT_FILES_LIST)
-	"$(SLINK)" $(SLINK_FLAGS) /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\BaseCpuLib.lib @$(OBJECT_FILES_LIST)
+	"$(SLINK)" $(SLINK_FLAGS) /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseCpuLib\BaseCpuLib\OUTPUT\BaseCpuLib.lib @$(OBJECT_FILES_LIST)
 
 
 

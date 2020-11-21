@@ -19,7 +19,7 @@ PLATFORM_NAME = AppPkg
 PLATFORM_GUID = 0458dade-8b6e-4e45-b773-1b27cbda3e06
 PLATFORM_VERSION = 0.01
 PLATFORM_RELATIVE_DIR = MyPkg
-PLATFORM_DIR = g:\uefi_edk2_practice\MyPkg
+PLATFORM_DIR = d:\uefi_edk2_practice\MyPkg
 PLATFORM_OUTPUT_DIR = Build\AppPkg
 
 #
@@ -35,7 +35,7 @@ MODULE_FILE_BASE_NAME = BasePciCf8Lib
 BASE_NAME = $(MODULE_NAME)
 MODULE_RELATIVE_DIR = MdePkg\Library\BasePciCf8Lib
 PACKAGE_RELATIVE_DIR = Library\BasePciCf8Lib
-MODULE_DIR = g:\uefi_edk2_practice\MdePkg\Library\BasePciCf8Lib
+MODULE_DIR = d:\uefi_edk2_practice\MdePkg\Library\BasePciCf8Lib
 FFS_OUTPUT_DIR = 
 
 MODULE_ENTRY_POINT = _ModuleEntryPoint
@@ -60,13 +60,13 @@ TARGET = RELEASE
 #
 # Build Directory Macro Definition
 #
-# PLATFORM_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
-BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+# PLATFORM_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
 BIN_DIR = $(BUILD_DIR)\X64
 LIB_DIR = $(BIN_DIR)
-MODULE_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BasePciCf8Lib\BasePciCf8Lib
-OUTPUT_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BasePciCf8Lib\BasePciCf8Lib\OUTPUT
-DEBUG_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BasePciCf8Lib\BasePciCf8Lib\DEBUG
+MODULE_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BasePciCf8Lib\BasePciCf8Lib
+OUTPUT_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BasePciCf8Lib\BasePciCf8Lib\OUTPUT
+DEBUG_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BasePciCf8Lib\BasePciCf8Lib\DEBUG
 DEST_DIR_OUTPUT = $(OUTPUT_DIR)
 DEST_DIR_DEBUG = $(DEBUG_DIR)
 
@@ -131,7 +131,7 @@ RC = c:\Program Files (x86)\Windows Kits\8.1\bin\x64\rc.exe
 ASM = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\x86_amd64\ml64.exe
 ASM_FLAGS = /nologo /c /WX /W3 /Cx /Zd
 
-ASL = G:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
+ASL = D:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
 ASL_FLAGS = 
 ASL_OUTFLAGS =  -p
 
@@ -189,7 +189,7 @@ MAKE = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\nmake.exe
 ASMLINK = C:\WINDDK\3790.1830\bin\bin16\link16.exe
 ASMLINK_FLAGS = /nologo /tiny
 
-NASM = G:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
+NASM = D:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
 NASM_FLAGS = -Ox -f win64
 
 
@@ -208,16 +208,16 @@ INC =  \
     /I$(WORKSPACE)\MdePkg\Include \
     /I$(WORKSPACE)\MdePkg\Include\X64
 
-OBJECT_FILES_LIST = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BasePciCf8Lib\BasePciCf8Lib\OUTPUT\object_files.lst
+OBJECT_FILES_LIST = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BasePciCf8Lib\BasePciCf8Lib\OUTPUT\object_files.lst
 
 
-COMMON_DEPS = $(DEBUG_DIR)\AutoGen.h \
+COMMON_DEPS = $(WORKSPACE)\MdePkg\Include\Library\IoLib.h \
+              $(DEBUG_DIR)\AutoGen.h \
               $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h \
-              $(WORKSPACE)\MdePkg\Include\Library\IoLib.h \
-              $(WORKSPACE)\MdePkg\Include\Base.h \
-              $(WORKSPACE)\MdePkg\Include\Library\PciCf8Lib.h \
               $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
+              $(WORKSPACE)\MdePkg\Include\Library\PciCf8Lib.h \
               $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h \
+              $(WORKSPACE)\MdePkg\Include\Base.h \
               
 
 #
@@ -227,7 +227,7 @@ FORCE_REBUILD = force_build
 INIT_TARGET = init
 PCH_TARGET =
 BC_TARGET = 
-CODA_TARGET = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BasePciCf8Lib\BasePciCf8Lib\OUTPUT\BasePciCf8Lib.lib \
+CODA_TARGET = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BasePciCf8Lib\BasePciCf8Lib\OUTPUT\BasePciCf8Lib.lib \
               
 
 #
@@ -301,12 +301,12 @@ gen_fds:
 #
 $(OUTPUT_DIR)\BasePciCf8Lib.lib : $(OBJECT_FILES)
 $(OUTPUT_DIR)\BasePciCf8Lib.lib : $(OBJECT_FILES_LIST)
-	"$(SLINK)" $(SLINK_FLAGS) /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BasePciCf8Lib\BasePciCf8Lib\OUTPUT\BasePciCf8Lib.lib @$(OBJECT_FILES_LIST)
+	"$(SLINK)" $(SLINK_FLAGS) /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BasePciCf8Lib\BasePciCf8Lib\OUTPUT\BasePciCf8Lib.lib @$(OBJECT_FILES_LIST)
 
 $(OUTPUT_DIR)\PciCf8Lib.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\PciCf8Lib.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\PciCf8Lib.obj : $(WORKSPACE)\MdePkg\Library\BasePciCf8Lib\PciCf8Lib.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BasePciCf8Lib\BasePciCf8Lib\OUTPUT\.\PciCf8Lib.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BasePciCf8Lib\PciCf8Lib.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BasePciCf8Lib\BasePciCf8Lib\OUTPUT\.\PciCf8Lib.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BasePciCf8Lib\PciCf8Lib.c
 
 
 

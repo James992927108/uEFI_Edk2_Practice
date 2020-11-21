@@ -1,6 +1,6 @@
  MySpdRead
 
- Timestamp is 5fb88479 (Sat Nov 21 11:07:37 2020)
+ Timestamp is 5fb887b8 (Sat Nov 21 11:21:28 2020)
 
  Preferred load address is 0000000000000000
 
@@ -93,11 +93,11 @@
  0002:000000a0       gEfiShellInterfaceGuid     0000000000003cc0     MySpdRead:AutoGen.obj
  0002:000000b0       gEfiHiiFontProtocolGuid    0000000000003cd0     MySpdRead:AutoGen.obj
  0002:000000c0       ??_C@_0ED@MKGCMJG@?$CILength?5?9?51?$CJ?5?$DM?$DN?5?$CI0xFFFFFFFFFFFFF@ 0000000000003ce0     BaseMemoryLib:CopyMemWrapper.obj
- 0002:00000110       ??_C@_0EE@COAMBEJJ@g?3?2uefi_edk2_practice?2MdePkg?2Lib@ 0000000000003d30     BaseMemoryLib:CopyMemWrapper.obj
+ 0002:00000110       ??_C@_0EE@IBEKLMPP@d?3?2uefi_edk2_practice?2MdePkg?2Lib@ 0000000000003d30     BaseMemoryLib:CopyMemWrapper.obj
  0002:00000158       ??_C@_0DO@MAOBOFEG@?$CILength?5?9?51?$CJ?5?$DM?$DN?5?$CI0xFFFFFFFFFFFFF@ 0000000000003d78     BaseMemoryLib:CopyMemWrapper.obj
  0002:00000198       ??_C@_0DG@EEENIGGL@Length?5?$DM?$DN?5?$CI0xFFFFFFFFFFFFFFFFULL@ 0000000000003db8     BaseMemoryLib:MemLibGuid.obj
- 0002:000001d0       ??_C@_0EE@JKKOHFFO@g?3?2uefi_edk2_practice?2MdePkg?2Lib@ 0000000000003df0     BaseMemoryLib:ZeroMemWrapper.obj
- 0002:00000218       ??_C@_0DG@MFCDKOLN@g?3?2uefi_edk2_practice?2MdePkg?2Lib@ 0000000000003e38     BaseLib:String.obj
+ 0002:000001d0       ??_C@_0EE@DFOINNDI@d?3?2uefi_edk2_practice?2MdePkg?2Lib@ 0000000000003df0     BaseMemoryLib:ZeroMemWrapper.obj
+ 0002:00000218       ??_C@_0DG@MHMNFEGH@d?3?2uefi_edk2_practice?2MdePkg?2Lib@ 0000000000003e38     BaseLib:String.obj
  0002:00000250       ??_C@_0CI@LLKACKFD@?$CI?$CIUINTN?$CJ?5Destination?5?$CG?50x0000000@ 0000000000003e70     BaseLib:String.obj
  0002:00000278       ??_C@_0DL@LFIMEMJP@Length?5?$DM?$DN?5_gPcd_FixedAtBuild_Pcd@ 0000000000003e98     BaseLib:String.obj
  0002:000002b8       ??_C@_0CD@BDCLIGHD@?$CI?$CIUINTN?$CJ?5String?5?$CG?50x00000001?$CJ?5?$DN?$DN@ 0000000000003ed8     BaseLib:String.obj
@@ -110,9 +110,9 @@
  0002:000003d8       ??_C@_0DI@MDIKFADO@Length?5?$DM?5_gPcd_FixedAtBuild_PcdM@ 0000000000003ff8     BaseLib:String.obj
  0002:00000410       ??_C@_0BL@IKFBNFIL@AsciiStrSize?5?$CIFirstString?$CJ?$AA@ 0000000000004030     BaseLib:String.obj
  0002:00000430       ??_C@_0BM@EDNOKLLE@AsciiStrSize?5?$CISecondString?$CJ?$AA@ 0000000000004050     BaseLib:String.obj
- 0002:00000450       ??_C@_0DJ@DIJFAOJH@g?3?2uefi_edk2_practice?2MdePkg?2Lib@ 0000000000004070     BaseLib:Unaligned.obj
+ 0002:00000450       ??_C@_0DJ@BBGKHIDL@d?3?2uefi_edk2_practice?2MdePkg?2Lib@ 0000000000004070     BaseLib:Unaligned.obj
  0002:00000490       ??_C@_0N@KGHEHMDL@Divisor?5?$CB?$DN?50?$AA@ 00000000000040b0     BaseLib:DivU64x32.obj
- 0002:000004a0       ??_C@_0DK@GNKFIOKI@g?3?2uefi_edk2_practice?2MdePkg?2Lib@ 00000000000040c0     BaseLib:SafeString.obj
+ 0002:000004a0       ??_C@_0DK@LCOMJOBN@d?3?2uefi_edk2_practice?2MdePkg?2Lib@ 00000000000040c0     BaseLib:SafeString.obj
  0002:000004e0       ??_C@_0CD@COCJPGE@?$CI?$CIUINTN?$CJ?5Source?5?$CG?50x00000001?$CJ?5?$DN?$DN@ 0000000000004100     BaseLib:SafeString.obj
  0002:00000508       ??_C@_0BO@ECNIOIHG@?$CIDestination?5?$CB?$DN?5?$CI?$CIvoid?5?$CK?$CJ?50?$CJ?$CJ?$AA@ 0000000000004128     BaseLib:SafeString.obj
  0002:00000528       ??_C@_0BJ@EAEEJIP@?$CISource?5?$CB?$DN?5?$CI?$CIvoid?5?$CK?$CJ?50?$CJ?$CJ?$AA@ 0000000000004148     BaseLib:SafeString.obj
@@ -123,15 +123,15 @@
  0002:00000638       ??_C@_0P@BHOOOJPD@?$CICopyLen?5?$CB?$DN?50?$CJ?$AA@ 0000000000004258     BaseLib:SafeString.obj
  0002:00000648       ??_C@_0BG@BPGICNPK@?$CICopyLen?5?$DO?5SourceLen?$CJ?$AA@ 0000000000004268     BaseLib:SafeString.obj
  0002:00000660       ??_C@_0BF@NJNGJMPC@List?5?$CB?$DN?5?$CI?$CIvoid?5?$CK?$CJ?50?$CJ?$AA@ 0000000000004280     BaseLib:LinkedList.obj
- 0002:00000678       ??_C@_0DK@FPMEKHHB@g?3?2uefi_edk2_practice?2MdePkg?2Lib@ 0000000000004298     BaseLib:LinkedList.obj
+ 0002:00000678       ??_C@_0DK@IAINLHME@d?3?2uefi_edk2_practice?2MdePkg?2Lib@ 0000000000004298     BaseLib:LinkedList.obj
  0002:000006b8       ??_C@_0CC@KDLPLAED@List?9?$DOForwardLink?5?$CB?$DN?5?$CI?$CIvoid?5?$CK?$CJ?50@ 00000000000042d8     BaseLib:LinkedList.obj
  0002:000006e0       ??_C@_0BP@IJJCCMAK@List?9?$DOBackLink?5?$CB?$DN?5?$CI?$CIvoid?5?$CK?$CJ?50?$CJ?$AA@ 0000000000004300     BaseLib:LinkedList.obj
  0002:00000700       ??_C@_0CG@LGIALJFK@InternalBaseLibIsListValid?5?$CIList@ 0000000000004320     BaseLib:LinkedList.obj
  0002:00000728       ??_C@_0CC@JLDICICM@InternalBaseLibIsListValid?5?$CIList@ 0000000000004348     BaseLib:LinkedList.obj
  0002:00000750       ??_C@_0BF@NMBJJECB@?$CBIsListEmpty?5?$CIEntry?$CJ?$AA@ 0000000000004370     BaseLib:LinkedList.obj
  0002:00000768       ??_C@_0L@MEMPDLHB@Count?5?$DM?564?$AA@ 0000000000004388     BaseLib:LShiftU64.obj
- 0002:00000778       ??_C@_0DJ@KJENGIEM@g?3?2uefi_edk2_practice?2MdePkg?2Lib@ 0000000000004398     BaseLib:LShiftU64.obj
- 0002:000007c0       ??_C@_0EC@LJCGBENK@g?3?2uefi_edk2_practice?2MdePkg?2Lib@ 00000000000043e0     BaseLib:DivU64x32Remainder.obj
+ 0002:00000778       ??_C@_0DJ@IALCBOOA@d?3?2uefi_edk2_practice?2MdePkg?2Lib@ 0000000000004398     BaseLib:LShiftU64.obj
+ 0002:000007c0       ??_C@_0EC@GDBMODPL@d?3?2uefi_edk2_practice?2MdePkg?2Lib@ 00000000000043e0     BaseLib:DivU64x32Remainder.obj
  0002:00000804       _gPcd_FixedAtBuild_PcdMaximumLinkedListLength 0000000000004424     MySpdRead:AutoGen.obj
  0002:00000808       _gPcd_FixedAtBuild_PcdMaximumUnicodeStringLength 0000000000004428     MySpdRead:AutoGen.obj
  0002:0000080c       _gPcd_FixedAtBuild_PcdMaximumAsciiStringLength 000000000000442c     MySpdRead:AutoGen.obj

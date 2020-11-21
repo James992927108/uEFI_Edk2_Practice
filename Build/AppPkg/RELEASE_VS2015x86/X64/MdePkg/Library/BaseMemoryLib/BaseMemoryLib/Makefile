@@ -19,7 +19,7 @@ PLATFORM_NAME = AppPkg
 PLATFORM_GUID = 0458dade-8b6e-4e45-b773-1b27cbda3e06
 PLATFORM_VERSION = 0.01
 PLATFORM_RELATIVE_DIR = MyPkg
-PLATFORM_DIR = g:\uefi_edk2_practice\MyPkg
+PLATFORM_DIR = d:\uefi_edk2_practice\MyPkg
 PLATFORM_OUTPUT_DIR = Build\AppPkg
 
 #
@@ -35,7 +35,7 @@ MODULE_FILE_BASE_NAME = BaseMemoryLib
 BASE_NAME = $(MODULE_NAME)
 MODULE_RELATIVE_DIR = MdePkg\Library\BaseMemoryLib
 PACKAGE_RELATIVE_DIR = Library\BaseMemoryLib
-MODULE_DIR = g:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib
+MODULE_DIR = d:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib
 FFS_OUTPUT_DIR = 
 
 MODULE_ENTRY_POINT = _ModuleEntryPoint
@@ -60,13 +60,13 @@ TARGET = RELEASE
 #
 # Build Directory Macro Definition
 #
-# PLATFORM_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
-BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+# PLATFORM_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
 BIN_DIR = $(BUILD_DIR)\X64
 LIB_DIR = $(BIN_DIR)
-MODULE_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib
-OUTPUT_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT
-DEBUG_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\DEBUG
+MODULE_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib
+OUTPUT_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT
+DEBUG_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\DEBUG
 DEST_DIR_OUTPUT = $(OUTPUT_DIR)
 DEST_DIR_DEBUG = $(DEBUG_DIR)
 
@@ -131,7 +131,7 @@ RC = c:\Program Files (x86)\Windows Kits\8.1\bin\x64\rc.exe
 ASM = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\x86_amd64\ml64.exe
 ASM_FLAGS = /nologo /c /WX /W3 /Cx /Zd
 
-ASL = G:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
+ASL = D:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
 ASL_FLAGS = 
 ASL_OUTFLAGS =  -p
 
@@ -189,7 +189,7 @@ MAKE = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\nmake.exe
 ASMLINK = C:\WINDDK\3790.1830\bin\bin16\link16.exe
 ASMLINK_FLAGS = /nologo /tiny
 
-NASM = G:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
+NASM = D:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
 NASM_FLAGS = -Ox -f win64
 
 
@@ -223,16 +223,16 @@ INC =  \
     /I$(WORKSPACE)\MdePkg\Include \
     /I$(WORKSPACE)\MdePkg\Include\X64
 
-OBJECT_FILES_LIST = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\object_files.lst
+OBJECT_FILES_LIST = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\object_files.lst
 
 
-COMMON_DEPS = $(DEBUG_DIR)\AutoGen.h \
-              $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\MemLibInternals.h \
-              $(WORKSPACE)\MdePkg\Include\Base.h \
+COMMON_DEPS = $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\MemLibInternals.h \
+              $(DEBUG_DIR)\AutoGen.h \
               $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h \
               $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
-              $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h \
               $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h \
+              $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h \
+              $(WORKSPACE)\MdePkg\Include\Base.h \
               
 
 #
@@ -242,7 +242,7 @@ FORCE_REBUILD = force_build
 INIT_TARGET = init
 PCH_TARGET =
 BC_TARGET = 
-CODA_TARGET = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\BaseMemoryLib.lib \
+CODA_TARGET = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\BaseMemoryLib.lib \
               
 
 #
@@ -316,87 +316,87 @@ gen_fds:
 #
 $(OUTPUT_DIR)\BaseMemoryLib.lib : $(OBJECT_FILES)
 $(OUTPUT_DIR)\BaseMemoryLib.lib : $(OBJECT_FILES_LIST)
-	"$(SLINK)" $(SLINK_FLAGS) /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\BaseMemoryLib.lib @$(OBJECT_FILES_LIST)
-
-$(OUTPUT_DIR)\ScanMem64Wrapper.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\ScanMem64Wrapper.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\ScanMem64Wrapper.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\ScanMem64Wrapper.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\ScanMem64Wrapper.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\ScanMem64Wrapper.c
-
-$(OUTPUT_DIR)\CopyMemWrapper.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\CopyMemWrapper.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\CopyMemWrapper.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\CopyMemWrapper.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\CopyMemWrapper.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\CopyMemWrapper.c
-
-$(OUTPUT_DIR)\IsZeroBufferWrapper.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\IsZeroBufferWrapper.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\IsZeroBufferWrapper.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\IsZeroBufferWrapper.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\IsZeroBufferWrapper.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\IsZeroBufferWrapper.c
-
-$(OUTPUT_DIR)\ZeroMemWrapper.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\ZeroMemWrapper.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\ZeroMemWrapper.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\ZeroMemWrapper.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\ZeroMemWrapper.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\ZeroMemWrapper.c
-
-$(OUTPUT_DIR)\SetMem32Wrapper.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\SetMem32Wrapper.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\SetMem32Wrapper.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\SetMem32Wrapper.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\SetMem32Wrapper.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\SetMem32Wrapper.c
-
-$(OUTPUT_DIR)\SetMem64Wrapper.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\SetMem64Wrapper.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\SetMem64Wrapper.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\SetMem64Wrapper.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\SetMem64Wrapper.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\SetMem64Wrapper.c
-
-$(OUTPUT_DIR)\MemLibGuid.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\MemLibGuid.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\MemLibGuid.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\MemLibGuid.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\MemLibGuid.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\MemLibGuid.c
-
-$(OUTPUT_DIR)\CopyMem.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\CopyMem.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\CopyMem.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\CopyMem.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\CopyMem.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\CopyMem.c
-
-$(OUTPUT_DIR)\SetMemWrapper.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\SetMemWrapper.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\SetMemWrapper.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\SetMemWrapper.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\SetMemWrapper.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\SetMemWrapper.c
-
-$(OUTPUT_DIR)\ScanMem8Wrapper.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\ScanMem8Wrapper.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\ScanMem8Wrapper.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\ScanMem8Wrapper.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\ScanMem8Wrapper.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\ScanMem8Wrapper.c
-
-$(OUTPUT_DIR)\MemLibGeneric.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\MemLibGeneric.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\MemLibGeneric.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\MemLibGeneric.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\MemLibGeneric.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\MemLibGeneric.c
-
-$(OUTPUT_DIR)\CompareMemWrapper.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\CompareMemWrapper.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\CompareMemWrapper.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\CompareMemWrapper.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\CompareMemWrapper.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\CompareMemWrapper.c
-
-$(OUTPUT_DIR)\ScanMem16Wrapper.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\ScanMem16Wrapper.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\ScanMem16Wrapper.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\ScanMem16Wrapper.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\ScanMem16Wrapper.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\ScanMem16Wrapper.c
+	"$(SLINK)" $(SLINK_FLAGS) /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\BaseMemoryLib.lib @$(OBJECT_FILES_LIST)
 
 $(OUTPUT_DIR)\ScanMem32Wrapper.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\ScanMem32Wrapper.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\ScanMem32Wrapper.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\ScanMem32Wrapper.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\ScanMem32Wrapper.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\ScanMem32Wrapper.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\ScanMem32Wrapper.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\ScanMem32Wrapper.c
 
-$(OUTPUT_DIR)\SetMem.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\SetMem.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\SetMem.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\SetMem.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\SetMem.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\SetMem.c
+$(OUTPUT_DIR)\SetMem64Wrapper.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\SetMem64Wrapper.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\SetMem64Wrapper.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\SetMem64Wrapper.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\SetMem64Wrapper.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\SetMem64Wrapper.c
+
+$(OUTPUT_DIR)\IsZeroBufferWrapper.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\IsZeroBufferWrapper.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\IsZeroBufferWrapper.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\IsZeroBufferWrapper.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\IsZeroBufferWrapper.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\IsZeroBufferWrapper.c
+
+$(OUTPUT_DIR)\CompareMemWrapper.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\CompareMemWrapper.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\CompareMemWrapper.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\CompareMemWrapper.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\CompareMemWrapper.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\CompareMemWrapper.c
+
+$(OUTPUT_DIR)\ScanMem16Wrapper.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\ScanMem16Wrapper.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\ScanMem16Wrapper.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\ScanMem16Wrapper.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\ScanMem16Wrapper.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\ScanMem16Wrapper.c
+
+$(OUTPUT_DIR)\ScanMem64Wrapper.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\ScanMem64Wrapper.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\ScanMem64Wrapper.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\ScanMem64Wrapper.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\ScanMem64Wrapper.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\ScanMem64Wrapper.c
+
+$(OUTPUT_DIR)\MemLibGuid.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\MemLibGuid.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\MemLibGuid.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\MemLibGuid.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\MemLibGuid.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\MemLibGuid.c
+
+$(OUTPUT_DIR)\CopyMem.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\CopyMem.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\CopyMem.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\CopyMem.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\CopyMem.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\CopyMem.c
+
+$(OUTPUT_DIR)\MemLibGeneric.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\MemLibGeneric.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\MemLibGeneric.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\MemLibGeneric.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\MemLibGeneric.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\MemLibGeneric.c
 
 $(OUTPUT_DIR)\SetMem16Wrapper.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\SetMem16Wrapper.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\SetMem16Wrapper.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\SetMem16Wrapper.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\SetMem16Wrapper.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\SetMem16Wrapper.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\SetMem16Wrapper.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\SetMem16Wrapper.c
+
+$(OUTPUT_DIR)\SetMem32Wrapper.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\SetMem32Wrapper.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\SetMem32Wrapper.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\SetMem32Wrapper.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\SetMem32Wrapper.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\SetMem32Wrapper.c
+
+$(OUTPUT_DIR)\SetMem.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\SetMem.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\SetMem.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\SetMem.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\SetMem.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\SetMem.c
+
+$(OUTPUT_DIR)\ScanMem8Wrapper.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\ScanMem8Wrapper.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\ScanMem8Wrapper.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\ScanMem8Wrapper.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\ScanMem8Wrapper.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\ScanMem8Wrapper.c
+
+$(OUTPUT_DIR)\SetMemWrapper.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\SetMemWrapper.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\SetMemWrapper.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\SetMemWrapper.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\SetMemWrapper.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\SetMemWrapper.c
+
+$(OUTPUT_DIR)\ZeroMemWrapper.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\ZeroMemWrapper.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\ZeroMemWrapper.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\ZeroMemWrapper.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\ZeroMemWrapper.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\ZeroMemWrapper.c
+
+$(OUTPUT_DIR)\CopyMemWrapper.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\CopyMemWrapper.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\CopyMemWrapper.obj : $(WORKSPACE)\MdePkg\Library\BaseMemoryLib\CopyMemWrapper.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseMemoryLib\BaseMemoryLib\OUTPUT\.\CopyMemWrapper.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseMemoryLib\CopyMemWrapper.c
 
 
 

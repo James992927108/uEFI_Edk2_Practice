@@ -1,5 +1,5 @@
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Library\\BaseLib\\X64\\WriteCr0.nasm"
-#line 1 "g:\\uefi_edk2_practice\\Build\\AppPkg\\RELEASE_VS2015x86\\X64\\MdePkg\\Library\\BaseLib\\BaseLib\\DEBUG\\AutoGen.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Library\\BaseLib\\X64\\WriteCr0.nasm"
+#line 1 "d:\\uefi_edk2_practice\\Build\\AppPkg\\RELEASE_VS2015x86\\X64\\MdePkg\\Library\\BaseLib\\BaseLib\\DEBUG\\AutoGen.h"
 
 
 
@@ -15,7 +15,7 @@
 
 
 
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
@@ -43,7 +43,7 @@
 
 
 
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
 
 
 
@@ -71,7 +71,7 @@
 
 
 #pragma pack()
-#line 29 "g:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
+#line 29 "d:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
 
 
 
@@ -85,7 +85,7 @@
 
 
 
-#line 43 "g:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
+#line 43 "d:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
 
 
 
@@ -112,7 +112,7 @@
 
 
 
-#line 70 "g:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
+#line 70 "d:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
 
 
 
@@ -171,9 +171,9 @@
 
 #pragma warning ( disable : 4703 )
   
-#line 129 "g:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
+#line 129 "d:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
 
-#line 131 "g:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
+#line 131 "d:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
 
 
 
@@ -274,7 +274,7 @@
 
 
 
-#line 232 "g:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
+#line 232 "d:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
 
 
 
@@ -353,7 +353,7 @@ typedef INT64   INTN;
 
 
 
-#line 311 "g:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
+#line 311 "d:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
 
 
 
@@ -361,7 +361,7 @@ typedef INT64   INTN;
 
 
 
-#line 319 "g:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
+#line 319 "d:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
 
 
 
@@ -377,18 +377,18 @@ typedef INT64   INTN;
 
 
 
-#line 335 "g:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
+#line 335 "d:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
 
-#line 337 "g:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
+#line 337 "d:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
 
-#line 29 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 29 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
 
 
 #pragma warning ( disable : 4200 )
-#line 36 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 36 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
@@ -454,46 +454,14 @@ extern UINT8 _VerifySizeof__VERIFY_UINT32_ENUM_SIZE[(sizeof(__VERIFY_UINT32_ENUM
 
 
 
-#line 102 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 102 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
   
   
   
   
   
   
-#line 109 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-
-
-
-
-
-
-  
-
-
-
-
-
-
-#line 123 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-
-
-
-
-
-
-
-#line 131 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-
-  
-    
-    
-    
-    
-    
-  #line 139 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-#line 140 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-
+#line 109 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
@@ -507,7 +475,39 @@ extern UINT8 _VerifySizeof__VERIFY_UINT32_ENUM_SIZE[(sizeof(__VERIFY_UINT32_ENUM
 
 
 
-#line 155 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 123 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+
+
+
+
+
+
+
+#line 131 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+
+  
+    
+    
+    
+    
+    
+  #line 139 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 140 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+#line 155 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
     
     
     
@@ -521,34 +521,8 @@ extern UINT8 _VerifySizeof__VERIFY_UINT32_ENUM_SIZE[(sizeof(__VERIFY_UINT32_ENUM
 
 
 
-#line 169 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-#line 170 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-  
-    
-    
-    
-    
-    
-  #line 193 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-#line 194 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-
-
+#line 169 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 170 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
@@ -571,34 +545,8 @@ extern UINT8 _VerifySizeof__VERIFY_UINT32_ENUM_SIZE[(sizeof(__VERIFY_UINT32_ENUM
     
     
     
-  #line 219 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-#line 220 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#line 244 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-  
-#line 246 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+  #line 193 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 194 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
@@ -608,7 +556,59 @@ extern UINT8 _VerifySizeof__VERIFY_UINT32_ENUM_SIZE[(sizeof(__VERIFY_UINT32_ENUM
 
 
   
-#line 256 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+  #line 219 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 220 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 244 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+  
+#line 246 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+
+
+
+
+
+
+
+
+  
+#line 256 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
@@ -996,7 +996,7 @@ struct _LIST_ENTRY {
 
 
 
-#line 644 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 644 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
@@ -1041,7 +1041,7 @@ struct _LIST_ENTRY {
 
 
 
-#line 689 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 689 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
@@ -1109,7 +1109,7 @@ typedef CHAR8 *VA_LIST;
 
 
 
-#line 757 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 757 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
@@ -1164,7 +1164,7 @@ typedef UINTN  *BASE_LIST;
 
 
 
-#line 812 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 812 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
@@ -1617,7 +1617,7 @@ typedef UINTN RETURN_STATUS;
 
 
 
-#line 1265 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 1265 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
@@ -1632,11 +1632,11 @@ typedef UINTN RETURN_STATUS;
 
 
 
-#line 1280 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 1280 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
-#line 17 "g:\\uefi_edk2_practice\\Build\\AppPkg\\RELEASE_VS2015x86\\X64\\MdePkg\\Library\\BaseLib\\BaseLib\\DEBUG\\AutoGen.h"
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Library/PcdLib.h"
+#line 17 "d:\\uefi_edk2_practice\\Build\\AppPkg\\RELEASE_VS2015x86\\X64\\MdePkg\\Library\\BaseLib\\BaseLib\\DEBUG\\AutoGen.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Library/PcdLib.h"
 
 
 
@@ -2224,7 +2224,7 @@ typedef UINTN RETURN_STATUS;
 
 
 
-#line 589 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Library/PcdLib.h"
+#line 589 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Library/PcdLib.h"
 
 
 
@@ -2580,7 +2580,7 @@ typedef UINTN RETURN_STATUS;
                                          
 
 
-#line 945 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Library/PcdLib.h"
+#line 945 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Library/PcdLib.h"
 
 
 
@@ -3280,7 +3280,7 @@ LibPcdSetExBool (
    UINTN             TokenNumber,
    BOOLEAN           Value
   );
-#line 1645 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Library/PcdLib.h"
+#line 1645 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Library/PcdLib.h"
 
 
 
@@ -3896,9 +3896,9 @@ LibPcdGetSku (
   void
   );
 
-#line 2261 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Library/PcdLib.h"
+#line 2261 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Library/PcdLib.h"
 
-#line 18 "g:\\uefi_edk2_practice\\Build\\AppPkg\\RELEASE_VS2015x86\\X64\\MdePkg\\Library\\BaseLib\\BaseLib\\DEBUG\\AutoGen.h"
+#line 18 "d:\\uefi_edk2_practice\\Build\\AppPkg\\RELEASE_VS2015x86\\X64\\MdePkg\\Library\\BaseLib\\BaseLib\\DEBUG\\AutoGen.h"
 
 extern GUID  gEfiCallerIdGuid;
 extern CHAR8 *gEfiCallerBaseName;
@@ -3949,8 +3949,8 @@ extern const UINT8 _gPcd_FixedAtBuild_PcdDebugPropertyMask;
 
 
 
-#line 69 "g:\\uefi_edk2_practice\\Build\\AppPkg\\RELEASE_VS2015x86\\X64\\MdePkg\\Library\\BaseLib\\BaseLib\\DEBUG\\AutoGen.h"
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Library\\BaseLib\\X64\\WriteCr0.nasm"
+#line 69 "d:\\uefi_edk2_practice\\Build\\AppPkg\\RELEASE_VS2015x86\\X64\\MdePkg\\Library\\BaseLib\\BaseLib\\DEBUG\\AutoGen.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Library\\BaseLib\\X64\\WriteCr0.nasm"
 ;------------------------------------------------------------------------------
 ;
 ; Copyright (c) 2006, Intel Corporation. All rights reserved.<BR>

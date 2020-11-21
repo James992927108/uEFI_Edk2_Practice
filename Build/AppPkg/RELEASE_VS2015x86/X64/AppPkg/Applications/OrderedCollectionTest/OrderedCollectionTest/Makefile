@@ -19,7 +19,7 @@ PLATFORM_NAME = AppPkg
 PLATFORM_GUID = 0458dade-8b6e-4e45-b773-1b27cbda3e06
 PLATFORM_VERSION = 0.01
 PLATFORM_RELATIVE_DIR = MyPkg
-PLATFORM_DIR = g:\uefi_edk2_practice\MyPkg
+PLATFORM_DIR = d:\uefi_edk2_practice\MyPkg
 PLATFORM_OUTPUT_DIR = Build\AppPkg
 
 #
@@ -35,7 +35,7 @@ MODULE_FILE_BASE_NAME = OrderedCollectionTest
 BASE_NAME = $(MODULE_NAME)
 MODULE_RELATIVE_DIR = AppPkg\Applications\OrderedCollectionTest
 PACKAGE_RELATIVE_DIR = Applications\OrderedCollectionTest
-MODULE_DIR = g:\uefi_edk2_practice\AppPkg\Applications\OrderedCollectionTest
+MODULE_DIR = d:\uefi_edk2_practice\AppPkg\Applications\OrderedCollectionTest
 FFS_OUTPUT_DIR = 
 
 MODULE_ENTRY_POINT = ShellCEntryLib
@@ -59,13 +59,13 @@ TARGET = RELEASE
 #
 # Build Directory Macro Definition
 #
-# PLATFORM_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
-BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+# PLATFORM_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
 BIN_DIR = $(BUILD_DIR)\X64
 LIB_DIR = $(BIN_DIR)
-MODULE_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest
-OUTPUT_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\OUTPUT
-DEBUG_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\DEBUG
+MODULE_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest
+OUTPUT_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\OUTPUT
+DEBUG_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\DEBUG
 DEST_DIR_OUTPUT = $(OUTPUT_DIR)
 DEST_DIR_DEBUG = $(DEBUG_DIR)
 
@@ -130,7 +130,7 @@ RC = c:\Program Files (x86)\Windows Kits\8.1\bin\x64\rc.exe
 ASM = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\x86_amd64\ml64.exe
 ASM_FLAGS = /nologo /c /WX /W3 /Cx /Zd
 
-ASL = G:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
+ASL = D:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
 ASL_FLAGS = 
 ASL_OUTFLAGS =  -p
 
@@ -188,7 +188,7 @@ MAKE = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\nmake.exe
 ASMLINK = C:\WINDDK\3790.1830\bin\bin16\link16.exe
 ASMLINK_FLAGS = /nologo /tiny
 
-NASM = G:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
+NASM = D:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
 NASM_FLAGS = -Ox -f win64
 
 
@@ -252,71 +252,71 @@ INC =  \
     /I$(WORKSPACE)\ShellPkg \
     /I$(WORKSPACE)\ShellPkg\Include
 
-OBJECT_FILES_LIST = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\OUTPUT\object_files.lst
-STATIC_LIBRARY_FILES_LIST = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\OUTPUT\static_library_files.lst
+OBJECT_FILES_LIST = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\OUTPUT\object_files.lst
+STATIC_LIBRARY_FILES_LIST = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\OUTPUT\static_library_files.lst
 
 
-COMMON_DEPS = $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h \
-              $(WORKSPACE)\StdLib\Include\sys\errno.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
-              $(WORKSPACE)\StdLib\Include\stdio.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
-              $(WORKSPACE)\StdLib\Include\assert.h \
-              $(WORKSPACE)\StdLib\Include\sys\cdefs_aout.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h \
-              $(WORKSPACE)\MdePkg\Include\Library\OrderedCollectionLib.h \
-              $(DEBUG_DIR)\AutoGen.h \
-              $(WORKSPACE)\StdLib\Include\sys\stdint.h \
-              $(WORKSPACE)\StdLib\Include\sys\fd_set.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h \
-              $(WORKSPACE)\StdLib\Include\sys\EfiSysCall.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h \
-              $(WORKSPACE)\MdePkg\Include\Base.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h \
-              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
-              $(WORKSPACE)\StdLib\Include\sys\endian.h \
-              $(WORKSPACE)\StdLib\Include\errno.h \
-              $(WORKSPACE)\StdLib\Include\sys\featuretest.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h \
-              $(WORKSPACE)\StdLib\Include\unistd.h \
-              $(WORKSPACE)\StdLib\Include\stdlib.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\types.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h \
-              $(WORKSPACE)\StdLib\Include\sys\unistd.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h \
-              $(WORKSPACE)\StdLib\Include\sys\EfiCdefs.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h \
-              $(WORKSPACE)\StdLib\Include\x86\limits.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\limits.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h \
-              $(WORKSPACE)\StdLib\Include\string.h \
-              $(WORKSPACE)\StdLib\Include\sys\ansi.h \
-              $(WORKSPACE)\StdLib\Include\sys\bswap.h \
+COMMON_DEPS = $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
               $(WORKSPACE)\MdePkg\Include\Uefi.h \
-              $(WORKSPACE)\StdLib\Include\sys\syslimits.h \
-              $(WORKSPACE)\StdLib\Include\sys\types.h \
-              $(WORKSPACE)\StdLib\Include\stdarg.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\endian.h \
-              $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h \
+              $(WORKSPACE)\StdLib\Include\sys\EfiCdefs.h \
               $(WORKSPACE)\StdLib\Include\limits.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
+              $(WORKSPACE)\StdLib\Include\sys\bswap.h \
               $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h \
+              $(WORKSPACE)\MdePkg\Include\Library\OrderedCollectionLib.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\limits.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\types.h \
+              $(WORKSPACE)\StdLib\Include\x86\limits.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
+              $(WORKSPACE)\MdePkg\Include\Base.h \
+              $(WORKSPACE)\StdLib\Include\assert.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h \
+              $(WORKSPACE)\StdLib\Include\sys\fd_set.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h \
+              $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
+              $(WORKSPACE)\StdLib\Include\sys\errno.h \
+              $(WORKSPACE)\StdLib\Include\errno.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h \
+              $(WORKSPACE)\StdLib\Include\unistd.h \
+              $(WORKSPACE)\StdLib\Include\string.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\endian.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h \
+              $(WORKSPACE)\StdLib\Include\stdlib.h \
+              $(WORKSPACE)\StdLib\Include\sys\EfiSysCall.h \
+              $(WORKSPACE)\StdLib\Include\sys\unistd.h \
+              $(WORKSPACE)\StdLib\Include\sys\cdefs_aout.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
+              $(WORKSPACE)\StdLib\Include\sys\ansi.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
+              $(WORKSPACE)\StdLib\Include\stdio.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h \
+              $(WORKSPACE)\StdLib\Include\sys\types.h \
+              $(WORKSPACE)\StdLib\Include\sys\endian.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
+              $(WORKSPACE)\StdLib\Include\sys\featuretest.h \
+              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
+              $(WORKSPACE)\StdLib\Include\stdarg.h \
+              $(WORKSPACE)\StdLib\Include\sys\syslimits.h \
+              $(WORKSPACE)\StdLib\Include\sys\stdint.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
+              $(DEBUG_DIR)\AutoGen.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
               
 
 #
@@ -326,7 +326,7 @@ FORCE_REBUILD = force_build
 INIT_TARGET = init
 PCH_TARGET =
 BC_TARGET = 
-CODA_TARGET = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\DEBUG\OrderedCollectionTest.efi \
+CODA_TARGET = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\DEBUG\OrderedCollectionTest.efi \
               
 
 #
@@ -435,60 +435,60 @@ gen_fds:
 # Individual Object Build Targets
 #
 $(DEBUG_DIR)\OrderedCollectionTest.efi : $(DEBUG_DIR)\OrderedCollectionTest.dll
-	"$(GENFW)" -e $(MODULE_TYPE) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\DEBUG\OrderedCollectionTest.efi g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\DEBUG\OrderedCollectionTest.dll $(GENFW_FLAGS)
-	$(CP) g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\DEBUG\OrderedCollectionTest.efi $(OUTPUT_DIR)
-	$(CP) g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\DEBUG\OrderedCollectionTest.efi $(BIN_DIR)\$(MODULE_NAME_GUID).efi
+	"$(GENFW)" -e $(MODULE_TYPE) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\DEBUG\OrderedCollectionTest.efi d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\DEBUG\OrderedCollectionTest.dll $(GENFW_FLAGS)
+	$(CP) d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\DEBUG\OrderedCollectionTest.efi $(OUTPUT_DIR)
+	$(CP) d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\DEBUG\OrderedCollectionTest.efi $(BIN_DIR)\$(MODULE_NAME_GUID).efi
 	-$(CP) $(DEBUG_DIR)\*.map $(OUTPUT_DIR)
 	-$(CP) $(DEBUG_DIR)\*.pdb $(OUTPUT_DIR)
 
 $(OUTPUT_DIR)\OrderedCollectionTest.lib : $(OBJECT_FILES)
 $(OUTPUT_DIR)\OrderedCollectionTest.lib : $(OBJECT_FILES_LIST)
-	"$(SLINK)" $(SLINK_FLAGS) /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\OUTPUT\OrderedCollectionTest.lib @$(OBJECT_FILES_LIST)
+	"$(SLINK)" $(SLINK_FLAGS) /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\OUTPUT\OrderedCollectionTest.lib @$(OBJECT_FILES_LIST)
 
 $(DEBUG_DIR)\OrderedCollectionTest.dll : $(MAKE_FILE)
 $(DEBUG_DIR)\OrderedCollectionTest.dll : $(STATIC_LIBRARY_FILES)
 $(DEBUG_DIR)\OrderedCollectionTest.dll : $(STATIC_LIBRARY_FILES_LIST)
-	"$(DLINK)" /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\DEBUG\OrderedCollectionTest.dll $(DLINK_FLAGS) $(DLINK2_FLAGS) $(DLINK_SPATH) @$(STATIC_LIBRARY_FILES_LIST)
-	"$(DLINK)" /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\DEBUG\OrderedCollectionTest.dll $(DLINK_FLAGS) $(DLINK_SPATH) @$(STATIC_LIBRARY_FILES_LIST)
-
-$(OUTPUT_DIR)\AutoGen.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h
-$(OUTPUT_DIR)\AutoGen.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiBootServicesTableLib.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiApplicationEntryPoint.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi.h
-$(OUTPUT_DIR)\AutoGen.obj : $(DEBUG_DIR)\AutoGen.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\OUTPUT\.\AutoGen.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\DEBUG\AutoGen.c
+	"$(DLINK)" /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\DEBUG\OrderedCollectionTest.dll $(DLINK_FLAGS) $(DLINK2_FLAGS) $(DLINK_SPATH) @$(STATIC_LIBRARY_FILES_LIST)
+	"$(DLINK)" /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\DEBUG\OrderedCollectionTest.dll $(DLINK_FLAGS) $(DLINK_SPATH) @$(STATIC_LIBRARY_FILES_LIST)
 
 $(OUTPUT_DIR)\OrderedCollectionTest.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\OrderedCollectionTest.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\OrderedCollectionTest.obj : $(WORKSPACE)\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\OUTPUT\.\OrderedCollectionTest.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\OUTPUT\.\OrderedCollectionTest.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest.c
+
+$(OUTPUT_DIR)\AutoGen.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\AutoGen.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiBootServicesTableLib.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiApplicationEntryPoint.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h
+$(OUTPUT_DIR)\AutoGen.obj : $(DEBUG_DIR)\AutoGen.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\OUTPUT\.\AutoGen.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\OrderedCollectionTest\OrderedCollectionTest\DEBUG\AutoGen.c
 
 
 

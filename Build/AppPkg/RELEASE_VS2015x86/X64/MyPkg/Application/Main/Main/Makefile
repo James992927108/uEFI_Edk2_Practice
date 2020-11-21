@@ -19,7 +19,7 @@ PLATFORM_NAME = AppPkg
 PLATFORM_GUID = 0458dade-8b6e-4e45-b773-1b27cbda3e06
 PLATFORM_VERSION = 0.01
 PLATFORM_RELATIVE_DIR = MyPkg
-PLATFORM_DIR = g:\uefi_edk2_practice\MyPkg
+PLATFORM_DIR = d:\uefi_edk2_practice\MyPkg
 PLATFORM_OUTPUT_DIR = Build\AppPkg
 
 #
@@ -35,7 +35,7 @@ MODULE_FILE_BASE_NAME = Main
 BASE_NAME = $(MODULE_NAME)
 MODULE_RELATIVE_DIR = MyPkg\Application\Main
 PACKAGE_RELATIVE_DIR = Application\Main
-MODULE_DIR = g:\uefi_edk2_practice\MyPkg\Application\Main
+MODULE_DIR = d:\uefi_edk2_practice\MyPkg\Application\Main
 FFS_OUTPUT_DIR = 
 
 MODULE_ENTRY_POINT = ShellCEntryLib
@@ -59,13 +59,13 @@ TARGET = RELEASE
 #
 # Build Directory Macro Definition
 #
-# PLATFORM_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
-BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+# PLATFORM_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
 BIN_DIR = $(BUILD_DIR)\X64
 LIB_DIR = $(BIN_DIR)
-MODULE_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main
-OUTPUT_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\OUTPUT
-DEBUG_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\DEBUG
+MODULE_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main
+OUTPUT_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\OUTPUT
+DEBUG_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\DEBUG
 DEST_DIR_OUTPUT = $(OUTPUT_DIR)
 DEST_DIR_DEBUG = $(DEBUG_DIR)
 
@@ -130,7 +130,7 @@ RC = c:\Program Files (x86)\Windows Kits\8.1\bin\x64\rc.exe
 ASM = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\x86_amd64\ml64.exe
 ASM_FLAGS = /nologo /c /WX /W3 /Cx /Zd
 
-ASL = G:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
+ASL = D:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
 ASL_FLAGS = 
 ASL_OUTFLAGS =  -p
 
@@ -188,7 +188,7 @@ MAKE = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\nmake.exe
 ASMLINK = C:\WINDDK\3790.1830\bin\bin16\link16.exe
 ASMLINK_FLAGS = /nologo /tiny
 
-NASM = G:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
+NASM = D:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
 NASM_FLAGS = -Ox -f win64
 
 
@@ -252,53 +252,53 @@ INC =  \
     /I$(WORKSPACE)\StdLib\Include \
     /I$(WORKSPACE)\StdLib\Include\X64
 
-OBJECT_FILES_LIST = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\OUTPUT\object_files.lst
-STATIC_LIBRARY_FILES_LIST = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\OUTPUT\static_library_files.lst
+OBJECT_FILES_LIST = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\OUTPUT\object_files.lst
+STATIC_LIBRARY_FILES_LIST = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\OUTPUT\static_library_files.lst
 
 
-COMMON_DEPS = $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
-              $(WORKSPACE)\StdLib\Include\stdio.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h \
-              $(DEBUG_DIR)\AutoGen.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
-              $(WORKSPACE)\StdLib\Include\sys\cdefs_aout.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Pci22.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h \
-              $(WORKSPACE)\MdePkg\Include\Base.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h \
-              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
-              $(WORKSPACE)\MdePkg\Include\Library\PciLib.h \
-              $(WORKSPACE)\StdLib\Include\sys\syslimits.h \
-              $(WORKSPACE)\StdLib\Include\sys\featuretest.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
-              $(WORKSPACE)\StdLib\Include\stdlib.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
-              $(WORKSPACE)\StdLib\Include\sys\EfiCdefs.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h \
-              $(WORKSPACE)\StdLib\Include\x86\limits.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\limits.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h \
-              $(WORKSPACE)\StdLib\Include\sys\ansi.h \
-              $(WORKSPACE)\MdePkg\Include\AArch64\ProcessorBind.h \
-              $(WORKSPACE)\StdLib\Include\stdarg.h \
-              $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h \
-              $(WORKSPACE)\StdLib\Include\limits.h \
+COMMON_DEPS = $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
               $(WORKSPACE)\MdePkg\Include\Uefi.h \
+              $(WORKSPACE)\StdLib\Include\sys\EfiCdefs.h \
+              $(WORKSPACE)\StdLib\Include\sys\cdefs_aout.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Pci22.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\limits.h \
+              $(DEBUG_DIR)\AutoGen.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h \
+              $(WORKSPACE)\StdLib\Include\x86\limits.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
+              $(WORKSPACE)\MdePkg\Include\Base.h \
+              $(WORKSPACE)\StdLib\Include\limits.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h \
+              $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h \
+              $(WORKSPACE)\StdLib\Include\stdlib.h \
+              $(WORKSPACE)\MdePkg\Include\Library\PciLib.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
+              $(WORKSPACE)\StdLib\Include\sys\ansi.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
+              $(WORKSPACE)\StdLib\Include\stdio.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
+              $(WORKSPACE)\StdLib\Include\sys\featuretest.h \
+              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
+              $(WORKSPACE)\StdLib\Include\stdarg.h \
+              $(WORKSPACE)\StdLib\Include\sys\syslimits.h \
+              $(WORKSPACE)\MdePkg\Include\AArch64\ProcessorBind.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
               
 
 #
@@ -308,7 +308,7 @@ FORCE_REBUILD = force_build
 INIT_TARGET = init
 PCH_TARGET =
 BC_TARGET = 
-CODA_TARGET = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\DEBUG\MyMain.efi \
+CODA_TARGET = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\DEBUG\MyMain.efi \
               
 
 #
@@ -417,60 +417,60 @@ gen_fds:
 # Individual Object Build Targets
 #
 $(DEBUG_DIR)\MyMain.efi : $(DEBUG_DIR)\MyMain.dll
-	"$(GENFW)" -e $(MODULE_TYPE) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\DEBUG\MyMain.efi g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\DEBUG\MyMain.dll $(GENFW_FLAGS)
-	$(CP) g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\DEBUG\MyMain.efi $(OUTPUT_DIR)
-	$(CP) g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\DEBUG\MyMain.efi $(BIN_DIR)\$(MODULE_NAME_GUID).efi
+	"$(GENFW)" -e $(MODULE_TYPE) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\DEBUG\MyMain.efi d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\DEBUG\MyMain.dll $(GENFW_FLAGS)
+	$(CP) d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\DEBUG\MyMain.efi $(OUTPUT_DIR)
+	$(CP) d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\DEBUG\MyMain.efi $(BIN_DIR)\$(MODULE_NAME_GUID).efi
 	-$(CP) $(DEBUG_DIR)\*.map $(OUTPUT_DIR)
 	-$(CP) $(DEBUG_DIR)\*.pdb $(OUTPUT_DIR)
 
 $(OUTPUT_DIR)\MyMain.lib : $(OBJECT_FILES)
 $(OUTPUT_DIR)\MyMain.lib : $(OBJECT_FILES_LIST)
-	"$(SLINK)" $(SLINK_FLAGS) /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\OUTPUT\MyMain.lib @$(OBJECT_FILES_LIST)
+	"$(SLINK)" $(SLINK_FLAGS) /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\OUTPUT\MyMain.lib @$(OBJECT_FILES_LIST)
 
 $(DEBUG_DIR)\MyMain.dll : $(MAKE_FILE)
 $(DEBUG_DIR)\MyMain.dll : $(STATIC_LIBRARY_FILES)
 $(DEBUG_DIR)\MyMain.dll : $(STATIC_LIBRARY_FILES_LIST)
-	"$(DLINK)" /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\DEBUG\MyMain.dll $(DLINK_FLAGS) $(DLINK2_FLAGS) $(DLINK_SPATH) @$(STATIC_LIBRARY_FILES_LIST)
-	"$(DLINK)" /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\DEBUG\MyMain.dll $(DLINK_FLAGS) $(DLINK_SPATH) @$(STATIC_LIBRARY_FILES_LIST)
+	"$(DLINK)" /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\DEBUG\MyMain.dll $(DLINK_FLAGS) $(DLINK2_FLAGS) $(DLINK_SPATH) @$(STATIC_LIBRARY_FILES_LIST)
+	"$(DLINK)" /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\DEBUG\MyMain.dll $(DLINK_FLAGS) $(DLINK_SPATH) @$(STATIC_LIBRARY_FILES_LIST)
+
+$(OUTPUT_DIR)\AutoGen.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h
+$(OUTPUT_DIR)\AutoGen.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiBootServicesTableLib.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiApplicationEntryPoint.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h
+$(OUTPUT_DIR)\AutoGen.obj : $(DEBUG_DIR)\AutoGen.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\OUTPUT\.\AutoGen.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\DEBUG\AutoGen.c
 
 $(OUTPUT_DIR)\Main.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\Main.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\Main.obj : $(WORKSPACE)\MyPkg\Application\Main\Main.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\OUTPUT\.\Main.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MyPkg\Application\Main\Main.c
-
-$(OUTPUT_DIR)\AutoGen.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h
-$(OUTPUT_DIR)\AutoGen.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiBootServicesTableLib.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiApplicationEntryPoint.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi.h
-$(OUTPUT_DIR)\AutoGen.obj : $(DEBUG_DIR)\AutoGen.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\OUTPUT\.\AutoGen.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\DEBUG\AutoGen.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\Main\Main\OUTPUT\.\Main.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MyPkg\Application\Main\Main.c
 
 
 

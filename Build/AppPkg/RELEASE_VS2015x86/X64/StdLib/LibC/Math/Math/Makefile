@@ -19,7 +19,7 @@ PLATFORM_NAME = AppPkg
 PLATFORM_GUID = 0458dade-8b6e-4e45-b773-1b27cbda3e06
 PLATFORM_VERSION = 0.01
 PLATFORM_RELATIVE_DIR = MyPkg
-PLATFORM_DIR = g:\uefi_edk2_practice\MyPkg
+PLATFORM_DIR = d:\uefi_edk2_practice\MyPkg
 PLATFORM_OUTPUT_DIR = Build\AppPkg
 
 #
@@ -35,7 +35,7 @@ MODULE_FILE_BASE_NAME = Math
 BASE_NAME = $(MODULE_NAME)
 MODULE_RELATIVE_DIR = StdLib\LibC\Math
 PACKAGE_RELATIVE_DIR = LibC\Math
-MODULE_DIR = g:\uefi_edk2_practice\StdLib\LibC\Math
+MODULE_DIR = d:\uefi_edk2_practice\StdLib\LibC\Math
 FFS_OUTPUT_DIR = 
 
 MODULE_ENTRY_POINT = _ModuleEntryPoint
@@ -59,13 +59,13 @@ TARGET = RELEASE
 #
 # Build Directory Macro Definition
 #
-# PLATFORM_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
-BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+# PLATFORM_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
 BIN_DIR = $(BUILD_DIR)\X64
 LIB_DIR = $(BIN_DIR)
-MODULE_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math
-OUTPUT_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT
-DEBUG_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\DEBUG
+MODULE_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math
+OUTPUT_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT
+DEBUG_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\DEBUG
 DEST_DIR_OUTPUT = $(OUTPUT_DIR)
 DEST_DIR_DEBUG = $(DEBUG_DIR)
 
@@ -130,7 +130,7 @@ RC = c:\Program Files (x86)\Windows Kits\8.1\bin\x64\rc.exe
 ASM = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\x86_amd64\ml64.exe
 ASM_FLAGS = /nologo /c /WX /W3 /Cx /Zd
 
-ASL = G:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
+ASL = D:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
 ASL_FLAGS = 
 ASL_OUTFLAGS =  -p
 
@@ -188,7 +188,7 @@ MAKE = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\nmake.exe
 ASMLINK = C:\WINDDK\3790.1830\bin\bin16\link16.exe
 ASMLINK_FLAGS = /nologo /tiny
 
-NASM = G:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
+NASM = D:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
 NASM_FLAGS = -Ox -f win64
 
 
@@ -257,55 +257,55 @@ INC =  \
     /I$(WORKSPACE)\MdePkg\Include \
     /I$(WORKSPACE)\MdePkg\Include\X64
 
-OBJECT_FILES_LIST = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\object_files.lst
+OBJECT_FILES_LIST = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\object_files.lst
 
 
-COMMON_DEPS = $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
-              $(WORKSPACE)\StdLib\Include\sys\endian.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
-              $(WORKSPACE)\StdLib\Include\sys\cdefs_aout.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h \
-              $(WORKSPACE)\StdLib\Include\sys\stdint.h \
-              $(WORKSPACE)\StdLib\Include\sys\fd_set.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h \
-              $(WORKSPACE)\MdePkg\Include\Base.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h \
-              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
-              $(WORKSPACE)\StdLib\Include\sys\featuretest.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\types.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h \
+COMMON_DEPS = $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi.h \
               $(WORKSPACE)\StdLib\Include\sys\EfiCdefs.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h \
-              $(WORKSPACE)\StdLib\Include\sys\ansi.h \
+              $(WORKSPACE)\StdLib\Include\sys\cdefs_aout.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
               $(WORKSPACE)\StdLib\Include\sys\bswap.h \
-              $(DEBUG_DIR)\AutoGen.h \
-              $(WORKSPACE)\StdLib\Include\sys\types.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\types.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
+              $(WORKSPACE)\MdePkg\Include\Base.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h \
+              $(WORKSPACE)\StdLib\Include\sys\fd_set.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h \
               $(WORKSPACE)\StdLib\Include\X64\machine\endian.h \
               $(WORKSPACE)\StdLibPrivateInternalFiles\Include\LibConfig.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
+              $(WORKSPACE)\StdLib\Include\sys\ansi.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h \
+              $(WORKSPACE)\StdLib\Include\sys\types.h \
+              $(WORKSPACE)\StdLib\Include\sys\endian.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
+              $(WORKSPACE)\StdLib\Include\sys\stdint.h \
+              $(WORKSPACE)\StdLib\Include\sys\featuretest.h \
+              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
+              $(DEBUG_DIR)\AutoGen.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
               
 
 #
@@ -315,7 +315,7 @@ FORCE_REBUILD = force_build
 INIT_TARGET = init
 PCH_TARGET =
 BC_TARGET = 
-CODA_TARGET = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\LibMath.lib \
+CODA_TARGET = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\LibMath.lib \
               
 
 #
@@ -389,418 +389,418 @@ gen_fds:
 #
 $(OUTPUT_DIR)\LibMath.lib : $(OBJECT_FILES)
 $(OUTPUT_DIR)\LibMath.lib : $(OBJECT_FILES_LIST)
-	"$(SLINK)" $(SLINK_FLAGS) /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\LibMath.lib @$(OBJECT_FILES_LIST)
+	"$(SLINK)" $(SLINK_FLAGS) /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\LibMath.lib @$(OBJECT_FILES_LIST)
 
-$(OUTPUT_DIR)\e_log2.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\e_log2.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\e_log2.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\e_log2.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\e_log2.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\e_log2.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\e_log2.obj : $(WORKSPACE)\StdLib\LibC\Math\e_log2.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_log2.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\e_log2.c
-
-$(OUTPUT_DIR)\s_expm1.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\s_expm1.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\s_expm1.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\s_expm1.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\s_expm1.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\s_expm1.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\s_expm1.obj : $(WORKSPACE)\StdLib\LibC\Math\s_expm1.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_expm1.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\s_expm1.c
-
-$(OUTPUT_DIR)\e_log10.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\e_log10.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\e_log10.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\e_log10.obj : $(WORKSPACE)\StdLib\Include\sys\errno.h
-$(OUTPUT_DIR)\e_log10.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\e_log10.obj : $(WORKSPACE)\StdLib\Include\errno.h
-$(OUTPUT_DIR)\e_log10.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\e_log10.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\e_log10.obj : $(WORKSPACE)\StdLib\LibC\Math\e_log10.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_log10.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\e_log10.c
-
-$(OUTPUT_DIR)\e_atan2.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\e_atan2.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\e_atan2.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\e_atan2.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\e_atan2.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\e_atan2.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\e_atan2.obj : $(WORKSPACE)\StdLib\LibC\Math\e_atan2.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_atan2.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\e_atan2.c
-
-$(OUTPUT_DIR)\s_copysign.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\s_copysign.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\s_copysign.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\s_copysign.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\s_copysign.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\s_copysign.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\s_copysign.obj : $(WORKSPACE)\StdLib\LibC\Math\s_copysign.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_copysign.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\s_copysign.c
-
-$(OUTPUT_DIR)\s_floor.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\s_floor.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\s_floor.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\s_floor.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\s_floor.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\s_floor.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\s_floor.obj : $(WORKSPACE)\StdLib\LibC\Math\s_floor.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_floor.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\s_floor.c
-
-$(OUTPUT_DIR)\w_asin.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\w_asin.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\w_asin.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\w_asin.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\w_asin.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\w_asin.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\w_asin.obj : $(WORKSPACE)\StdLib\LibC\Math\w_asin.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_asin.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\w_asin.c
-
-$(OUTPUT_DIR)\s_frexp.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\s_frexp.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\s_frexp.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\s_frexp.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\s_frexp.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\s_frexp.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\s_frexp.obj : $(WORKSPACE)\StdLib\LibC\Math\s_frexp.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_frexp.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\s_frexp.c
-
-$(OUTPUT_DIR)\w_sinh.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\w_sinh.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\w_sinh.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\w_sinh.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\w_sinh.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\w_sinh.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\w_sinh.obj : $(WORKSPACE)\StdLib\LibC\Math\w_sinh.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_sinh.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\w_sinh.c
-
-$(OUTPUT_DIR)\s_ceil.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\s_ceil.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\s_ceil.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\s_ceil.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\s_ceil.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\s_ceil.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\s_ceil.obj : $(WORKSPACE)\StdLib\LibC\Math\s_ceil.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_ceil.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\s_ceil.c
-
-$(OUTPUT_DIR)\k_rem_pio2.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\k_rem_pio2.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\k_rem_pio2.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\k_rem_pio2.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\k_rem_pio2.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\k_rem_pio2.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\k_rem_pio2.obj : $(WORKSPACE)\StdLib\LibC\Math\k_rem_pio2.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\k_rem_pio2.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\k_rem_pio2.c
-
-$(OUTPUT_DIR)\s_ldexp.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\s_ldexp.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\s_ldexp.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\s_ldexp.obj : $(WORKSPACE)\StdLib\Include\sys\errno.h
-$(OUTPUT_DIR)\s_ldexp.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\s_ldexp.obj : $(WORKSPACE)\StdLib\Include\errno.h
-$(OUTPUT_DIR)\s_ldexp.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\s_ldexp.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\s_ldexp.obj : $(WORKSPACE)\StdLib\LibC\Math\s_ldexp.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_ldexp.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\s_ldexp.c
-
-$(OUTPUT_DIR)\s_tanh.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\s_tanh.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\s_tanh.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\s_tanh.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\s_tanh.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\s_tanh.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\s_tanh.obj : $(WORKSPACE)\StdLib\LibC\Math\s_tanh.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_tanh.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\s_tanh.c
-
-$(OUTPUT_DIR)\w_log2.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\w_log2.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\w_log2.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\w_log2.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\w_log2.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\w_log2.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\w_log2.obj : $(WORKSPACE)\StdLib\LibC\Math\w_log2.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_log2.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\w_log2.c
-
-$(OUTPUT_DIR)\w_fmod.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\w_fmod.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\w_fmod.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\w_fmod.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\w_fmod.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\w_fmod.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\w_fmod.obj : $(WORKSPACE)\StdLib\LibC\Math\w_fmod.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_fmod.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\w_fmod.c
-
-$(OUTPUT_DIR)\e_sinh.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\e_sinh.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\e_sinh.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\e_sinh.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\e_sinh.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\e_sinh.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\e_sinh.obj : $(WORKSPACE)\StdLib\LibC\Math\e_sinh.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_sinh.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\e_sinh.c
-
-$(OUTPUT_DIR)\w_pow.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\w_pow.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\w_pow.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\w_pow.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\w_pow.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\w_pow.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\w_pow.obj : $(WORKSPACE)\StdLib\LibC\Math\w_pow.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_pow.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\w_pow.c
-
-$(OUTPUT_DIR)\s_fabs.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\s_fabs.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\s_fabs.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\s_fabs.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\s_fabs.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\s_fabs.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\s_fabs.obj : $(WORKSPACE)\StdLib\LibC\Math\s_fabs.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_fabs.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\s_fabs.c
-
-$(OUTPUT_DIR)\w_log10.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\w_log10.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\w_log10.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\w_log10.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\w_log10.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\w_log10.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\w_log10.obj : $(WORKSPACE)\StdLib\LibC\Math\w_log10.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_log10.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\w_log10.c
-
-$(OUTPUT_DIR)\k_sin.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\k_sin.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\k_sin.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\k_sin.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\k_sin.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\k_sin.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\k_sin.obj : $(WORKSPACE)\StdLib\LibC\Math\k_sin.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\k_sin.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\k_sin.c
-
-$(OUTPUT_DIR)\e_sqrt.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\e_sqrt.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\e_sqrt.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\e_sqrt.obj : $(WORKSPACE)\StdLib\Include\sys\errno.h
-$(OUTPUT_DIR)\e_sqrt.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\e_sqrt.obj : $(WORKSPACE)\StdLib\Include\errno.h
-$(OUTPUT_DIR)\e_sqrt.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\e_sqrt.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\e_sqrt.obj : $(WORKSPACE)\StdLib\LibC\Math\e_sqrt.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_sqrt.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\e_sqrt.c
-
-$(OUTPUT_DIR)\w_cosh.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\w_cosh.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\w_cosh.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\w_cosh.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\w_cosh.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\w_cosh.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\w_cosh.obj : $(WORKSPACE)\StdLib\LibC\Math\w_cosh.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_cosh.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\w_cosh.c
-
-$(OUTPUT_DIR)\s_sin.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\s_sin.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\s_sin.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\s_sin.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\s_sin.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\s_sin.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\s_sin.obj : $(WORKSPACE)\StdLib\LibC\Math\s_sin.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_sin.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\s_sin.c
-
-$(OUTPUT_DIR)\e_exp.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\e_exp.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\e_exp.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\e_exp.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\e_exp.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\e_exp.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\e_exp.obj : $(WORKSPACE)\StdLib\LibC\Math\e_exp.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_exp.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\e_exp.c
-
-$(OUTPUT_DIR)\s_modf.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\s_modf.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\s_modf.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\s_modf.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\s_modf.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\s_modf.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\s_modf.obj : $(WORKSPACE)\StdLib\LibC\Math\s_modf.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_modf.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\s_modf.c
+$(OUTPUT_DIR)\s_cos.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\s_cos.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\s_cos.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\s_cos.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\s_cos.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\s_cos.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\s_cos.obj : $(WORKSPACE)\StdLib\LibC\Math\s_cos.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_cos.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\s_cos.c
 
 $(OUTPUT_DIR)\e_cosh.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\e_cosh.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\e_cosh.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
 $(OUTPUT_DIR)\e_cosh.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
 $(OUTPUT_DIR)\e_cosh.obj : $(WORKSPACE)\StdLib\Include\math.h
 $(OUTPUT_DIR)\e_cosh.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\e_cosh.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
 $(OUTPUT_DIR)\e_cosh.obj : $(WORKSPACE)\StdLib\LibC\Math\e_cosh.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_cosh.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\e_cosh.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_cosh.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\e_cosh.c
 
-$(OUTPUT_DIR)\s_scalbn.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\s_scalbn.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\s_scalbn.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\s_scalbn.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\s_scalbn.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\s_scalbn.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\s_scalbn.obj : $(WORKSPACE)\StdLib\LibC\Math\s_scalbn.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_scalbn.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\s_scalbn.c
+$(OUTPUT_DIR)\s_ldexp.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\s_ldexp.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\s_ldexp.obj : $(WORKSPACE)\StdLib\Include\errno.h
+$(OUTPUT_DIR)\s_ldexp.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\s_ldexp.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\s_ldexp.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\s_ldexp.obj : $(WORKSPACE)\StdLib\Include\sys\errno.h
+$(OUTPUT_DIR)\s_ldexp.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\s_ldexp.obj : $(WORKSPACE)\StdLib\LibC\Math\s_ldexp.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_ldexp.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\s_ldexp.c
 
-$(OUTPUT_DIR)\s_tan.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\s_tan.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\s_tan.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\s_tan.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\s_tan.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\s_tan.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\s_tan.obj : $(WORKSPACE)\StdLib\LibC\Math\s_tan.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_tan.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\s_tan.c
+$(OUTPUT_DIR)\e_sqrt.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\e_sqrt.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\e_sqrt.obj : $(WORKSPACE)\StdLib\Include\errno.h
+$(OUTPUT_DIR)\e_sqrt.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\e_sqrt.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\e_sqrt.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\e_sqrt.obj : $(WORKSPACE)\StdLib\Include\sys\errno.h
+$(OUTPUT_DIR)\e_sqrt.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\e_sqrt.obj : $(WORKSPACE)\StdLib\LibC\Math\e_sqrt.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_sqrt.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\e_sqrt.c
+
+$(OUTPUT_DIR)\s_expm1.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\s_expm1.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\s_expm1.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\s_expm1.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\s_expm1.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\s_expm1.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\s_expm1.obj : $(WORKSPACE)\StdLib\LibC\Math\s_expm1.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_expm1.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\s_expm1.c
+
+$(OUTPUT_DIR)\w_sqrt.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\w_sqrt.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\w_sqrt.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\w_sqrt.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\w_sqrt.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\w_sqrt.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\w_sqrt.obj : $(WORKSPACE)\StdLib\LibC\Math\w_sqrt.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_sqrt.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\w_sqrt.c
+
+$(OUTPUT_DIR)\e_asin.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\e_asin.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\e_asin.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\e_asin.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\e_asin.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\e_asin.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\e_asin.obj : $(WORKSPACE)\StdLib\LibC\Math\e_asin.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_asin.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\e_asin.c
+
+$(OUTPUT_DIR)\e_atan2.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\e_atan2.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\e_atan2.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\e_atan2.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\e_atan2.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\e_atan2.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\e_atan2.obj : $(WORKSPACE)\StdLib\LibC\Math\e_atan2.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_atan2.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\e_atan2.c
+
+$(OUTPUT_DIR)\w_log.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\w_log.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\w_log.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\w_log.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\w_log.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\w_log.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\w_log.obj : $(WORKSPACE)\StdLib\LibC\Math\w_log.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_log.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\w_log.c
+
+$(OUTPUT_DIR)\e_log10.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\e_log10.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\e_log10.obj : $(WORKSPACE)\StdLib\Include\errno.h
+$(OUTPUT_DIR)\e_log10.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\e_log10.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\e_log10.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\e_log10.obj : $(WORKSPACE)\StdLib\Include\sys\errno.h
+$(OUTPUT_DIR)\e_log10.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\e_log10.obj : $(WORKSPACE)\StdLib\LibC\Math\e_log10.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_log10.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\e_log10.c
+
+$(OUTPUT_DIR)\s_tanh.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\s_tanh.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\s_tanh.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\s_tanh.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\s_tanh.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\s_tanh.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\s_tanh.obj : $(WORKSPACE)\StdLib\LibC\Math\s_tanh.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_tanh.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\s_tanh.c
+
+$(OUTPUT_DIR)\s_sin.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\s_sin.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\s_sin.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\s_sin.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\s_sin.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\s_sin.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\s_sin.obj : $(WORKSPACE)\StdLib\LibC\Math\s_sin.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_sin.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\s_sin.c
+
+$(OUTPUT_DIR)\s_modf.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\s_modf.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\s_modf.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\s_modf.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\s_modf.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\s_modf.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\s_modf.obj : $(WORKSPACE)\StdLib\LibC\Math\s_modf.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_modf.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\s_modf.c
+
+$(OUTPUT_DIR)\e_rem_pio2.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\e_rem_pio2.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\e_rem_pio2.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\e_rem_pio2.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\e_rem_pio2.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\e_rem_pio2.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\e_rem_pio2.obj : $(WORKSPACE)\StdLib\LibC\Math\e_rem_pio2.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_rem_pio2.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\e_rem_pio2.c
 
 $(OUTPUT_DIR)\s_infinity.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\s_infinity.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\s_infinity.obj : $(WORKSPACE)\StdLib\LibC\Math\s_infinity.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_infinity.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\s_infinity.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_infinity.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\s_infinity.c
 
-$(OUTPUT_DIR)\e_rem_pio2.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\e_rem_pio2.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\e_rem_pio2.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\e_rem_pio2.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\e_rem_pio2.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\e_rem_pio2.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\e_rem_pio2.obj : $(WORKSPACE)\StdLib\LibC\Math\e_rem_pio2.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_rem_pio2.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\e_rem_pio2.c
+$(OUTPUT_DIR)\e_exp.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\e_exp.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\e_exp.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\e_exp.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\e_exp.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\e_exp.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\e_exp.obj : $(WORKSPACE)\StdLib\LibC\Math\e_exp.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_exp.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\e_exp.c
 
-$(OUTPUT_DIR)\w_exp.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\w_exp.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\w_exp.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\w_exp.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\w_exp.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\w_exp.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\w_exp.obj : $(WORKSPACE)\StdLib\LibC\Math\w_exp.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_exp.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\w_exp.c
+$(OUTPUT_DIR)\s_copysign.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\s_copysign.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\s_copysign.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\s_copysign.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\s_copysign.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\s_copysign.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\s_copysign.obj : $(WORKSPACE)\StdLib\LibC\Math\s_copysign.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_copysign.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\s_copysign.c
 
-$(OUTPUT_DIR)\w_sqrt.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\w_sqrt.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\w_sqrt.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\w_sqrt.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\w_sqrt.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\w_sqrt.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\w_sqrt.obj : $(WORKSPACE)\StdLib\LibC\Math\w_sqrt.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_sqrt.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\w_sqrt.c
+$(OUTPUT_DIR)\w_pow.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\w_pow.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\w_pow.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\w_pow.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\w_pow.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\w_pow.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\w_pow.obj : $(WORKSPACE)\StdLib\LibC\Math\w_pow.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_pow.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\w_pow.c
 
-$(OUTPUT_DIR)\e_pow.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\e_pow.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\e_pow.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\e_pow.obj : $(WORKSPACE)\StdLib\Include\sys\errno.h
-$(OUTPUT_DIR)\e_pow.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\e_pow.obj : $(WORKSPACE)\StdLib\Include\errno.h
-$(OUTPUT_DIR)\e_pow.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\e_pow.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\e_pow.obj : $(WORKSPACE)\StdLib\LibC\Math\e_pow.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_pow.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\e_pow.c
-
-$(OUTPUT_DIR)\s_finite.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\s_finite.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\s_finite.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\s_finite.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\s_finite.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\s_finite.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\s_finite.obj : $(WORKSPACE)\StdLib\LibC\Math\s_finite.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_finite.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\s_finite.c
-
-$(OUTPUT_DIR)\e_fmod.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\e_fmod.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\e_fmod.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\e_fmod.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\e_fmod.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\e_fmod.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\e_fmod.obj : $(WORKSPACE)\StdLib\LibC\Math\e_fmod.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_fmod.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\e_fmod.c
-
-$(OUTPUT_DIR)\e_asin.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\e_asin.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\e_asin.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\e_asin.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\e_asin.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\e_asin.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\e_asin.obj : $(WORKSPACE)\StdLib\LibC\Math\e_asin.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_asin.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\e_asin.c
-
-$(OUTPUT_DIR)\e_log.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\e_log.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\e_log.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\e_log.obj : $(WORKSPACE)\StdLib\Include\sys\errno.h
-$(OUTPUT_DIR)\e_log.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\e_log.obj : $(WORKSPACE)\StdLib\Include\errno.h
-$(OUTPUT_DIR)\e_log.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\e_log.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\e_log.obj : $(WORKSPACE)\StdLib\LibC\Math\e_log.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_log.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\e_log.c
-
-$(OUTPUT_DIR)\e_acos.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\e_acos.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\e_acos.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\e_acos.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\e_acos.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\e_acos.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\e_acos.obj : $(WORKSPACE)\StdLib\LibC\Math\e_acos.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_acos.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\e_acos.c
-
-$(OUTPUT_DIR)\s_atan.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\s_atan.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\s_atan.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\s_atan.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\s_atan.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\s_atan.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\s_atan.obj : $(WORKSPACE)\StdLib\LibC\Math\s_atan.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_atan.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\s_atan.c
-
-$(OUTPUT_DIR)\w_log.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\w_log.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\w_log.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\w_log.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\w_log.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\w_log.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\w_log.obj : $(WORKSPACE)\StdLib\LibC\Math\w_log.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_log.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\w_log.c
+$(OUTPUT_DIR)\s_ceil.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\s_ceil.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\s_ceil.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\s_ceil.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\s_ceil.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\s_ceil.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\s_ceil.obj : $(WORKSPACE)\StdLib\LibC\Math\s_ceil.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_ceil.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\s_ceil.c
 
 $(OUTPUT_DIR)\w_acos.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\w_acos.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\w_acos.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
 $(OUTPUT_DIR)\w_acos.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
 $(OUTPUT_DIR)\w_acos.obj : $(WORKSPACE)\StdLib\Include\math.h
 $(OUTPUT_DIR)\w_acos.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\w_acos.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
 $(OUTPUT_DIR)\w_acos.obj : $(WORKSPACE)\StdLib\LibC\Math\w_acos.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_acos.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\w_acos.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_acos.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\w_acos.c
 
-$(OUTPUT_DIR)\s_cos.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\s_cos.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\s_cos.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\s_cos.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\s_cos.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\s_cos.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\s_cos.obj : $(WORKSPACE)\StdLib\LibC\Math\s_cos.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_cos.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\s_cos.c
+$(OUTPUT_DIR)\s_fabs.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\s_fabs.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\s_fabs.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\s_fabs.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\s_fabs.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\s_fabs.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\s_fabs.obj : $(WORKSPACE)\StdLib\LibC\Math\s_fabs.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_fabs.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\s_fabs.c
 
-$(OUTPUT_DIR)\w_atan2.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\w_atan2.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\w_atan2.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\w_atan2.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\w_atan2.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\w_atan2.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\w_atan2.obj : $(WORKSPACE)\StdLib\LibC\Math\w_atan2.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_atan2.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\w_atan2.c
+$(OUTPUT_DIR)\e_log2.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\e_log2.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\e_log2.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\e_log2.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\e_log2.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\e_log2.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\e_log2.obj : $(WORKSPACE)\StdLib\LibC\Math\e_log2.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_log2.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\e_log2.c
 
-$(OUTPUT_DIR)\k_cos.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\k_cos.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\k_cos.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
-$(OUTPUT_DIR)\k_cos.obj : $(WORKSPACE)\StdLib\Include\math.h
-$(OUTPUT_DIR)\k_cos.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\k_cos.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
-$(OUTPUT_DIR)\k_cos.obj : $(WORKSPACE)\StdLib\LibC\Math\k_cos.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\k_cos.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\k_cos.c
+$(OUTPUT_DIR)\e_fmod.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\e_fmod.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\e_fmod.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\e_fmod.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\e_fmod.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\e_fmod.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\e_fmod.obj : $(WORKSPACE)\StdLib\LibC\Math\e_fmod.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_fmod.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\e_fmod.c
+
+$(OUTPUT_DIR)\s_frexp.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\s_frexp.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\s_frexp.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\s_frexp.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\s_frexp.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\s_frexp.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\s_frexp.obj : $(WORKSPACE)\StdLib\LibC\Math\s_frexp.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_frexp.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\s_frexp.c
+
+$(OUTPUT_DIR)\w_exp.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\w_exp.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\w_exp.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\w_exp.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\w_exp.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\w_exp.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\w_exp.obj : $(WORKSPACE)\StdLib\LibC\Math\w_exp.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_exp.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\w_exp.c
+
+$(OUTPUT_DIR)\s_floor.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\s_floor.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\s_floor.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\s_floor.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\s_floor.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\s_floor.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\s_floor.obj : $(WORKSPACE)\StdLib\LibC\Math\s_floor.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_floor.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\s_floor.c
+
+$(OUTPUT_DIR)\w_asin.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\w_asin.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\w_asin.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\w_asin.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\w_asin.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\w_asin.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\w_asin.obj : $(WORKSPACE)\StdLib\LibC\Math\w_asin.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_asin.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\w_asin.c
+
+$(OUTPUT_DIR)\s_atan.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\s_atan.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\s_atan.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\s_atan.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\s_atan.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\s_atan.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\s_atan.obj : $(WORKSPACE)\StdLib\LibC\Math\s_atan.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_atan.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\s_atan.c
+
+$(OUTPUT_DIR)\w_cosh.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\w_cosh.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\w_cosh.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\w_cosh.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\w_cosh.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\w_cosh.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\w_cosh.obj : $(WORKSPACE)\StdLib\LibC\Math\w_cosh.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_cosh.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\w_cosh.c
 
 $(OUTPUT_DIR)\k_tan.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\k_tan.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\k_tan.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
 $(OUTPUT_DIR)\k_tan.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
 $(OUTPUT_DIR)\k_tan.obj : $(WORKSPACE)\StdLib\Include\math.h
 $(OUTPUT_DIR)\k_tan.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
-$(OUTPUT_DIR)\k_tan.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
 $(OUTPUT_DIR)\k_tan.obj : $(WORKSPACE)\StdLib\LibC\Math\k_tan.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\k_tan.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Math\k_tan.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\k_tan.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\k_tan.c
+
+$(OUTPUT_DIR)\e_pow.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\e_pow.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\e_pow.obj : $(WORKSPACE)\StdLib\Include\errno.h
+$(OUTPUT_DIR)\e_pow.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\e_pow.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\e_pow.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\e_pow.obj : $(WORKSPACE)\StdLib\Include\sys\errno.h
+$(OUTPUT_DIR)\e_pow.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\e_pow.obj : $(WORKSPACE)\StdLib\LibC\Math\e_pow.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_pow.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\e_pow.c
+
+$(OUTPUT_DIR)\w_atan2.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\w_atan2.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\w_atan2.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\w_atan2.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\w_atan2.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\w_atan2.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\w_atan2.obj : $(WORKSPACE)\StdLib\LibC\Math\w_atan2.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_atan2.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\w_atan2.c
+
+$(OUTPUT_DIR)\w_sinh.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\w_sinh.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\w_sinh.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\w_sinh.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\w_sinh.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\w_sinh.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\w_sinh.obj : $(WORKSPACE)\StdLib\LibC\Math\w_sinh.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_sinh.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\w_sinh.c
+
+$(OUTPUT_DIR)\e_acos.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\e_acos.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\e_acos.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\e_acos.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\e_acos.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\e_acos.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\e_acos.obj : $(WORKSPACE)\StdLib\LibC\Math\e_acos.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_acos.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\e_acos.c
+
+$(OUTPUT_DIR)\e_log.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\e_log.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\e_log.obj : $(WORKSPACE)\StdLib\Include\errno.h
+$(OUTPUT_DIR)\e_log.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\e_log.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\e_log.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\e_log.obj : $(WORKSPACE)\StdLib\Include\sys\errno.h
+$(OUTPUT_DIR)\e_log.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\e_log.obj : $(WORKSPACE)\StdLib\LibC\Math\e_log.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_log.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\e_log.c
+
+$(OUTPUT_DIR)\w_fmod.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\w_fmod.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\w_fmod.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\w_fmod.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\w_fmod.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\w_fmod.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\w_fmod.obj : $(WORKSPACE)\StdLib\LibC\Math\w_fmod.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_fmod.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\w_fmod.c
+
+$(OUTPUT_DIR)\w_log10.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\w_log10.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\w_log10.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\w_log10.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\w_log10.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\w_log10.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\w_log10.obj : $(WORKSPACE)\StdLib\LibC\Math\w_log10.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_log10.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\w_log10.c
+
+$(OUTPUT_DIR)\k_cos.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\k_cos.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\k_cos.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\k_cos.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\k_cos.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\k_cos.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\k_cos.obj : $(WORKSPACE)\StdLib\LibC\Math\k_cos.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\k_cos.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\k_cos.c
+
+$(OUTPUT_DIR)\s_tan.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\s_tan.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\s_tan.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\s_tan.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\s_tan.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\s_tan.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\s_tan.obj : $(WORKSPACE)\StdLib\LibC\Math\s_tan.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_tan.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\s_tan.c
+
+$(OUTPUT_DIR)\k_rem_pio2.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\k_rem_pio2.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\k_rem_pio2.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\k_rem_pio2.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\k_rem_pio2.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\k_rem_pio2.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\k_rem_pio2.obj : $(WORKSPACE)\StdLib\LibC\Math\k_rem_pio2.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\k_rem_pio2.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\k_rem_pio2.c
+
+$(OUTPUT_DIR)\s_scalbn.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\s_scalbn.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\s_scalbn.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\s_scalbn.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\s_scalbn.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\s_scalbn.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\s_scalbn.obj : $(WORKSPACE)\StdLib\LibC\Math\s_scalbn.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_scalbn.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\s_scalbn.c
+
+$(OUTPUT_DIR)\e_sinh.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\e_sinh.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\e_sinh.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\e_sinh.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\e_sinh.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\e_sinh.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\e_sinh.obj : $(WORKSPACE)\StdLib\LibC\Math\e_sinh.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\e_sinh.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\e_sinh.c
+
+$(OUTPUT_DIR)\w_log2.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\w_log2.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\w_log2.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\w_log2.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\w_log2.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\w_log2.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\w_log2.obj : $(WORKSPACE)\StdLib\LibC\Math\w_log2.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\w_log2.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\w_log2.c
+
+$(OUTPUT_DIR)\k_sin.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\k_sin.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\k_sin.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\k_sin.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\k_sin.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\k_sin.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\k_sin.obj : $(WORKSPACE)\StdLib\LibC\Math\k_sin.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\k_sin.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\k_sin.c
+
+$(OUTPUT_DIR)\s_finite.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\s_finite.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\s_finite.obj : $(WORKSPACE)\StdLib\LibC\Math\math_private.h
+$(OUTPUT_DIR)\s_finite.obj : $(WORKSPACE)\StdLib\Include\X64\machine\math.h
+$(OUTPUT_DIR)\s_finite.obj : $(WORKSPACE)\StdLib\Include\math.h
+$(OUTPUT_DIR)\s_finite.obj : $(WORKSPACE)\StdLib\Include\x86\math.h
+$(OUTPUT_DIR)\s_finite.obj : $(WORKSPACE)\StdLib\LibC\Math\s_finite.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Math\Math\OUTPUT\.\s_finite.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Math\s_finite.c
 
 
 

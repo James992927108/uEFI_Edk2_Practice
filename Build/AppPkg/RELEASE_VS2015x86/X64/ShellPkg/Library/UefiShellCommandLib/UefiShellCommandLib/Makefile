@@ -19,7 +19,7 @@ PLATFORM_NAME = AppPkg
 PLATFORM_GUID = 0458dade-8b6e-4e45-b773-1b27cbda3e06
 PLATFORM_VERSION = 0.01
 PLATFORM_RELATIVE_DIR = MyPkg
-PLATFORM_DIR = g:\uefi_edk2_practice\MyPkg
+PLATFORM_DIR = d:\uefi_edk2_practice\MyPkg
 PLATFORM_OUTPUT_DIR = Build\AppPkg
 
 #
@@ -35,7 +35,7 @@ MODULE_FILE_BASE_NAME = UefiShellCommandLib
 BASE_NAME = $(MODULE_NAME)
 MODULE_RELATIVE_DIR = ShellPkg\Library\UefiShellCommandLib
 PACKAGE_RELATIVE_DIR = Library\UefiShellCommandLib
-MODULE_DIR = g:\uefi_edk2_practice\ShellPkg\Library\UefiShellCommandLib
+MODULE_DIR = d:\uefi_edk2_practice\ShellPkg\Library\UefiShellCommandLib
 FFS_OUTPUT_DIR = 
 
 MODULE_ENTRY_POINT = _ModuleEntryPoint
@@ -59,13 +59,13 @@ TARGET = RELEASE
 #
 # Build Directory Macro Definition
 #
-# PLATFORM_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
-BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+# PLATFORM_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
 BIN_DIR = $(BUILD_DIR)\X64
 LIB_DIR = $(BIN_DIR)
-MODULE_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiShellCommandLib\UefiShellCommandLib
-OUTPUT_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiShellCommandLib\UefiShellCommandLib\OUTPUT
-DEBUG_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiShellCommandLib\UefiShellCommandLib\DEBUG
+MODULE_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiShellCommandLib\UefiShellCommandLib
+OUTPUT_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiShellCommandLib\UefiShellCommandLib\OUTPUT
+DEBUG_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiShellCommandLib\UefiShellCommandLib\DEBUG
 DEST_DIR_OUTPUT = $(OUTPUT_DIR)
 DEST_DIR_DEBUG = $(DEBUG_DIR)
 
@@ -130,7 +130,7 @@ RC = c:\Program Files (x86)\Windows Kits\8.1\bin\x64\rc.exe
 ASM = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\x86_amd64\ml64.exe
 ASM_FLAGS = /nologo /c /WX /W3 /Cx /Zd
 
-ASL = G:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
+ASL = D:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
 ASL_FLAGS = 
 ASL_OUTFLAGS =  -p
 
@@ -188,7 +188,7 @@ MAKE = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\nmake.exe
 ASMLINK = C:\WINDDK\3790.1830\bin\bin16\link16.exe
 ASMLINK_FLAGS = /nologo /tiny
 
-NASM = G:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
+NASM = D:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
 NASM_FLAGS = -Ox -f win64
 
 
@@ -212,69 +212,69 @@ INC =  \
     /I$(WORKSPACE)\MdeModulePkg \
     /I$(WORKSPACE)\MdeModulePkg\Include
 
-OBJECT_FILES_LIST = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiShellCommandLib\UefiShellCommandLib\OUTPUT\object_files.lst
+OBJECT_FILES_LIST = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiShellCommandLib\UefiShellCommandLib\OUTPUT\object_files.lst
 
 
-COMMON_DEPS = $(WORKSPACE)\MdePkg\Include\Library\PrintLib.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
+COMMON_DEPS = $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\GlobalVariable.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\FileInfo.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h \
+              $(WORKSPACE)\ShellPkg\Library\UefiShellCommandLib\UefiShellCommandLib.h \
+              $(WORKSPACE)\MdePkg\Include\Library\PrintLib.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleFileSystem.h \
               $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName.h \
+              $(DEBUG_DIR)\AutoGen.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\ShellParameters.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
+              $(WORKSPACE)\MdePkg\Include\Base.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h \
+              $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h \
+              $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h \
+              $(WORKSPACE)\ShellPkg\Include\Library\ShellLib.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
+              $(WORKSPACE)\ShellPkg\Include\Protocol\EfiShellEnvironment2.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
+              $(WORKSPACE)\MdePkg\Include\Library\UefiLib.h \
+              $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
+              $(WORKSPACE)\ShellPkg\Include\Protocol\EfiShellInterface.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\GraphicsOutput.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h \
+              $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Shell.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName2.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\ShellDynamicCommand.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration2.h \
               $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics2.h \
               $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h \
-              $(WORKSPACE)\MdePkg\Include\Library\UefiLib.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
-              $(WORKSPACE)\MdePkg\Include\Library\UefiBootServicesTableLib.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h \
-              $(WORKSPACE)\ShellPkg\Include\Library\HandleParsingLib.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\BlockIo.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
               $(WORKSPACE)\MdePkg\Include\Protocol\LoadedImage.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\UnicodeCollation.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\GraphicsOutput.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\FileInfo.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h \
-              $(WORKSPACE)\MdePkg\Include\Base.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
-              $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\GlobalVariable.h \
-              $(WORKSPACE)\ShellPkg\Library\UefiShellCommandLib\UefiShellCommandLib.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
-              $(WORKSPACE)\MdeModulePkg\Include\Library\HiiLib.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\ShellDynamicCommand.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
-              $(WORKSPACE)\ShellPkg\Include\Library\ShellCommandLib.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration2.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\ShellParameters.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Shell.h \
-              $(WORKSPACE)\MdeModulePkg\Include\Library\SortLib.h \
-              $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h \
-              $(WORKSPACE)\ShellPkg\Include\Library\ShellLib.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName2.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleFileSystem.h \
-              $(DEBUG_DIR)\AutoGen.h \
               $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h \
-              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
-              $(WORKSPACE)\MdePkg\Include\Library\DevicePathLib.h \
-              $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverBinding.h \
-              $(WORKSPACE)\ShellPkg\Include\Protocol\EfiShellInterface.h \
-              $(WORKSPACE)\ShellPkg\Include\Protocol\EfiShellEnvironment2.h \
-              $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h \
               $(WORKSPACE)\MdePkg\Include\Library\MemoryAllocationLib.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
+              $(WORKSPACE)\MdePkg\Include\Library\DevicePathLib.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
               $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
+              $(WORKSPACE)\MdeModulePkg\Include\Library\SortLib.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\BlockIo.h \
+              $(WORKSPACE)\ShellPkg\Include\Library\ShellCommandLib.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\UnicodeCollation.h \
+              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
+              $(WORKSPACE)\MdePkg\Include\Library\UefiBootServicesTableLib.h \
+              $(WORKSPACE)\MdeModulePkg\Include\Library\HiiLib.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverBinding.h \
+              $(WORKSPACE)\ShellPkg\Include\Library\HandleParsingLib.h \
               
 
 #
@@ -284,7 +284,7 @@ FORCE_REBUILD = force_build
 INIT_TARGET = init
 PCH_TARGET =
 BC_TARGET = 
-CODA_TARGET = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiShellCommandLib\UefiShellCommandLib\OUTPUT\UefiShellCommandLib.lib \
+CODA_TARGET = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiShellCommandLib\UefiShellCommandLib\OUTPUT\UefiShellCommandLib.lib \
               
 
 #
@@ -358,19 +358,19 @@ gen_fds:
 #
 $(OUTPUT_DIR)\UefiShellCommandLib.lib : $(OBJECT_FILES)
 $(OUTPUT_DIR)\UefiShellCommandLib.lib : $(OBJECT_FILES_LIST)
-	"$(SLINK)" $(SLINK_FLAGS) /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiShellCommandLib\UefiShellCommandLib\OUTPUT\UefiShellCommandLib.lib @$(OBJECT_FILES_LIST)
+	"$(SLINK)" $(SLINK_FLAGS) /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiShellCommandLib\UefiShellCommandLib\OUTPUT\UefiShellCommandLib.lib @$(OBJECT_FILES_LIST)
 
 $(OUTPUT_DIR)\ConsistMapping.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\ConsistMapping.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\ConsistMapping.obj : $(WORKSPACE)\MdePkg\Include\Protocol\UsbIo.h
 $(OUTPUT_DIR)\ConsistMapping.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Usb.h
 $(OUTPUT_DIR)\ConsistMapping.obj : $(WORKSPACE)\ShellPkg\Library\UefiShellCommandLib\ConsistMapping.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiShellCommandLib\UefiShellCommandLib\OUTPUT\.\ConsistMapping.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\ShellPkg\Library\UefiShellCommandLib\ConsistMapping.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiShellCommandLib\UefiShellCommandLib\OUTPUT\.\ConsistMapping.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\ShellPkg\Library\UefiShellCommandLib\ConsistMapping.c
 
 $(OUTPUT_DIR)\UefiShellCommandLib.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\UefiShellCommandLib.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\UefiShellCommandLib.obj : $(WORKSPACE)\ShellPkg\Library\UefiShellCommandLib\UefiShellCommandLib.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiShellCommandLib\UefiShellCommandLib\OUTPUT\.\UefiShellCommandLib.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\ShellPkg\Library\UefiShellCommandLib\UefiShellCommandLib.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiShellCommandLib\UefiShellCommandLib\OUTPUT\.\UefiShellCommandLib.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\ShellPkg\Library\UefiShellCommandLib\UefiShellCommandLib.c
 
 
 

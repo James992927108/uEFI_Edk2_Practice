@@ -1,6 +1,6 @@
  SocketDxe
 
- Timestamp is 5fb8847b (Sat Nov 21 11:07:39 2020)
+ Timestamp is 5fb887ba (Sat Nov 21 11:21:30 2020)
 
  Preferred load address is 0000000000000000
 
@@ -81,8 +81,8 @@
  0001:00003b40       EslTcp6ListenComplete      0000000000003dc0 f   EfiSocketLib:Tcp6.obj
  0001:00003d24       EslTcp6LocalAddressGet     0000000000003fa4 f   EfiSocketLib:Tcp6.obj
  0001:00003d68       EslTcp6LocalAddressSet     0000000000003fe8 f   EfiSocketLib:Tcp6.obj
- 0001:00003e00       EslTcp6PacketFree          0000000000004080 f   EfiSocketLib:Tcp6.obj
  0001:00003e00       EslTcp4PacketFree          0000000000004080 f   EfiSocketLib:Tcp4.obj
+ 0001:00003e00       EslTcp6PacketFree          0000000000004080 f   EfiSocketLib:Tcp6.obj
  0001:00003e08       EslTcp6PortAllocate        0000000000004088 f   EfiSocketLib:Tcp6.obj
  0001:00003ef8       EslTcp6PortClose           0000000000004178 f   EfiSocketLib:Tcp6.obj
  0001:00003f4c       EslTcp6PortCloseOp         00000000000041cc f   EfiSocketLib:Tcp6.obj
@@ -91,16 +91,16 @@
  0001:0000407c       EslTcp6RemoteAddressSet    00000000000042fc f   EfiSocketLib:Tcp6.obj
  0001:000040c0       EslTcp4RxComplete          0000000000004340 f   EfiSocketLib:Tcp4.obj
  0001:000040c0       EslTcp6RxComplete          0000000000004340 f   EfiSocketLib:Tcp6.obj
- 0001:000040e8       EslTcp6RxStart             0000000000004368 f   EfiSocketLib:Tcp6.obj
  0001:000040e8       EslTcp4RxStart             0000000000004368 f   EfiSocketLib:Tcp4.obj
- 0001:00004110       EslTcp6SocketIsConfigured  0000000000004390 f   EfiSocketLib:Tcp6.obj
+ 0001:000040e8       EslTcp6RxStart             0000000000004368 f   EfiSocketLib:Tcp6.obj
  0001:00004110       EslTcp4SocketIsConfigured  0000000000004390 f   EfiSocketLib:Tcp4.obj
+ 0001:00004110       EslTcp6SocketIsConfigured  0000000000004390 f   EfiSocketLib:Tcp6.obj
  0001:0000412c       EslTcp4TxBuffer            00000000000043ac f   EfiSocketLib:Tcp4.obj
  0001:0000412c       EslTcp6TxBuffer            00000000000043ac f   EfiSocketLib:Tcp6.obj
- 0001:00004344       EslTcp6TxComplete          00000000000045c4 f   EfiSocketLib:Tcp6.obj
  0001:00004344       EslTcp4TxComplete          00000000000045c4 f   EfiSocketLib:Tcp4.obj
- 0001:00004398       EslTcp4TxOobComplete       0000000000004618 f   EfiSocketLib:Tcp4.obj
+ 0001:00004344       EslTcp6TxComplete          00000000000045c4 f   EfiSocketLib:Tcp6.obj
  0001:00004398       EslTcp6TxOobComplete       0000000000004618 f   EfiSocketLib:Tcp6.obj
+ 0001:00004398       EslTcp4TxOobComplete       0000000000004618 f   EfiSocketLib:Tcp4.obj
  0001:000043f4       EslTcp6VerifyLocalIpAddress 0000000000004674 f   EfiSocketLib:Tcp6.obj
  0001:0000467c       EslIp4LocalAddressGet      00000000000048fc f   EfiSocketLib:Ip4.obj
  0001:0000469c       EslIp4LocalAddressSet      000000000000491c f   EfiSocketLib:Ip4.obj
@@ -114,8 +114,8 @@
  0001:0000497c       EslIp4RxComplete           0000000000004bfc f   EfiSocketLib:Ip4.obj
  0001:000049a4       EslIp4SocketIsConfigured   0000000000004c24 f   EfiSocketLib:Ip4.obj
  0001:00004b4c       EslIp4TxBuffer             0000000000004dcc f   EfiSocketLib:Ip4.obj
- 0001:00004d84       EslUdp6TxComplete          0000000000005004 f   EfiSocketLib:Udp6.obj
  0001:00004d84       EslIp4TxComplete           0000000000005004 f   EfiSocketLib:Ip4.obj
+ 0001:00004d84       EslUdp6TxComplete          0000000000005004 f   EfiSocketLib:Udp6.obj
  0001:00004de4       EslIp4VerifyLocalIpAddress 0000000000005064 f   EfiSocketLib:Ip4.obj
  0001:00004f18       EslTcp4Accept              0000000000005198 f   EfiSocketLib:Tcp4.obj
  0001:00004fb8       EslTcp4ConnectComplete     0000000000005238 f   EfiSocketLib:Tcp4.obj
@@ -194,20 +194,20 @@
  0002:000001a0       mDriverBinding             0000000000007640     SocketDxe:DriverBinding.obj
  0002:000001d0       cEslAfInet6Api             0000000000007670     EfiSocketLib:Socket.obj
  0002:00000200       cEslAfInetApi              00000000000076a0     EfiSocketLib:Socket.obj
- 0002:00000230       ??_C@_0DG@MFCDKOLN@g?3?2uefi_edk2_practice?2MdePkg?2Lib@ 00000000000076d0     BaseLib:String.obj
+ 0002:00000230       ??_C@_0DG@MHMNFEGH@d?3?2uefi_edk2_practice?2MdePkg?2Lib@ 00000000000076d0     BaseLib:String.obj
  0002:00000268       ??_C@_0BH@MAAHKCPC@String?5?$CB?$DN?5?$CI?$CIvoid?5?$CK?$CJ?50?$CJ?$AA@ 0000000000007708     BaseLib:String.obj
  0002:00000280       ??_C@_0DJ@JJHGIFMP@Length?5?$DM?$DN?5_gPcd_FixedAtBuild_Pcd@ 0000000000007720     BaseLib:String.obj
  0002:000002c0       ??_C@_0DI@MDIKFADO@Length?5?$DM?5_gPcd_FixedAtBuild_PcdM@ 0000000000007760     BaseLib:String.obj
  0002:000002f8       ??_C@_0BL@IKFBNFIL@AsciiStrSize?5?$CIFirstString?$CJ?$AA@ 0000000000007798     BaseLib:String.obj
  0002:00000318       ??_C@_0BM@EDNOKLLE@AsciiStrSize?5?$CISecondString?$CJ?$AA@ 00000000000077b8     BaseLib:String.obj
- 0002:00000338       ??_C@_0DJ@DIJFAOJH@g?3?2uefi_edk2_practice?2MdePkg?2Lib@ 00000000000077d8     BaseLib:Unaligned.obj
+ 0002:00000338       ??_C@_0DJ@BBGKHIDL@d?3?2uefi_edk2_practice?2MdePkg?2Lib@ 00000000000077d8     BaseLib:Unaligned.obj
  0002:00000378       ??_C@_0L@MEMPDLHB@Count?5?$DM?564?$AA@ 0000000000007818     BaseLib:LShiftU64.obj
- 0002:00000388       ??_C@_0DJ@KJENGIEM@g?3?2uefi_edk2_practice?2MdePkg?2Lib@ 0000000000007828     BaseLib:LShiftU64.obj
+ 0002:00000388       ??_C@_0DJ@IALCBOOA@d?3?2uefi_edk2_practice?2MdePkg?2Lib@ 0000000000007828     BaseLib:LShiftU64.obj
  0002:000003d0       ??_C@_0ED@MKGCMJG@?$CILength?5?9?51?$CJ?5?$DM?$DN?5?$CI0xFFFFFFFFFFFFF@ 0000000000007870     BaseMemoryLib:CopyMemWrapper.obj
- 0002:00000420       ??_C@_0EE@COAMBEJJ@g?3?2uefi_edk2_practice?2MdePkg?2Lib@ 00000000000078c0     BaseMemoryLib:CopyMemWrapper.obj
+ 0002:00000420       ??_C@_0EE@IBEKLMPP@d?3?2uefi_edk2_practice?2MdePkg?2Lib@ 00000000000078c0     BaseMemoryLib:CopyMemWrapper.obj
  0002:00000468       ??_C@_0DO@MAOBOFEG@?$CILength?5?9?51?$CJ?5?$DM?$DN?5?$CI0xFFFFFFFFFFFFF@ 0000000000007908     BaseMemoryLib:CopyMemWrapper.obj
  0002:000004a8       ??_C@_0DG@EEENIGGL@Length?5?$DM?$DN?5?$CI0xFFFFFFFFFFFFFFFFULL@ 0000000000007948     BaseMemoryLib:MemLibGuid.obj
- 0002:000004e0       ??_C@_0EE@JKKOHFFO@g?3?2uefi_edk2_practice?2MdePkg?2Lib@ 0000000000007980     BaseMemoryLib:ZeroMemWrapper.obj
+ 0002:000004e0       ??_C@_0EE@DFOINNDI@d?3?2uefi_edk2_practice?2MdePkg?2Lib@ 0000000000007980     BaseMemoryLib:ZeroMemWrapper.obj
  0002:00000524       _gPcd_FixedAtBuild_PcdMaximumAsciiStringLength 00000000000079c4     SocketDxe:AutoGen.obj
  0002:00000528       mEslUdp4ServiceGuid        00000000000079c8     SocketDxe:EntryUnload.obj
  0002:00000538       mEfiServiceBinding         00000000000079d8     SocketDxe:EntryUnload.obj

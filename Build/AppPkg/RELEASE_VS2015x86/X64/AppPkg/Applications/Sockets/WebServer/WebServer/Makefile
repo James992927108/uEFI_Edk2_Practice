@@ -19,7 +19,7 @@ PLATFORM_NAME = AppPkg
 PLATFORM_GUID = 0458dade-8b6e-4e45-b773-1b27cbda3e06
 PLATFORM_VERSION = 0.01
 PLATFORM_RELATIVE_DIR = MyPkg
-PLATFORM_DIR = g:\uefi_edk2_practice\MyPkg
+PLATFORM_DIR = d:\uefi_edk2_practice\MyPkg
 PLATFORM_OUTPUT_DIR = Build\AppPkg
 
 #
@@ -35,7 +35,7 @@ MODULE_FILE_BASE_NAME = WebServer
 BASE_NAME = $(MODULE_NAME)
 MODULE_RELATIVE_DIR = AppPkg\Applications\Sockets\WebServer
 PACKAGE_RELATIVE_DIR = Applications\Sockets\WebServer
-MODULE_DIR = g:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer
+MODULE_DIR = d:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer
 FFS_OUTPUT_DIR = 
 
 MODULE_ENTRY_POINT = ShellCEntryLib
@@ -59,13 +59,13 @@ TARGET = RELEASE
 #
 # Build Directory Macro Definition
 #
-# PLATFORM_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
-BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+# PLATFORM_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
 BIN_DIR = $(BUILD_DIR)\X64
 LIB_DIR = $(BIN_DIR)
-MODULE_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer
-OUTPUT_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT
-DEBUG_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\DEBUG
+MODULE_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer
+OUTPUT_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT
+DEBUG_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\DEBUG
 DEST_DIR_OUTPUT = $(OUTPUT_DIR)
 DEST_DIR_DEBUG = $(DEBUG_DIR)
 
@@ -130,7 +130,7 @@ RC = c:\Program Files (x86)\Windows Kits\8.1\bin\x64\rc.exe
 ASM = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\x86_amd64\ml64.exe
 ASM_FLAGS = /nologo /c /WX /W3 /Cx /Zd
 
-ASL = G:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
+ASL = D:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
 ASL_FLAGS = 
 ASL_OUTFLAGS =  -p
 
@@ -188,7 +188,7 @@ MAKE = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\nmake.exe
 ASMLINK = C:\WINDDK\3790.1830\bin\bin16\link16.exe
 ASMLINK_FLAGS = /nologo /tiny
 
-NASM = G:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
+NASM = D:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
 NASM_FLAGS = -Ox -f win64
 
 
@@ -278,104 +278,104 @@ INC =  \
     /I$(WORKSPACE)\UefiCpuPkg \
     /I$(WORKSPACE)\UefiCpuPkg\Include
 
-OBJECT_FILES_LIST = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\object_files.lst
-STATIC_LIBRARY_FILES_LIST = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\static_library_files.lst
+OBJECT_FILES_LIST = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\object_files.lst
+STATIC_LIBRARY_FILES_LIST = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\static_library_files.lst
 
 
-COMMON_DEPS = $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\XeonE7Msr.h \
-              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\HaswellEMsr.h \
-              $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\WebServer.h \
-              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\SilvermontMsr.h \
-              $(WORKSPACE)\StdLib\Include\sys\endian.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName.h \
-              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\Core2Msr.h \
-              $(WORKSPACE)\StdLib\Include\sys\EfiSysCall.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
-              $(WORKSPACE)\StdLib\Include\sys\poll.h \
-              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
-              $(WORKSPACE)\StdLib\Include\sys\featuretest.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
+COMMON_DEPS = $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\PentiumMsr.h \
               $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\Xeon5600Msr.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
-              $(WORKSPACE)\MdePkg\Include\Library\UefiApplicationEntryPoint.h \
-              $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h \
-              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\SandyBridgeMsr.h \
-              $(WORKSPACE)\StdLib\Include\netinet\in.h \
-              $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration.h \
-              $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h \
-              $(WORKSPACE)\StdLib\Include\sys\errno.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
-              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\PentiumMMsr.h \
-              $(WORKSPACE)\StdLib\Include\sys\cdefs_aout.h \
-              $(WORKSPACE)\StdLib\Include\sys\fd_set.h \
-              $(DEBUG_DIR)\AutoGen.h \
-              $(WORKSPACE)\MdePkg\Include\Library\UefiBootServicesTableLib.h \
-              $(WORKSPACE)\StdLib\Include\errno.h \
-              $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h \
-              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\BroadwellMsr.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration2.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\types.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h \
-              $(WORKSPACE)\StdLib\Include\sys\EfiCdefs.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h \
-              $(WORKSPACE)\StdLib\Include\sys\bswap.h \
-              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\HaswellMsr.h \
               $(WORKSPACE)\MdePkg\Include\Library\MemoryAllocationLib.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics2.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\GraphicsOutput.h \
-              $(WORKSPACE)\StdLib\Include\sys\stdint.h \
-              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\NehalemMsr.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\BlockIo.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h \
-              $(WORKSPACE)\MdePkg\Include\Base.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h \
-              $(WORKSPACE)\StdLib\Include\netinet6\in6.h \
-              $(WORKSPACE)\UefiCpuPkg\Include\Register\ArchitecturalMsr.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
-              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\PentiumMsr.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName2.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
               $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h \
-              $(WORKSPACE)\StdLib\Include\sys\ansi.h \
-              $(WORKSPACE)\StdLib\Include\sys\types.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\endian.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi.h \
-              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\P6Msr.h \
-              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\GoldmontMsr.h \
-              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\XeonDMsr.h \
-              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\IvyBridgeMsr.h \
-              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\AtomMsr.h \
-              $(WORKSPACE)\MdePkg\Include\Library\UefiLib.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
               $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h \
-              $(WORKSPACE)\StdLib\Include\sys\socket.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\EventGroup.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
-              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\SkylakeMsr.h \
-              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\Pentium4Msr.h \
-              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\CoreMsr.h \
-              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr.h \
+              $(WORKSPACE)\StdLib\Include\sys\poll.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
               $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverBinding.h \
+              $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\GraphicsOutput.h \
+              $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h \
+              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\GoldmontMsr.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration2.h \
+              $(WORKSPACE)\UefiCpuPkg\Include\Register\ArchitecturalMsr.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h \
+              $(WORKSPACE)\StdLib\Include\sys\EfiCdefs.h \
+              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\BroadwellMsr.h \
+              $(WORKSPACE)\StdLib\Include\sys\cdefs_aout.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
+              $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h \
+              $(WORKSPACE)\StdLib\Include\netinet6\in6.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h \
+              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\SandyBridgeMsr.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
+              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName2.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h \
+              $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\WebServer.h \
+              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\Core2Msr.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
+              $(WORKSPACE)\StdLib\Include\sys\types.h \
+              $(WORKSPACE)\MdePkg\Include\Library\UefiLib.h \
+              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\XeonDMsr.h \
+              $(WORKSPACE)\StdLib\Include\sys\featuretest.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics.h \
+              $(WORKSPACE)\StdLib\Include\errno.h \
+              $(WORKSPACE)\MdePkg\Include\Library\UefiBootServicesTableLib.h \
+              $(WORKSPACE)\StdLib\Include\sys\stdint.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
               $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\XeonPhiMsr.h \
+              $(WORKSPACE)\StdLib\Include\sys\bswap.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h \
+              $(WORKSPACE)\StdLib\Include\sys\fd_set.h \
+              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\HaswellMsr.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi.h \
+              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\Pentium4Msr.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\endian.h \
               $(WORKSPACE)\StdLib\Include\sys\uio.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h \
+              $(WORKSPACE)\StdLib\Include\sys\EfiSysCall.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\EventGroup.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
+              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\NehalemMsr.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration.h \
+              $(WORKSPACE)\StdLib\Include\sys\endian.h \
+              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\CoreMsr.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\BlockIo.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h \
+              $(DEBUG_DIR)\AutoGen.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
+              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\AtomMsr.h \
+              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
+              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\P6Msr.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\types.h \
+              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\SkylakeMsr.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
+              $(WORKSPACE)\MdePkg\Include\Base.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
+              $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h \
+              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\IvyBridgeMsr.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h \
+              $(WORKSPACE)\StdLib\Include\sys\errno.h \
+              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\HaswellEMsr.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
+              $(WORKSPACE)\StdLib\Include\sys\ansi.h \
+              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\SilvermontMsr.h \
+              $(WORKSPACE)\StdLib\Include\sys\socket.h \
+              $(WORKSPACE)\StdLib\Include\netinet\in.h \
+              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\XeonE7Msr.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics2.h \
+              $(WORKSPACE)\UefiCpuPkg\Include\Register\Msr\PentiumMMsr.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
+              $(WORKSPACE)\MdePkg\Include\Library\UefiApplicationEntryPoint.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverBinding.h \
               
 
 #
@@ -385,7 +385,7 @@ FORCE_REBUILD = force_build
 INIT_TARGET = init
 PCH_TARGET =
 BC_TARGET = 
-CODA_TARGET = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\DEBUG\WebServer.efi \
+CODA_TARGET = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\DEBUG\WebServer.efi \
               
 
 #
@@ -497,201 +497,201 @@ gen_fds:
 # Individual Object Build Targets
 #
 $(DEBUG_DIR)\WebServer.efi : $(DEBUG_DIR)\WebServer.dll
-	"$(GENFW)" -e $(MODULE_TYPE) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\DEBUG\WebServer.efi g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\DEBUG\WebServer.dll $(GENFW_FLAGS)
-	$(CP) g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\DEBUG\WebServer.efi $(OUTPUT_DIR)
-	$(CP) g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\DEBUG\WebServer.efi $(BIN_DIR)\$(MODULE_NAME_GUID).efi
+	"$(GENFW)" -e $(MODULE_TYPE) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\DEBUG\WebServer.efi d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\DEBUG\WebServer.dll $(GENFW_FLAGS)
+	$(CP) d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\DEBUG\WebServer.efi $(OUTPUT_DIR)
+	$(CP) d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\DEBUG\WebServer.efi $(BIN_DIR)\$(MODULE_NAME_GUID).efi
 	-$(CP) $(DEBUG_DIR)\*.map $(OUTPUT_DIR)
 	-$(CP) $(DEBUG_DIR)\*.pdb $(OUTPUT_DIR)
 
 $(OUTPUT_DIR)\WebServer.lib : $(OBJECT_FILES)
 $(OUTPUT_DIR)\WebServer.lib : $(OBJECT_FILES_LIST)
-	"$(SLINK)" $(SLINK_FLAGS) /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\WebServer.lib @$(OBJECT_FILES_LIST)
+	"$(SLINK)" $(SLINK_FLAGS) /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\WebServer.lib @$(OBJECT_FILES_LIST)
 
 $(DEBUG_DIR)\WebServer.dll : $(MAKE_FILE)
 $(DEBUG_DIR)\WebServer.dll : $(STATIC_LIBRARY_FILES)
 $(DEBUG_DIR)\WebServer.dll : $(STATIC_LIBRARY_FILES_LIST)
-	"$(DLINK)" /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\DEBUG\WebServer.dll $(DLINK_FLAGS) $(DLINK2_FLAGS) $(DLINK_SPATH) @$(STATIC_LIBRARY_FILES_LIST)
-	"$(DLINK)" /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\DEBUG\WebServer.dll $(DLINK_FLAGS) $(DLINK_SPATH) @$(STATIC_LIBRARY_FILES_LIST)
-
-$(OUTPUT_DIR)\HTTP.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\HTTP.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\HTTP.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\HTTP.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\HTTP.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\HTTP.c
-
-$(OUTPUT_DIR)\DhcpOptions.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\DhcpOptions.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiBootMode.h
-$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiMultiPhase.h
-$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiFirmwareFile.h
-$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DebugSupport.h
-$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiS3BootScript.h
-$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Protocol\ServiceBinding.h
-$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiDxeCis.h
-$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Protocol\Dhcp4.h
-$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\PeImage.h
-$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiFirmwareVolume.h
-$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiHob.h
-$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Guid\DxeServices.h
-$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiStatusCode.h
-$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiDependency.h
-$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\DhcpOptions.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\DhcpOptions.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\DhcpOptions.c
-
-$(OUTPUT_DIR)\PageList.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\PageList.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\PageList.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\PageList.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\PageList.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\PageList.c
-
-$(OUTPUT_DIR)\AutoGen.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h
-$(OUTPUT_DIR)\AutoGen.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiBootServicesTableLib.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiApplicationEntryPoint.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi.h
-$(OUTPUT_DIR)\AutoGen.obj : $(DEBUG_DIR)\AutoGen.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\AutoGen.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\DEBUG\AutoGen.c
-
-$(OUTPUT_DIR)\DxeServicesTable.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\DxeServicesTable.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiBootMode.h
-$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiMultiPhase.h
-$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiFirmwareFile.h
-$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DebugSupport.h
-$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiS3BootScript.h
-$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiDxeCis.h
-$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\PeImage.h
-$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiFirmwareVolume.h
-$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiHob.h
-$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Guid\DxeServices.h
-$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiStatusCode.h
-$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiDependency.h
-$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\DxeServicesTable.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\DxeServicesTable.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\DxeServicesTable.c
-
-$(OUTPUT_DIR)\Hello.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\Hello.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\Hello.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\Hello.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\Hello.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\Hello.c
-
-$(OUTPUT_DIR)\MemoryMap.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\MemoryMap.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\Library\DxeServicesTableLib.h
-$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiBootMode.h
-$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiMultiPhase.h
-$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiFirmwareFile.h
-$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DebugSupport.h
-$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiS3BootScript.h
-$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\PiDxe.h
-$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiDxeCis.h
-$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\PeImage.h
-$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiFirmwareVolume.h
-$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiHob.h
-$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiStatusCode.h
-$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiDependency.h
-$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\MemoryMap.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\MemoryMap.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\MemoryMap.c
-
-$(OUTPUT_DIR)\SystemTable.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\SystemTable.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\SystemTable.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\SystemTable.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\SystemTable.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\SystemTable.c
-
-$(OUTPUT_DIR)\Firmware.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\Firmware.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\Firmware.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\Firmware.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\Firmware.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\Firmware.c
-
-$(OUTPUT_DIR)\RuntimeServicesTable.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\RuntimeServicesTable.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\RuntimeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiRuntimeServicesTableLib.h
-$(OUTPUT_DIR)\RuntimeServicesTable.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\RuntimeServicesTable.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\RuntimeServicesTable.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\RuntimeServicesTable.c
-
-$(OUTPUT_DIR)\Index.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\Index.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\Index.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\Index.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\Index.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\Index.c
-
-$(OUTPUT_DIR)\Reboot.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\Reboot.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\Reboot.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiRuntimeServicesTableLib.h
-$(OUTPUT_DIR)\Reboot.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\Reboot.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\Reboot.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\Reboot.c
-
-$(OUTPUT_DIR)\ConfigurationTable.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\ConfigurationTable.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\ConfigurationTable.obj : $(WORKSPACE)\MdePkg\Include\Protocol\LoadedImage.h
-$(OUTPUT_DIR)\ConfigurationTable.obj : $(WORKSPACE)\MdePkg\Include\Guid\DebugImageInfoTable.h
-$(OUTPUT_DIR)\ConfigurationTable.obj : $(WORKSPACE)\MdeModulePkg\Include\Guid\MemoryTypeInformation.h
-$(OUTPUT_DIR)\ConfigurationTable.obj : $(WORKSPACE)\MdePkg\Include\Guid\Acpi.h
-$(OUTPUT_DIR)\ConfigurationTable.obj : $(WORKSPACE)\MdeModulePkg\Include\Guid\LoadModuleAtFixedAddress.h
-$(OUTPUT_DIR)\ConfigurationTable.obj : $(WORKSPACE)\MdePkg\Include\Guid\HobList.h
-$(OUTPUT_DIR)\ConfigurationTable.obj : $(WORKSPACE)\MdePkg\Include\Guid\DxeServices.h
-$(OUTPUT_DIR)\ConfigurationTable.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\ConfigurationTable.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\ConfigurationTable.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\ConfigurationTable.c
+	"$(DLINK)" /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\DEBUG\WebServer.dll $(DLINK_FLAGS) $(DLINK2_FLAGS) $(DLINK_SPATH) @$(STATIC_LIBRARY_FILES_LIST)
+	"$(DLINK)" /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\DEBUG\WebServer.dll $(DLINK_FLAGS) $(DLINK_SPATH) @$(STATIC_LIBRARY_FILES_LIST)
 
 $(OUTPUT_DIR)\Handles.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\Handles.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\Handles.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\Handles.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\Handles.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\Handles.c
-
-$(OUTPUT_DIR)\BootServicesTable.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\BootServicesTable.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\BootServicesTable.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\BootServicesTable.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\BootServicesTable.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\BootServicesTable.c
-
-$(OUTPUT_DIR)\Exit.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\Exit.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\Exit.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\Exit.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\Exit.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\Exit.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\Handles.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\Handles.c
 
 $(OUTPUT_DIR)\Mtrr.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\Mtrr.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\Mtrr.obj : $(WORKSPACE)\UefiCpuPkg\Include\Library\MtrrLib.h
 $(OUTPUT_DIR)\Mtrr.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\Mtrr.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\Mtrr.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\Mtrr.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\Mtrr.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\Mtrr.c
+
+$(OUTPUT_DIR)\Firmware.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\Firmware.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\Firmware.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\Firmware.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\Firmware.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\Firmware.c
+
+$(OUTPUT_DIR)\SystemTable.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\SystemTable.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\SystemTable.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\SystemTable.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\SystemTable.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\SystemTable.c
+
+$(OUTPUT_DIR)\BootServicesTable.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\BootServicesTable.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\BootServicesTable.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\BootServicesTable.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\BootServicesTable.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\BootServicesTable.c
+
+$(OUTPUT_DIR)\PageList.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\PageList.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\PageList.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\PageList.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\PageList.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\PageList.c
+
+$(OUTPUT_DIR)\DxeServicesTable.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\DxeServicesTable.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiS3BootScript.h
+$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiDxeCis.h
+$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiBootMode.h
+$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiDependency.h
+$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DebugSupport.h
+$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Guid\DxeServices.h
+$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\PeImage.h
+$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiFirmwareFile.h
+$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiHob.h
+$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiStatusCode.h
+$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiMultiPhase.h
+$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiFirmwareVolume.h
+$(OUTPUT_DIR)\DxeServicesTable.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\DxeServicesTable.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\DxeServicesTable.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\DxeServicesTable.c
+
+$(OUTPUT_DIR)\Exit.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\Exit.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\Exit.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\Exit.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\Exit.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\Exit.c
 
 $(OUTPUT_DIR)\Ports.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\Ports.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\Ports.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\Ports.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\Ports.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\Ports.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\Ports.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\Ports.c
+
+$(OUTPUT_DIR)\Hello.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\Hello.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\Hello.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\Hello.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\Hello.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\Hello.c
+
+$(OUTPUT_DIR)\RuntimeServicesTable.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\RuntimeServicesTable.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\RuntimeServicesTable.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiRuntimeServicesTableLib.h
+$(OUTPUT_DIR)\RuntimeServicesTable.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\RuntimeServicesTable.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\RuntimeServicesTable.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\RuntimeServicesTable.c
+
+$(OUTPUT_DIR)\Reboot.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\Reboot.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\Reboot.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiRuntimeServicesTableLib.h
+$(OUTPUT_DIR)\Reboot.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\Reboot.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\Reboot.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\Reboot.c
+
+$(OUTPUT_DIR)\Index.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\Index.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\Index.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\Index.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\Index.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\Index.c
+
+$(OUTPUT_DIR)\WebServer.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\WebServer.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\WebServer.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\WebServer.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\WebServer.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\WebServer.c
+
+$(OUTPUT_DIR)\ConfigurationTable.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\ConfigurationTable.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\ConfigurationTable.obj : $(WORKSPACE)\MdePkg\Include\Guid\DebugImageInfoTable.h
+$(OUTPUT_DIR)\ConfigurationTable.obj : $(WORKSPACE)\MdePkg\Include\Guid\Acpi.h
+$(OUTPUT_DIR)\ConfigurationTable.obj : $(WORKSPACE)\MdePkg\Include\Guid\DxeServices.h
+$(OUTPUT_DIR)\ConfigurationTable.obj : $(WORKSPACE)\MdeModulePkg\Include\Guid\LoadModuleAtFixedAddress.h
+$(OUTPUT_DIR)\ConfigurationTable.obj : $(WORKSPACE)\MdePkg\Include\Guid\HobList.h
+$(OUTPUT_DIR)\ConfigurationTable.obj : $(WORKSPACE)\MdeModulePkg\Include\Guid\MemoryTypeInformation.h
+$(OUTPUT_DIR)\ConfigurationTable.obj : $(WORKSPACE)\MdePkg\Include\Protocol\LoadedImage.h
+$(OUTPUT_DIR)\ConfigurationTable.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\ConfigurationTable.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\ConfigurationTable.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\ConfigurationTable.c
 
 $(OUTPUT_DIR)\ACPI.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\ACPI.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\ACPI.obj : $(WORKSPACE)\MdePkg\Include\Guid\Acpi.h
 $(OUTPUT_DIR)\ACPI.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\ACPI.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\ACPI.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\ACPI.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\ACPI.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\ACPI.c
 
-$(OUTPUT_DIR)\WebServer.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\WebServer.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\WebServer.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\WebServer.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\WebServer.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\WebServer.c
+$(OUTPUT_DIR)\MemoryMap.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\MemoryMap.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiS3BootScript.h
+$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\PiDxe.h
+$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiDxeCis.h
+$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiBootMode.h
+$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiDependency.h
+$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DebugSupport.h
+$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\Library\DxeServicesTableLib.h
+$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\PeImage.h
+$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiFirmwareFile.h
+$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiHob.h
+$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiStatusCode.h
+$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiMultiPhase.h
+$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiFirmwareVolume.h
+$(OUTPUT_DIR)\MemoryMap.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\MemoryMap.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\MemoryMap.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\MemoryMap.c
+
+$(OUTPUT_DIR)\DhcpOptions.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\DhcpOptions.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiS3BootScript.h
+$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiDxeCis.h
+$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiBootMode.h
+$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiDependency.h
+$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Protocol\ServiceBinding.h
+$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DebugSupport.h
+$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Guid\DxeServices.h
+$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\PeImage.h
+$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiFirmwareFile.h
+$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiHob.h
+$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiStatusCode.h
+$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Protocol\Dhcp4.h
+$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiMultiPhase.h
+$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\MdePkg\Include\Pi\PiFirmwareVolume.h
+$(OUTPUT_DIR)\DhcpOptions.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\DhcpOptions.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\DhcpOptions.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\DhcpOptions.c
+
+$(OUTPUT_DIR)\AutoGen.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiBootServicesTableLib.h
+$(OUTPUT_DIR)\AutoGen.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiApplicationEntryPoint.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h
+$(OUTPUT_DIR)\AutoGen.obj : $(DEBUG_DIR)\AutoGen.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\AutoGen.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\DEBUG\AutoGen.c
+
+$(OUTPUT_DIR)\HTTP.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\HTTP.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\HTTP.obj : $(WORKSPACE)\AppPkg\Applications\Sockets\WebServer\HTTP.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\AppPkg\Applications\Sockets\WebServer\WebServer\OUTPUT\.\HTTP.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\AppPkg\Applications\Sockets\WebServer\HTTP.c
 
 
 

@@ -19,7 +19,7 @@ PLATFORM_NAME = AppPkg
 PLATFORM_GUID = 0458dade-8b6e-4e45-b773-1b27cbda3e06
 PLATFORM_VERSION = 0.01
 PLATFORM_RELATIVE_DIR = MyPkg
-PLATFORM_DIR = g:\uefi_edk2_practice\MyPkg
+PLATFORM_DIR = d:\uefi_edk2_practice\MyPkg
 PLATFORM_OUTPUT_DIR = Build\AppPkg
 
 #
@@ -35,7 +35,7 @@ MODULE_FILE_BASE_NAME = daShell
 BASE_NAME = $(MODULE_NAME)
 MODULE_RELATIVE_DIR = StdLib\LibC\Uefi\Devices
 PACKAGE_RELATIVE_DIR = LibC\Uefi\Devices
-MODULE_DIR = g:\uefi_edk2_practice\StdLib\LibC\Uefi\Devices
+MODULE_DIR = d:\uefi_edk2_practice\StdLib\LibC\Uefi\Devices
 FFS_OUTPUT_DIR = 
 
 MODULE_ENTRY_POINT = _ModuleEntryPoint
@@ -59,13 +59,13 @@ TARGET = RELEASE
 #
 # Build Directory Macro Definition
 #
-# PLATFORM_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
-BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+# PLATFORM_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
 BIN_DIR = $(BUILD_DIR)\X64
 LIB_DIR = $(BIN_DIR)
-MODULE_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Uefi\Devices\daShell
-OUTPUT_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Uefi\Devices\daShell\OUTPUT
-DEBUG_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Uefi\Devices\daShell\DEBUG
+MODULE_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Uefi\Devices\daShell
+OUTPUT_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Uefi\Devices\daShell\OUTPUT
+DEBUG_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Uefi\Devices\daShell\DEBUG
 DEST_DIR_OUTPUT = $(OUTPUT_DIR)
 DEST_DIR_DEBUG = $(DEBUG_DIR)
 
@@ -130,7 +130,7 @@ RC = c:\Program Files (x86)\Windows Kits\8.1\bin\x64\rc.exe
 ASM = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\x86_amd64\ml64.exe
 ASM_FLAGS = /nologo /c /WX /W3 /Cx /Zd
 
-ASL = G:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
+ASL = D:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
 ASL_FLAGS = 
 ASL_OUTFLAGS =  -p
 
@@ -188,7 +188,7 @@ MAKE = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\nmake.exe
 ASMLINK = C:\WINDDK\3790.1830\bin\bin16\link16.exe
 ASMLINK_FLAGS = /nologo /tiny
 
-NASM = G:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
+NASM = D:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
 NASM_FLAGS = -Ox -f win64
 
 
@@ -216,100 +216,100 @@ INC =  \
     /I$(WORKSPACE)\ShellPkg \
     /I$(WORKSPACE)\ShellPkg\Include
 
-OBJECT_FILES_LIST = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Uefi\Devices\daShell\OUTPUT\object_files.lst
+OBJECT_FILES_LIST = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Uefi\Devices\daShell\OUTPUT\object_files.lst
 
 
-COMMON_DEPS = $(WORKSPACE)\StdLib\Include\sys\endian.h \
-              $(WORKSPACE)\ShellPkg\Include\Library\ShellLib.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\LoadedImage.h \
-              $(WORKSPACE)\StdLib\Include\sys\EfiSysCall.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\signal.h \
-              $(WORKSPACE)\StdLib\Include\sys\poll.h \
-              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
-              $(WORKSPACE)\StdLibPrivateInternalFiles\Include\MainData.h \
-              $(WORKSPACE)\StdLib\Include\sys\featuretest.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
-              $(WORKSPACE)\StdLib\Include\sys\signal.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
-              $(WORKSPACE)\StdLib\Include\sys\ioccom.h \
-              $(WORKSPACE)\StdLib\Include\x86\limits.h \
-              $(WORKSPACE)\StdLib\Include\sys\select.h \
-              $(WORKSPACE)\StdLib\Include\stdarg.h \
-              $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h \
-              $(WORKSPACE)\StdLib\Include\sys\errno.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
-              $(WORKSPACE)\StdLib\Include\sys\cdefs_aout.h \
-              $(WORKSPACE)\StdLib\Include\sys\fd_set.h \
-              $(WORKSPACE)\MdePkg\Include\Library\UefiBootServicesTableLib.h \
-              $(WORKSPACE)\StdLib\Include\sys\sigtypes.h \
-              $(WORKSPACE)\StdLibPrivateInternalFiles\Include\Efi\SysEfi.h \
-              $(WORKSPACE)\StdLib\Include\errno.h \
-              $(WORKSPACE)\StdLibPrivateInternalFiles\Include\Device\Device.h \
-              $(WORKSPACE)\StdLib\Include\sys\filio.h \
-              $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h \
-              $(WORKSPACE)\StdLib\Include\time.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h \
-              $(WORKSPACE)\StdLibPrivateInternalFiles\Include\Device\Console.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\types.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h \
-              $(WORKSPACE)\StdLib\Include\sys\EfiCdefs.h \
-              $(DEBUG_DIR)\AutoGen.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\limits.h \
-              $(WORKSPACE)\StdLib\Include\sys\fcntl.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h \
-              $(WORKSPACE)\StdLib\Include\sys\bswap.h \
-              $(WORKSPACE)\MdePkg\Include\Library\MemoryAllocationLib.h \
-              $(WORKSPACE)\StdLibPrivateInternalFiles\Include\LibConfig.h \
-              $(WORKSPACE)\StdLib\Include\limits.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h \
-              $(WORKSPACE)\StdLib\Include\wchar.h \
-              $(WORKSPACE)\StdLib\Include\stdio.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
+COMMON_DEPS = $(WORKSPACE)\StdLib\Include\limits.h \
               $(WORKSPACE)\StdLib\Include\wctype.h \
-              $(WORKSPACE)\StdLib\Include\sys\stdint.h \
+              $(WORKSPACE)\StdLib\Include\time.h \
               $(WORKSPACE)\StdLib\Include\sys\stat.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h \
-              $(WORKSPACE)\StdLib\Include\sys\time.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\FileInfo.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h \
-              $(WORKSPACE)\MdePkg\Include\Base.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h \
-              $(WORKSPACE)\StdLib\Include\sys\syslimits.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
-              $(WORKSPACE)\ShellPkg\Include\Protocol\EfiShellEnvironment2.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
-              $(WORKSPACE)\StdLib\Include\signal.h \
-              $(WORKSPACE)\StdLib\Include\setjmp.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\ShellParameters.h \
-              $(WORKSPACE)\StdLib\Include\sys\unistd.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleFileSystem.h \
-              $(WORKSPACE)\ShellPkg\Include\Protocol\EfiShellInterface.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\limits.h \
+              $(WORKSPACE)\MdePkg\Include\Library\MemoryAllocationLib.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
               $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h \
-              $(WORKSPACE)\StdLib\Include\sys\ansi.h \
+              $(WORKSPACE)\ShellPkg\Include\Protocol\EfiShellEnvironment2.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h \
+              $(WORKSPACE)\StdLib\Include\sys\poll.h \
+              $(WORKSPACE)\StdLibPrivateInternalFiles\Include\kfile.h \
+              $(WORKSPACE)\StdLib\Include\sys\select.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h \
+              $(WORKSPACE)\ShellPkg\Include\Protocol\EfiShellInterface.h \
+              $(WORKSPACE)\StdLib\Include\string.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h \
+              $(WORKSPACE)\StdLibPrivateInternalFiles\Include\Device\Device.h \
+              $(WORKSPACE)\StdLib\Include\sys\unistd.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
+              $(WORKSPACE)\StdLib\Include\stdio.h \
+              $(WORKSPACE)\StdLib\Include\sys\fcntl.h \
+              $(WORKSPACE)\StdLib\Include\stdarg.h \
+              $(WORKSPACE)\StdLib\Include\sys\EfiCdefs.h \
+              $(WORKSPACE)\StdLib\Include\sys\cdefs_aout.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
+              $(WORKSPACE)\StdLib\Include\setjmp.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleFileSystem.h \
+              $(WORKSPACE)\StdLib\Include\x86\limits.h \
+              $(WORKSPACE)\StdLib\Include\sys\filio.h \
+              $(WORKSPACE)\StdLib\Include\sys\signal.h \
+              $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h \
+              $(WORKSPACE)\ShellPkg\Include\Library\ShellLib.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h \
+              $(WORKSPACE)\StdLib\Include\stdlib.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\ShellParameters.h \
+              $(WORKSPACE)\StdLib\Include\sys\sigtypes.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
               $(WORKSPACE)\StdLib\Include\sys\types.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\endian.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
+              $(WORKSPACE)\StdLibPrivateInternalFiles\Include\Efi\SysEfi.h \
+              $(WORKSPACE)\StdLib\Include\sys\featuretest.h \
+              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
+              $(WORKSPACE)\StdLib\Include\errno.h \
+              $(WORKSPACE)\MdePkg\Include\Library\UefiBootServicesTableLib.h \
+              $(WORKSPACE)\StdLib\Include\sys\stdint.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
+              $(WORKSPACE)\StdLib\Include\sys\bswap.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h \
+              $(WORKSPACE)\StdLibPrivateInternalFiles\Include\MainData.h \
+              $(DEBUG_DIR)\AutoGen.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h \
+              $(WORKSPACE)\StdLib\Include\sys\fd_set.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
               $(WORKSPACE)\MdePkg\Include\Uefi.h \
               $(WORKSPACE)\StdLib\Include\unistd.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h \
-              $(WORKSPACE)\StdLib\Include\stdlib.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\endian.h \
+              $(WORKSPACE)\StdLibPrivateInternalFiles\Include\LibConfig.h \
               $(WORKSPACE)\MdePkg\Include\Protocol\Shell.h \
-              $(WORKSPACE)\StdLibPrivateInternalFiles\Include\kfile.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h \
-              $(WORKSPACE)\StdLib\Include\string.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h \
+              $(WORKSPACE)\StdLib\Include\sys\EfiSysCall.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\LoadedImage.h \
+              $(WORKSPACE)\StdLib\Include\sys\time.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h \
+              $(WORKSPACE)\StdLib\Include\sys\endian.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
+              $(WORKSPACE)\StdLib\Include\sys\syslimits.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
+              $(WORKSPACE)\StdLib\Include\sys\ioccom.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\FileInfo.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\types.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
+              $(WORKSPACE)\MdePkg\Include\Base.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
+              $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h \
+              $(WORKSPACE)\StdLibPrivateInternalFiles\Include\Device\Console.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h \
+              $(WORKSPACE)\StdLib\Include\sys\errno.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
+              $(WORKSPACE)\StdLib\Include\sys\ansi.h \
+              $(WORKSPACE)\StdLib\Include\signal.h \
+              $(WORKSPACE)\StdLib\Include\wchar.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\signal.h \
               
 
 #
@@ -319,7 +319,7 @@ FORCE_REBUILD = force_build
 INIT_TARGET = init
 PCH_TARGET =
 BC_TARGET = 
-CODA_TARGET = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Uefi\Devices\daShell\OUTPUT\DevShell.lib \
+CODA_TARGET = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Uefi\Devices\daShell\OUTPUT\DevShell.lib \
               
 
 #
@@ -393,12 +393,12 @@ gen_fds:
 #
 $(OUTPUT_DIR)\DevShell.lib : $(OBJECT_FILES)
 $(OUTPUT_DIR)\DevShell.lib : $(OBJECT_FILES_LIST)
-	"$(SLINK)" $(SLINK_FLAGS) /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Uefi\Devices\daShell\OUTPUT\DevShell.lib @$(OBJECT_FILES_LIST)
+	"$(SLINK)" $(SLINK_FLAGS) /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Uefi\Devices\daShell\OUTPUT\DevShell.lib @$(OBJECT_FILES_LIST)
 
 $(OUTPUT_DIR)\UefiShell\daShell.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\UefiShell\daShell.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\UefiShell\daShell.obj : $(WORKSPACE)\StdLib\LibC\Uefi\Devices\UefiShell\daShell.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Uefi\Devices\daShell\OUTPUT\UefiShell\daShell.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Uefi\Devices\UefiShell\daShell.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Uefi\Devices\daShell\OUTPUT\UefiShell\daShell.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Uefi\Devices\UefiShell\daShell.c
 
 
 

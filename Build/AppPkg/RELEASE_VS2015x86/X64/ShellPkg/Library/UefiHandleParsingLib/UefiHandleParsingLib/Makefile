@@ -19,7 +19,7 @@ PLATFORM_NAME = AppPkg
 PLATFORM_GUID = 0458dade-8b6e-4e45-b773-1b27cbda3e06
 PLATFORM_VERSION = 0.01
 PLATFORM_RELATIVE_DIR = MyPkg
-PLATFORM_DIR = g:\uefi_edk2_practice\MyPkg
+PLATFORM_DIR = d:\uefi_edk2_practice\MyPkg
 PLATFORM_OUTPUT_DIR = Build\AppPkg
 
 #
@@ -35,7 +35,7 @@ MODULE_FILE_BASE_NAME = UefiHandleParsingLib
 BASE_NAME = $(MODULE_NAME)
 MODULE_RELATIVE_DIR = ShellPkg\Library\UefiHandleParsingLib
 PACKAGE_RELATIVE_DIR = Library\UefiHandleParsingLib
-MODULE_DIR = g:\uefi_edk2_practice\ShellPkg\Library\UefiHandleParsingLib
+MODULE_DIR = d:\uefi_edk2_practice\ShellPkg\Library\UefiHandleParsingLib
 FFS_OUTPUT_DIR = 
 
 MODULE_ENTRY_POINT = _ModuleEntryPoint
@@ -59,13 +59,13 @@ TARGET = RELEASE
 #
 # Build Directory Macro Definition
 #
-# PLATFORM_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
-BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+# PLATFORM_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
 BIN_DIR = $(BUILD_DIR)\X64
 LIB_DIR = $(BIN_DIR)
-MODULE_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiHandleParsingLib\UefiHandleParsingLib
-OUTPUT_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiHandleParsingLib\UefiHandleParsingLib\OUTPUT
-DEBUG_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiHandleParsingLib\UefiHandleParsingLib\DEBUG
+MODULE_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiHandleParsingLib\UefiHandleParsingLib
+OUTPUT_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiHandleParsingLib\UefiHandleParsingLib\OUTPUT
+DEBUG_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiHandleParsingLib\UefiHandleParsingLib\DEBUG
 DEST_DIR_OUTPUT = $(OUTPUT_DIR)
 DEST_DIR_DEBUG = $(DEBUG_DIR)
 
@@ -130,7 +130,7 @@ RC = c:\Program Files (x86)\Windows Kits\8.1\bin\x64\rc.exe
 ASM = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\x86_amd64\ml64.exe
 ASM_FLAGS = /nologo /c /WX /W3 /Cx /Zd
 
-ASL = G:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
+ASL = D:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
 ASL_FLAGS = 
 ASL_OUTFLAGS =  -p
 
@@ -188,7 +188,7 @@ MAKE = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\nmake.exe
 ASMLINK = C:\WINDDK\3790.1830\bin\bin16\link16.exe
 ASMLINK_FLAGS = /nologo /tiny
 
-NASM = G:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
+NASM = D:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
 NASM_FLAGS = -Ox -f win64
 
 
@@ -212,191 +212,191 @@ INC =  \
     /I$(WORKSPACE)\ShellPkg \
     /I$(WORKSPACE)\ShellPkg\Include
 
-OBJECT_FILES_LIST = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiHandleParsingLib\UefiHandleParsingLib\OUTPUT\object_files.lst
+OBJECT_FILES_LIST = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiHandleParsingLib\UefiHandleParsingLib\OUTPUT\object_files.lst
 
 
-COMMON_DEPS = $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName.h \
-              $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h \
-              $(WORKSPACE)\MdeModulePkg\Include\Library\SortLib.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\ShellParameters.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\EapManagement.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\PartitionInfo.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Tpm12.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DiskIo.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\FirmwareVolume2.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\PlatformToDriverConfiguration.h \
-              $(WORKSPACE)\MdePkg\Include\Pi\PiBootMode.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\LoadedImage.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\UnicodeCollation.h \
-              $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Eap.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\GlobalVariable.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Tpm20.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\EdidOverride.h \
-              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\ScsiPassThruExt.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\HiiImage.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\FirmwareManagement.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\UgaIo.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName2.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\LoadFile.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Ftp4.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimplePointer.h \
-              $(DEBUG_DIR)\AutoGen.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\PciExpress21.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\FileSystemInfo.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\ManagedNetwork.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Bis.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\HiiDatabase.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\BusSpecificDriverOverride.h \
-              $(WORKSPACE)\MdePkg\Include\Pi\PiFirmwareFile.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Pci.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\LoadFile2.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DebugSupport.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\HiiPlatformSetupFormset.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePathFromText.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SerialIo.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
-              $(WORKSPACE)\MdeModulePkg\Include\Library\HiiLib.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverSupportedEfiVersion.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\PciIo.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\GraphicsOutput.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Decompress.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Ip4Config.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DeviceIo.h \
-              $(WORKSPACE)\MdePkg\Include\Pi\PiS3BootScript.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Ip4.h \
-              $(WORKSPACE)\MdeModulePkg\Include\Guid\ConsoleInDevice.h \
-              $(WORKSPACE)\MdePkg\Include\Library\UefiBootServicesTableLib.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Mbr.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\EdidActive.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\UgaDraw.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Pci22.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\UserCredential2.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\FormBrowser2.h \
-              $(WORKSPACE)\ShellPkg\Include\Library\ShellLib.h \
-              $(WORKSPACE)\MdeModulePkg\Include\Guid\StandardErrorDevice.h \
-              $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DeferredImageLoad.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\UserCredential.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\HiiPackageList.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\ShellDynamicCommand.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverFamilyOverride.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Atapi.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePathToText.h \
-              $(WORKSPACE)\MdePkg\Include\Library\PeCoffGetEntryPointLib.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration2.h \
-              $(WORKSPACE)\MdePkg\Include\PiDxe.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\AdapterInformation.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\PxeBaseCode.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics.h \
-              $(WORKSPACE)\MdePkg\Include\Pi\PiMultiPhase.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\HiiString.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Hash.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\PxeBaseCodeCallBack.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration.h \
-              $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h \
-              $(WORKSPACE)\MdePkg\Include\Library\MemoryAllocationLib.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Udp6.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\NetworkInterfaceIdentifier.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics2.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\TcgService.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePathUtilities.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Udp4.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\UsbIo.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Arp.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Shell.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\AtaPassThru.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Pci23.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Dhcp4.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\BlockIo.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Ebc.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\ScsiIo.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\FileInfo.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Dhcp6.h \
-              $(WORKSPACE)\MdePkg\Include\Base.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\IScsiInitiatorName.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Usb2HostController.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DebugPort.h \
-              $(WORKSPACE)\ShellPkg\Library\UefiHandleParsingLib\UefiHandleParsingLib.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\AcpiTable.h \
-              $(WORKSPACE)\ShellPkg\Include\Library\ShellCommandLib.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\AuthenticationInfo.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\VlanConfig.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleFileSystem.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\AbsolutePointer.h \
-              $(DEBUG_DIR)\UefiHandleParsingLibStrDefs.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Mtftp4.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\PeImage.h \
-              $(WORKSPACE)\ShellPkg\Include\Protocol\EfiShellInterface.h \
-              $(WORKSPACE)\MdePkg\Include\Library\DevicePathLib.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Ip6Config.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\UserManager.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Mtftp6.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\ScsiPassThru.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Tcp4.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Usb.h \
-              $(WORKSPACE)\ShellPkg\Include\Guid\ShellLibHiiGuid.h \
-              $(WORKSPACE)\MdePkg\Include\Pi\PiFirmwareVolume.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\TapeIo.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\EdidDiscovered.h \
-              $(WORKSPACE)\MdePkg\Include\Library\UefiLib.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverHealth.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h \
-              $(WORKSPACE)\ShellPkg\Include\Protocol\EfiShellEnvironment2.h \
-              $(WORKSPACE)\MdePkg\Include\Pi\PiHob.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\BlockIo2.h \
-              $(WORKSPACE)\ShellPkg\Include\Library\HandleParsingLib.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DiskInfo.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverBinding.h \
+COMMON_DEPS = $(WORKSPACE)\MdePkg\Include\Protocol\Udp4.h \
               $(WORKSPACE)\MdePkg\Include\IndustryStandard\PciCodeId.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\IScsiInitiatorName.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\PciRootBridgeIo.h \
+              $(WORKSPACE)\MdePkg\Include\Pi\PiS3BootScript.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\HiiPackageList.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\ScsiPassThru.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePathFromText.h \
+              $(WORKSPACE)\MdePkg\Include\Library\MemoryAllocationLib.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Pci30.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverFamilyOverride.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\EdidOverride.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Eap.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\FirmwareManagement.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\UsbIo.h \
+              $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h \
+              $(WORKSPACE)\ShellPkg\Include\Protocol\EfiShellInterface.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\GraphicsOutput.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\PciExpress30.h \
+              $(WORKSPACE)\MdeModulePkg\Include\Guid\ConsoleOutDevice.h \
+              $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
+              $(WORKSPACE)\MdePkg\Include\Pi\PiDxeCis.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\AtaPassThru.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Udp6.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\EdidActive.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Tpm12.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\PartitionInfo.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Ip4Config.h \
+              $(DEBUG_DIR)\UefiHandleParsingLibStrDefs.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\FirmwareVolume2.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\IpSecConfig.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\UserCredential2.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration2.h \
+              $(WORKSPACE)\MdeModulePkg\Include\Guid\StandardErrorDevice.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\NetworkInterfaceIdentifier.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePathUtilities.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\HiiPlatformSetupFormset.h \
+              $(WORKSPACE)\MdePkg\Include\Pi\PiDependency.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\AcpiTable.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\PlatformToDriverConfiguration.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SerialIo.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\EapManagement.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\HiiImage.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\GlobalVariable.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\HiiString.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\HiiDatabase.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\BlockIo2.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\UgaDraw.h \
+              $(WORKSPACE)\MdePkg\Include\PiDxe.h \
+              $(WORKSPACE)\ShellPkg\Include\Guid\ShellLibHiiGuid.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Mtftp6.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\HiiConfigRouting.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleFileSystem.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Ftp4.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Arp.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Dhcp6.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Usb2HostController.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DiskIo2.h \
+              $(WORKSPACE)\MdePkg\Include\Pi\PiHob.h \
+              $(WORKSPACE)\ShellPkg\Include\Library\ShellLib.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\PxeBaseCodeCallBack.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\EdidDiscovered.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DiskIo.h \
+              $(WORKSPACE)\MdePkg\Include\Pi\PiBootMode.h \
+              $(WORKSPACE)\ShellPkg\Library\UefiHandleParsingLib\UefiHandleParsingLib.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\VlanConfig.h \
+              $(WORKSPACE)\MdeModulePkg\Include\Guid\ConsoleInDevice.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\UserManager.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName2.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\UefiTcgPlatform.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\AdapterInformation.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePathToText.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimplePointer.h \
+              $(WORKSPACE)\MdePkg\Include\Library\DevicePathLib.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DeferredImageLoad.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\UgaIo.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Pcd.h \
+              $(WORKSPACE)\MdeModulePkg\Include\Library\SortLib.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\BusSpecificDriverOverride.h \
+              $(WORKSPACE)\ShellPkg\Include\Library\ShellCommandLib.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\UnicodeCollation.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverHealth.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Bis.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\StorageSecurityCommand.h \
+              $(WORKSPACE)\MdePkg\Include\Library\UefiBootServicesTableLib.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\PeImage.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Ebc.h \
+              $(WORKSPACE)\MdePkg\Include\Pi\PiFirmwareFile.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DebugPort.h \
               $(WORKSPACE)\MdePkg\Include\Protocol\Kms.h \
               $(WORKSPACE)\MdePkg\Include\Protocol\PlatformDriverOverride.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Pcd.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\StorageSecurityCommand.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Ip4Config2.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\HiiFont.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\HiiConfigRouting.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleNetwork.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\HiiConfigAccess.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Ip6Config.h \
               $(WORKSPACE)\MdePkg\Include\Protocol\Tcp6.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\UsbHostController.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Pci.h \
+              $(WORKSPACE)\MdePkg\Include\Library\PeCoffGetEntryPointLib.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Pci23.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Ip4.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Usb.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\TcgService.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\UserCredential.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\PciExpress21.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Ip4Config2.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DebugSupport.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Shell.h \
               $(WORKSPACE)\MdePkg\Include\Pi\PiStatusCode.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\PciRootBridgeIo.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\IpSec.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\IdeControllerInit.h \
-              $(WORKSPACE)\MdePkg\Include\Pi\PiDependency.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\UefiTcgPlatform.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Pci30.h \
-              $(WORKSPACE)\MdeModulePkg\Include\Guid\ConsoleOutDevice.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\IpSecConfig.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\UsbHostController.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Dhcp4.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics2.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\LoadedImage.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\FileSystemInfo.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Atapi.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\ScsiPassThruExt.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleNetwork.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\PxeBaseCode.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DiskInfo.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Hash.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Tcp4.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\BlockIo.h \
+              $(WORKSPACE)\MdePkg\Include\Library\UefiLib.h \
               $(WORKSPACE)\MdePkg\Include\Protocol\Ip6.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\PciExpress30.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\ShellParameters.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverSupportedEfiVersion.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Decompress.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\LoadFile.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\AuthenticationInfo.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Pci22.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\HiiConfigAccess.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\FileInfo.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\TapeIo.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\ManagedNetwork.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\ScsiIo.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
+              $(WORKSPACE)\MdePkg\Include\Base.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
+              $(WORKSPACE)\MdePkg\Include\Pi\PiMultiPhase.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Tpm20.h \
+              $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\LoadFile2.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\IpSec.h \
+              $(WORKSPACE)\ShellPkg\Include\Protocol\EfiShellEnvironment2.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\FormBrowser2.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\AbsolutePointer.h \
               $(WORKSPACE)\MdePkg\Include\Guid\Gpt.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DiskIo2.h \
-              $(WORKSPACE)\MdePkg\Include\Pi\PiDxeCis.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Mbr.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\IdeControllerInit.h \
+              $(DEBUG_DIR)\AutoGen.h \
+              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\ShellDynamicCommand.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\PciIo.h \
               $(WORKSPACE)\MdePkg\Include\Library\PrintLib.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\HiiFont.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Mtftp4.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
+              $(WORKSPACE)\MdePkg\Include\Pi\PiFirmwareVolume.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DeviceIo.h \
+              $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h \
+              $(WORKSPACE)\MdeModulePkg\Include\Library\HiiLib.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverBinding.h \
+              $(WORKSPACE)\ShellPkg\Include\Library\HandleParsingLib.h \
               
 
 #
@@ -406,7 +406,7 @@ FORCE_REBUILD = force_build
 INIT_TARGET = init
 PCH_TARGET =
 BC_TARGET = 
-CODA_TARGET = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiHandleParsingLib\UefiHandleParsingLib\OUTPUT\UefiHandleParsingLib.lib \
+CODA_TARGET = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiHandleParsingLib\UefiHandleParsingLib\OUTPUT\UefiHandleParsingLib.lib \
               
 
 #
@@ -480,44 +480,44 @@ gen_fds:
 #
 $(OUTPUT_DIR)\UefiHandleParsingLib.lib : $(OBJECT_FILES)
 $(OUTPUT_DIR)\UefiHandleParsingLib.lib : $(OBJECT_FILES_LIST)
-	"$(SLINK)" $(SLINK_FLAGS) /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiHandleParsingLib\UefiHandleParsingLib\OUTPUT\UefiHandleParsingLib.lib @$(OBJECT_FILES_LIST)
+	"$(SLINK)" $(SLINK_FLAGS) /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiHandleParsingLib\UefiHandleParsingLib\OUTPUT\UefiHandleParsingLib.lib @$(OBJECT_FILES_LIST)
+
+$(OUTPUT_DIR)\AutoGen.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h
+$(OUTPUT_DIR)\AutoGen.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h
+$(OUTPUT_DIR)\AutoGen.obj : $(DEBUG_DIR)\UefiHandleParsingLibStrDefs.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h
+$(OUTPUT_DIR)\AutoGen.obj : $(DEBUG_DIR)\AutoGen.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiHandleParsingLib\UefiHandleParsingLib\OUTPUT\.\AutoGen.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiHandleParsingLib\UefiHandleParsingLib\DEBUG\AutoGen.c
 
 $(OUTPUT_DIR)\UefiHandleParsingLib.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\UefiHandleParsingLib.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\UefiHandleParsingLib.obj : $(WORKSPACE)\ShellPkg\Library\UefiHandleParsingLib\UefiHandleParsingLib.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiHandleParsingLib\UefiHandleParsingLib\OUTPUT\.\UefiHandleParsingLib.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\ShellPkg\Library\UefiHandleParsingLib\UefiHandleParsingLib.c
-
-$(OUTPUT_DIR)\AutoGen.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h
-$(OUTPUT_DIR)\AutoGen.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\AutoGen.obj : $(DEBUG_DIR)\UefiHandleParsingLibStrDefs.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi.h
-$(OUTPUT_DIR)\AutoGen.obj : $(DEBUG_DIR)\AutoGen.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiHandleParsingLib\UefiHandleParsingLib\OUTPUT\.\AutoGen.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiHandleParsingLib\UefiHandleParsingLib\DEBUG\AutoGen.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\ShellPkg\Library\UefiHandleParsingLib\UefiHandleParsingLib\OUTPUT\.\UefiHandleParsingLib.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\ShellPkg\Library\UefiHandleParsingLib\UefiHandleParsingLib.c
 
 
 

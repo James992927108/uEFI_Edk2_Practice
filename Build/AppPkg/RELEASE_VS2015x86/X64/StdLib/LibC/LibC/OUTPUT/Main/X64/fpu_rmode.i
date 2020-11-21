@@ -1,5 +1,5 @@
-#line 1 "g:\\uefi_edk2_practice\\StdLib\\LibC\\Main\\X64\\fpu_rmode.asm"
-#line 1 "g:\\uefi_edk2_practice\\Build\\AppPkg\\RELEASE_VS2015x86\\X64\\StdLib\\LibC\\LibC\\DEBUG\\AutoGen.h"
+#line 1 "d:\\uefi_edk2_practice\\StdLib\\LibC\\Main\\X64\\fpu_rmode.asm"
+#line 1 "d:\\uefi_edk2_practice\\Build\\AppPkg\\RELEASE_VS2015x86\\X64\\StdLib\\LibC\\LibC\\DEBUG\\AutoGen.h"
 
 
 
@@ -15,7 +15,7 @@
 
 
 
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
@@ -43,7 +43,7 @@
 
 
 
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
 
 
 
@@ -71,7 +71,7 @@
 
 
 #pragma pack()
-#line 29 "g:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
+#line 29 "d:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
 
 
 
@@ -85,7 +85,7 @@
 
 
 
-#line 43 "g:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
+#line 43 "d:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
 
 
 
@@ -112,7 +112,7 @@
 
 
 
-#line 70 "g:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
+#line 70 "d:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
 
 
 
@@ -171,9 +171,9 @@
 
 #pragma warning ( disable : 4703 )
   
-#line 129 "g:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
+#line 129 "d:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
 
-#line 131 "g:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
+#line 131 "d:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
 
 
 
@@ -274,7 +274,7 @@
 
 
 
-#line 232 "g:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
+#line 232 "d:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
 
 
 
@@ -353,7 +353,7 @@ typedef INT64   INTN;
 
 
 
-#line 311 "g:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
+#line 311 "d:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
 
 
 
@@ -361,7 +361,7 @@ typedef INT64   INTN;
 
 
 
-#line 319 "g:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
+#line 319 "d:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
 
 
 
@@ -377,18 +377,18 @@ typedef INT64   INTN;
 
 
 
-#line 335 "g:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
+#line 335 "d:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
 
-#line 337 "g:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
+#line 337 "d:\\uefi_edk2_practice\\MdePkg\\Include\\X64\\ProcessorBind.h"
 
-#line 29 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 29 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
 
 
 #pragma warning ( disable : 4200 )
-#line 36 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 36 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
@@ -454,46 +454,14 @@ extern UINT8 _VerifySizeof__VERIFY_UINT32_ENUM_SIZE[(sizeof(__VERIFY_UINT32_ENUM
 
 
 
-#line 102 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 102 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
   
   
   
   
   
   
-#line 109 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-
-
-
-
-
-
-  
-
-
-
-
-
-
-#line 123 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-
-
-
-
-
-
-
-#line 131 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-
-  
-    
-    
-    
-    
-    
-  #line 139 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-#line 140 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-
+#line 109 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
@@ -507,7 +475,39 @@ extern UINT8 _VerifySizeof__VERIFY_UINT32_ENUM_SIZE[(sizeof(__VERIFY_UINT32_ENUM
 
 
 
-#line 155 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 123 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+
+
+
+
+
+
+
+#line 131 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+
+  
+    
+    
+    
+    
+    
+  #line 139 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 140 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+#line 155 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
     
     
     
@@ -521,34 +521,8 @@ extern UINT8 _VerifySizeof__VERIFY_UINT32_ENUM_SIZE[(sizeof(__VERIFY_UINT32_ENUM
 
 
 
-#line 169 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-#line 170 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-  
-    
-    
-    
-    
-    
-  #line 193 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-#line 194 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-
-
+#line 169 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 170 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
@@ -571,34 +545,8 @@ extern UINT8 _VerifySizeof__VERIFY_UINT32_ENUM_SIZE[(sizeof(__VERIFY_UINT32_ENUM
     
     
     
-  #line 219 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-#line 220 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#line 244 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
-  
-#line 246 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+  #line 193 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 194 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
@@ -608,7 +556,59 @@ extern UINT8 _VerifySizeof__VERIFY_UINT32_ENUM_SIZE[(sizeof(__VERIFY_UINT32_ENUM
 
 
   
-#line 256 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+
+
+
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+  #line 219 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 220 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#line 244 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+  
+#line 246 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+
+
+
+
+
+
+
+
+  
+#line 256 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
@@ -996,7 +996,7 @@ struct _LIST_ENTRY {
 
 
 
-#line 644 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 644 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
@@ -1041,7 +1041,7 @@ struct _LIST_ENTRY {
 
 
 
-#line 689 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 689 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
@@ -1109,7 +1109,7 @@ typedef CHAR8 *VA_LIST;
 
 
 
-#line 757 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 757 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
@@ -1164,7 +1164,7 @@ typedef UINTN  *BASE_LIST;
 
 
 
-#line 812 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 812 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
@@ -1617,7 +1617,7 @@ typedef UINTN RETURN_STATUS;
 
 
 
-#line 1265 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 1265 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
 
@@ -1632,14 +1632,11 @@ typedef UINTN RETURN_STATUS;
 
 
 
-#line 1280 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
+#line 1280 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Base.h"
 
 
-#line 17 "g:\\uefi_edk2_practice\\Build\\AppPkg\\RELEASE_VS2015x86\\X64\\StdLib\\LibC\\LibC\\DEBUG\\AutoGen.h"
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi.h"
-
-
-
+#line 17 "d:\\uefi_edk2_practice\\Build\\AppPkg\\RELEASE_VS2015x86\\X64\\StdLib\\LibC\\LibC\\DEBUG\\AutoGen.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi.h"
 
 
 
@@ -1659,7 +1656,10 @@ typedef UINTN RETURN_STATUS;
 
 
 
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiBaseType.h"
+
+
+
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiBaseType.h"
 
 
 
@@ -1916,14 +1916,14 @@ typedef union {
 
 
 
-#line 258 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiBaseType.h"
+#line 258 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiBaseType.h"
 
 
 
 
 
 
-#line 265 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiBaseType.h"
+#line 265 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiBaseType.h"
 
 
 
@@ -1955,11 +1955,11 @@ typedef union {
 
 
 
-#line 297 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiBaseType.h"
+#line 297 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiBaseType.h"
 
-#line 299 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiBaseType.h"
-#line 24 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi.h"
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
+#line 299 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiBaseType.h"
+#line 24 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
 
 
 
@@ -1981,7 +1981,7 @@ typedef union {
 
 
 
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiMultiPhase.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiMultiPhase.h"
 
 
 
@@ -1999,7 +1999,7 @@ typedef union {
 
 
 
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Guid/WinCertificate.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Guid/WinCertificate.h"
 
 
 
@@ -2127,8 +2127,8 @@ typedef struct {
 
 extern EFI_GUID gEfiCertTypeRsa2048Sha256Guid;
 
-#line 129 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Guid/WinCertificate.h"
-#line 19 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiMultiPhase.h"
+#line 129 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Guid/WinCertificate.h"
+#line 19 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiMultiPhase.h"
 
 
 
@@ -2343,12 +2343,10 @@ typedef struct {
   WIN_CERTIFICATE_UEFI_GUID   AuthInfo;
  } EFI_VARIABLE_AUTHENTICATION_2;
 
-#line 234 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiMultiPhase.h"
-#line 23 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
+#line 234 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiMultiPhase.h"
+#line 23 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
 
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Protocol/DevicePath.h"
-
-
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Protocol/DevicePath.h"
 
 
 
@@ -2368,7 +2366,9 @@ typedef struct {
 
 
 
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Guid/PcAnsi.h"
+
+
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Guid/PcAnsi.h"
 
 
 
@@ -2426,9 +2426,9 @@ extern EFI_GUID gEfiVTUTF8Guid;
 extern EFI_GUID gEfiUartDevicePathGuid;
 extern EFI_GUID gEfiSasDevicePathGuid;
 
-#line 59 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Guid/PcAnsi.h"
-#line 23 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Protocol/DevicePath.h"
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Bluetooth.h"
+#line 59 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Guid/PcAnsi.h"
+#line 23 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Protocol/DevicePath.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Bluetooth.h"
 
 
 
@@ -2490,9 +2490,9 @@ typedef struct {
 
 
 
-#line 63 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Bluetooth.h"
-#line 24 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Protocol/DevicePath.h"
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi60.h"
+#line 63 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Bluetooth.h"
+#line 24 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Protocol/DevicePath.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi60.h"
 
 
 
@@ -2510,7 +2510,7 @@ typedef struct {
 
 
 
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi51.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi51.h"
 
 
 
@@ -2529,7 +2529,7 @@ typedef struct {
 
 
 
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi50.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi50.h"
 
 
 
@@ -2547,7 +2547,7 @@ typedef struct {
 
 
 
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi40.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi40.h"
 
 
 
@@ -2564,7 +2564,7 @@ typedef struct {
 
 
 
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi30.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi30.h"
 
 
 
@@ -2581,7 +2581,7 @@ typedef struct {
 
 
 
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi20.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi20.h"
 
 
 
@@ -2598,7 +2598,7 @@ typedef struct {
 
 
 
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi10.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi10.h"
 
 
 
@@ -2615,7 +2615,7 @@ typedef struct {
 
 
 
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/AcpiAml.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/AcpiAml.h"
 
 
 
@@ -2790,8 +2790,8 @@ typedef struct {
 
 
 
-#line 176 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/AcpiAml.h"
-#line 18 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi10.h"
+#line 176 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/AcpiAml.h"
+#line 18 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi10.h"
 
 
 
@@ -3435,8 +3435,8 @@ typedef struct {
 
 #pragma pack()
 
-#line 662 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi10.h"
-#line 18 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi20.h"
+#line 662 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi10.h"
+#line 18 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi20.h"
 
 
 
@@ -3964,8 +3964,8 @@ typedef struct {
 
 #pragma pack()
 
-#line 546 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi20.h"
-#line 18 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi30.h"
+#line 546 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi20.h"
+#line 18 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi30.h"
 
 
 
@@ -4677,8 +4677,8 @@ typedef struct {
 
 #pragma pack()
 
-#line 730 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi30.h"
-#line 18 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi40.h"
+#line 730 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi30.h"
+#line 18 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi40.h"
 
 
 
@@ -5970,9 +5970,9 @@ typedef struct {
 
 #pragma pack()
 
-#line 1310 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi40.h"
+#line 1310 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi40.h"
 
-#line 19 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi50.h"
+#line 19 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi50.h"
 
 
 
@@ -8073,9 +8073,9 @@ typedef struct {
 
 #pragma pack()
 
-#line 2120 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi50.h"
+#line 2120 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi50.h"
 
-#line 20 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi51.h"
+#line 20 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi51.h"
 
 
 
@@ -10195,9 +10195,9 @@ typedef struct {
 
 #pragma pack()
 
-#line 2140 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi51.h"
+#line 2140 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi51.h"
 
-#line 19 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi60.h"
+#line 19 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi60.h"
 
 
 
@@ -12571,9 +12571,9 @@ typedef struct {
 
 #pragma pack()
 
-#line 2393 "g:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi60.h"
+#line 2393 "d:\\uefi_edk2_practice\\MdePkg\\Include\\IndustryStandard/Acpi60.h"
 
-#line 25 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Protocol/DevicePath.h"
+#line 25 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Protocol/DevicePath.h"
 
 
 
@@ -13907,10 +13907,10 @@ typedef union {
 
 extern EFI_GUID gEfiDevicePathProtocolGuid;
 
-#line 1359 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Protocol/DevicePath.h"
+#line 1359 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Protocol/DevicePath.h"
 
-#line 25 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Protocol/SimpleTextIn.h"
+#line 25 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Protocol/SimpleTextIn.h"
 
 
 
@@ -14043,9 +14043,9 @@ struct _EFI_SIMPLE_TEXT_INPUT_PROTOCOL {
 
 extern EFI_GUID gEfiSimpleTextInProtocolGuid;
 
-#line 134 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Protocol/SimpleTextIn.h"
-#line 26 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Protocol/SimpleTextInEx.h"
+#line 134 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Protocol/SimpleTextIn.h"
+#line 26 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Protocol/SimpleTextInEx.h"
 
 
 
@@ -14367,10 +14367,10 @@ struct _EFI_SIMPLE_TEXT_INPUT_EX_PROTOCOL{
 
 extern EFI_GUID gEfiSimpleTextInputExProtocolGuid;
 
-#line 323 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Protocol/SimpleTextInEx.h"
+#line 323 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Protocol/SimpleTextInEx.h"
 
-#line 27 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Protocol/SimpleTextOut.h"
+#line 27 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Protocol/SimpleTextOut.h"
 
 
 
@@ -14785,8 +14785,8 @@ struct _EFI_SIMPLE_TEXT_OUTPUT_PROTOCOL {
 
 extern EFI_GUID gEfiSimpleTextOutProtocolGuid;
 
-#line 416 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Protocol/SimpleTextOut.h"
-#line 28 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
+#line 416 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Protocol/SimpleTextOut.h"
+#line 28 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
 
 
 
@@ -16952,9 +16952,9 @@ typedef struct {
 
 
 
-#line 2194 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
+#line 2194 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
 
-#line 2196 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
+#line 2196 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
   
 
 
@@ -16963,9 +16963,9 @@ typedef struct {
 
 
 
-#line 2205 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
+#line 2205 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
 
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiPxe.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiPxe.h"
 
 
 
@@ -18757,10 +18757,10 @@ typedef struct s_pxe_db_receive {
 
 #pragma pack()
 
-#line 1793 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiPxe.h"
+#line 1793 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiPxe.h"
 
-#line 2207 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiGpt.h"
+#line 2207 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiGpt.h"
 
 
 
@@ -18899,14 +18899,11 @@ typedef struct {
 } EFI_PARTITION_ENTRY;
 
 #pragma pack()
-#line 140 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiGpt.h"
+#line 140 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiGpt.h"
 
 
-#line 2208 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiInternalFormRepresentation.h"
-
-
-
+#line 2208 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiInternalFormRepresentation.h"
 
 
 
@@ -18927,7 +18924,10 @@ typedef struct {
 
 
 
-#line 1 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Guid/HiiFormMapMethodGuid.h"
+
+
+
+#line 1 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Guid/HiiFormMapMethodGuid.h"
 
 
 
@@ -18952,8 +18952,8 @@ typedef struct {
 
 extern EFI_GUID gEfiHiiStandardFormGuid;
 
-#line 26 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Guid/HiiFormMapMethodGuid.h"
-#line 25 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiInternalFormRepresentation.h"
+#line 26 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Guid/HiiFormMapMethodGuid.h"
+#line 25 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiInternalFormRepresentation.h"
 
 
 
@@ -21064,17 +21064,17 @@ typedef struct _EFI_HII_AIBT_SKIP2_BLOCK {
 
 
 
-#line 2136 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiInternalFormRepresentation.h"
+#line 2136 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiInternalFormRepresentation.h"
 
-#line 2209 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
+#line 2209 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
 
-#line 2211 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
+#line 2211 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi/UefiSpec.h"
 
-#line 25 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi.h"
+#line 25 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi.h"
 
-#line 27 "g:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi.h"
+#line 27 "d:\\uefi_edk2_practice\\MdePkg\\Include\\Uefi.h"
 
-#line 18 "g:\\uefi_edk2_practice\\Build\\AppPkg\\RELEASE_VS2015x86\\X64\\StdLib\\LibC\\LibC\\DEBUG\\AutoGen.h"
+#line 18 "d:\\uefi_edk2_practice\\Build\\AppPkg\\RELEASE_VS2015x86\\X64\\StdLib\\LibC\\LibC\\DEBUG\\AutoGen.h"
 
 extern GUID  gEfiCallerIdGuid;
 extern CHAR8 *gEfiCallerBaseName;
@@ -21088,8 +21088,8 @@ extern UINT64 _gPcd_SkuId_Array[];
 
 
 
-#line 32 "g:\\uefi_edk2_practice\\Build\\AppPkg\\RELEASE_VS2015x86\\X64\\StdLib\\LibC\\LibC\\DEBUG\\AutoGen.h"
-#line 1 "g:\\uefi_edk2_practice\\StdLib\\LibC\\Main\\X64\\fpu_rmode.asm"
+#line 32 "d:\\uefi_edk2_practice\\Build\\AppPkg\\RELEASE_VS2015x86\\X64\\StdLib\\LibC\\LibC\\DEBUG\\AutoGen.h"
+#line 1 "d:\\uefi_edk2_practice\\StdLib\\LibC\\Main\\X64\\fpu_rmode.asm"
 ;------------------------------------------------------------------------------
 ; Return the current FPU rounding mode.
 ;

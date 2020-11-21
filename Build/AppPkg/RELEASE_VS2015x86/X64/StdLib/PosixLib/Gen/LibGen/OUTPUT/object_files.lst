@@ -1,6 +1,6 @@
-g:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/PosixLib/Gen/LibGen/OUTPUT/dirname.obj
-g:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/PosixLib/Gen/LibGen/OUTPUT/opendir.obj
-g:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/PosixLib/Gen/LibGen/OUTPUT/closedir.obj
-g:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/PosixLib/Gen/LibGen/OUTPUT/readdir.obj
-g:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/PosixLib/Gen/LibGen/OUTPUT/access.obj
-g:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/PosixLib/Gen/LibGen/OUTPUT/utime.obj
+d:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/PosixLib/Gen/LibGen/OUTPUT/dirname.obj
+d:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/PosixLib/Gen/LibGen/OUTPUT/opendir.obj
+d:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/PosixLib/Gen/LibGen/OUTPUT/closedir.obj
+d:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/PosixLib/Gen/LibGen/OUTPUT/readdir.obj
+d:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/PosixLib/Gen/LibGen/OUTPUT/access.obj
+d:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/PosixLib/Gen/LibGen/OUTPUT/utime.obj

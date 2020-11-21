@@ -19,7 +19,7 @@ PLATFORM_NAME = AppPkg
 PLATFORM_GUID = 0458dade-8b6e-4e45-b773-1b27cbda3e06
 PLATFORM_VERSION = 0.01
 PLATFORM_RELATIVE_DIR = MyPkg
-PLATFORM_DIR = g:\uefi_edk2_practice\MyPkg
+PLATFORM_DIR = d:\uefi_edk2_practice\MyPkg
 PLATFORM_OUTPUT_DIR = Build\AppPkg
 
 #
@@ -35,7 +35,7 @@ MODULE_FILE_BASE_NAME = BaseLib
 BASE_NAME = $(MODULE_NAME)
 MODULE_RELATIVE_DIR = MdePkg\Library\BaseLib
 PACKAGE_RELATIVE_DIR = Library\BaseLib
-MODULE_DIR = g:\uefi_edk2_practice\MdePkg\Library\BaseLib
+MODULE_DIR = d:\uefi_edk2_practice\MdePkg\Library\BaseLib
 FFS_OUTPUT_DIR = 
 
 MODULE_ENTRY_POINT = _ModuleEntryPoint
@@ -60,13 +60,13 @@ TARGET = RELEASE
 #
 # Build Directory Macro Definition
 #
-# PLATFORM_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
-BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+# PLATFORM_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
 BIN_DIR = $(BUILD_DIR)\X64
 LIB_DIR = $(BIN_DIR)
-MODULE_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib
-OUTPUT_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT
-DEBUG_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\DEBUG
+MODULE_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib
+OUTPUT_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT
+DEBUG_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\DEBUG
 DEST_DIR_OUTPUT = $(OUTPUT_DIR)
 DEST_DIR_DEBUG = $(DEBUG_DIR)
 
@@ -131,7 +131,7 @@ RC = c:\Program Files (x86)\Windows Kits\8.1\bin\x64\rc.exe
 ASM = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\x86_amd64\ml64.exe
 ASM_FLAGS = /nologo /c /WX /W3 /Cx /Zd
 
-ASL = G:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
+ASL = D:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
 ASL_FLAGS = 
 ASL_OUTFLAGS =  -p
 
@@ -189,7 +189,7 @@ MAKE = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\nmake.exe
 ASMLINK = C:\WINDDK\3790.1830\bin\bin16\link16.exe
 ASMLINK_FLAGS = /nologo /tiny
 
-NASM = G:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
+NASM = D:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
 NASM_FLAGS = -Ox -f win64
 
 
@@ -342,13 +342,13 @@ INC =  \
     /I$(WORKSPACE)\MdePkg\Include \
     /I$(WORKSPACE)\MdePkg\Include\X64
 
-OBJECT_FILES_LIST = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\object_files.lst
+OBJECT_FILES_LIST = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\object_files.lst
 
 
-COMMON_DEPS = $(DEBUG_DIR)\AutoGen.h \
+COMMON_DEPS = $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h \
+              $(DEBUG_DIR)\AutoGen.h \
               $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
               $(WORKSPACE)\MdePkg\Include\Base.h \
-              $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h \
               
 
 #
@@ -358,7 +358,7 @@ FORCE_REBUILD = force_build
 INIT_TARGET = init
 PCH_TARGET =
 BC_TARGET = 
-CODA_TARGET = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\BaseLib.lib \
+CODA_TARGET = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\BaseLib.lib \
               
 
 #
@@ -430,1274 +430,1274 @@ gen_fds:
 #
 # Individual Object Build Targets
 #
-$(OUTPUT_DIR)\X64\ReadFs.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadFs.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadFs.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadFs.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadFs.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadFs.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadFs.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadFs.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadFs.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadFs.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadFs.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadFs.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadFs.iii
-
-$(OUTPUT_DIR)\X64\ReadMm0.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadMm0.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadMm0.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadMm0.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadMm0.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadMm0.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadMm0.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadMm0.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm0.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm0.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm0.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm0.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm0.iii
-
-$(OUTPUT_DIR)\X64\WriteGdtr.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\WriteGdtr.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\WriteGdtr.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\WriteGdtr.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteGdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\WriteGdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteGdtr.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteGdtr.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteGdtr.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteGdtr.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteGdtr.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteGdtr.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteGdtr.iii
-
-$(OUTPUT_DIR)\X64\WriteMm1.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\WriteMm1.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\WriteMm1.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\WriteMm1.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteMm1.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\WriteMm1.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteMm1.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteMm1.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm1.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm1.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm1.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm1.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm1.iii
-
-$(OUTPUT_DIR)\X64\FxSave.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\FxSave.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\FxSave.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\FxSave.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\FxSave.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\FxSave.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\FxSave.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\FxSave.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FxSave.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FxSave.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FxSave.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FxSave.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FxSave.iii
-
-$(OUTPUT_DIR)\X64\ReadMm4.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadMm4.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadMm4.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadMm4.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadMm4.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadMm4.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadMm4.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadMm4.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm4.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm4.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm4.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm4.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm4.iii
-
-$(OUTPUT_DIR)\X64\WriteCr4.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\WriteCr4.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\WriteCr4.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\WriteCr4.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteCr4.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\WriteCr4.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteCr4.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteCr4.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr4.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr4.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr4.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr4.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr4.iii
-
-$(OUTPUT_DIR)\X64\ReadDr7.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadDr7.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadDr7.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadDr7.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadDr7.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadDr7.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadDr7.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadDr7.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr7.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr7.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr7.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr7.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr7.iii
-
-$(OUTPUT_DIR)\X64\SetJump.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\SetJump.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\SetJump.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\SetJump.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\SetJump.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\SetJump.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\SetJump.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\SetJump.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\SetJump.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\SetJump.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\SetJump.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\SetJump.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\SetJump.iii
-
-$(OUTPUT_DIR)\X64\ReadLdtr.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadLdtr.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadLdtr.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadLdtr.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadLdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadLdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadLdtr.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadLdtr.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadLdtr.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadLdtr.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadLdtr.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadLdtr.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadLdtr.iii
-
-$(OUTPUT_DIR)\X64\WriteMm4.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\WriteMm4.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\WriteMm4.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\WriteMm4.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteMm4.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\WriteMm4.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteMm4.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteMm4.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm4.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm4.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm4.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm4.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm4.iii
-
-$(OUTPUT_DIR)\X64\ReadMm1.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadMm1.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadMm1.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadMm1.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadMm1.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadMm1.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadMm1.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadMm1.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm1.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm1.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm1.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm1.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm1.iii
-
-$(OUTPUT_DIR)\X64\Mwait.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\Mwait.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\Mwait.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\Mwait.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\Mwait.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\Mwait.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\Mwait.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\Mwait.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Mwait.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Mwait.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Mwait.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Mwait.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Mwait.iii
-
-$(OUTPUT_DIR)\X64\ReadMm7.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadMm7.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadMm7.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadMm7.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadMm7.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadMm7.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadMm7.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadMm7.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm7.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm7.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm7.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm7.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm7.iii
-
-$(OUTPUT_DIR)\X64\ReadGdtr.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadGdtr.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadGdtr.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadGdtr.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadGdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadGdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadGdtr.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadGdtr.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadGdtr.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadGdtr.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadGdtr.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadGdtr.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadGdtr.iii
-
-$(OUTPUT_DIR)\X64\CpuPause.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\CpuPause.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\CpuPause.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\CpuPause.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\CpuPause.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\CpuPause.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\CpuPause.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\CpuPause.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuPause.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuPause.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuPause.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuPause.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuPause.iii
-
-$(OUTPUT_DIR)\X64\ReadMm2.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadMm2.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadMm2.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadMm2.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadMm2.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadMm2.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadMm2.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadMm2.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm2.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm2.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm2.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm2.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm2.iii
-
-$(OUTPUT_DIR)\X64\ReadDr6.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadDr6.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadDr6.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadDr6.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadDr6.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadDr6.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadDr6.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadDr6.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr6.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr6.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr6.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr6.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr6.iii
-
-$(OUTPUT_DIR)\X64\ReadTsc.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadTsc.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadTsc.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadTsc.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadTsc.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadTsc.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadTsc.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadTsc.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadTsc.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadTsc.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadTsc.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadTsc.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadTsc.iii
-
-$(OUTPUT_DIR)\X64\CpuId.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\CpuId.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\CpuId.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\CpuId.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\CpuId.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\CpuId.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\CpuId.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\CpuId.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuId.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuId.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuId.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuId.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuId.iii
-
-$(OUTPUT_DIR)\X64\ReadDr3.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadDr3.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadDr3.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadDr3.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadDr3.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadDr3.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadDr3.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadDr3.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr3.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr3.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr3.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr3.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr3.iii
-
-$(OUTPUT_DIR)\X64\RdRand.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\RdRand.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\RdRand.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\RdRand.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\RdRand.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\RdRand.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\RdRand.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\RdRand.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\RdRand.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\RdRand.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\RdRand.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\RdRand.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\RdRand.iii
-
-$(OUTPUT_DIR)\X64\FlushCacheLine.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\FlushCacheLine.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\FlushCacheLine.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\FlushCacheLine.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\FlushCacheLine.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\FlushCacheLine.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\FlushCacheLine.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\FlushCacheLine.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FlushCacheLine.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FlushCacheLine.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FlushCacheLine.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FlushCacheLine.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FlushCacheLine.iii
-
-$(OUTPUT_DIR)\X64\WriteDr2.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\WriteDr2.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\WriteDr2.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\WriteDr2.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteDr2.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\WriteDr2.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteDr2.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteDr2.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr2.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr2.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr2.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr2.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr2.iii
-
-$(OUTPUT_DIR)\X64\ReadDs.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadDs.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadDs.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadDs.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadDs.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadDs.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadDs.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadDs.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDs.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDs.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDs.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDs.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDs.iii
-
-$(OUTPUT_DIR)\X64\DisableInterrupts.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\DisableInterrupts.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\DisableInterrupts.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\DisableInterrupts.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\DisableInterrupts.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\DisableInterrupts.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\DisableInterrupts.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\DisableInterrupts.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisableInterrupts.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisableInterrupts.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisableInterrupts.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisableInterrupts.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisableInterrupts.iii
-
-$(OUTPUT_DIR)\X64\WriteDr7.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\WriteDr7.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\WriteDr7.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\WriteDr7.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteDr7.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\WriteDr7.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteDr7.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteDr7.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr7.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr7.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr7.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr7.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr7.iii
-
-$(OUTPUT_DIR)\X64\ReadEflags.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadEflags.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadEflags.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadEflags.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadEflags.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadEflags.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadEflags.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadEflags.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadEflags.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadEflags.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadEflags.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadEflags.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadEflags.iii
-
-$(OUTPUT_DIR)\X64\ReadSs.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadSs.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadSs.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadSs.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadSs.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadSs.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadSs.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadSs.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadSs.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadSs.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadSs.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadSs.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadSs.iii
-
-$(OUTPUT_DIR)\X64\WriteMm3.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\WriteMm3.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\WriteMm3.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\WriteMm3.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteMm3.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\WriteMm3.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteMm3.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteMm3.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm3.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm3.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm3.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm3.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm3.iii
-
-$(OUTPUT_DIR)\X64\ReadDr2.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadDr2.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadDr2.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadDr2.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadDr2.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadDr2.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadDr2.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadDr2.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr2.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr2.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr2.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr2.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr2.iii
-
-$(OUTPUT_DIR)\X64\WriteMm0.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\WriteMm0.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\WriteMm0.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\WriteMm0.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteMm0.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\WriteMm0.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteMm0.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteMm0.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm0.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm0.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm0.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm0.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm0.iii
-
-$(OUTPUT_DIR)\X64\FxRestore.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\FxRestore.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\FxRestore.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\FxRestore.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\FxRestore.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\FxRestore.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\FxRestore.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\FxRestore.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FxRestore.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FxRestore.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FxRestore.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FxRestore.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FxRestore.iii
-
 $(OUTPUT_DIR)\X64\WriteCr2.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteCr2.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
 $(OUTPUT_DIR)\X64\WriteCr2.obj : $(DEBUG_DIR)\AutoGen.h
 $(OUTPUT_DIR)\X64\WriteCr2.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
 $(OUTPUT_DIR)\X64\WriteCr2.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteCr2.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
 $(OUTPUT_DIR)\X64\WriteCr2.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteCr2.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteCr2.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr2.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr2.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr2.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr2.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr2.iii
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteCr2.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr2.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr2.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr2.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr2.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr2.iii
 
-$(OUTPUT_DIR)\X64\WriteLdtr.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\WriteLdtr.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\WriteLdtr.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\WriteLdtr.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteLdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\WriteLdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteLdtr.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteLdtr.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteLdtr.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteLdtr.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteLdtr.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteLdtr.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteLdtr.iii
-
-$(OUTPUT_DIR)\X64\ReadDr0.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadDr0.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadDr0.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadDr0.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadDr0.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadDr0.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadDr0.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadDr0.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr0.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr0.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr0.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr0.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr0.iii
-
-$(OUTPUT_DIR)\X64\ReadDr5.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadDr5.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadDr5.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadDr5.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadDr5.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadDr5.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadDr5.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadDr5.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr5.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr5.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr5.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr5.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr5.iii
-
-$(OUTPUT_DIR)\X64\EnableCache.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\EnableCache.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\EnableCache.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\EnableCache.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\EnableCache.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\EnableCache.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\EnableCache.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\EnableCache.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableCache.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableCache.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableCache.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableCache.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableCache.iii
-
-$(OUTPUT_DIR)\X64\ReadEs.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadEs.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadEs.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadEs.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadEs.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadEs.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadEs.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadEs.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadEs.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadEs.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadEs.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadEs.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadEs.iii
-
-$(OUTPUT_DIR)\X64\WriteMm6.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\WriteMm6.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\WriteMm6.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\WriteMm6.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteMm6.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\WriteMm6.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteMm6.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteMm6.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm6.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm6.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm6.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm6.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm6.iii
-
-$(OUTPUT_DIR)\X64\ReadCr3.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadCr3.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadCr3.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadCr3.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadCr3.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadCr3.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadCr3.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadCr3.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr3.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr3.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr3.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr3.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr3.iii
-
-$(OUTPUT_DIR)\X64\ReadDr4.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadDr4.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadDr4.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadDr4.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadDr4.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadDr4.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadDr4.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadDr4.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr4.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr4.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr4.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr4.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr4.iii
-
-$(OUTPUT_DIR)\X64\ReadMm5.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadMm5.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadMm5.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadMm5.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadMm5.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadMm5.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadMm5.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadMm5.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm5.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm5.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm5.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm5.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm5.iii
-
-$(OUTPUT_DIR)\X64\ReadPmc.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadPmc.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadPmc.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadPmc.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadPmc.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadPmc.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadPmc.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadPmc.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadPmc.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadPmc.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadPmc.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadPmc.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadPmc.iii
-
-$(OUTPUT_DIR)\X64\ReadMm3.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadMm3.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadMm3.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadMm3.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadMm3.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadMm3.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadMm3.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadMm3.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm3.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm3.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm3.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm3.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm3.iii
-
-$(OUTPUT_DIR)\X64\WriteDr4.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\WriteDr4.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\WriteDr4.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\WriteDr4.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteDr4.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\WriteDr4.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteDr4.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteDr4.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr4.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr4.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr4.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr4.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr4.iii
-
-$(OUTPUT_DIR)\X64\WriteMm2.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\WriteMm2.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\WriteMm2.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\WriteMm2.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteMm2.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\WriteMm2.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteMm2.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteMm2.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm2.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm2.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm2.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm2.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm2.iii
-
-$(OUTPUT_DIR)\X64\ReadIdtr.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadIdtr.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadIdtr.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadIdtr.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadIdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadIdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadIdtr.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadIdtr.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadIdtr.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadIdtr.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadIdtr.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadIdtr.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadIdtr.iii
-
-$(OUTPUT_DIR)\X64\WriteDr6.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\WriteDr6.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\WriteDr6.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\WriteDr6.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteDr6.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\WriteDr6.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteDr6.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteDr6.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr6.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr6.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr6.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr6.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr6.iii
-
-$(OUTPUT_DIR)\X64\WriteTr.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\WriteTr.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\WriteTr.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\WriteTr.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteTr.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\WriteTr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteTr.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteTr.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteTr.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteTr.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteTr.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteTr.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteTr.iii
-
-$(OUTPUT_DIR)\X64\DisablePaging64.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\DisablePaging64.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\DisablePaging64.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\DisablePaging64.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\DisablePaging64.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\DisablePaging64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\DisablePaging64.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\DisablePaging64.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisablePaging64.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisablePaging64.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisablePaging64.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisablePaging64.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisablePaging64.iii
-
-$(OUTPUT_DIR)\X64\ReadGs.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadGs.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadGs.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadGs.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadGs.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadGs.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadGs.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadGs.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadGs.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadGs.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadGs.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadGs.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadGs.iii
-
-$(OUTPUT_DIR)\X64\WriteCr3.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\WriteCr3.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\WriteCr3.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\WriteCr3.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteCr3.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\WriteCr3.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteCr3.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteCr3.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr3.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr3.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr3.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr3.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr3.iii
-
-$(OUTPUT_DIR)\X64\WriteDr0.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\WriteDr0.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\WriteDr0.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\WriteDr0.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteDr0.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\WriteDr0.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteDr0.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteDr0.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr0.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr0.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr0.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr0.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr0.iii
-
-$(OUTPUT_DIR)\X64\ReadCs.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadCs.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadCs.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadCs.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadCs.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadCs.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadCs.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadCs.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCs.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCs.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCs.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCs.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCs.iii
-
-$(OUTPUT_DIR)\X64\Invd.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\Invd.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\Invd.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\Invd.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\Invd.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\Invd.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\Invd.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\Invd.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Invd.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Invd.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Invd.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Invd.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Invd.iii
-
-$(OUTPUT_DIR)\X64\WriteIdtr.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\WriteIdtr.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\WriteIdtr.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\WriteIdtr.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteIdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\WriteIdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteIdtr.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteIdtr.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteIdtr.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteIdtr.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteIdtr.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteIdtr.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteIdtr.iii
-
-$(OUTPUT_DIR)\X64\ReadTr.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadTr.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadTr.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadTr.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadTr.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadTr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadTr.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadTr.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadTr.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadTr.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadTr.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadTr.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadTr.iii
-
-$(OUTPUT_DIR)\X64\Wbinvd.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\Wbinvd.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\Wbinvd.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\Wbinvd.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\Wbinvd.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\Wbinvd.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\Wbinvd.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\Wbinvd.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Wbinvd.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Wbinvd.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Wbinvd.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Wbinvd.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Wbinvd.iii
-
-$(OUTPUT_DIR)\X64\EnableInterrupts.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\EnableInterrupts.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\EnableInterrupts.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\EnableInterrupts.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\EnableInterrupts.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\EnableInterrupts.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\EnableInterrupts.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\EnableInterrupts.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableInterrupts.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableInterrupts.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableInterrupts.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableInterrupts.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableInterrupts.iii
-
-$(OUTPUT_DIR)\X64\SwitchStack.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\SwitchStack.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\SwitchStack.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\SwitchStack.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\SwitchStack.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\SwitchStack.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\SwitchStack.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\SwitchStack.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\SwitchStack.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\SwitchStack.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\SwitchStack.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\SwitchStack.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\SwitchStack.iii
-
-$(OUTPUT_DIR)\X64\DisableCache.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\DisableCache.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\DisableCache.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\DisableCache.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\DisableCache.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\DisableCache.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\DisableCache.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\DisableCache.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisableCache.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisableCache.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisableCache.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisableCache.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisableCache.iii
-
-$(OUTPUT_DIR)\X64\ReadCr4.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadCr4.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadCr4.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadCr4.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadCr4.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadCr4.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadCr4.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadCr4.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr4.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr4.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr4.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr4.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr4.iii
-
-$(OUTPUT_DIR)\X64\WriteMm5.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\WriteMm5.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\WriteMm5.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\WriteMm5.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteMm5.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\WriteMm5.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteMm5.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteMm5.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm5.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm5.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm5.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm5.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm5.iii
-
-$(OUTPUT_DIR)\X64\ReadMm6.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadMm6.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadMm6.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadMm6.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadMm6.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadMm6.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadMm6.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadMm6.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm6.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm6.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm6.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm6.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm6.iii
-
-$(OUTPUT_DIR)\X64\Thunk16.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\Thunk16.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\Thunk16.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\Thunk16.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\Thunk16.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\X64\Thunk16.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\X64\Thunk16.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\Thunk16.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\X64\Thunk16.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\X64\Thunk16.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\Thunk16.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\Thunk16.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Thunk16.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Thunk16.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Thunk16.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Thunk16.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Thunk16.iii
-
-$(OUTPUT_DIR)\X64\WriteDr3.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\WriteDr3.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\WriteDr3.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\WriteDr3.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteDr3.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\WriteDr3.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteDr3.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteDr3.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr3.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr3.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr3.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr3.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr3.iii
-
-$(OUTPUT_DIR)\X64\ReadCr2.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadCr2.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadCr2.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadCr2.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadCr2.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadCr2.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadCr2.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadCr2.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr2.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr2.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr2.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr2.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr2.iii
-
-$(OUTPUT_DIR)\X64\CpuIdEx.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\CpuIdEx.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\CpuIdEx.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\CpuIdEx.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\CpuIdEx.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\CpuIdEx.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\CpuIdEx.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\CpuIdEx.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuIdEx.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuIdEx.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuIdEx.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuIdEx.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuIdEx.iii
+$(OUTPUT_DIR)\X64\ReadDr2.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadDr2.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadDr2.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadDr2.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadDr2.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadDr2.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadDr2.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadDr2.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr2.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr2.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr2.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr2.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr2.iii
 
 $(OUTPUT_DIR)\X64\LongJump.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\LongJump.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
 $(OUTPUT_DIR)\X64\LongJump.obj : $(DEBUG_DIR)\AutoGen.h
 $(OUTPUT_DIR)\X64\LongJump.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
 $(OUTPUT_DIR)\X64\LongJump.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\LongJump.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
 $(OUTPUT_DIR)\X64\LongJump.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\LongJump.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\LongJump.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\LongJump.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\LongJump.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\LongJump.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\LongJump.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\LongJump.iii
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\LongJump.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\LongJump.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\LongJump.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\LongJump.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\LongJump.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\LongJump.iii
 
-$(OUTPUT_DIR)\X64\ReadCr0.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\ReadCr0.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\ReadCr0.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\ReadCr0.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadCr0.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\ReadCr0.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadCr0.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadCr0.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr0.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr0.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr0.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr0.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr0.iii
+$(OUTPUT_DIR)\X64\WriteMm1.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteMm1.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\WriteMm1.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\WriteMm1.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\WriteMm1.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\WriteMm1.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteMm1.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteMm1.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm1.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm1.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm1.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm1.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm1.iii
 
-$(OUTPUT_DIR)\X64\WriteMm7.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\WriteMm7.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\WriteMm7.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\WriteMm7.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteMm7.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\WriteMm7.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteMm7.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteMm7.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm7.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm7.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm7.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm7.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm7.iii
+$(OUTPUT_DIR)\X64\ReadMm5.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadMm5.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadMm5.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadMm5.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadMm5.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadMm5.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadMm5.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadMm5.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm5.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm5.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm5.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm5.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm5.iii
 
-$(OUTPUT_DIR)\X64\WriteDr5.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\WriteDr5.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\WriteDr5.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\WriteDr5.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteDr5.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\WriteDr5.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteDr5.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteDr5.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr5.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr5.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr5.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr5.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr5.iii
+$(OUTPUT_DIR)\X64\WriteMm4.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteMm4.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\WriteMm4.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\WriteMm4.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\WriteMm4.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\WriteMm4.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteMm4.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteMm4.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm4.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm4.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm4.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm4.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm4.iii
+
+$(OUTPUT_DIR)\X64\ReadCr3.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadCr3.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadCr3.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadCr3.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadCr3.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadCr3.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadCr3.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadCr3.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr3.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr3.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr3.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr3.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr3.iii
+
+$(OUTPUT_DIR)\X64\DisablePaging64.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\DisablePaging64.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\DisablePaging64.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\DisablePaging64.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\DisablePaging64.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\DisablePaging64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\DisablePaging64.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\DisablePaging64.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisablePaging64.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisablePaging64.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisablePaging64.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisablePaging64.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisablePaging64.iii
+
+$(OUTPUT_DIR)\X64\Wbinvd.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\Wbinvd.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\Wbinvd.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\Wbinvd.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\Wbinvd.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\Wbinvd.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\Wbinvd.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\Wbinvd.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Wbinvd.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Wbinvd.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Wbinvd.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Wbinvd.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Wbinvd.iii
+
+$(OUTPUT_DIR)\X64\ReadTr.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadTr.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadTr.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadTr.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadTr.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadTr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadTr.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadTr.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadTr.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadTr.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadTr.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadTr.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadTr.iii
+
+$(OUTPUT_DIR)\X64\SwitchStack.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\SwitchStack.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\SwitchStack.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\SwitchStack.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\SwitchStack.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\SwitchStack.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\SwitchStack.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\SwitchStack.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\SwitchStack.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\SwitchStack.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\SwitchStack.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\SwitchStack.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\SwitchStack.iii
+
+$(OUTPUT_DIR)\X64\WriteDr4.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteDr4.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\WriteDr4.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\WriteDr4.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\WriteDr4.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\WriteDr4.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteDr4.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteDr4.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr4.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr4.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr4.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr4.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr4.iii
+
+$(OUTPUT_DIR)\X64\ReadTsc.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadTsc.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadTsc.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadTsc.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadTsc.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadTsc.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadTsc.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadTsc.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadTsc.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadTsc.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadTsc.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadTsc.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadTsc.iii
+
+$(OUTPUT_DIR)\X64\FlushCacheLine.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\FlushCacheLine.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\FlushCacheLine.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\FlushCacheLine.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\FlushCacheLine.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\FlushCacheLine.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\FlushCacheLine.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\FlushCacheLine.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FlushCacheLine.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FlushCacheLine.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FlushCacheLine.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FlushCacheLine.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FlushCacheLine.iii
+
+$(OUTPUT_DIR)\X64\WriteMm0.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteMm0.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\WriteMm0.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\WriteMm0.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\WriteMm0.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\WriteMm0.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteMm0.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteMm0.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm0.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm0.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm0.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm0.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm0.iii
+
+$(OUTPUT_DIR)\X64\ReadDr3.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadDr3.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadDr3.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadDr3.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadDr3.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadDr3.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadDr3.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadDr3.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr3.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr3.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr3.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr3.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr3.iii
+
+$(OUTPUT_DIR)\X64\ReadCs.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadCs.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadCs.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadCs.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadCs.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadCs.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadCs.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadCs.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCs.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCs.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCs.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCs.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCs.iii
+
+$(OUTPUT_DIR)\X64\ReadDr0.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadDr0.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadDr0.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadDr0.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadDr0.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadDr0.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadDr0.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadDr0.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr0.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr0.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr0.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr0.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr0.iii
 
 $(OUTPUT_DIR)\X64\ReadDr1.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadDr1.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
 $(OUTPUT_DIR)\X64\ReadDr1.obj : $(DEBUG_DIR)\AutoGen.h
 $(OUTPUT_DIR)\X64\ReadDr1.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
 $(OUTPUT_DIR)\X64\ReadDr1.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\ReadDr1.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
 $(OUTPUT_DIR)\X64\ReadDr1.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadDr1.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadDr1.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr1.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr1.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr1.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr1.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr1.iii
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadDr1.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr1.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr1.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr1.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr1.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr1.iii
 
-$(OUTPUT_DIR)\X64\Monitor.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\Monitor.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\Monitor.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\Monitor.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\Monitor.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\Monitor.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\Monitor.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\Monitor.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Monitor.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Monitor.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Monitor.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Monitor.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Monitor.iii
+$(OUTPUT_DIR)\X64\Invd.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\Invd.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\Invd.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\Invd.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\Invd.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\Invd.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\Invd.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\Invd.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Invd.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Invd.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Invd.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Invd.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Invd.iii
 
-$(OUTPUT_DIR)\X64\EnableDisableInterrupts.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\EnableDisableInterrupts.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\X64\EnableDisableInterrupts.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\X64\EnableDisableInterrupts.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\EnableDisableInterrupts.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\X64\EnableDisableInterrupts.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\EnableDisableInterrupts.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\EnableDisableInterrupts.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableDisableInterrupts.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableDisableInterrupts.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableDisableInterrupts.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableDisableInterrupts.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableDisableInterrupts.iii
+$(OUTPUT_DIR)\X64\ReadSs.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadSs.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadSs.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadSs.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadSs.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadSs.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadSs.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadSs.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadSs.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadSs.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadSs.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadSs.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadSs.iii
+
+$(OUTPUT_DIR)\X64\ReadCr2.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadCr2.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadCr2.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadCr2.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadCr2.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadCr2.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadCr2.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadCr2.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr2.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr2.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr2.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr2.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr2.iii
+
+$(OUTPUT_DIR)\X64\ReadGdtr.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadGdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadGdtr.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadGdtr.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadGdtr.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadGdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadGdtr.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadGdtr.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadGdtr.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadGdtr.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadGdtr.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadGdtr.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadGdtr.iii
+
+$(OUTPUT_DIR)\X64\ReadFs.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadFs.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadFs.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadFs.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadFs.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadFs.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadFs.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadFs.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadFs.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadFs.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadFs.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadFs.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadFs.iii
+
+$(OUTPUT_DIR)\X64\WriteMm7.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteMm7.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\WriteMm7.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\WriteMm7.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\WriteMm7.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\WriteMm7.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteMm7.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteMm7.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm7.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm7.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm7.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm7.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm7.iii
+
+$(OUTPUT_DIR)\X64\WriteLdtr.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteLdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\WriteLdtr.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\WriteLdtr.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\WriteLdtr.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\WriteLdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteLdtr.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteLdtr.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteLdtr.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteLdtr.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteLdtr.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteLdtr.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteLdtr.iii
+
+$(OUTPUT_DIR)\X64\WriteDr5.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteDr5.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\WriteDr5.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\WriteDr5.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\WriteDr5.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\WriteDr5.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteDr5.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteDr5.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr5.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr5.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr5.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr5.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr5.iii
+
+$(OUTPUT_DIR)\X64\WriteGdtr.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteGdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\WriteGdtr.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\WriteGdtr.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\WriteGdtr.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\WriteGdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteGdtr.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteGdtr.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteGdtr.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteGdtr.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteGdtr.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteGdtr.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteGdtr.iii
 
 $(OUTPUT_DIR)\X64\WriteCr0.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteCr0.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
 $(OUTPUT_DIR)\X64\WriteCr0.obj : $(DEBUG_DIR)\AutoGen.h
 $(OUTPUT_DIR)\X64\WriteCr0.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
 $(OUTPUT_DIR)\X64\WriteCr0.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteCr0.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
 $(OUTPUT_DIR)\X64\WriteCr0.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteCr0.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteCr0.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr0.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr0.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr0.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr0.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr0.iii
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteCr0.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr0.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr0.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr0.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr0.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr0.iii
+
+$(OUTPUT_DIR)\X64\WriteMm6.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteMm6.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\WriteMm6.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\WriteMm6.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\WriteMm6.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\WriteMm6.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteMm6.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteMm6.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm6.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm6.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm6.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm6.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm6.iii
+
+$(OUTPUT_DIR)\X64\WriteMm3.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteMm3.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\WriteMm3.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\WriteMm3.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\WriteMm3.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\WriteMm3.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteMm3.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteMm3.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm3.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm3.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm3.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm3.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm3.iii
+
+$(OUTPUT_DIR)\X64\FxRestore.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\FxRestore.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\FxRestore.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\FxRestore.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\FxRestore.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\FxRestore.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\FxRestore.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\FxRestore.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FxRestore.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FxRestore.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FxRestore.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FxRestore.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FxRestore.iii
+
+$(OUTPUT_DIR)\X64\WriteCr4.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteCr4.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\WriteCr4.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\WriteCr4.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\WriteCr4.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\WriteCr4.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteCr4.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteCr4.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr4.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr4.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr4.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr4.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr4.iii
+
+$(OUTPUT_DIR)\X64\EnableDisableInterrupts.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\EnableDisableInterrupts.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\EnableDisableInterrupts.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\EnableDisableInterrupts.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\EnableDisableInterrupts.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\EnableDisableInterrupts.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\EnableDisableInterrupts.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\EnableDisableInterrupts.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableDisableInterrupts.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableDisableInterrupts.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableDisableInterrupts.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableDisableInterrupts.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableDisableInterrupts.iii
+
+$(OUTPUT_DIR)\X64\WriteMm2.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteMm2.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\WriteMm2.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\WriteMm2.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\WriteMm2.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\WriteMm2.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteMm2.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteMm2.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm2.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm2.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm2.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm2.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm2.iii
+
+$(OUTPUT_DIR)\X64\Thunk16.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\Thunk16.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\X64\Thunk16.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\X64\Thunk16.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\Thunk16.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\Thunk16.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\Thunk16.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\X64\Thunk16.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\X64\Thunk16.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\Thunk16.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\Thunk16.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\Thunk16.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Thunk16.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Thunk16.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Thunk16.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Thunk16.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Thunk16.iii
+
+$(OUTPUT_DIR)\X64\ReadIdtr.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadIdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadIdtr.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadIdtr.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadIdtr.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadIdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadIdtr.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadIdtr.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadIdtr.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadIdtr.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadIdtr.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadIdtr.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadIdtr.iii
+
+$(OUTPUT_DIR)\X64\WriteDr3.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteDr3.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\WriteDr3.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\WriteDr3.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\WriteDr3.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\WriteDr3.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteDr3.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteDr3.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr3.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr3.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr3.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr3.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr3.iii
+
+$(OUTPUT_DIR)\X64\DisableInterrupts.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\DisableInterrupts.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\DisableInterrupts.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\DisableInterrupts.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\DisableInterrupts.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\DisableInterrupts.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\DisableInterrupts.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\DisableInterrupts.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisableInterrupts.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisableInterrupts.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisableInterrupts.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisableInterrupts.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisableInterrupts.iii
+
+$(OUTPUT_DIR)\X64\ReadGs.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadGs.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadGs.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadGs.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadGs.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadGs.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadGs.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadGs.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadGs.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadGs.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadGs.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadGs.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadGs.iii
+
+$(OUTPUT_DIR)\X64\ReadDr5.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadDr5.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadDr5.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadDr5.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadDr5.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadDr5.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadDr5.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadDr5.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr5.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr5.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr5.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr5.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr5.iii
+
+$(OUTPUT_DIR)\X64\ReadPmc.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadPmc.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadPmc.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadPmc.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadPmc.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadPmc.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadPmc.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadPmc.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadPmc.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadPmc.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadPmc.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadPmc.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadPmc.iii
+
+$(OUTPUT_DIR)\X64\WriteTr.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteTr.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\WriteTr.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\WriteTr.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\WriteTr.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\WriteTr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteTr.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteTr.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteTr.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteTr.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteTr.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteTr.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteTr.iii
+
+$(OUTPUT_DIR)\X64\WriteDr6.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteDr6.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\WriteDr6.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\WriteDr6.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\WriteDr6.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\WriteDr6.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteDr6.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteDr6.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr6.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr6.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr6.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr6.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr6.iii
+
+$(OUTPUT_DIR)\X64\ReadCr4.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadCr4.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadCr4.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadCr4.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadCr4.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadCr4.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadCr4.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadCr4.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr4.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr4.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr4.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr4.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr4.iii
+
+$(OUTPUT_DIR)\X64\SetJump.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\SetJump.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\SetJump.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\SetJump.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\SetJump.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\SetJump.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\SetJump.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\SetJump.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\SetJump.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\SetJump.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\SetJump.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\SetJump.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\SetJump.iii
+
+$(OUTPUT_DIR)\X64\WriteDr7.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteDr7.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\WriteDr7.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\WriteDr7.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\WriteDr7.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\WriteDr7.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteDr7.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteDr7.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr7.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr7.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr7.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr7.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr7.iii
+
+$(OUTPUT_DIR)\X64\ReadMm6.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadMm6.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadMm6.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadMm6.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadMm6.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadMm6.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadMm6.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadMm6.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm6.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm6.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm6.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm6.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm6.iii
 
 $(OUTPUT_DIR)\X64\WriteDr1.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteDr1.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
 $(OUTPUT_DIR)\X64\WriteDr1.obj : $(DEBUG_DIR)\AutoGen.h
 $(OUTPUT_DIR)\X64\WriteDr1.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
 $(OUTPUT_DIR)\X64\WriteDr1.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\X64\WriteDr1.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
 $(OUTPUT_DIR)\X64\WriteDr1.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteDr1.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteDr1.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr1.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr1.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr1.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr1.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr1.iii
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteDr1.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr1.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr1.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr1.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr1.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr1.iii
+
+$(OUTPUT_DIR)\X64\WriteDr0.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteDr0.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\WriteDr0.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\WriteDr0.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\WriteDr0.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\WriteDr0.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteDr0.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteDr0.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr0.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr0.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr0.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr0.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr0.iii
+
+$(OUTPUT_DIR)\X64\WriteIdtr.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteIdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\WriteIdtr.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\WriteIdtr.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\WriteIdtr.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\WriteIdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteIdtr.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteIdtr.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteIdtr.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteIdtr.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteIdtr.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteIdtr.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteIdtr.iii
+
+$(OUTPUT_DIR)\X64\ReadMm7.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadMm7.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadMm7.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadMm7.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadMm7.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadMm7.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadMm7.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadMm7.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm7.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm7.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm7.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm7.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm7.iii
+
+$(OUTPUT_DIR)\X64\ReadMm1.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadMm1.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadMm1.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadMm1.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadMm1.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadMm1.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadMm1.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadMm1.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm1.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm1.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm1.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm1.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm1.iii
+
+$(OUTPUT_DIR)\X64\ReadEflags.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadEflags.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadEflags.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadEflags.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadEflags.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadEflags.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadEflags.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadEflags.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadEflags.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadEflags.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadEflags.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadEflags.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadEflags.iii
+
+$(OUTPUT_DIR)\X64\Monitor.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\Monitor.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\Monitor.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\Monitor.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\Monitor.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\Monitor.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\Monitor.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\Monitor.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Monitor.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Monitor.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Monitor.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Monitor.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Monitor.iii
+
+$(OUTPUT_DIR)\X64\CpuPause.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\CpuPause.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\CpuPause.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\CpuPause.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\CpuPause.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\CpuPause.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\CpuPause.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\CpuPause.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuPause.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuPause.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuPause.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuPause.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuPause.iii
+
+$(OUTPUT_DIR)\X64\Mwait.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\Mwait.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\Mwait.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\Mwait.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\Mwait.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\Mwait.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\Mwait.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\Mwait.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Mwait.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Mwait.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Mwait.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Mwait.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Mwait.iii
+
+$(OUTPUT_DIR)\X64\FxSave.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\FxSave.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\FxSave.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\FxSave.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\FxSave.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\FxSave.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\FxSave.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\FxSave.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FxSave.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FxSave.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FxSave.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FxSave.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\FxSave.iii
+
+$(OUTPUT_DIR)\X64\EnableInterrupts.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\EnableInterrupts.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\EnableInterrupts.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\EnableInterrupts.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\EnableInterrupts.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\EnableInterrupts.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\EnableInterrupts.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\EnableInterrupts.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableInterrupts.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableInterrupts.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableInterrupts.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableInterrupts.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableInterrupts.iii
+
+$(OUTPUT_DIR)\X64\WriteCr3.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteCr3.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\WriteCr3.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\WriteCr3.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\WriteCr3.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\WriteCr3.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteCr3.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteCr3.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr3.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr3.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr3.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr3.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteCr3.iii
+
+$(OUTPUT_DIR)\X64\ReadDs.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadDs.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadDs.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadDs.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadDs.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadDs.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadDs.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadDs.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDs.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDs.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDs.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDs.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDs.iii
+
+$(OUTPUT_DIR)\X64\ReadMm4.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadMm4.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadMm4.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadMm4.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadMm4.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadMm4.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadMm4.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadMm4.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm4.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm4.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm4.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm4.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm4.iii
+
+$(OUTPUT_DIR)\X64\WriteDr2.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteDr2.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\WriteDr2.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\WriteDr2.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\WriteDr2.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\WriteDr2.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteDr2.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteDr2.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr2.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr2.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr2.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr2.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteDr2.iii
+
+$(OUTPUT_DIR)\X64\EnableCache.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\EnableCache.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\EnableCache.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\EnableCache.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\EnableCache.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\EnableCache.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\EnableCache.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\EnableCache.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableCache.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableCache.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableCache.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableCache.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\EnableCache.iii
+
+$(OUTPUT_DIR)\X64\ReadDr6.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadDr6.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadDr6.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadDr6.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadDr6.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadDr6.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadDr6.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadDr6.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr6.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr6.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr6.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr6.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr6.iii
+
+$(OUTPUT_DIR)\X64\CpuIdEx.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\CpuIdEx.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\CpuIdEx.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\CpuIdEx.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\CpuIdEx.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\CpuIdEx.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\CpuIdEx.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\CpuIdEx.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuIdEx.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuIdEx.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuIdEx.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuIdEx.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuIdEx.iii
+
+$(OUTPUT_DIR)\X64\ReadMm3.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadMm3.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadMm3.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadMm3.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadMm3.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadMm3.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadMm3.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadMm3.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm3.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm3.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm3.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm3.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm3.iii
+
+$(OUTPUT_DIR)\X64\ReadCr0.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadCr0.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadCr0.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadCr0.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadCr0.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadCr0.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadCr0.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadCr0.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr0.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr0.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr0.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr0.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadCr0.iii
+
+$(OUTPUT_DIR)\X64\ReadMm0.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadMm0.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadMm0.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadMm0.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadMm0.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadMm0.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadMm0.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadMm0.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm0.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm0.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm0.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm0.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm0.iii
+
+$(OUTPUT_DIR)\X64\ReadEs.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadEs.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadEs.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadEs.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadEs.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadEs.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadEs.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadEs.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadEs.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadEs.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadEs.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadEs.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadEs.iii
+
+$(OUTPUT_DIR)\X64\WriteMm5.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\WriteMm5.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\WriteMm5.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\WriteMm5.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\WriteMm5.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\WriteMm5.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteMm5.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteMm5.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm5.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm5.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm5.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm5.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMm5.iii
+
+$(OUTPUT_DIR)\X64\RdRand.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\RdRand.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\RdRand.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\RdRand.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\RdRand.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\RdRand.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\RdRand.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\RdRand.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\RdRand.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\RdRand.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\RdRand.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\RdRand.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\RdRand.iii
+
+$(OUTPUT_DIR)\X64\CpuId.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\CpuId.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\CpuId.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\CpuId.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\CpuId.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\CpuId.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\CpuId.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\CpuId.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuId.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuId.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuId.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuId.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuId.iii
+
+$(OUTPUT_DIR)\X64\ReadDr4.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadDr4.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadDr4.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadDr4.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadDr4.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadDr4.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadDr4.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadDr4.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr4.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr4.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr4.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr4.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr4.iii
+
+$(OUTPUT_DIR)\X64\ReadDr7.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadDr7.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadDr7.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadDr7.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadDr7.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadDr7.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadDr7.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadDr7.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr7.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr7.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr7.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr7.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadDr7.iii
+
+$(OUTPUT_DIR)\X64\ReadLdtr.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadLdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadLdtr.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadLdtr.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadLdtr.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadLdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadLdtr.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadLdtr.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadLdtr.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadLdtr.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadLdtr.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadLdtr.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadLdtr.iii
+
+$(OUTPUT_DIR)\X64\DisableCache.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\DisableCache.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\DisableCache.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\DisableCache.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\DisableCache.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\DisableCache.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\DisableCache.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\DisableCache.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisableCache.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisableCache.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisableCache.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisableCache.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\DisableCache.iii
+
+$(OUTPUT_DIR)\X64\ReadMm2.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\ReadMm2.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\X64\ReadMm2.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\X64\ReadMm2.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\X64\ReadMm2.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\X64\ReadMm2.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadMm2.nasm
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadMm2.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm2.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm2.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm2.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm2.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMm2.iii
 
 $(OUTPUT_DIR)\BaseLib.lib : $(OBJECT_FILES)
 $(OUTPUT_DIR)\BaseLib.lib : $(OBJECT_FILES_LIST)
-	"$(SLINK)" $(SLINK_FLAGS) /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\BaseLib.lib @$(OBJECT_FILES_LIST)
+	"$(SLINK)" $(SLINK_FLAGS) /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\BaseLib.lib @$(OBJECT_FILES_LIST)
 
-$(OUTPUT_DIR)\CpuDeadLoop.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\CpuDeadLoop.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\CpuDeadLoop.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\CpuDeadLoop.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\CpuDeadLoop.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\CpuDeadLoop.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\CpuDeadLoop.c
+$(OUTPUT_DIR)\X86ReadIdtr.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X86ReadIdtr.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\X86ReadIdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\X86ReadIdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\X86ReadIdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\X86ReadIdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\X86ReadIdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86ReadIdtr.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86ReadIdtr.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86ReadIdtr.c
 
-$(OUTPUT_DIR)\SafeString.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\SafeString.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\SafeString.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\SafeString.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\SafeString.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\SafeString.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\SafeString.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\SafeString.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\SafeString.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\SafeString.c
+$(OUTPUT_DIR)\MultU64x32.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\MultU64x32.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\MultU64x32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\MultU64x32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\MultU64x32.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\MultU64x32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\MultU64x32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\MultU64x32.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\MultU64x32.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\MultU64x32.c
 
-$(OUTPUT_DIR)\String.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\String.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\String.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\String.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\String.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\String.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\String.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\String.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\String.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\String.c
+$(OUTPUT_DIR)\X86FxRestore.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X86FxRestore.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\X86FxRestore.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\X86FxRestore.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\X86FxRestore.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\X86FxRestore.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\X86FxRestore.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86FxRestore.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86FxRestore.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86FxRestore.c
+
+$(OUTPUT_DIR)\SwapBytes64.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\SwapBytes64.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\SwapBytes64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\SwapBytes64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\SwapBytes64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\SwapBytes64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\SwapBytes64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\SwapBytes64.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\SwapBytes64.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\SwapBytes64.c
+
+$(OUTPUT_DIR)\LowBitSet64.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\LowBitSet64.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\LowBitSet64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\LowBitSet64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\LowBitSet64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\LowBitSet64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\LowBitSet64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\LowBitSet64.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\LowBitSet64.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\LowBitSet64.c
+
+$(OUTPUT_DIR)\X86GetInterruptState.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X86GetInterruptState.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\X86GetInterruptState.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\X86GetInterruptState.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\X86GetInterruptState.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\X86GetInterruptState.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\X86GetInterruptState.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86GetInterruptState.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86GetInterruptState.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86GetInterruptState.c
+
+$(OUTPUT_DIR)\Unaligned.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\Unaligned.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\Unaligned.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\Unaligned.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\Unaligned.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\Unaligned.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\Unaligned.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\Unaligned.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\Unaligned.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\Unaligned.c
+
+$(OUTPUT_DIR)\LinkedList.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\LinkedList.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\LinkedList.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\LinkedList.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\LinkedList.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\LinkedList.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\LinkedList.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\LinkedList.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\LinkedList.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\LinkedList.c
+
+$(OUTPUT_DIR)\X86Thunk.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X86Thunk.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\X86Thunk.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\X86Thunk.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\X86Thunk.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\X86Thunk.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\X86Thunk.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86Thunk.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86Thunk.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86Thunk.c
+
+$(OUTPUT_DIR)\ModU64x32.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\ModU64x32.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\ModU64x32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\ModU64x32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\ModU64x32.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\ModU64x32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\ModU64x32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\ModU64x32.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\ModU64x32.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\ModU64x32.c
+
+$(OUTPUT_DIR)\X86WriteGdtr.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X86WriteGdtr.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\X86WriteGdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\X86WriteGdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\X86WriteGdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\X86WriteGdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\X86WriteGdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86WriteGdtr.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86WriteGdtr.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86WriteGdtr.c
+
+$(OUTPUT_DIR)\BitField.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\BitField.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\BitField.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\BitField.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\BitField.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\BitField.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\BitField.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BitField.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\BitField.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\BitField.c
+
+$(OUTPUT_DIR)\Math64.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\Math64.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\Math64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\Math64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\Math64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\Math64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\Math64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\Math64.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\Math64.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\Math64.c
+
+$(OUTPUT_DIR)\X86Msr.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X86Msr.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\X86Msr.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\X86Msr.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\X86Msr.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\X86Msr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\X86Msr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86Msr.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86Msr.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86Msr.c
+
+$(OUTPUT_DIR)\MultS64x64.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\MultS64x64.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\MultS64x64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\MultS64x64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\MultS64x64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\MultS64x64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\MultS64x64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\MultS64x64.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\MultS64x64.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\MultS64x64.c
+
+$(OUTPUT_DIR)\RShiftU64.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\RShiftU64.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\RShiftU64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\RShiftU64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\RShiftU64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\RShiftU64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\RShiftU64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\RShiftU64.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\RShiftU64.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\RShiftU64.c
+
+$(OUTPUT_DIR)\GetPowerOfTwo32.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\GetPowerOfTwo32.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\GetPowerOfTwo32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\GetPowerOfTwo32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\GetPowerOfTwo32.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\GetPowerOfTwo32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\GetPowerOfTwo32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\GetPowerOfTwo32.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\GetPowerOfTwo32.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\GetPowerOfTwo32.c
 
 $(OUTPUT_DIR)\X64\WriteMsr64.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\X64\WriteMsr64.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\X64\WriteMsr64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\WriteMsr64.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMsr64.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteMsr64.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\WriteMsr64.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\WriteMsr64.c
+
+$(OUTPUT_DIR)\SwapBytes16.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\SwapBytes16.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\SwapBytes16.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\SwapBytes16.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\SwapBytes16.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\SwapBytes16.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\SwapBytes16.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\SwapBytes16.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\SwapBytes16.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\SwapBytes16.c
+
+$(OUTPUT_DIR)\X86ReadGdtr.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X86ReadGdtr.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\X86ReadGdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\X86ReadGdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\X86ReadGdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\X86ReadGdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\X86ReadGdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86ReadGdtr.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86ReadGdtr.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86ReadGdtr.c
+
+$(OUTPUT_DIR)\CheckSum.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\CheckSum.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\CheckSum.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\CheckSum.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\CheckSum.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\CheckSum.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\CheckSum.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\CheckSum.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\CheckSum.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\CheckSum.c
+
+$(OUTPUT_DIR)\X86FxSave.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X86FxSave.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\X86FxSave.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\X86FxSave.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\X86FxSave.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\X86FxSave.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\X86FxSave.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86FxSave.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86FxSave.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86FxSave.c
+
+$(OUTPUT_DIR)\DivU64x64Remainder.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\DivU64x64Remainder.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\DivU64x64Remainder.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\DivU64x64Remainder.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\DivU64x64Remainder.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\DivU64x64Remainder.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\DivU64x64Remainder.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\DivU64x64Remainder.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\DivU64x64Remainder.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\DivU64x64Remainder.c
+
+$(OUTPUT_DIR)\X86MemoryFence.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X86MemoryFence.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\X86MemoryFence.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86MemoryFence.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86MemoryFence.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86MemoryFence.c
+
+$(OUTPUT_DIR)\SwitchStack.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\SwitchStack.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\SwitchStack.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\SwitchStack.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\SwitchStack.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\SwitchStack.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\SwitchStack.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\SwitchStack.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\SwitchStack.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\SwitchStack.c
+
+$(OUTPUT_DIR)\LRotU32.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\LRotU32.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\LRotU32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\LRotU32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\LRotU32.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\LRotU32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\LRotU32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\LRotU32.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\LRotU32.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\LRotU32.c
+
+$(OUTPUT_DIR)\SetJump.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\SetJump.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\SetJump.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\SetJump.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\SetJump.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\SetJump.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\SetJump.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\SetJump.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\SetJump.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\SetJump.c
+
+$(OUTPUT_DIR)\X86WriteIdtr.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X86WriteIdtr.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\X86WriteIdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\X86WriteIdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\X86WriteIdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\X86WriteIdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\X86WriteIdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86WriteIdtr.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86WriteIdtr.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86WriteIdtr.c
+
+$(OUTPUT_DIR)\X86DisablePaging64.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X86DisablePaging64.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\X86DisablePaging64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\X86DisablePaging64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\X86DisablePaging64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\X86DisablePaging64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\X86DisablePaging64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86DisablePaging64.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86DisablePaging64.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86DisablePaging64.c
+
+$(OUTPUT_DIR)\X86DisablePaging32.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X86DisablePaging32.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\X86DisablePaging32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\X86DisablePaging32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\X86DisablePaging32.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\X86DisablePaging32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\X86DisablePaging32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86DisablePaging32.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86DisablePaging32.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86DisablePaging32.c
 
 $(OUTPUT_DIR)\FilePaths.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\FilePaths.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\FilePaths.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
 $(OUTPUT_DIR)\FilePaths.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
 $(OUTPUT_DIR)\FilePaths.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\FilePaths.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\FilePaths.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\FilePaths.c
-
-$(OUTPUT_DIR)\LRotU32.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\LRotU32.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\LRotU32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\LRotU32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\LRotU32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\LRotU32.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\LRotU32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\LRotU32.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\LRotU32.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\LRotU32.c
-
-$(OUTPUT_DIR)\X86FxRestore.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X86FxRestore.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\X86FxRestore.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\X86FxRestore.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\X86FxRestore.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\X86FxRestore.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\X86FxRestore.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86FxRestore.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86FxRestore.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86FxRestore.c
-
-$(OUTPUT_DIR)\HighBitSet64.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\HighBitSet64.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\HighBitSet64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\HighBitSet64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\HighBitSet64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\HighBitSet64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\HighBitSet64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\HighBitSet64.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\HighBitSet64.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\HighBitSet64.c
-
-$(OUTPUT_DIR)\Math64.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\Math64.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\Math64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\Math64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\Math64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\Math64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\Math64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\Math64.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\Math64.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\Math64.c
-
-$(OUTPUT_DIR)\GetPowerOfTwo32.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\GetPowerOfTwo32.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\GetPowerOfTwo32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\GetPowerOfTwo32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\GetPowerOfTwo32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\GetPowerOfTwo32.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\GetPowerOfTwo32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\GetPowerOfTwo32.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\GetPowerOfTwo32.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\GetPowerOfTwo32.c
-
-$(OUTPUT_DIR)\X86WriteIdtr.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X86WriteIdtr.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\X86WriteIdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\X86WriteIdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\X86WriteIdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\X86WriteIdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\X86WriteIdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86WriteIdtr.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86WriteIdtr.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86WriteIdtr.c
-
-$(OUTPUT_DIR)\ARShiftU64.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\ARShiftU64.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\ARShiftU64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\ARShiftU64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\ARShiftU64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\ARShiftU64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\ARShiftU64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\ARShiftU64.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\ARShiftU64.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\ARShiftU64.c
-
-$(OUTPUT_DIR)\RRotU64.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\RRotU64.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\RRotU64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\RRotU64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\RRotU64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\RRotU64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\RRotU64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\RRotU64.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\RRotU64.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\RRotU64.c
-
-$(OUTPUT_DIR)\MultS64x64.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\MultS64x64.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\MultS64x64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\MultS64x64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\MultS64x64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\MultS64x64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\MultS64x64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\MultS64x64.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\MultS64x64.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\MultS64x64.c
-
-$(OUTPUT_DIR)\Unaligned.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\Unaligned.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\Unaligned.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\Unaligned.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\Unaligned.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\Unaligned.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\Unaligned.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\Unaligned.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\Unaligned.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\Unaligned.c
-
-$(OUTPUT_DIR)\CheckSum.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\CheckSum.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\CheckSum.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\CheckSum.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\CheckSum.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\CheckSum.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\CheckSum.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\CheckSum.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\CheckSum.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\CheckSum.c
-
-$(OUTPUT_DIR)\X86GetInterruptState.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X86GetInterruptState.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\X86GetInterruptState.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\X86GetInterruptState.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\X86GetInterruptState.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\X86GetInterruptState.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\X86GetInterruptState.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86GetInterruptState.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86GetInterruptState.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86GetInterruptState.c
-
-$(OUTPUT_DIR)\X86DisablePaging32.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X86DisablePaging32.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\X86DisablePaging32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\X86DisablePaging32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\X86DisablePaging32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\X86DisablePaging32.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\X86DisablePaging32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86DisablePaging32.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86DisablePaging32.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86DisablePaging32.c
-
-$(OUTPUT_DIR)\X86FxSave.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X86FxSave.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\X86FxSave.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\X86FxSave.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\X86FxSave.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\X86FxSave.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\X86FxSave.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86FxSave.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86FxSave.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86FxSave.c
-
-$(OUTPUT_DIR)\SwitchStack.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\SwitchStack.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\SwitchStack.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\SwitchStack.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\SwitchStack.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\SwitchStack.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\SwitchStack.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\SwitchStack.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\SwitchStack.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\SwitchStack.c
-
-$(OUTPUT_DIR)\DivU64x32Remainder.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\DivU64x32Remainder.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\DivU64x32Remainder.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\DivU64x32Remainder.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\DivU64x32Remainder.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\DivU64x32Remainder.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\DivU64x32Remainder.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\DivU64x32Remainder.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\DivU64x32Remainder.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\DivU64x32Remainder.c
-
-$(OUTPUT_DIR)\X64\CpuBreakpoint.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X64\CpuBreakpoint.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\X64\CpuBreakpoint.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\CpuBreakpoint.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuBreakpoint.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\CpuBreakpoint.c
-
-$(OUTPUT_DIR)\DivU64x32.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\DivU64x32.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\DivU64x32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\DivU64x32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\DivU64x32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\DivU64x32.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\DivU64x32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\DivU64x32.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\DivU64x32.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\DivU64x32.c
-
-$(OUTPUT_DIR)\X86Thunk.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X86Thunk.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\X86Thunk.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\X86Thunk.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\X86Thunk.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\X86Thunk.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\X86Thunk.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86Thunk.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86Thunk.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86Thunk.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\FilePaths.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\FilePaths.c
 
 $(OUTPUT_DIR)\X86EnablePaging32.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\X86EnablePaging32.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\X86EnablePaging32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
 $(OUTPUT_DIR)\X86EnablePaging32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\X86EnablePaging32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
 $(OUTPUT_DIR)\X86EnablePaging32.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\X86EnablePaging32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
 $(OUTPUT_DIR)\X86EnablePaging32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86EnablePaging32.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86EnablePaging32.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86EnablePaging32.c
-
-$(OUTPUT_DIR)\SetJump.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\SetJump.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\SetJump.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\SetJump.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\SetJump.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\SetJump.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\SetJump.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\SetJump.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\SetJump.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\SetJump.c
-
-$(OUTPUT_DIR)\X86EnablePaging64.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X86EnablePaging64.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\X86EnablePaging64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\X86EnablePaging64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\X86EnablePaging64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\X86EnablePaging64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\X86EnablePaging64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86EnablePaging64.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86EnablePaging64.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86EnablePaging64.c
-
-$(OUTPUT_DIR)\X86WriteGdtr.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X86WriteGdtr.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\X86WriteGdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\X86WriteGdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\X86WriteGdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\X86WriteGdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\X86WriteGdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86WriteGdtr.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86WriteGdtr.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86WriteGdtr.c
-
-$(OUTPUT_DIR)\BitField.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\BitField.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\BitField.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\BitField.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\BitField.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\BitField.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\BitField.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BitField.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\BitField.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\BitField.c
-
-$(OUTPUT_DIR)\LShiftU64.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\LShiftU64.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\LShiftU64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\LShiftU64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\LShiftU64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\LShiftU64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\LShiftU64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\LShiftU64.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\LShiftU64.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\LShiftU64.c
-
-$(OUTPUT_DIR)\SwapBytes64.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\SwapBytes64.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\SwapBytes64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\SwapBytes64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\SwapBytes64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\SwapBytes64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\SwapBytes64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\SwapBytes64.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\SwapBytes64.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\SwapBytes64.c
-
-$(OUTPUT_DIR)\LowBitSet64.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\LowBitSet64.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\LowBitSet64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\LowBitSet64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\LowBitSet64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\LowBitSet64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\LowBitSet64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\LowBitSet64.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\LowBitSet64.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\LowBitSet64.c
-
-$(OUTPUT_DIR)\MultU64x64.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\MultU64x64.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\MultU64x64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\MultU64x64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\MultU64x64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\MultU64x64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\MultU64x64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\MultU64x64.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\MultU64x64.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\MultU64x64.c
-
-$(OUTPUT_DIR)\LongJump.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\LongJump.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\LongJump.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\LongJump.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\LongJump.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\LongJump.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\LongJump.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\LongJump.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\LongJump.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\LongJump.c
-
-$(OUTPUT_DIR)\GetPowerOfTwo64.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\GetPowerOfTwo64.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\GetPowerOfTwo64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\GetPowerOfTwo64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\GetPowerOfTwo64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\GetPowerOfTwo64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\GetPowerOfTwo64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\GetPowerOfTwo64.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\GetPowerOfTwo64.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\GetPowerOfTwo64.c
-
-$(OUTPUT_DIR)\Cpu.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\Cpu.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\Cpu.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\Cpu.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\Cpu.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\Cpu.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\Cpu.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\Cpu.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\Cpu.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\Cpu.c
-
-$(OUTPUT_DIR)\X86RdRand.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X86RdRand.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\X86RdRand.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\X86RdRand.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\X86RdRand.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\X86RdRand.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\X86RdRand.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86RdRand.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86RdRand.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86RdRand.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86EnablePaging32.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86EnablePaging32.c
 
 $(OUTPUT_DIR)\LowBitSet32.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\LowBitSet32.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\LowBitSet32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
 $(OUTPUT_DIR)\LowBitSet32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\LowBitSet32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
 $(OUTPUT_DIR)\LowBitSet32.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\LowBitSet32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
 $(OUTPUT_DIR)\LowBitSet32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\LowBitSet32.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\LowBitSet32.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\LowBitSet32.c
-
-$(OUTPUT_DIR)\RShiftU64.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\RShiftU64.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\RShiftU64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\RShiftU64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\RShiftU64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\RShiftU64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\RShiftU64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\RShiftU64.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\RShiftU64.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\RShiftU64.c
-
-$(OUTPUT_DIR)\MultU64x32.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\MultU64x32.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\MultU64x32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\MultU64x32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\MultU64x32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\MultU64x32.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\MultU64x32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\MultU64x32.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\MultU64x32.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\MultU64x32.c
-
-$(OUTPUT_DIR)\DivS64x64Remainder.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\DivS64x64Remainder.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\DivS64x64Remainder.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\DivS64x64Remainder.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\DivS64x64Remainder.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\DivS64x64Remainder.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\DivS64x64Remainder.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\DivS64x64Remainder.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\DivS64x64Remainder.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\DivS64x64Remainder.c
-
-$(OUTPUT_DIR)\X86ReadGdtr.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X86ReadGdtr.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\X86ReadGdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\X86ReadGdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\X86ReadGdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\X86ReadGdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\X86ReadGdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86ReadGdtr.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86ReadGdtr.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86ReadGdtr.c
-
-$(OUTPUT_DIR)\X86DisablePaging64.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X86DisablePaging64.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\X86DisablePaging64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\X86DisablePaging64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\X86DisablePaging64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\X86DisablePaging64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\X86DisablePaging64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86DisablePaging64.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86DisablePaging64.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86DisablePaging64.c
-
-$(OUTPUT_DIR)\LinkedList.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\LinkedList.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\LinkedList.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\LinkedList.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\LinkedList.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\LinkedList.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\LinkedList.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\LinkedList.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\LinkedList.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\LinkedList.c
-
-$(OUTPUT_DIR)\SwapBytes16.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\SwapBytes16.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\SwapBytes16.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\SwapBytes16.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\SwapBytes16.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\SwapBytes16.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\SwapBytes16.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\SwapBytes16.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\SwapBytes16.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\SwapBytes16.c
-
-$(OUTPUT_DIR)\ModU64x32.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\ModU64x32.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\ModU64x32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\ModU64x32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\ModU64x32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\ModU64x32.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\ModU64x32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\ModU64x32.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\ModU64x32.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\ModU64x32.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\LowBitSet32.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\LowBitSet32.c
 
 $(OUTPUT_DIR)\RRotU32.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\RRotU32.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\RRotU32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
 $(OUTPUT_DIR)\RRotU32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\RRotU32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
 $(OUTPUT_DIR)\RRotU32.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\RRotU32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
 $(OUTPUT_DIR)\RRotU32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\RRotU32.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\RRotU32.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\RRotU32.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\RRotU32.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\RRotU32.c
 
-$(OUTPUT_DIR)\DivU64x64Remainder.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\DivU64x64Remainder.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\DivU64x64Remainder.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\DivU64x64Remainder.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\DivU64x64Remainder.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\DivU64x64Remainder.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\DivU64x64Remainder.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\DivU64x64Remainder.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\DivU64x64Remainder.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\DivU64x64Remainder.c
+$(OUTPUT_DIR)\Cpu.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\Cpu.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\Cpu.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\Cpu.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\Cpu.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\Cpu.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\Cpu.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\Cpu.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\Cpu.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\Cpu.c
 
-$(OUTPUT_DIR)\HighBitSet32.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\HighBitSet32.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\HighBitSet32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\HighBitSet32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\HighBitSet32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\HighBitSet32.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\HighBitSet32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\HighBitSet32.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\HighBitSet32.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\HighBitSet32.c
+$(OUTPUT_DIR)\SafeString.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\SafeString.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\SafeString.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\SafeString.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\SafeString.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\SafeString.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\SafeString.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\SafeString.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\SafeString.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\SafeString.c
 
 $(OUTPUT_DIR)\X64\Non-existing.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\X64\Non-existing.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\X64\Non-existing.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
 $(OUTPUT_DIR)\X64\Non-existing.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
 $(OUTPUT_DIR)\X64\Non-existing.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\Non-existing.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Non-existing.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\Non-existing.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\Non-existing.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\Non-existing.c
 
-$(OUTPUT_DIR)\LRotU64.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\LRotU64.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\LRotU64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\LRotU64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\LRotU64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\LRotU64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\LRotU64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\LRotU64.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\LRotU64.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\LRotU64.c
+$(OUTPUT_DIR)\DivU64x32.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\DivU64x32.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\DivU64x32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\DivU64x32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\DivU64x32.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\DivU64x32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\DivU64x32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\DivU64x32.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\DivU64x32.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\DivU64x32.c
 
-$(OUTPUT_DIR)\X86Msr.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X86Msr.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\X86Msr.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\X86Msr.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\X86Msr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\X86Msr.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\X86Msr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86Msr.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86Msr.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86Msr.c
+$(OUTPUT_DIR)\DivU64x32Remainder.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\DivU64x32Remainder.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\DivU64x32Remainder.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\DivU64x32Remainder.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\DivU64x32Remainder.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\DivU64x32Remainder.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\DivU64x32Remainder.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\DivU64x32Remainder.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\DivU64x32Remainder.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\DivU64x32Remainder.c
 
-$(OUTPUT_DIR)\X86ReadIdtr.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X86ReadIdtr.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\X86ReadIdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\X86ReadIdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\X86ReadIdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
-$(OUTPUT_DIR)\X86ReadIdtr.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\X86ReadIdtr.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86ReadIdtr.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86ReadIdtr.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86ReadIdtr.c
+$(OUTPUT_DIR)\MultU64x64.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\MultU64x64.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\MultU64x64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\MultU64x64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\MultU64x64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\MultU64x64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\MultU64x64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\MultU64x64.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\MultU64x64.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\MultU64x64.c
+
+$(OUTPUT_DIR)\LShiftU64.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\LShiftU64.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\LShiftU64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\LShiftU64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\LShiftU64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\LShiftU64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\LShiftU64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\LShiftU64.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\LShiftU64.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\LShiftU64.c
+
+$(OUTPUT_DIR)\HighBitSet64.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\HighBitSet64.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\HighBitSet64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\HighBitSet64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\HighBitSet64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\HighBitSet64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\HighBitSet64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\HighBitSet64.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\HighBitSet64.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\HighBitSet64.c
+
+$(OUTPUT_DIR)\RRotU64.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\RRotU64.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\RRotU64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\RRotU64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\RRotU64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\RRotU64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\RRotU64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\RRotU64.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\RRotU64.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\RRotU64.c
+
+$(OUTPUT_DIR)\CpuDeadLoop.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\CpuDeadLoop.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\CpuDeadLoop.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\CpuDeadLoop.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\CpuDeadLoop.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\CpuDeadLoop.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\CpuDeadLoop.c
 
 $(OUTPUT_DIR)\X64\ReadMsr64.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\X64\ReadMsr64.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\X64\ReadMsr64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\ReadMsr64.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMsr64.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadMsr64.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\ReadMsr64.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\ReadMsr64.c
+
+$(OUTPUT_DIR)\LongJump.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\LongJump.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\LongJump.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\LongJump.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\LongJump.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\LongJump.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\LongJump.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\LongJump.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\LongJump.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\LongJump.c
+
+$(OUTPUT_DIR)\ARShiftU64.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\ARShiftU64.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\ARShiftU64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\ARShiftU64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\ARShiftU64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\ARShiftU64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\ARShiftU64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\ARShiftU64.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\ARShiftU64.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\ARShiftU64.c
+
+$(OUTPUT_DIR)\GetPowerOfTwo64.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\GetPowerOfTwo64.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\GetPowerOfTwo64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\GetPowerOfTwo64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\GetPowerOfTwo64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\GetPowerOfTwo64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\GetPowerOfTwo64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\GetPowerOfTwo64.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\GetPowerOfTwo64.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\GetPowerOfTwo64.c
+
+$(OUTPUT_DIR)\X64\CpuBreakpoint.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X64\CpuBreakpoint.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\X64\CpuBreakpoint.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X64\CpuBreakpoint.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\X64\CpuBreakpoint.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X64\CpuBreakpoint.c
+
+$(OUTPUT_DIR)\DivS64x64Remainder.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\DivS64x64Remainder.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\DivS64x64Remainder.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\DivS64x64Remainder.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\DivS64x64Remainder.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\DivS64x64Remainder.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\DivS64x64Remainder.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\DivS64x64Remainder.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\DivS64x64Remainder.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\DivS64x64Remainder.c
+
+$(OUTPUT_DIR)\HighBitSet32.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\HighBitSet32.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\HighBitSet32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\HighBitSet32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\HighBitSet32.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\HighBitSet32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\HighBitSet32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\HighBitSet32.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\HighBitSet32.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\HighBitSet32.c
 
 $(OUTPUT_DIR)\SwapBytes32.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\SwapBytes32.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\SwapBytes32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
 $(OUTPUT_DIR)\SwapBytes32.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\SwapBytes32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
 $(OUTPUT_DIR)\SwapBytes32.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\SwapBytes32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
 $(OUTPUT_DIR)\SwapBytes32.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\SwapBytes32.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\SwapBytes32.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\SwapBytes32.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\SwapBytes32.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\SwapBytes32.c
 
-$(OUTPUT_DIR)\X86MemoryFence.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\X86MemoryFence.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\X86MemoryFence.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86MemoryFence.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86MemoryFence.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86MemoryFence.c
+$(OUTPUT_DIR)\X86RdRand.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X86RdRand.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\X86RdRand.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\X86RdRand.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\X86RdRand.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\X86RdRand.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\X86RdRand.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86RdRand.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86RdRand.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86RdRand.c
+
+$(OUTPUT_DIR)\String.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\String.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\String.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\String.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\String.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\String.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\String.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\String.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\String.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\String.c
+
+$(OUTPUT_DIR)\X86EnablePaging64.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\X86EnablePaging64.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\X86EnablePaging64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\X86EnablePaging64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\X86EnablePaging64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\X86EnablePaging64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\X86EnablePaging64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\X86EnablePaging64.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\X86EnablePaging64.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\X86EnablePaging64.c
+
+$(OUTPUT_DIR)\LRotU64.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\LRotU64.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\LRotU64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\LRotU64.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\LRotU64.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\LRotU64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\BaseLibInternals.h
+$(OUTPUT_DIR)\LRotU64.obj : $(WORKSPACE)\MdePkg\Library\BaseLib\LRotU64.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseLib\BaseLib\OUTPUT\.\LRotU64.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseLib\LRotU64.c
 
 
 

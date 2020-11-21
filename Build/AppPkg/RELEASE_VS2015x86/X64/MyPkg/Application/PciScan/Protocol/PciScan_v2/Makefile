@@ -19,7 +19,7 @@ PLATFORM_NAME = AppPkg
 PLATFORM_GUID = 0458dade-8b6e-4e45-b773-1b27cbda3e06
 PLATFORM_VERSION = 0.01
 PLATFORM_RELATIVE_DIR = MyPkg
-PLATFORM_DIR = g:\uefi_edk2_practice\MyPkg
+PLATFORM_DIR = d:\uefi_edk2_practice\MyPkg
 PLATFORM_OUTPUT_DIR = Build\AppPkg
 
 #
@@ -35,7 +35,7 @@ MODULE_FILE_BASE_NAME = PciScan_v2
 BASE_NAME = $(MODULE_NAME)
 MODULE_RELATIVE_DIR = MyPkg\Application\PciScan\Protocol
 PACKAGE_RELATIVE_DIR = Application\PciScan\Protocol
-MODULE_DIR = g:\uefi_edk2_practice\MyPkg\Application\PciScan\Protocol
+MODULE_DIR = d:\uefi_edk2_practice\MyPkg\Application\PciScan\Protocol
 FFS_OUTPUT_DIR = 
 
 MODULE_ENTRY_POINT = UefiMain
@@ -59,13 +59,13 @@ TARGET = RELEASE
 #
 # Build Directory Macro Definition
 #
-# PLATFORM_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
-BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+# PLATFORM_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
 BIN_DIR = $(BUILD_DIR)\X64
 LIB_DIR = $(BIN_DIR)
-MODULE_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2
-OUTPUT_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\OUTPUT
-DEBUG_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\DEBUG
+MODULE_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2
+OUTPUT_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\OUTPUT
+DEBUG_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\DEBUG
 DEST_DIR_OUTPUT = $(OUTPUT_DIR)
 DEST_DIR_DEBUG = $(DEBUG_DIR)
 
@@ -130,7 +130,7 @@ RC = c:\Program Files (x86)\Windows Kits\8.1\bin\x64\rc.exe
 ASM = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\x86_amd64\ml64.exe
 ASM_FLAGS = /nologo /c /WX /W3 /Cx /Zd
 
-ASL = G:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
+ASL = D:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
 ASL_FLAGS = 
 ASL_OUTFLAGS =  -p
 
@@ -188,7 +188,7 @@ MAKE = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\nmake.exe
 ASMLINK = C:\WINDDK\3790.1830\bin\bin16\link16.exe
 ASMLINK_FLAGS = /nologo /tiny
 
-NASM = G:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
+NASM = D:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
 NASM_FLAGS = -Ox -f win64
 
 
@@ -229,63 +229,63 @@ INC =  \
     /I$(WORKSPACE)\ShellPkg \
     /I$(WORKSPACE)\ShellPkg\Include
 
-OBJECT_FILES_LIST = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\OUTPUT\object_files.lst
-STATIC_LIBRARY_FILES_LIST = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\OUTPUT\static_library_files.lst
+OBJECT_FILES_LIST = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\OUTPUT\object_files.lst
+STATIC_LIBRARY_FILES_LIST = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\OUTPUT\static_library_files.lst
 
 
-COMMON_DEPS = $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics2.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h \
-              $(WORKSPACE)\MdePkg\Include\Library\UefiLib.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\PciIo.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h \
-              $(DEBUG_DIR)\AutoGen.h \
-              $(WORKSPACE)\ShellPkg\Include\Library\ShellLib.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
-              $(WORKSPACE)\MdePkg\Include\Library\UefiBootServicesTableLib.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\LoadedImage.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Pci22.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\FileInfo.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
-              $(WORKSPACE)\MdePkg\Include\Base.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
-              $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h \
-              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
-              $(WORKSPACE)\ShellPkg\Library\UefiShellDebug1CommandsLib\Pci.h \
-              $(WORKSPACE)\MdePkg\Include\Library\PciLib.h \
-              $(WORKSPACE)\MyPkg\Application\PciScan\Protocol\PciScan_v2.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration2.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\ShellParameters.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Shell.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName2.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleFileSystem.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverBinding.h \
+COMMON_DEPS = $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
               $(WORKSPACE)\MdePkg\Include\Uefi.h \
-              $(WORKSPACE)\MdePkg\Include\AArch64\ProcessorBind.h \
-              $(WORKSPACE)\ShellPkg\Include\Protocol\EfiShellInterface.h \
-              $(WORKSPACE)\ShellPkg\Include\Protocol\EfiShellEnvironment2.h \
-              $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\GraphicsOutput.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration.h \
+              $(WORKSPACE)\MyPkg\Application\PciScan\Protocol\PciScan_v2.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\FileInfo.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
               $(WORKSPACE)\MdePkg\Include\Protocol\PciRootBridgeIo.h \
+              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleFileSystem.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Pci22.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h \
+              $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h \
+              $(WORKSPACE)\ShellPkg\Include\Library\ShellLib.h \
+              $(WORKSPACE)\ShellPkg\Include\Protocol\EfiShellEnvironment2.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h \
+              $(WORKSPACE)\MdePkg\Include\Base.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
+              $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
+              $(WORKSPACE)\ShellPkg\Include\Protocol\EfiShellInterface.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\GraphicsOutput.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Shell.h \
+              $(WORKSPACE)\ShellPkg\Library\UefiShellDebug1CommandsLib\Pci.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics2.h \
+              $(WORKSPACE)\MdePkg\Include\Library\PciLib.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\PciIo.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
+              $(DEBUG_DIR)\AutoGen.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration.h \
+              $(WORKSPACE)\MdePkg\Include\Library\UefiLib.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration2.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\ShellParameters.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\LoadedImage.h \
+              $(WORKSPACE)\MdePkg\Include\Library\UefiBootServicesTableLib.h \
+              $(WORKSPACE)\MdePkg\Include\AArch64\ProcessorBind.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName2.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverBinding.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
               
 
 #
@@ -295,7 +295,7 @@ FORCE_REBUILD = force_build
 INIT_TARGET = init
 PCH_TARGET =
 BC_TARGET = 
-CODA_TARGET = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\DEBUG\MyPciScan_v2.efi \
+CODA_TARGET = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\DEBUG\MyPciScan_v2.efi \
               
 
 #
@@ -384,60 +384,60 @@ gen_fds:
 # Individual Object Build Targets
 #
 $(DEBUG_DIR)\MyPciScan_v2.efi : $(DEBUG_DIR)\MyPciScan_v2.dll
-	"$(GENFW)" -e $(MODULE_TYPE) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\DEBUG\MyPciScan_v2.efi g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\DEBUG\MyPciScan_v2.dll $(GENFW_FLAGS)
-	$(CP) g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\DEBUG\MyPciScan_v2.efi $(OUTPUT_DIR)
-	$(CP) g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\DEBUG\MyPciScan_v2.efi $(BIN_DIR)\$(MODULE_NAME_GUID).efi
+	"$(GENFW)" -e $(MODULE_TYPE) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\DEBUG\MyPciScan_v2.efi d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\DEBUG\MyPciScan_v2.dll $(GENFW_FLAGS)
+	$(CP) d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\DEBUG\MyPciScan_v2.efi $(OUTPUT_DIR)
+	$(CP) d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\DEBUG\MyPciScan_v2.efi $(BIN_DIR)\$(MODULE_NAME_GUID).efi
 	-$(CP) $(DEBUG_DIR)\*.map $(OUTPUT_DIR)
 	-$(CP) $(DEBUG_DIR)\*.pdb $(OUTPUT_DIR)
 
 $(OUTPUT_DIR)\MyPciScan_v2.lib : $(OBJECT_FILES)
 $(OUTPUT_DIR)\MyPciScan_v2.lib : $(OBJECT_FILES_LIST)
-	"$(SLINK)" $(SLINK_FLAGS) /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\OUTPUT\MyPciScan_v2.lib @$(OBJECT_FILES_LIST)
+	"$(SLINK)" $(SLINK_FLAGS) /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\OUTPUT\MyPciScan_v2.lib @$(OBJECT_FILES_LIST)
 
 $(DEBUG_DIR)\MyPciScan_v2.dll : $(MAKE_FILE)
 $(DEBUG_DIR)\MyPciScan_v2.dll : $(STATIC_LIBRARY_FILES)
 $(DEBUG_DIR)\MyPciScan_v2.dll : $(STATIC_LIBRARY_FILES_LIST)
-	"$(DLINK)" /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\DEBUG\MyPciScan_v2.dll $(DLINK_FLAGS) $(DLINK2_FLAGS) $(DLINK_SPATH) @$(STATIC_LIBRARY_FILES_LIST)
-	"$(DLINK)" /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\DEBUG\MyPciScan_v2.dll $(DLINK_FLAGS) $(DLINK_SPATH) @$(STATIC_LIBRARY_FILES_LIST)
+	"$(DLINK)" /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\DEBUG\MyPciScan_v2.dll $(DLINK_FLAGS) $(DLINK2_FLAGS) $(DLINK_SPATH) @$(STATIC_LIBRARY_FILES_LIST)
+	"$(DLINK)" /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\DEBUG\MyPciScan_v2.dll $(DLINK_FLAGS) $(DLINK_SPATH) @$(STATIC_LIBRARY_FILES_LIST)
+
+$(OUTPUT_DIR)\AutoGen.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Base.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h
+$(OUTPUT_DIR)\AutoGen.obj : $(DEBUG_DIR)\AutoGen.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiBootServicesTableLib.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiApplicationEntryPoint.h
+$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h
+$(OUTPUT_DIR)\AutoGen.obj : $(DEBUG_DIR)\AutoGen.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\OUTPUT\.\AutoGen.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\DEBUG\AutoGen.c
 
 $(OUTPUT_DIR)\PciScan_v2.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\PciScan_v2.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\PciScan_v2.obj : $(WORKSPACE)\MyPkg\Application\PciScan\Protocol\PciScan_v2.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\OUTPUT\.\PciScan_v2.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MyPkg\Application\PciScan\Protocol\PciScan_v2.c
-
-$(OUTPUT_DIR)\AutoGen.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h
-$(OUTPUT_DIR)\AutoGen.obj : $(DEBUG_DIR)\AutoGen.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiBootServicesTableLib.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Base.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiApplicationEntryPoint.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h
-$(OUTPUT_DIR)\AutoGen.obj : $(WORKSPACE)\MdePkg\Include\Uefi.h
-$(OUTPUT_DIR)\AutoGen.obj : $(DEBUG_DIR)\AutoGen.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\OUTPUT\.\AutoGen.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\DEBUG\AutoGen.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MyPkg\Application\PciScan\Protocol\PciScan_v2\OUTPUT\.\PciScan_v2.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MyPkg\Application\PciScan\Protocol\PciScan_v2.c
 
 
 

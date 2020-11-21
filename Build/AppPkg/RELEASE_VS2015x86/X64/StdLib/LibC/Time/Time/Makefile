@@ -19,7 +19,7 @@ PLATFORM_NAME = AppPkg
 PLATFORM_GUID = 0458dade-8b6e-4e45-b773-1b27cbda3e06
 PLATFORM_VERSION = 0.01
 PLATFORM_RELATIVE_DIR = MyPkg
-PLATFORM_DIR = g:\uefi_edk2_practice\MyPkg
+PLATFORM_DIR = d:\uefi_edk2_practice\MyPkg
 PLATFORM_OUTPUT_DIR = Build\AppPkg
 
 #
@@ -35,7 +35,7 @@ MODULE_FILE_BASE_NAME = Time
 BASE_NAME = $(MODULE_NAME)
 MODULE_RELATIVE_DIR = StdLib\LibC\Time
 PACKAGE_RELATIVE_DIR = LibC\Time
-MODULE_DIR = g:\uefi_edk2_practice\StdLib\LibC\Time
+MODULE_DIR = d:\uefi_edk2_practice\StdLib\LibC\Time
 FFS_OUTPUT_DIR = 
 
 MODULE_ENTRY_POINT = _ModuleEntryPoint
@@ -59,13 +59,13 @@ TARGET = RELEASE
 #
 # Build Directory Macro Definition
 #
-# PLATFORM_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
-BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+# PLATFORM_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
 BIN_DIR = $(BUILD_DIR)\X64
 LIB_DIR = $(BIN_DIR)
-MODULE_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time
-OUTPUT_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT
-DEBUG_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\DEBUG
+MODULE_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time
+OUTPUT_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT
+DEBUG_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\DEBUG
 DEST_DIR_OUTPUT = $(OUTPUT_DIR)
 DEST_DIR_DEBUG = $(DEBUG_DIR)
 
@@ -130,7 +130,7 @@ RC = c:\Program Files (x86)\Windows Kits\8.1\bin\x64\rc.exe
 ASM = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\x86_amd64\ml64.exe
 ASM_FLAGS = /nologo /c /WX /W3 /Cx /Zd
 
-ASL = G:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
+ASL = D:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
 ASL_FLAGS = 
 ASL_OUTFLAGS =  -p
 
@@ -188,7 +188,7 @@ MAKE = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\nmake.exe
 ASMLINK = C:\WINDDK\3790.1830\bin\bin16\link16.exe
 ASMLINK_FLAGS = /nologo /tiny
 
-NASM = G:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
+NASM = D:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
 NASM_FLAGS = -Ox -f win64
 
 
@@ -222,40 +222,40 @@ INC =  \
     /I$(WORKSPACE)\ShellPkg \
     /I$(WORKSPACE)\ShellPkg\Include
 
-OBJECT_FILES_LIST = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT\object_files.lst
+OBJECT_FILES_LIST = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT\object_files.lst
 
 
-COMMON_DEPS = $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
-              $(DEBUG_DIR)\AutoGen.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
+COMMON_DEPS = $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h \
+              $(WORKSPACE)\StdLib\Include\sys\EfiCdefs.h \
               $(WORKSPACE)\StdLib\Include\sys\cdefs_aout.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
+              $(WORKSPACE)\StdLib\Include\time.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h \
+              $(DEBUG_DIR)\AutoGen.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
+              $(WORKSPACE)\MdePkg\Include\Base.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
               $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h \
               $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
-              $(WORKSPACE)\StdLibPrivateInternalFiles\Include\LibConfig.h \
-              $(WORKSPACE)\MdePkg\Include\Base.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
-              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
-              $(WORKSPACE)\StdLib\Include\time.h \
-              $(WORKSPACE)\StdLib\Include\sys\featuretest.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
               $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
-              $(WORKSPACE)\StdLib\Include\sys\EfiCdefs.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
               $(WORKSPACE)\MdePkg\Include\Uefi.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h \
+              $(WORKSPACE)\StdLibPrivateInternalFiles\Include\LibConfig.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
+              $(WORKSPACE)\StdLib\Include\sys\featuretest.h \
+              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
               
 
 #
@@ -265,7 +265,7 @@ FORCE_REBUILD = force_build
 INIT_TARGET = init
 PCH_TARGET =
 BC_TARGET = 
-CODA_TARGET = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT\LibTime.lib \
+CODA_TARGET = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT\LibTime.lib \
               
 
 #
@@ -339,321 +339,321 @@ gen_fds:
 #
 $(OUTPUT_DIR)\LibTime.lib : $(OBJECT_FILES)
 $(OUTPUT_DIR)\LibTime.lib : $(OBJECT_FILES_LIST)
-	"$(SLINK)" $(SLINK_FLAGS) /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT\LibTime.lib @$(OBJECT_FILES_LIST)
+	"$(SLINK)" $(SLINK_FLAGS) /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT\LibTime.lib @$(OBJECT_FILES_LIST)
+
+$(OUTPUT_DIR)\TimeEfi.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\TimeEfi.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\limits.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\bswap.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\MainData.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\stdlib.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\fd_set.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\kfile.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\select.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\Device\Device.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\unistd.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\stat.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\stdio.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\time.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\endian.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\fcntl.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\stdarg.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\setjmp.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleFileSystem.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\types.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\signal.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\LibC\Time\tzfile.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\Device\Console.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\ansi.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\sigtypes.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\signal.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\types.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\wchar.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\stdint.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\signal.h
+$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\LibC\Time\TimeEfi.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT\.\TimeEfi.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Time\TimeEfi.c
+
+$(OUTPUT_DIR)\ZoneProc.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\ZoneProc.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\limits.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\bswap.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\stdlib.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\fd_set.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\select.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\_ctype.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\types.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\string.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\EfiSysCall.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\unistd.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\fcntl.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\stat.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\stdio.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\time.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\endian.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\fcntl.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\stdarg.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\LibC\Time\TimeVals.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\types.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\ctype.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\LibC\Time\tzfile.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\ansi.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\sigtypes.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\unistd.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\stdint.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\LibC\Time\ZoneProc.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT\.\ZoneProc.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Time\ZoneProc.c
+
+$(OUTPUT_DIR)\strftime.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\strftime.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\limits.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\bswap.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\MainData.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\stdlib.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\fd_set.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\kfile.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\locale.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\select.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\Device\Device.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\unistd.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\fcntl.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\stat.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\stdio.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\time.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\endian.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\fcntl.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\stdarg.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\LibC\Time\TimeVals.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\localedef.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\setjmp.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleFileSystem.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\types.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\signal.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\LibC\Time\tzfile.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\Device\Console.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\namespace.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\ansi.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\sigtypes.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\signal.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\types.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\wchar.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\stdint.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\signal.h
+$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\LibC\Time\strftime.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT\.\strftime.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Time\strftime.c
 
 $(OUTPUT_DIR)\itimer.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\itimer.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\sys\bswap.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h
 $(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics2.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\sys\endian.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\sys\EfiSysCall.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\MdePkg\Include\Protocol\GraphicsOutput.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\sys\stdint.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\sys\time.h
 $(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h
 $(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\sys\signal.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\signal.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\X64\machine\signal.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\sys\unistd.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName2.h
 $(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\sys\ansi.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\sys\fd_set.h
 $(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\sys\select.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\MdePkg\Include\Protocol\GraphicsOutput.h
 $(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\sys\types.h
 $(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\sys\EfiSysCall.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\sys\unistd.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics2.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\sys\time.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\sys\endian.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration2.h
 $(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\X64\machine\types.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\sys\signal.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
 $(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\sys\errno.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName2.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\sys\ansi.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\sys\sigtypes.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\signal.h
 $(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\unistd.h
 $(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiLib.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\sys\fd_set.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\sys\bswap.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiBootServicesTableLib.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\sys\sigtypes.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\errno.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration2.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\X64\machine\types.h
 $(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h
-$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\errno.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\X64\machine\signal.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiBootServicesTableLib.h
+$(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\Include\sys\stdint.h
 $(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DriverBinding.h
 $(OUTPUT_DIR)\itimer.obj : $(WORKSPACE)\StdLib\LibC\Time\itimer.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT\.\itimer.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Time\itimer.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT\.\itimer.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Time\itimer.c
+
+$(OUTPUT_DIR)\strptime.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\strptime.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\bswap.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\LibC\Time\TimeVals.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\localedef.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\stat.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\types.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\ctype.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\fd_set.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\LibC\Time\tzfile.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\locale.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\select.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\_ctype.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\string.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\fcntl.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\namespace.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\ansi.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\sigtypes.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\time.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\types.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\endian.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\fcntl.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\stdint.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\cdefs.h
+$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\LibC\Time\strptime.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT\.\strptime.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Time\strptime.c
+
+$(OUTPUT_DIR)\Time.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\Time.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\limits.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\stat.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\stdlib.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\kfile.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Protocol\GraphicsOutput.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\Device\Device.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\unistd.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\stdio.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration2.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\fcntl.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\stdarg.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\setjmp.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleFileSystem.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\signal.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\LibC\Time\tzfile.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Library\TimerLib.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName2.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\sigtypes.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\types.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\errno.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\stdint.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\reentrant.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiRuntimeServicesTableLib.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\bswap.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\MainData.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\fd_set.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\extern.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\select.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics2.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiLib.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\time.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\endian.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\LibC\Time\TimeVals.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\types.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\Device\Console.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\errno.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\ansi.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\signal.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\wchar.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DriverBinding.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\signal.h
+$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\LibC\Time\Time.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT\.\Time.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Time\Time.c
 
 $(OUTPUT_DIR)\timegm.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\timegm.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\timegm.obj : $(WORKSPACE)\StdLib\LibC\Time\timegm.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT\.\timegm.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Time\timegm.c
-
-$(OUTPUT_DIR)\Time.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\Time.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\endian.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\extern.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\LibC\Time\TimeVals.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\signal.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\MainData.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\signal.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\reentrant.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\select.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\stdarg.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\errno.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\fd_set.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\sigtypes.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Library\TimerLib.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\errno.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\Device\Device.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration2.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\Device\Console.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\types.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\fcntl.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\bswap.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\limits.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\wchar.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics2.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\stdio.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\LibC\Time\tzfile.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Protocol\GraphicsOutput.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiRuntimeServicesTableLib.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\stdint.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\stat.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\time.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\signal.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\setjmp.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\unistd.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName2.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleFileSystem.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\ansi.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\sys\types.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Library\UefiLib.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\stdlib.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\kfile.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\MdePkg\Include\Protocol\DriverBinding.h
-$(OUTPUT_DIR)\Time.obj : $(WORKSPACE)\StdLib\LibC\Time\Time.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT\.\Time.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Time\Time.c
-
-$(OUTPUT_DIR)\ZoneProc.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\ZoneProc.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\stdio.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\LibC\Time\tzfile.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\stdint.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\stat.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\EfiSysCall.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\LibC\Time\TimeVals.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\ctype.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\endian.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\unistd.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\ansi.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\select.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\types.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\stdarg.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\unistd.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\fd_set.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\sigtypes.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\fcntl.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\stdlib.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\time.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\_ctype.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\types.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\fcntl.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\sys\bswap.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\string.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\Include\limits.h
-$(OUTPUT_DIR)\ZoneProc.obj : $(WORKSPACE)\StdLib\LibC\Time\ZoneProc.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT\.\ZoneProc.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Time\ZoneProc.c
-
-$(OUTPUT_DIR)\TimeEfi.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\TimeEfi.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\wchar.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\MainData.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\LibC\Time\tzfile.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\stdint.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\types.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\stat.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\time.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\stdio.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\endian.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\signal.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\signal.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\setjmp.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\signal.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\unistd.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleFileSystem.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\ansi.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\select.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\types.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\stdarg.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\fd_set.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\sigtypes.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\Device\Device.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\stdlib.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\Device\Console.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\kfile.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\fcntl.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\sys\bswap.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\Include\limits.h
-$(OUTPUT_DIR)\TimeEfi.obj : $(WORKSPACE)\StdLib\LibC\Time\TimeEfi.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT\.\TimeEfi.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Time\TimeEfi.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT\.\timegm.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Time\timegm.c
 
 $(OUTPUT_DIR)\gettimeofday.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\gettimeofday.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h
-$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\sys\endian.h
-$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\sys\stdint.h
-$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\sys\fd_set.h
-$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\sys\sigtypes.h
-$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\sys\time.h
-$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h
-$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h
-$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h
+$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\sys\bswap.h
 $(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h
 $(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\X64\machine\types.h
-$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h
+$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h
+$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h
 $(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h
-$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h
-$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\sys\ansi.h
-$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\sys\bswap.h
+$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\sys\fd_set.h
 $(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\sys\select.h
-$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\sys\types.h
+$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h
 $(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian.h
+$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h
+$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h
+$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\sys\ansi.h
+$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\sys\sigtypes.h
+$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\sys\time.h
+$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h
+$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\sys\types.h
+$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\sys\endian.h
+$(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\Include\sys\stdint.h
 $(OUTPUT_DIR)\gettimeofday.obj : $(WORKSPACE)\StdLib\LibC\Time\gettimeofday.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT\.\gettimeofday.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Time\gettimeofday.c
-
-$(OUTPUT_DIR)\strftime.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\strftime.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\wchar.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\MainData.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\LibC\Time\tzfile.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\stdint.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\types.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\stat.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\time.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\LibC\Time\TimeVals.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\stdio.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\endian.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\locale.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\signal.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\signal.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\setjmp.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\signal.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\unistd.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\MdePkg\Include\Protocol\SimpleFileSystem.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\ansi.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\select.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\types.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\stdarg.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\fd_set.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\sigtypes.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\localedef.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\Device\Device.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\fcntl.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\stdlib.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\Device\Console.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\kfile.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\namespace.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\fcntl.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\sys\bswap.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\Include\limits.h
-$(OUTPUT_DIR)\strftime.obj : $(WORKSPACE)\StdLib\LibC\Time\strftime.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT\.\strftime.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Time\strftime.c
-
-$(OUTPUT_DIR)\strptime.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\strptime.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\endian.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\LibC\Time\tzfile.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\stdint.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\fd_set.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\stat.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\sigtypes.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\time.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\LibC\Time\TimeVals.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\localedef.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\ctype.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\locale.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\fcntl.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\_ctype.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\types.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\namespace.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\cdefs.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\fcntl.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\ansi.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\bswap.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\select.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\sys\types.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\Include\string.h
-$(OUTPUT_DIR)\strptime.obj : $(WORKSPACE)\StdLib\LibC\Time\strptime.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT\.\strptime.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\Time\strptime.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\Time\Time\OUTPUT\.\gettimeofday.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\Time\gettimeofday.c
 
 
 

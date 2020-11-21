@@ -19,7 +19,7 @@ PLATFORM_NAME = AppPkg
 PLATFORM_GUID = 0458dade-8b6e-4e45-b773-1b27cbda3e06
 PLATFORM_VERSION = 0.01
 PLATFORM_RELATIVE_DIR = MyPkg
-PLATFORM_DIR = g:\uefi_edk2_practice\MyPkg
+PLATFORM_DIR = d:\uefi_edk2_practice\MyPkg
 PLATFORM_OUTPUT_DIR = Build\AppPkg
 
 #
@@ -35,7 +35,7 @@ MODULE_FILE_BASE_NAME = EfiSocketLib
 BASE_NAME = $(MODULE_NAME)
 MODULE_RELATIVE_DIR = StdLib\EfiSocketLib
 PACKAGE_RELATIVE_DIR = EfiSocketLib
-MODULE_DIR = g:\uefi_edk2_practice\StdLib\EfiSocketLib
+MODULE_DIR = d:\uefi_edk2_practice\StdLib\EfiSocketLib
 FFS_OUTPUT_DIR = 
 
 MODULE_ENTRY_POINT = _ModuleEntryPoint
@@ -59,13 +59,13 @@ TARGET = RELEASE
 #
 # Build Directory Macro Definition
 #
-# PLATFORM_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
-BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+# PLATFORM_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
 BIN_DIR = $(BUILD_DIR)\X64
 LIB_DIR = $(BIN_DIR)
-MODULE_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib
-OUTPUT_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT
-DEBUG_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\DEBUG
+MODULE_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib
+OUTPUT_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT
+DEBUG_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\DEBUG
 DEST_DIR_OUTPUT = $(OUTPUT_DIR)
 DEST_DIR_DEBUG = $(DEBUG_DIR)
 
@@ -130,7 +130,7 @@ RC = c:\Program Files (x86)\Windows Kits\8.1\bin\x64\rc.exe
 ASM = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\x86_amd64\ml64.exe
 ASM_FLAGS = /nologo /c /WX /W3 /Cx /Zd
 
-ASL = G:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
+ASL = D:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
 ASL_FLAGS = 
 ASL_OUTFLAGS =  -p
 
@@ -188,7 +188,7 @@ MAKE = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\nmake.exe
 ASMLINK = C:\WINDDK\3790.1830\bin\bin16\link16.exe
 ASMLINK_FLAGS = /nologo /tiny
 
-NASM = G:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
+NASM = D:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
 NASM_FLAGS = -Ox -f win64
 
 
@@ -221,92 +221,92 @@ INC =  \
     /I$(WORKSPACE)\StdLib\Include \
     /I$(WORKSPACE)\StdLib\Include\X64
 
-OBJECT_FILES_LIST = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\object_files.lst
+OBJECT_FILES_LIST = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\object_files.lst
 
 
-COMMON_DEPS = $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Udp6.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverBinding.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
-              $(DEBUG_DIR)\AutoGen.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics2.h \
-              $(WORKSPACE)\StdLib\Include\sys\endian.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h \
-              $(WORKSPACE)\StdLib\Include\sys\errno.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
+COMMON_DEPS = $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
               $(WORKSPACE)\MdePkg\Include\Protocol\Udp4.h \
-              $(WORKSPACE)\MdePkg\Include\Library\UefiLib.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
-              $(WORKSPACE)\StdLib\Include\errno.h \
-              $(WORKSPACE)\StdLib\Include\sys\cdefs_aout.h \
-              $(WORKSPACE)\StdLib\Include\Protocol\EfiSocket.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration2.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
-              $(WORKSPACE)\StdLib\Include\sys\socket.h \
-              $(WORKSPACE)\StdLib\Include\sys\stdint.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Ip4.h \
-              $(WORKSPACE)\StdLib\Include\sys\fd_set.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Ip6Config.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
-              $(WORKSPACE)\MdePkg\Include\Library\UefiBootServicesTableLib.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
-              $(WORKSPACE)\StdLib\Include\sys\sigtypes.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\GraphicsOutput.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h \
-              $(WORKSPACE)\StdLib\Include\sys\time.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
-              $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h \
-              $(WORKSPACE)\StdLib\Include\sys\poll.h \
-              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Tcp6.h \
-              $(WORKSPACE)\StdLib\Include\netinet6\in6.h \
-              $(WORKSPACE)\MdePkg\Include\Base.h \
-              $(WORKSPACE)\StdLib\Include\sys\featuretest.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleNetwork.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\ServiceBinding.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h \
-              $(WORKSPACE)\StdLib\EfiSocketLib\Socket.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Ip6.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName2.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
-              $(WORKSPACE)\StdLib\Include\sys\uio.h \
-              $(WORKSPACE)\StdLib\Include\Efi\EfiSocketLib.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\types.h \
-              $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\ManagedNetwork.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h \
               $(WORKSPACE)\StdLib\Include\sys\EfiCdefs.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\endian.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Ip4Config2.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
-              $(WORKSPACE)\StdLib\Include\sys\ansi.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\ServiceBinding.h \
+              $(WORKSPACE)\StdLib\Include\sys\cdefs_aout.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName.h \
               $(WORKSPACE)\StdLib\Include\sys\bswap.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h \
-              $(WORKSPACE)\StdLib\Include\netinet\in.h \
-              $(WORKSPACE)\StdLib\Include\sys\select.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\Tcp4.h \
-              $(WORKSPACE)\StdLib\Include\sys\types.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi.h \
-              $(WORKSPACE)\MdePkg\Include\Library\MemoryAllocationLib.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\ManagedNetwork.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Tcp6.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\types.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Ip4.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
+              $(WORKSPACE)\MdePkg\Include\Base.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
+              $(WORKSPACE)\StdLib\Include\sys\socket.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\ComponentName2.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h \
+              $(WORKSPACE)\StdLib\Include\sys\fd_set.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h \
+              $(WORKSPACE)\StdLib\Include\sys\poll.h \
               $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Ip6Config.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
+              $(WORKSPACE)\StdLib\Include\netinet6\in6.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Ip4Config2.h \
               $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h \
+              $(WORKSPACE)\StdLib\Include\sys\errno.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\GraphicsOutput.h \
+              $(WORKSPACE)\StdLib\Include\sys\select.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi.h \
+              $(DEBUG_DIR)\AutoGen.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\endian.h \
+              $(WORKSPACE)\StdLib\Include\sys\uio.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h \
+              $(WORKSPACE)\MdePkg\Include\Library\MemoryAllocationLib.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h \
+              $(WORKSPACE)\StdLib\Include\sys\featuretest.h \
+              $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h \
+              $(WORKSPACE)\StdLib\Include\Efi\EfiSocketLib.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
+              $(WORKSPACE)\StdLib\Include\sys\ansi.h \
+              $(WORKSPACE)\StdLib\Include\sys\sigtypes.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleNetwork.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
+              $(WORKSPACE)\StdLib\Include\netinet\in.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
+              $(WORKSPACE)\StdLib\Include\sys\types.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics2.h \
+              $(WORKSPACE)\MdePkg\Include\Library\UefiLib.h \
+              $(WORKSPACE)\StdLib\Include\Protocol\EfiSocket.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Tcp4.h \
+              $(WORKSPACE)\StdLib\Include\sys\endian.h \
+              $(WORKSPACE)\StdLib\EfiSocketLib\Socket.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverConfiguration2.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverDiagnostics.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Ip6.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
+              $(WORKSPACE)\StdLib\Include\errno.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\Udp6.h \
+              $(WORKSPACE)\StdLib\Include\sys\time.h \
+              $(WORKSPACE)\MdePkg\Include\Library\UefiBootServicesTableLib.h \
+              $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h \
+              $(WORKSPACE)\StdLib\Include\sys\stdint.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DriverBinding.h \
+              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
               
 
 #
@@ -316,7 +316,7 @@ FORCE_REBUILD = force_build
 INIT_TARGET = init
 PCH_TARGET =
 BC_TARGET = 
-CODA_TARGET = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\EfiSocketLib.lib \
+CODA_TARGET = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\EfiSocketLib.lib \
               
 
 #
@@ -390,57 +390,57 @@ gen_fds:
 #
 $(OUTPUT_DIR)\EfiSocketLib.lib : $(OBJECT_FILES)
 $(OUTPUT_DIR)\EfiSocketLib.lib : $(OBJECT_FILES_LIST)
-	"$(SLINK)" $(SLINK_FLAGS) /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\EfiSocketLib.lib @$(OBJECT_FILES_LIST)
-
-$(OUTPUT_DIR)\Tcp6.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\Tcp6.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\Tcp6.obj : $(WORKSPACE)\StdLib\EfiSocketLib\Tcp6.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\.\Tcp6.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\EfiSocketLib\Tcp6.c
-
-$(OUTPUT_DIR)\Service.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\Service.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\Service.obj : $(WORKSPACE)\StdLib\EfiSocketLib\Service.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\.\Service.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\EfiSocketLib\Service.c
+	"$(SLINK)" $(SLINK_FLAGS) /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\EfiSocketLib.lib @$(OBJECT_FILES_LIST)
 
 $(OUTPUT_DIR)\UseEfiSocketLib.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\UseEfiSocketLib.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\UseEfiSocketLib.obj : $(WORKSPACE)\StdLib\EfiSocketLib\UseEfiSocketLib.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\.\UseEfiSocketLib.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\EfiSocketLib\UseEfiSocketLib.c
-
-$(OUTPUT_DIR)\DxeSupport.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\DxeSupport.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\DxeSupport.obj : $(WORKSPACE)\StdLib\EfiSocketLib\DxeSupport.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\.\DxeSupport.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\EfiSocketLib\DxeSupport.c
-
-$(OUTPUT_DIR)\Init.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\Init.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\Init.obj : $(WORKSPACE)\StdLib\EfiSocketLib\Init.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\.\Init.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\EfiSocketLib\Init.c
-
-$(OUTPUT_DIR)\Socket.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\Socket.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\Socket.obj : $(WORKSPACE)\StdLib\EfiSocketLib\Socket.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\.\Socket.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\EfiSocketLib\Socket.c
-
-$(OUTPUT_DIR)\Udp4.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\Udp4.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\Udp4.obj : $(WORKSPACE)\StdLib\EfiSocketLib\Udp4.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\.\Udp4.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\EfiSocketLib\Udp4.c
-
-$(OUTPUT_DIR)\Ip4.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\Ip4.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\Ip4.obj : $(WORKSPACE)\StdLib\EfiSocketLib\Ip4.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\.\Ip4.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\EfiSocketLib\Ip4.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\.\UseEfiSocketLib.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\EfiSocketLib\UseEfiSocketLib.c
 
 $(OUTPUT_DIR)\Tcp4.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\Tcp4.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\Tcp4.obj : $(WORKSPACE)\StdLib\EfiSocketLib\Tcp4.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\.\Tcp4.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\EfiSocketLib\Tcp4.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\.\Tcp4.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\EfiSocketLib\Tcp4.c
+
+$(OUTPUT_DIR)\DxeSupport.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\DxeSupport.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\DxeSupport.obj : $(WORKSPACE)\StdLib\EfiSocketLib\DxeSupport.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\.\DxeSupport.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\EfiSocketLib\DxeSupport.c
+
+$(OUTPUT_DIR)\Udp4.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\Udp4.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\Udp4.obj : $(WORKSPACE)\StdLib\EfiSocketLib\Udp4.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\.\Udp4.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\EfiSocketLib\Udp4.c
+
+$(OUTPUT_DIR)\Socket.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\Socket.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\Socket.obj : $(WORKSPACE)\StdLib\EfiSocketLib\Socket.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\.\Socket.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\EfiSocketLib\Socket.c
+
+$(OUTPUT_DIR)\Tcp6.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\Tcp6.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\Tcp6.obj : $(WORKSPACE)\StdLib\EfiSocketLib\Tcp6.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\.\Tcp6.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\EfiSocketLib\Tcp6.c
+
+$(OUTPUT_DIR)\Service.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\Service.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\Service.obj : $(WORKSPACE)\StdLib\EfiSocketLib\Service.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\.\Service.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\EfiSocketLib\Service.c
+
+$(OUTPUT_DIR)\Init.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\Init.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\Init.obj : $(WORKSPACE)\StdLib\EfiSocketLib\Init.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\.\Init.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\EfiSocketLib\Init.c
 
 $(OUTPUT_DIR)\Udp6.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\Udp6.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\Udp6.obj : $(WORKSPACE)\StdLib\EfiSocketLib\Udp6.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\.\Udp6.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\EfiSocketLib\Udp6.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\.\Udp6.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\EfiSocketLib\Udp6.c
+
+$(OUTPUT_DIR)\Ip4.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\Ip4.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\Ip4.obj : $(WORKSPACE)\StdLib\EfiSocketLib\Ip4.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\EfiSocketLib\EfiSocketLib\OUTPUT\.\Ip4.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\EfiSocketLib\Ip4.c
 
 
 

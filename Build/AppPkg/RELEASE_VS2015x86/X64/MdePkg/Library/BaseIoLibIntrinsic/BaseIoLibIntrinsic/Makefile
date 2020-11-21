@@ -19,7 +19,7 @@ PLATFORM_NAME = AppPkg
 PLATFORM_GUID = 0458dade-8b6e-4e45-b773-1b27cbda3e06
 PLATFORM_VERSION = 0.01
 PLATFORM_RELATIVE_DIR = MyPkg
-PLATFORM_DIR = g:\uefi_edk2_practice\MyPkg
+PLATFORM_DIR = d:\uefi_edk2_practice\MyPkg
 PLATFORM_OUTPUT_DIR = Build\AppPkg
 
 #
@@ -35,7 +35,7 @@ MODULE_FILE_BASE_NAME = BaseIoLibIntrinsic
 BASE_NAME = $(MODULE_NAME)
 MODULE_RELATIVE_DIR = MdePkg\Library\BaseIoLibIntrinsic
 PACKAGE_RELATIVE_DIR = Library\BaseIoLibIntrinsic
-MODULE_DIR = g:\uefi_edk2_practice\MdePkg\Library\BaseIoLibIntrinsic
+MODULE_DIR = d:\uefi_edk2_practice\MdePkg\Library\BaseIoLibIntrinsic
 FFS_OUTPUT_DIR = 
 
 MODULE_ENTRY_POINT = _ModuleEntryPoint
@@ -60,13 +60,13 @@ TARGET = RELEASE
 #
 # Build Directory Macro Definition
 #
-# PLATFORM_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
-BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+# PLATFORM_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
 BIN_DIR = $(BUILD_DIR)\X64
 LIB_DIR = $(BIN_DIR)
-MODULE_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic
-OUTPUT_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT
-DEBUG_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\DEBUG
+MODULE_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic
+OUTPUT_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT
+DEBUG_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\DEBUG
 DEST_DIR_OUTPUT = $(OUTPUT_DIR)
 DEST_DIR_DEBUG = $(DEBUG_DIR)
 
@@ -131,7 +131,7 @@ RC = c:\Program Files (x86)\Windows Kits\8.1\bin\x64\rc.exe
 ASM = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\x86_amd64\ml64.exe
 ASM_FLAGS = /nologo /c /WX /W3 /Cx /Zd
 
-ASL = G:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
+ASL = D:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
 ASL_FLAGS = 
 ASL_OUTFLAGS =  -p
 
@@ -189,7 +189,7 @@ MAKE = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\nmake.exe
 ASMLINK = C:\WINDDK\3790.1830\bin\bin16\link16.exe
 ASMLINK_FLAGS = /nologo /tiny
 
-NASM = G:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
+NASM = D:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
 NASM_FLAGS = -Ox -f win64
 
 
@@ -213,16 +213,16 @@ INC =  \
     /I$(WORKSPACE)\MdePkg\Include \
     /I$(WORKSPACE)\MdePkg\Include\X64
 
-OBJECT_FILES_LIST = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\object_files.lst
+OBJECT_FILES_LIST = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\object_files.lst
 
 
-COMMON_DEPS = $(WORKSPACE)\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsicInternal.h \
-              $(WORKSPACE)\MdePkg\Include\Library\IoLib.h \
-              $(WORKSPACE)\MdePkg\Include\Base.h \
+COMMON_DEPS = $(WORKSPACE)\MdePkg\Include\Library\IoLib.h \
               $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h \
-              $(DEBUG_DIR)\AutoGen.h \
               $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
+              $(DEBUG_DIR)\AutoGen.h \
+              $(WORKSPACE)\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsicInternal.h \
               $(WORKSPACE)\MdePkg\Include\Library\DebugLib.h \
+              $(WORKSPACE)\MdePkg\Include\Base.h \
               
 
 #
@@ -232,7 +232,7 @@ FORCE_REBUILD = force_build
 INIT_TARGET = init
 PCH_TARGET =
 BC_TARGET = 
-CODA_TARGET = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\BaseIoLibIntrinsic.lib \
+CODA_TARGET = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\BaseIoLibIntrinsic.lib \
               
 
 #
@@ -309,33 +309,33 @@ $(OUTPUT_DIR)\X64\IoFifo.obj : $(DEBUG_DIR)\AutoGen.h
 $(OUTPUT_DIR)\X64\IoFifo.obj : $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h
 $(OUTPUT_DIR)\X64\IoFifo.obj : $(WORKSPACE)\MdePkg\Include\Base.h
 $(OUTPUT_DIR)\X64\IoFifo.obj : $(WORKSPACE)\MdePkg\Library\BaseIoLibIntrinsic\X64\IoFifo.nasm
-	"$(PP)" $(PP_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseIoLibIntrinsic\X64\IoFifo.nasm > g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\X64\IoFifo.i
-	Trim --trim-long --source-code -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\X64\IoFifo.iii g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\X64\IoFifo.i
-	"$(NASM)" -Ig:\uefi_edk2_practice\MdePkg\Library\BaseIoLibIntrinsic\X64\ $(NASM_FLAGS) -o g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\X64\IoFifo.obj g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\X64\IoFifo.iii
+	"$(PP)" $(PP_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseIoLibIntrinsic\X64\IoFifo.nasm > d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\X64\IoFifo.i
+	Trim --trim-long --source-code -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\X64\IoFifo.iii d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\X64\IoFifo.i
+	"$(NASM)" -Id:\uefi_edk2_practice\MdePkg\Library\BaseIoLibIntrinsic\X64\ $(NASM_FLAGS) -o d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\X64\IoFifo.obj d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\X64\IoFifo.iii
 
 $(OUTPUT_DIR)\BaseIoLibIntrinsic.lib : $(OBJECT_FILES)
 $(OUTPUT_DIR)\BaseIoLibIntrinsic.lib : $(OBJECT_FILES_LIST)
-	"$(SLINK)" $(SLINK_FLAGS) /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\BaseIoLibIntrinsic.lib @$(OBJECT_FILES_LIST)
-
-$(OUTPUT_DIR)\IoHighLevel.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\IoHighLevel.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\IoHighLevel.obj : $(WORKSPACE)\MdePkg\Library\BaseIoLibIntrinsic\IoHighLevel.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\.\IoHighLevel.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseIoLibIntrinsic\IoHighLevel.c
-
-$(OUTPUT_DIR)\IoLibMsc.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\IoLibMsc.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\IoLibMsc.obj : $(WORKSPACE)\MdePkg\Library\BaseIoLibIntrinsic\IoLibMsc.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\.\IoLibMsc.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseIoLibIntrinsic\IoLibMsc.c
-
-$(OUTPUT_DIR)\IoLibMmioBuffer.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\IoLibMmioBuffer.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\IoLibMmioBuffer.obj : $(WORKSPACE)\MdePkg\Library\BaseIoLibIntrinsic\IoLibMmioBuffer.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\.\IoLibMmioBuffer.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseIoLibIntrinsic\IoLibMmioBuffer.c
+	"$(SLINK)" $(SLINK_FLAGS) /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\BaseIoLibIntrinsic.lib @$(OBJECT_FILES_LIST)
 
 $(OUTPUT_DIR)\IoLib.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\IoLib.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\IoLib.obj : $(WORKSPACE)\MdePkg\Library\BaseIoLibIntrinsic\IoLib.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\.\IoLib.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\MdePkg\Library\BaseIoLibIntrinsic\IoLib.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\.\IoLib.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseIoLibIntrinsic\IoLib.c
+
+$(OUTPUT_DIR)\IoHighLevel.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\IoHighLevel.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\IoHighLevel.obj : $(WORKSPACE)\MdePkg\Library\BaseIoLibIntrinsic\IoHighLevel.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\.\IoHighLevel.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseIoLibIntrinsic\IoHighLevel.c
+
+$(OUTPUT_DIR)\IoLibMsc.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\IoLibMsc.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\IoLibMsc.obj : $(WORKSPACE)\MdePkg\Library\BaseIoLibIntrinsic\IoLibMsc.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\.\IoLibMsc.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseIoLibIntrinsic\IoLibMsc.c
+
+$(OUTPUT_DIR)\IoLibMmioBuffer.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\IoLibMmioBuffer.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\IoLibMmioBuffer.obj : $(WORKSPACE)\MdePkg\Library\BaseIoLibIntrinsic\IoLibMmioBuffer.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\MdePkg\Library\BaseIoLibIntrinsic\BaseIoLibIntrinsic\OUTPUT\.\IoLibMmioBuffer.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\MdePkg\Library\BaseIoLibIntrinsic\IoLibMmioBuffer.c
 
 
 

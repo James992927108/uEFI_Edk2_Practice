@@ -19,7 +19,7 @@ PLATFORM_NAME = AppPkg
 PLATFORM_GUID = 0458dade-8b6e-4e45-b773-1b27cbda3e06
 PLATFORM_VERSION = 0.01
 PLATFORM_RELATIVE_DIR = MyPkg
-PLATFORM_DIR = g:\uefi_edk2_practice\MyPkg
+PLATFORM_DIR = d:\uefi_edk2_practice\MyPkg
 PLATFORM_OUTPUT_DIR = Build\AppPkg
 
 #
@@ -35,7 +35,7 @@ MODULE_FILE_BASE_NAME = NetUtil
 BASE_NAME = $(MODULE_NAME)
 MODULE_RELATIVE_DIR = StdLib\LibC\NetUtil
 PACKAGE_RELATIVE_DIR = LibC\NetUtil
-MODULE_DIR = g:\uefi_edk2_practice\StdLib\LibC\NetUtil
+MODULE_DIR = d:\uefi_edk2_practice\StdLib\LibC\NetUtil
 FFS_OUTPUT_DIR = 
 
 MODULE_ENTRY_POINT = _ModuleEntryPoint
@@ -59,13 +59,13 @@ TARGET = RELEASE
 #
 # Build Directory Macro Definition
 #
-# PLATFORM_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
-BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+# PLATFORM_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
 BIN_DIR = $(BUILD_DIR)\X64
 LIB_DIR = $(BIN_DIR)
-MODULE_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil
-OUTPUT_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\OUTPUT
-DEBUG_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\DEBUG
+MODULE_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil
+OUTPUT_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\OUTPUT
+DEBUG_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\DEBUG
 DEST_DIR_OUTPUT = $(OUTPUT_DIR)
 DEST_DIR_DEBUG = $(DEBUG_DIR)
 
@@ -130,7 +130,7 @@ RC = c:\Program Files (x86)\Windows Kits\8.1\bin\x64\rc.exe
 ASM = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\x86_amd64\ml64.exe
 ASM_FLAGS = /nologo /c /WX /W3 /Cx /Zd
 
-ASL = G:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
+ASL = D:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
 ASL_FLAGS = 
 ASL_OUTFLAGS =  -p
 
@@ -188,7 +188,7 @@ MAKE = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\nmake.exe
 ASMLINK = C:\WINDDK\3790.1830\bin\bin16\link16.exe
 ASMLINK_FLAGS = /nologo /tiny
 
-NASM = G:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
+NASM = D:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
 NASM_FLAGS = -Ox -f win64
 
 
@@ -219,61 +219,61 @@ INC =  \
     /I$(WORKSPACE)\MdePkg\Include \
     /I$(WORKSPACE)\MdePkg\Include\X64
 
-OBJECT_FILES_LIST = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\OUTPUT\object_files.lst
+OBJECT_FILES_LIST = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\OUTPUT\object_files.lst
 
 
-COMMON_DEPS = $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
-              $(WORKSPACE)\StdLib\Include\arpa\inet.h \
-              $(WORKSPACE)\StdLib\Include\sys\endian.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
-              $(WORKSPACE)\StdLib\Include\sys\cdefs_aout.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h \
-              $(WORKSPACE)\StdLib\Include\sys\socket.h \
-              $(WORKSPACE)\StdLib\Include\sys\stdint.h \
-              $(WORKSPACE)\StdLib\Include\sys\fd_set.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
+COMMON_DEPS = $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
               $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h \
-              $(WORKSPACE)\MdePkg\Include\Base.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h \
-              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
-              $(WORKSPACE)\StdLib\Include\netinet6\in6.h \
-              $(WORKSPACE)\StdLib\Include\sys\featuretest.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
-              $(WORKSPACE)\StdLib\Include\sys\types.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\types.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h \
               $(WORKSPACE)\StdLib\Include\sys\EfiCdefs.h \
-              $(WORKSPACE)\StdLibPrivateInternalFiles\Include\namespace.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h \
-              $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h \
-              $(WORKSPACE)\StdLib\Include\sys\ansi.h \
+              $(WORKSPACE)\StdLib\Include\sys\cdefs_aout.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
               $(WORKSPACE)\StdLib\Include\sys\bswap.h \
-              $(DEBUG_DIR)\AutoGen.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\types.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
+              $(WORKSPACE)\MdePkg\Include\Base.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h \
+              $(WORKSPACE)\StdLib\Include\sys\fd_set.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h \
               $(WORKSPACE)\StdLib\Include\netinet\in.h \
-              $(WORKSPACE)\StdLib\Include\sys\uio.h \
+              $(WORKSPACE)\StdLib\Include\netinet6\in6.h \
+              $(WORKSPACE)\StdLib\Include\arpa\inet.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h \
               $(WORKSPACE)\StdLib\Include\X64\machine\endian.h \
               $(WORKSPACE)\StdLibPrivateInternalFiles\Include\LibConfig.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h \
+              $(WORKSPACE)\StdLibPrivateInternalFiles\Include\namespace.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
+              $(WORKSPACE)\StdLib\Include\sys\ansi.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
+              $(WORKSPACE)\StdLib\Include\sys\socket.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
+              $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h \
+              $(WORKSPACE)\StdLib\Include\sys\types.h \
+              $(WORKSPACE)\StdLib\Include\sys\endian.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
+              $(DEBUG_DIR)\AutoGen.h \
+              $(WORKSPACE)\StdLib\Include\sys\featuretest.h \
+              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
+              $(WORKSPACE)\StdLib\Include\sys\uio.h \
+              $(WORKSPACE)\StdLib\Include\sys\stdint.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
               
 
 #
@@ -283,7 +283,7 @@ FORCE_REBUILD = force_build
 INIT_TARGET = init
 PCH_TARGET =
 BC_TARGET = 
-CODA_TARGET = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\OUTPUT\LibNetUtil.lib \
+CODA_TARGET = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\OUTPUT\LibNetUtil.lib \
               
 
 #
@@ -357,102 +357,102 @@ gen_fds:
 #
 $(OUTPUT_DIR)\LibNetUtil.lib : $(OBJECT_FILES)
 $(OUTPUT_DIR)\LibNetUtil.lib : $(OBJECT_FILES_LIST)
-	"$(SLINK)" $(SLINK_FLAGS) /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\OUTPUT\LibNetUtil.lib @$(OBJECT_FILES_LIST)
-
-$(OUTPUT_DIR)\inet_makeaddr.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\inet_makeaddr.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\inet_makeaddr.obj : $(WORKSPACE)\StdLib\Include\sys\param.h
-$(OUTPUT_DIR)\inet_makeaddr.obj : $(WORKSPACE)\StdLib\Include\X64\machine\param.h
-$(OUTPUT_DIR)\inet_makeaddr.obj : $(WORKSPACE)\StdLib\Include\sys\signal.h
-$(OUTPUT_DIR)\inet_makeaddr.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
-$(OUTPUT_DIR)\inet_makeaddr.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
-$(OUTPUT_DIR)\inet_makeaddr.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
-$(OUTPUT_DIR)\inet_makeaddr.obj : $(WORKSPACE)\StdLib\Include\X64\machine\signal.h
-$(OUTPUT_DIR)\inet_makeaddr.obj : $(WORKSPACE)\StdLib\LibC\NetUtil\inet_makeaddr.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\OUTPUT\.\inet_makeaddr.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\NetUtil\inet_makeaddr.c
-
-$(OUTPUT_DIR)\inet_addr.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\inet_addr.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\inet_addr.obj : $(WORKSPACE)\StdLib\Include\sys\signal.h
-$(OUTPUT_DIR)\inet_addr.obj : $(WORKSPACE)\StdLib\Include\sys\_ctype.h
-$(OUTPUT_DIR)\inet_addr.obj : $(WORKSPACE)\StdLib\Include\sys\param.h
-$(OUTPUT_DIR)\inet_addr.obj : $(WORKSPACE)\StdLib\Include\X64\machine\param.h
-$(OUTPUT_DIR)\inet_addr.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
-$(OUTPUT_DIR)\inet_addr.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
-$(OUTPUT_DIR)\inet_addr.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
-$(OUTPUT_DIR)\inet_addr.obj : $(WORKSPACE)\StdLib\Include\ctype.h
-$(OUTPUT_DIR)\inet_addr.obj : $(WORKSPACE)\StdLib\Include\X64\machine\signal.h
-$(OUTPUT_DIR)\inet_addr.obj : $(WORKSPACE)\StdLib\LibC\NetUtil\inet_addr.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\OUTPUT\.\inet_addr.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\NetUtil\inet_addr.c
+	"$(SLINK)" $(SLINK_FLAGS) /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\OUTPUT\LibNetUtil.lib @$(OBJECT_FILES_LIST)
 
 $(OUTPUT_DIR)\inet_ntoa.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\inet_ntoa.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\inet_ntoa.obj : $(WORKSPACE)\StdLib\Include\stdio.h
-$(OUTPUT_DIR)\inet_ntoa.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
-$(OUTPUT_DIR)\inet_ntoa.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
-$(OUTPUT_DIR)\inet_ntoa.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\inet_ntoa.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
-$(OUTPUT_DIR)\inet_ntoa.obj : $(WORKSPACE)\StdLib\Include\stdarg.h
 $(OUTPUT_DIR)\inet_ntoa.obj : $(WORKSPACE)\StdLib\Include\string.h
 $(OUTPUT_DIR)\inet_ntoa.obj : $(WORKSPACE)\StdLib\Include\limits.h
+$(OUTPUT_DIR)\inet_ntoa.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
+$(OUTPUT_DIR)\inet_ntoa.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
+$(OUTPUT_DIR)\inet_ntoa.obj : $(WORKSPACE)\StdLib\Include\stdio.h
+$(OUTPUT_DIR)\inet_ntoa.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\inet_ntoa.obj : $(WORKSPACE)\StdLib\Include\stdarg.h
+$(OUTPUT_DIR)\inet_ntoa.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
 $(OUTPUT_DIR)\inet_ntoa.obj : $(WORKSPACE)\StdLib\LibC\NetUtil\inet_ntoa.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\OUTPUT\.\inet_ntoa.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\NetUtil\inet_ntoa.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\OUTPUT\.\inet_ntoa.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\NetUtil\inet_ntoa.c
+
+$(OUTPUT_DIR)\inet_makeaddr.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\inet_makeaddr.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\inet_makeaddr.obj : $(WORKSPACE)\StdLib\Include\X64\machine\param.h
+$(OUTPUT_DIR)\inet_makeaddr.obj : $(WORKSPACE)\StdLib\Include\sys\signal.h
+$(OUTPUT_DIR)\inet_makeaddr.obj : $(WORKSPACE)\StdLib\Include\sys\param.h
+$(OUTPUT_DIR)\inet_makeaddr.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
+$(OUTPUT_DIR)\inet_makeaddr.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
+$(OUTPUT_DIR)\inet_makeaddr.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
+$(OUTPUT_DIR)\inet_makeaddr.obj : $(WORKSPACE)\StdLib\Include\X64\machine\signal.h
+$(OUTPUT_DIR)\inet_makeaddr.obj : $(WORKSPACE)\StdLib\LibC\NetUtil\inet_makeaddr.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\OUTPUT\.\inet_makeaddr.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\NetUtil\inet_makeaddr.c
+
+$(OUTPUT_DIR)\inet_addr.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\inet_addr.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\inet_addr.obj : $(WORKSPACE)\StdLib\Include\sys\param.h
+$(OUTPUT_DIR)\inet_addr.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
+$(OUTPUT_DIR)\inet_addr.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
+$(OUTPUT_DIR)\inet_addr.obj : $(WORKSPACE)\StdLib\Include\X64\machine\param.h
+$(OUTPUT_DIR)\inet_addr.obj : $(WORKSPACE)\StdLib\Include\ctype.h
+$(OUTPUT_DIR)\inet_addr.obj : $(WORKSPACE)\StdLib\Include\sys\signal.h
+$(OUTPUT_DIR)\inet_addr.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
+$(OUTPUT_DIR)\inet_addr.obj : $(WORKSPACE)\StdLib\Include\sys\_ctype.h
+$(OUTPUT_DIR)\inet_addr.obj : $(WORKSPACE)\StdLib\Include\X64\machine\signal.h
+$(OUTPUT_DIR)\inet_addr.obj : $(WORKSPACE)\StdLib\LibC\NetUtil\inet_addr.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\OUTPUT\.\inet_addr.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\NetUtil\inet_addr.c
 
 $(OUTPUT_DIR)\inet_ntop.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\inet_ntop.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\sys\errno.h
-$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\stdio.h
-$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\arpa\nameser.h
+$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\limits.h
+$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
+$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
 $(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\assert.h
+$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\stdlib.h
+$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\sys\signal.h
+$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
+$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\arpa\nameser.h
+$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\sys\errno.h
+$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\string.h
+$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\sys\param.h
+$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\stdarg.h
+$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\stdio.h
 $(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\X64\machine\param.h
 $(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\arpa\nameser_compat.h
 $(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\errno.h
-$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\X64\machine\signal.h
 $(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
-$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\sys\signal.h
-$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\stdlib.h
-$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\sys\param.h
-$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
-$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
-$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h
-$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\stdarg.h
-$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\string.h
-$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\limits.h
+$(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\Include\X64\machine\signal.h
 $(OUTPUT_DIR)\inet_ntop.obj : $(WORKSPACE)\StdLib\LibC\NetUtil\inet_ntop.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\OUTPUT\.\inet_ntop.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\NetUtil\inet_ntop.c
-
-$(OUTPUT_DIR)\inet_netof.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\inet_netof.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\inet_netof.obj : $(WORKSPACE)\StdLib\Include\sys\param.h
-$(OUTPUT_DIR)\inet_netof.obj : $(WORKSPACE)\StdLib\Include\X64\machine\param.h
-$(OUTPUT_DIR)\inet_netof.obj : $(WORKSPACE)\StdLib\Include\sys\signal.h
-$(OUTPUT_DIR)\inet_netof.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
-$(OUTPUT_DIR)\inet_netof.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
-$(OUTPUT_DIR)\inet_netof.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
-$(OUTPUT_DIR)\inet_netof.obj : $(WORKSPACE)\StdLib\Include\X64\machine\signal.h
-$(OUTPUT_DIR)\inet_netof.obj : $(WORKSPACE)\StdLib\LibC\NetUtil\inet_netof.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\OUTPUT\.\inet_netof.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\NetUtil\inet_netof.c
-
-$(OUTPUT_DIR)\inet_lnaof.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\inet_lnaof.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\inet_lnaof.obj : $(WORKSPACE)\StdLib\Include\sys\param.h
-$(OUTPUT_DIR)\inet_lnaof.obj : $(WORKSPACE)\StdLib\Include\X64\machine\param.h
-$(OUTPUT_DIR)\inet_lnaof.obj : $(WORKSPACE)\StdLib\Include\sys\signal.h
-$(OUTPUT_DIR)\inet_lnaof.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
-$(OUTPUT_DIR)\inet_lnaof.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
-$(OUTPUT_DIR)\inet_lnaof.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
-$(OUTPUT_DIR)\inet_lnaof.obj : $(WORKSPACE)\StdLib\Include\X64\machine\signal.h
-$(OUTPUT_DIR)\inet_lnaof.obj : $(WORKSPACE)\StdLib\LibC\NetUtil\inet_lnaof.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\OUTPUT\.\inet_lnaof.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\NetUtil\inet_lnaof.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\OUTPUT\.\inet_ntop.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\NetUtil\inet_ntop.c
 
 $(OUTPUT_DIR)\inet_network.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\inet_network.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\inet_network.obj : $(WORKSPACE)\StdLib\Include\ctype.h
-$(OUTPUT_DIR)\inet_network.obj : $(WORKSPACE)\StdLib\Include\assert.h
-$(OUTPUT_DIR)\inet_network.obj : $(WORKSPACE)\StdLib\Include\stddef.h
 $(OUTPUT_DIR)\inet_network.obj : $(WORKSPACE)\StdLib\Include\sys\_ctype.h
+$(OUTPUT_DIR)\inet_network.obj : $(WORKSPACE)\StdLib\Include\stddef.h
+$(OUTPUT_DIR)\inet_network.obj : $(WORKSPACE)\StdLib\Include\assert.h
 $(OUTPUT_DIR)\inet_network.obj : $(WORKSPACE)\StdLib\LibC\NetUtil\inet_network.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\OUTPUT\.\inet_network.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\NetUtil\inet_network.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\OUTPUT\.\inet_network.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\NetUtil\inet_network.c
+
+$(OUTPUT_DIR)\inet_netof.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\inet_netof.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\inet_netof.obj : $(WORKSPACE)\StdLib\Include\X64\machine\param.h
+$(OUTPUT_DIR)\inet_netof.obj : $(WORKSPACE)\StdLib\Include\sys\signal.h
+$(OUTPUT_DIR)\inet_netof.obj : $(WORKSPACE)\StdLib\Include\sys\param.h
+$(OUTPUT_DIR)\inet_netof.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
+$(OUTPUT_DIR)\inet_netof.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
+$(OUTPUT_DIR)\inet_netof.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
+$(OUTPUT_DIR)\inet_netof.obj : $(WORKSPACE)\StdLib\Include\X64\machine\signal.h
+$(OUTPUT_DIR)\inet_netof.obj : $(WORKSPACE)\StdLib\LibC\NetUtil\inet_netof.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\OUTPUT\.\inet_netof.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\NetUtil\inet_netof.c
+
+$(OUTPUT_DIR)\inet_lnaof.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\inet_lnaof.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\inet_lnaof.obj : $(WORKSPACE)\StdLib\Include\X64\machine\param.h
+$(OUTPUT_DIR)\inet_lnaof.obj : $(WORKSPACE)\StdLib\Include\sys\signal.h
+$(OUTPUT_DIR)\inet_lnaof.obj : $(WORKSPACE)\StdLib\Include\sys\param.h
+$(OUTPUT_DIR)\inet_lnaof.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
+$(OUTPUT_DIR)\inet_lnaof.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
+$(OUTPUT_DIR)\inet_lnaof.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
+$(OUTPUT_DIR)\inet_lnaof.obj : $(WORKSPACE)\StdLib\Include\X64\machine\signal.h
+$(OUTPUT_DIR)\inet_lnaof.obj : $(WORKSPACE)\StdLib\LibC\NetUtil\inet_lnaof.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\NetUtil\NetUtil\OUTPUT\.\inet_lnaof.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\NetUtil\inet_lnaof.c
 
 
 

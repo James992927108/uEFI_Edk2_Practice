@@ -1,8 +1,8 @@
-g:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/LibC/Time/Time/OUTPUT/Time.obj
-g:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/LibC/Time/Time/OUTPUT/ZoneProc.obj
-g:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/LibC/Time/Time/OUTPUT/strftime.obj
-g:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/LibC/Time/Time/OUTPUT/strptime.obj
-g:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/LibC/Time/Time/OUTPUT/TimeEfi.obj
-g:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/LibC/Time/Time/OUTPUT/gettimeofday.obj
-g:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/LibC/Time/Time/OUTPUT/timegm.obj
-g:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/LibC/Time/Time/OUTPUT/itimer.obj
+d:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/LibC/Time/Time/OUTPUT/Time.obj
+d:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/LibC/Time/Time/OUTPUT/ZoneProc.obj
+d:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/LibC/Time/Time/OUTPUT/strftime.obj
+d:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/LibC/Time/Time/OUTPUT/strptime.obj
+d:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/LibC/Time/Time/OUTPUT/TimeEfi.obj
+d:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/LibC/Time/Time/OUTPUT/gettimeofday.obj
+d:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/LibC/Time/Time/OUTPUT/timegm.obj
+d:/uefi_edk2_practice/Build/AppPkg/RELEASE_VS2015x86/X64/StdLib/LibC/Time/Time/OUTPUT/itimer.obj

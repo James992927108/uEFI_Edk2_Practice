@@ -96,7 +96,7 @@ ASL_BUILDRULEORDER = nasm asm Asm ASM S s nasmb asm16
 ASL_FLAGS = 
 ASL_OUTFLAGS = -p
 ASL_FAMILY = MSFT
-ASL = G:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
+ASL = D:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
 
 SLINKPATH_BUILDRULEORDER = nasm asm Asm ASM S s nasmb asm16
 SLINKPATH_FAMILY = MSFT
@@ -194,7 +194,7 @@ ASMLINK_BUILDRULEORDER = nasm asm Asm ASM S s nasmb asm16
 ASMLINK_FAMILY = MSFT
 
 NASM_FLAGS = -Ox -f win64
-NASM = G:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
+NASM = D:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
 NASM_BUILDRULEORDER = nasm asm Asm ASM S s nasmb asm16
 NASM_FAMILY = MSFT
 

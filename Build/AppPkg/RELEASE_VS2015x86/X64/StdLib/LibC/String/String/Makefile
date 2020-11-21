@@ -19,7 +19,7 @@ PLATFORM_NAME = AppPkg
 PLATFORM_GUID = 0458dade-8b6e-4e45-b773-1b27cbda3e06
 PLATFORM_VERSION = 0.01
 PLATFORM_RELATIVE_DIR = MyPkg
-PLATFORM_DIR = g:\uefi_edk2_practice\MyPkg
+PLATFORM_DIR = d:\uefi_edk2_practice\MyPkg
 PLATFORM_OUTPUT_DIR = Build\AppPkg
 
 #
@@ -35,7 +35,7 @@ MODULE_FILE_BASE_NAME = String
 BASE_NAME = $(MODULE_NAME)
 MODULE_RELATIVE_DIR = StdLib\LibC\String
 PACKAGE_RELATIVE_DIR = LibC\String
-MODULE_DIR = g:\uefi_edk2_practice\StdLib\LibC\String
+MODULE_DIR = d:\uefi_edk2_practice\StdLib\LibC\String
 FFS_OUTPUT_DIR = 
 
 MODULE_ENTRY_POINT = _ModuleEntryPoint
@@ -59,13 +59,13 @@ TARGET = RELEASE
 #
 # Build Directory Macro Definition
 #
-# PLATFORM_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
-BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+# PLATFORM_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
+BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86
 BIN_DIR = $(BUILD_DIR)\X64
 LIB_DIR = $(BIN_DIR)
-MODULE_BUILD_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String
-OUTPUT_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT
-DEBUG_DIR = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\DEBUG
+MODULE_BUILD_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String
+OUTPUT_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT
+DEBUG_DIR = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\DEBUG
 DEST_DIR_OUTPUT = $(OUTPUT_DIR)
 DEST_DIR_DEBUG = $(DEBUG_DIR)
 
@@ -130,7 +130,7 @@ RC = c:\Program Files (x86)\Windows Kits\8.1\bin\x64\rc.exe
 ASM = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\x86_amd64\ml64.exe
 ASM_FLAGS = /nologo /c /WX /W3 /Cx /Zd
 
-ASL = G:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
+ASL = D:\uEFI_Edk2_Practice\BuildTools\ASL\iasl.exe
 ASL_FLAGS = 
 ASL_OUTFLAGS =  -p
 
@@ -188,7 +188,7 @@ MAKE = D:\Program Files (x86)\Microsoft Visual Studio 14.0\Vc\bin\nmake.exe
 ASMLINK = C:\WINDDK\3790.1830\bin\bin16\link16.exe
 ASMLINK_FLAGS = /nologo /tiny
 
-NASM = G:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
+NASM = D:\uEFI_Edk2_Practice\BuildTools\NASM\nasm
 NASM_FLAGS = -Ox -f win64
 
 
@@ -222,40 +222,40 @@ INC =  \
     /I$(WORKSPACE)\MdePkg\Include \
     /I$(WORKSPACE)\MdePkg\Include\X64
 
-OBJECT_FILES_LIST = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\object_files.lst
+OBJECT_FILES_LIST = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\object_files.lst
 
 
-COMMON_DEPS = $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
-              $(WORKSPACE)\StdLib\Include\sys\cdefs_aout.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
+COMMON_DEPS = $(WORKSPACE)\MdePkg\Include\IndustryStandard\Bluetooth.h \
               $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi60.h \
-              $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
-              $(WORKSPACE)\MdePkg\Include\Base.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
-              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
-              $(WORKSPACE)\StdLib\Include\sys\featuretest.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
-              $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
-              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
-              $(DEBUG_DIR)\AutoGen.h \
               $(WORKSPACE)\StdLib\Include\sys\EfiCdefs.h \
-              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h \
-              $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h \
+              $(WORKSPACE)\StdLib\Include\sys\cdefs_aout.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\WinCertificate.h \
               $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextInEx.h \
-              $(WORKSPACE)\StdLibPrivateInternalFiles\Include\LibConfig.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiSpec.h \
+              $(WORKSPACE)\MdePkg\Include\Base.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi10.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\AcpiAml.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiInternalFormRepresentation.h \
+              $(WORKSPACE)\MdePkg\Include\Library\PcdLib.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi20.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\HiiFormMapMethodGuid.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextOut.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiGpt.h \
               $(WORKSPACE)\MdePkg\Include\Uefi.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiPxe.h \
+              $(WORKSPACE)\StdLibPrivateInternalFiles\Include\LibConfig.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiMultiPhase.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\SimpleTextIn.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi40.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi51.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi50.h \
+              $(WORKSPACE)\MdePkg\Include\Protocol\DevicePath.h \
+              $(WORKSPACE)\StdLib\Include\sys\featuretest.h \
+              $(WORKSPACE)\MdePkg\Include\X64\ProcessorBind.h \
+              $(WORKSPACE)\MdePkg\Include\Guid\PcAnsi.h \
+              $(DEBUG_DIR)\AutoGen.h \
+              $(WORKSPACE)\MdePkg\Include\IndustryStandard\Acpi30.h \
+              $(WORKSPACE)\MdePkg\Include\Uefi\UefiBaseType.h \
               
 
 #
@@ -265,7 +265,7 @@ FORCE_REBUILD = force_build
 INIT_TARGET = init
 PCH_TARGET =
 BC_TARGET = 
-CODA_TARGET = g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\LibString.lib \
+CODA_TARGET = d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\LibString.lib \
               
 
 #
@@ -339,144 +339,144 @@ gen_fds:
 #
 $(OUTPUT_DIR)\LibString.lib : $(OBJECT_FILES)
 $(OUTPUT_DIR)\LibString.lib : $(OBJECT_FILES_LIST)
-	"$(SLINK)" $(SLINK_FLAGS) /OUT:g:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\LibString.lib @$(OBJECT_FILES_LIST)
+	"$(SLINK)" $(SLINK_FLAGS) /OUT:d:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\LibString.lib @$(OBJECT_FILES_LIST)
+
+$(OUTPUT_DIR)\strncasecmp.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\strncasecmp.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\strncasecmp.obj : $(WORKSPACE)\StdLib\Include\string.h
+$(OUTPUT_DIR)\strncasecmp.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
+$(OUTPUT_DIR)\strncasecmp.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
+$(OUTPUT_DIR)\strncasecmp.obj : $(WORKSPACE)\StdLib\Include\assert.h
+$(OUTPUT_DIR)\strncasecmp.obj : $(WORKSPACE)\StdLib\Include\ctype.h
+$(OUTPUT_DIR)\strncasecmp.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\namespace.h
+$(OUTPUT_DIR)\strncasecmp.obj : $(WORKSPACE)\StdLib\Include\sys\_ctype.h
+$(OUTPUT_DIR)\strncasecmp.obj : $(WORKSPACE)\StdLib\Include\sys\cdefs.h
+$(OUTPUT_DIR)\strncasecmp.obj : $(WORKSPACE)\StdLib\LibC\String\strncasecmp.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\.\strncasecmp.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\String\strncasecmp.c
+
+$(OUTPUT_DIR)\Misc.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\Misc.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\Misc.obj : $(WORKSPACE)\StdLib\Include\string.h
+$(OUTPUT_DIR)\Misc.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\Misc.obj : $(WORKSPACE)\StdLib\Include\limits.h
+$(OUTPUT_DIR)\Misc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
+$(OUTPUT_DIR)\Misc.obj : $(WORKSPACE)\MdePkg\Include\Library\PrintLib.h
+$(OUTPUT_DIR)\Misc.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
+$(OUTPUT_DIR)\Misc.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\Misc.obj : $(WORKSPACE)\StdLib\Include\errno.h
+$(OUTPUT_DIR)\Misc.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
+$(OUTPUT_DIR)\Misc.obj : $(WORKSPACE)\StdLib\Include\sys\errno.h
+$(OUTPUT_DIR)\Misc.obj : $(WORKSPACE)\StdLib\LibC\String\Misc.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\.\Misc.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\String\Misc.c
+
+$(OUTPUT_DIR)\strsep.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\strsep.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\Include\string.h
+$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\Include\limits.h
+$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
+$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\Include\sys\ansi.h
+$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
+$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\Include\stdio.h
+$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h
+$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\Include\stdarg.h
+$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
+$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h
+$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\Include\sys\cdefs.h
+$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\LibC\String\strsep.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\.\strsep.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\String\strsep.c
+
+$(OUTPUT_DIR)\Concatenation.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\Concatenation.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\Concatenation.obj : $(WORKSPACE)\StdLib\Include\string.h
+$(OUTPUT_DIR)\Concatenation.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\Concatenation.obj : $(WORKSPACE)\StdLib\LibC\String\Concatenation.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\.\Concatenation.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\String\Concatenation.c
 
 $(OUTPUT_DIR)\strlcat.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\strlcat.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h
-$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\sys\endian.h
-$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\assert.h
-$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\sys\stdint.h
-$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\sys\fd_set.h
-$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h
-$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h
-$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h
+$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\sys\bswap.h
 $(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h
 $(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\X64\machine\types.h
+$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\assert.h
+$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h
+$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h
+$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h
+$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\sys\fd_set.h
+$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h
+$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\string.h
+$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian.h
+$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h
 $(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h
 $(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\namespace.h
-$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\sys\cdefs.h
-$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h
-$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h
 $(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\sys\ansi.h
-$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\sys\bswap.h
+$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h
 $(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\sys\types.h
-$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian.h
-$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\string.h
+$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\sys\endian.h
+$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\sys\stdint.h
+$(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\Include\sys\cdefs.h
 $(OUTPUT_DIR)\strlcat.obj : $(WORKSPACE)\StdLib\LibC\String\strlcat.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\.\strlcat.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\String\strlcat.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\.\strlcat.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\String\strlcat.c
+
+$(OUTPUT_DIR)\Searching.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\Searching.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\Searching.obj : $(WORKSPACE)\StdLib\Include\string.h
+$(OUTPUT_DIR)\Searching.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\Searching.obj : $(WORKSPACE)\StdLib\Include\limits.h
+$(OUTPUT_DIR)\Searching.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
+$(OUTPUT_DIR)\Searching.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
+$(OUTPUT_DIR)\Searching.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
+$(OUTPUT_DIR)\Searching.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
+$(OUTPUT_DIR)\Searching.obj : $(WORKSPACE)\StdLib\LibC\String\Searching.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\.\Searching.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\String\Searching.c
+
+$(OUTPUT_DIR)\strlcpy.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\strlcpy.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\sys\bswap.h
+$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h
+$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\X64\machine\types.h
+$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\assert.h
+$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h
+$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h
+$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h
+$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\sys\fd_set.h
+$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h
+$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\string.h
+$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian.h
+$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h
+$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h
+$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\namespace.h
+$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\sys\ansi.h
+$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h
+$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\sys\types.h
+$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\sys\endian.h
+$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\sys\stdint.h
+$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\sys\cdefs.h
+$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\LibC\String\strlcpy.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\.\strlcpy.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\String\strlcpy.c
 
 $(OUTPUT_DIR)\Comparison.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\Comparison.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\Comparison.obj : $(WORKSPACE)\StdLib\Include\string.h
 $(OUTPUT_DIR)\Comparison.obj : $(WORKSPACE)\StdLib\Include\ctype.h
+$(OUTPUT_DIR)\Comparison.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
 $(OUTPUT_DIR)\Comparison.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
 $(OUTPUT_DIR)\Comparison.obj : $(WORKSPACE)\StdLib\Include\sys\_ctype.h
-$(OUTPUT_DIR)\Comparison.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
 $(OUTPUT_DIR)\Comparison.obj : $(WORKSPACE)\StdLib\LibC\String\Comparison.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\.\Comparison.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\String\Comparison.c
-
-$(OUTPUT_DIR)\strncasecmp.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\strncasecmp.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\strncasecmp.obj : $(WORKSPACE)\StdLib\Include\assert.h
-$(OUTPUT_DIR)\strncasecmp.obj : $(WORKSPACE)\StdLib\Include\sys\_ctype.h
-$(OUTPUT_DIR)\strncasecmp.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\namespace.h
-$(OUTPUT_DIR)\strncasecmp.obj : $(WORKSPACE)\StdLib\Include\sys\cdefs.h
-$(OUTPUT_DIR)\strncasecmp.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
-$(OUTPUT_DIR)\strncasecmp.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
-$(OUTPUT_DIR)\strncasecmp.obj : $(WORKSPACE)\StdLib\Include\ctype.h
-$(OUTPUT_DIR)\strncasecmp.obj : $(WORKSPACE)\StdLib\Include\string.h
-$(OUTPUT_DIR)\strncasecmp.obj : $(WORKSPACE)\StdLib\LibC\String\strncasecmp.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\.\strncasecmp.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\String\strncasecmp.c
-
-$(OUTPUT_DIR)\ErrorList.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\ErrorList.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\ErrorList.obj : $(WORKSPACE)\StdLib\LibC\String\ErrorList.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\.\ErrorList.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\String\ErrorList.c
-
-$(OUTPUT_DIR)\strsep.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\strsep.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\Include\stdio.h
-$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\Include\sys\cdefs.h
-$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
-$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
-$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h
-$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\Include\sys\ansi.h
-$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
-$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h
-$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\Include\stdarg.h
-$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\Include\string.h
-$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\Include\limits.h
-$(OUTPUT_DIR)\strsep.obj : $(WORKSPACE)\StdLib\LibC\String\strsep.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\.\strsep.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\String\strsep.c
-
-$(OUTPUT_DIR)\strlcpy.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\strlcpy.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\X64\machine\byte_swap.h
-$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\sys\endian.h
-$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\assert.h
-$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\sys\stdint.h
-$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\sys\fd_set.h
-$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_limits.h
-$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_types.h
-$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_const.h
-$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian_machdep.h
-$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\X64\machine\types.h
-$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\X64\machine\bswap.h
-$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLibPrivateInternalFiles\Include\namespace.h
-$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\sys\cdefs.h
-$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\X64\machine\int_mwgwtypes.h
-$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\X64\machine\ansi.h
-$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\sys\ansi.h
-$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\sys\bswap.h
-$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\sys\types.h
-$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\X64\machine\endian.h
-$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\Include\string.h
-$(OUTPUT_DIR)\strlcpy.obj : $(WORKSPACE)\StdLib\LibC\String\strlcpy.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\.\strlcpy.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\String\strlcpy.c
-
-$(OUTPUT_DIR)\Concatenation.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\Concatenation.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\Concatenation.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\Concatenation.obj : $(WORKSPACE)\StdLib\Include\string.h
-$(OUTPUT_DIR)\Concatenation.obj : $(WORKSPACE)\StdLib\LibC\String\Concatenation.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\.\Concatenation.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\String\Concatenation.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\.\Comparison.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\String\Comparison.c
 
 $(OUTPUT_DIR)\Copying.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)\Copying.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)\Copying.obj : $(WORKSPACE)\StdLib\Include\stdlib.h
 $(OUTPUT_DIR)\Copying.obj : $(WORKSPACE)\StdLib\Include\string.h
-$(OUTPUT_DIR)\Copying.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
 $(OUTPUT_DIR)\Copying.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
+$(OUTPUT_DIR)\Copying.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
 $(OUTPUT_DIR)\Copying.obj : $(WORKSPACE)\StdLib\LibC\String\Copying.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\.\Copying.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\String\Copying.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\.\Copying.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\String\Copying.c
 
-$(OUTPUT_DIR)\Searching.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\Searching.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\Searching.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
-$(OUTPUT_DIR)\Searching.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
-$(OUTPUT_DIR)\Searching.obj : $(WORKSPACE)\StdLib\Include\string.h
-$(OUTPUT_DIR)\Searching.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
-$(OUTPUT_DIR)\Searching.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\Searching.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\Searching.obj : $(WORKSPACE)\StdLib\Include\limits.h
-$(OUTPUT_DIR)\Searching.obj : $(WORKSPACE)\StdLib\LibC\String\Searching.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\.\Searching.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\String\Searching.c
-
-$(OUTPUT_DIR)\Misc.obj : $(MAKE_FILE)
-$(OUTPUT_DIR)\Misc.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)\Misc.obj : $(WORKSPACE)\StdLib\Include\sys\errno.h
-$(OUTPUT_DIR)\Misc.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseMemoryLib.h
-$(OUTPUT_DIR)\Misc.obj : $(WORKSPACE)\StdLib\Include\x86\limits.h
-$(OUTPUT_DIR)\Misc.obj : $(WORKSPACE)\StdLib\Include\X64\machine\limits.h
-$(OUTPUT_DIR)\Misc.obj : $(WORKSPACE)\StdLib\Include\errno.h
-$(OUTPUT_DIR)\Misc.obj : $(WORKSPACE)\MdePkg\Include\Library\BaseLib.h
-$(OUTPUT_DIR)\Misc.obj : $(WORKSPACE)\MdePkg\Include\Library\PrintLib.h
-$(OUTPUT_DIR)\Misc.obj : $(WORKSPACE)\StdLib\Include\string.h
-$(OUTPUT_DIR)\Misc.obj : $(WORKSPACE)\StdLib\Include\limits.h
-$(OUTPUT_DIR)\Misc.obj : $(WORKSPACE)\StdLib\Include\sys\syslimits.h
-$(OUTPUT_DIR)\Misc.obj : $(WORKSPACE)\StdLib\LibC\String\Misc.c
-	"$(CC)" /Fog:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\.\Misc.obj $(CC_FLAGS) $(INC) g:\uefi_edk2_practice\StdLib\LibC\String\Misc.c
+$(OUTPUT_DIR)\ErrorList.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)\ErrorList.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)\ErrorList.obj : $(WORKSPACE)\StdLib\LibC\String\ErrorList.c
+	"$(CC)" /Fod:\uefi_edk2_practice\Build\AppPkg\RELEASE_VS2015x86\X64\StdLib\LibC\String\String\OUTPUT\.\ErrorList.obj $(CC_FLAGS) $(INC) d:\uefi_edk2_practice\StdLib\LibC\String\ErrorList.c
 
 
 
