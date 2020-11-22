@@ -1,3 +1,0 @@
-gCommandLineDefines: {'ARCH': 'X64'}
-BuildOptionPcd: []
-Active Platform: d:\uefi_edk2_practice\MyPkg\MyPkg.dsc

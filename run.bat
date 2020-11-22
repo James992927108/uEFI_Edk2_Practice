@@ -12,16 +12,17 @@ cd /D BaseTools
 call toolsetup.bat Rebuild
 cd /D ..
 
-echo Run edksetup.bat
+echo Run edksetup.ba。t
 @REM call edksetup.bat --nt32
 call edksetup.bat
 @REM call build cleanall
 call build
 @REM call build -q -s
-@REM call build -DDEBUG_ON_SERIAL_PORT=TRUE -DSOURCE_DEBUG_ENABLE
 @REM call build run
-@REM del /F z:\MySpdRead.efi 
-@REM del /F f:\MySpdRead.efi 
 
-@REM copy E:\EDK2\UDK2018\Build\AppPkg\RELEASE_VS2015x86\X64\MySpdRead.efi  z:\
-@REM copy E:\EDK2\UDK2018\Build\AppPkg\RELEASE_VS2015x86\X64\MySpdRead.efi  f:\
+del /F z:\MySpdRead.efi 
+copy %CD%\Build\MyPkg\RELEASE_VS2015x86\X64\MySpdRead.efi  z:\
+
+set QEMU_HOME=E:\Qemu
+set PATH=%QEMU_HOME%;%PATH%
+call qemu-system-x86_64.exe -pflash E:\Qemu\OVMF.fd -hda fat:rw:Z:\ -net none
