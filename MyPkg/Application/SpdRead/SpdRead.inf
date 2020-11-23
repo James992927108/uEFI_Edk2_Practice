@@ -31,4 +31,5 @@
 
   ShellLib # ShellPkg/ShellPkg.dec
   ShellCommandLib #ShellPkg/ShellPkg.dec
+
 [Protocols]

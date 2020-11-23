@@ -49,140 +49,183 @@ BOOLEAN GetSMBusIoSpaceBase(UINT32 *IoSpaceBase)
     return FALSE;
 }
 
-BOOLEAN CheckContinue(BOOLEAN Continue)
+BOOLEAN CheckContinue()
 {
     SHELL_PROMPT_RESPONSE *Resp = NULL;
     ShellPromptForResponse(ShellPromptResponseTypeYesNo, L"\nType 'y' or 'n' for continue: ", (VOID **)&Resp);
     switch (*(SHELL_PROMPT_RESPONSE *)Resp)
     {
     case ShellPromptResponseNo:
-        Continue = FALSE;
         Print(L"Choose No\n");
+        return FALSE;
         break;
     case ShellPromptResponseYes:
-        Continue = TRUE;
+        return TRUE;
         Print(L"Choose Yes\n");
         break;
     default:
+        return FALSE;
         break;
     }
-    return Continue;
+}
+
+BOOLEAN GetSlaveAddrList(UINT32 IoSpaceBase, UINT8 *SlaveAddrList, UINT8 *Count)
+{
+    INT32 Index = 0;
+    BOOLEAN Result = FALSE;
+    for (INT32 i = 0; i < 16; i++)
+    {
+        SlaveAddrList[i] = 0;
+    }
+    for (UINT8 SlaveAddr = 0xA0; SlaveAddr < 0xA0 + 32; SlaveAddr += 2)
+    {
+        IoWrite8(IoSpaceBase, 0x1E);
+        IoWrite8(IoSpaceBase + 0x04, SlaveAddr | SLAVE_ENABLE);
+        IoWrite8(IoSpaceBase + 0x03, 0);
+        IoWrite8(IoSpaceBase + 0x02, 0x48);
+        while (IoRead8(IoSpaceBase) & 0x01)
+            ;
+        if (IoRead8(IoSpaceBase) & 0x04)
+        {
+            continue;
+        }
+        else
+        {
+            SlaveAddrList[Index++] = SlaveAddr;
+            Result = TRUE;
+        }
+    }
+    // for (INT32 i = 0; i < 16; i++)
+    // {
+    //     Print(L"i = %d, 0x%02x\n", i, SlaveAddrList[i]);
+    // }
+    *Count = (UINT8)Index;
+    return Result;
+}
+
+BOOLEAN CheckDevErr(UINT32 IoSpaceBase, UINT8 SlaveAddr)
+{
+    //18.2.1 HST_STS-HOST Status Register(SMBus) SMB_BASE + 00h, 8 bits
+    // Set 1001 1110
+    // Note [1:5] [7]clear bit by write a 1 to it. 1011 1110
+    // [1] INTR = 1, [2] DEV_ERR = 1, [3] DEV_ERR = 1, [4]FAILED = 1, [5] SMBALERT_STS = 1[7]  Done Status = 1
+    IoWrite8(IoSpaceBase + SMB_HST_STS, 0xFF); // -> 40
+    //18.2.4 XMIT_SLVA Transmit Slave Transmit Slave Address Register(SMBus) SMB_BASE + 04h, 8 bits
+    //set Address[7:1] + RW[0] -> SlaveAddr + 0x01(0W/1R)，So for "read"
+    Print(L"CheckDevErr SlaveAddr -->  0x%02x\n", SlaveAddr | SLAVE_ENABLE);
+
+    IoWrite8(IoSpaceBase + SMB_XMIT_SLVA, SlaveAddr | SLAVE_ENABLE);
+    //18.2.3 HST_CMD-HOST Command Register(SMBus) SMB_BASE + 03h, 8 bits
+    // set 0000 0000 read first(index = 0) byte
+    IoWrite8(IoSpaceBase + SMB_HST_CMD, 0);
+    //18.2.2 HST_CNT-HOST Contorl Register(SMBus) SMB_BASE + 02h, 8 bits
+    //Set 0100 1000 [0] INTREN = 1 -> Enable [4:2] SMB_CMD = 010 -> "Byte" Data, [6] START = 1
+    IoWrite8(IoSpaceBase + SMB_HST_CNT, 0x48);
+    // -> 42 (0100 0010) bit 6 INUSE_STS = 1, mean read, the next time read will set 0
+    // bit 1 INTR, interrupt was the successful.
+
+    // -> 01 (0000 0001)
+    // bit 0 -> set 1, "No" SMB registers should be accessed while is set.
+    // bit 1 -> the PCH de-assert the interrut, so set 0.
+    // bit 6, 1 -> 0 (next time read will reset 0)
+    UINT8 Temp;
+    Temp = IoRead8(IoSpaceBase + SMB_HST_STS);
+    Print(L"Line: %d, Temp: 0x%02x\n", __LINE__, Temp);
+    while (IoRead8(IoSpaceBase + SMB_HST_STS) & 0x01)
+        ;
+    Print(L"Transaction is completed\n");
+    if (IoRead8(IoSpaceBase + SMB_HST_STS) & 0x04)
+    {
+        Print(L"DEV_ERR -> 1\n");
+        return TRUE;
+    }
+    else
+    {
+        Print(L"DEV_ERR -> 0\n");
+        return FALSE;
+    }
 }
 
 EFI_STATUS UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
 {
     UINT32 IoSpaceBase;
-    UINT8 *InputStr = NULL;
-    BOOLEAN Continue;
+
+    UINT8 SlaveAddrList[16];
+    UINT8 Length;
 
     UINT8 SlaveAddr;
-    UINT32 Index;
     UINT8 DumpData[256];
-    BOOLEAN DEV_ERR;
+    UINT8 *InputStr = NULL;
 
-    UINT8 Exp;
-
-    if (GetSMBusIoSpaceBase(&IoSpaceBase))
+    if (!GetSMBusIoSpaceBase(&IoSpaceBase))
     {
-        Print(L"Find SMBus IO Space base %08x\n", IoSpaceBase);
-        Continue = TRUE;
-        while (Continue)
+        Print(L"Can not find SMBus Io Space base\n");
+        return 0;
+    }
+
+    Print(L"Find SMBus IO Space base %08x\n", IoSpaceBase);
+
+    do
+    {
+        if (!GetSlaveAddrList(IoSpaceBase, SlaveAddrList, &Length))
         {
-            while (1)
+            Print(L"Can not find any available slave on board\n");
+            return 0;
+        }
+        for (INT32 Index = 0; Index < Length; Index++)
+        {
+            Print(L"Index: %d, Addr: 0x%02x\n", Index, SlaveAddrList[Index]);
+        }
+        Print(L"----------------------------------\n");
+        while (1)
+        {
+            ShellPromptForResponse(ShellPromptResponseTypeFreeform, L"Please tpye sdram channel from SlaveAddrList by Index:", (VOID **)&InputStr);
+            UINT8 Min = 0x30;
+            UINT8 Max = 0x30 + Length;
+            UINT8 Input = (*InputStr);
+            UINT8 Select = *InputStr - 0x30;
+            UINT8 SelectValue = SlaveAddrList[(*InputStr - 0x30)];
+            Print(L"Debug 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n", Min, Max, Input, Select, SelectValue);
+            if (Input < Min || Input >= Max)
             {
-                ShellPromptForResponse(ShellPromptResponseTypeFreeform, L"Please select Sdram channel(0 ~ 3):", (VOID **)&InputStr);
-                if ((*InputStr) < 0x30 || (*InputStr) > 0x33)
-                {
-                    Print(L"Out of the Range\n");
-                }
-                else
-                {
-                    Print(L"Select Sdram channel is (Dex)%02x (Glyph)%02x\n", *InputStr, *InputStr - 0x30);
-                    break;
-                }
-            } // End while
-
-            Exp = *InputStr - 0x30;
-            SlaveAddr = 0xA0 + ( 1 << Exp);
-            Print(L"Base 0x%02x, Slave: 0x%02x\n", 0xA0, SlaveAddr);
-
-            //18.2.1 HST_STS-HOST Status Register(SMBus) SMB_BASE + 00h, 8 bits
-            // Set 1001 1110
-            // Note [1:5] [7]clear bit by write a 1 to it. 1011 1110
-            // [1] INTR = 1, [2] DEV_ERR = 1, [3] DEV_ERR = 1, [4]FAILED = 1, [5] SMBALERT_STS = 1[7]  Done Status = 1
-            IoWrite8(IoSpaceBase + SMB_HST_STS, 0xFF); // -> 40
-            //18.2.4 XMIT_SLVA Transmit Slave Transmit Slave Address Register(SMBus) SMB_BASE + 04h, 8 bits
-            //set Address[7:1] + RW[0] -> SlaveAddr + 0x01(0W/1R)，So for "read"
-            Print(L"1.-->  0x%02x\n",SlaveAddr | SLAVE_ENABLE);
-
-            IoWrite8(IoSpaceBase + SMB_XMIT_SLVA, SlaveAddr | SLAVE_ENABLE);
-            //18.2.3 HST_CMD-HOST Command Register(SMBus) SMB_BASE + 03h, 8 bits
-            // set 0000 0000 read first(index = 0) byte
-            IoWrite8(IoSpaceBase + SMB_HST_CMD, 0);
-            //18.2.2 HST_CNT-HOST Contorl Register(SMBus) SMB_BASE + 02h, 8 bits
-            //Set 0100 1000 [0] INTREN = 1 -> Enable [4:2] SMB_CMD = 010 -> "Byte" Data, [6] START = 1
-            IoWrite8(IoSpaceBase + SMB_HST_CNT, 0x48);
-            // -> 42 (0100 0010) bit 6 INUSE_STS = 1, mean read, the next time read will set 0
-            // bit 1 INTR, interrupt was the successful.
-
-            // -> 01 (0000 0001)
-            // bit 0 -> set 1, "No" SMB registers should be accessed while is set.
-            // bit 1 -> the PCH de-assert the interrut, so set 0.
-            // bit 6, 1 -> 0 (next time read will reset 0)
-            UINT8 Temp;
-            Temp = IoRead8(IoSpaceBase + SMB_HST_STS);
-            Print(L"Line: %d, Temp: 0x%02x\n", __LINE__, Temp);
-            while (IoRead8(IoSpaceBase + SMB_HST_STS) & 0x01)
-                ;
-
-            Print(L"Transaction is completed\n");
-            if (IoRead8(IoSpaceBase + SMB_HST_STS) & 0x04)
-            {
-                DEV_ERR = TRUE;
-                Print(L"DEV_ERR -> 1\n");
-                Temp = IoRead8(IoSpaceBase + SMB_HST_STS);
-                Print(L"Line: %d, Temp: 0x%02x\n", __LINE__, Temp);
+                Print(L"Out of the Range\n");
             }
             else
             {
-                DEV_ERR = FALSE;
-                Print(L"DEV_ERR -> 0\n");
-                Temp = IoRead8(IoSpaceBase + SMB_HST_STS);
-                Print(L"Line: %d, Temp: 0x%02x\n", __LINE__, Temp);
+                Print(L"Select sdram channel is %d, 0x%02x\n", Select, SelectValue);
+                SlaveAddr = SelectValue;
+                break;
             }
+        } // End while
 
-            if (DEV_ERR == FALSE)
+        Print(L"--> Slave 0x%02x\n", SlaveAddr);
+        if (CheckDevErr(IoSpaceBase, SlaveAddr) == FALSE)
+        {
+            Print(L"--> Slave & 0x01: 0x%02x\n", SlaveAddr | SLAVE_ENABLE);
+            for (INT32 Index = 0; Index < SMB_SIZE; Index++)
             {
-                Print(L"2.-->  0x%02x\n",SlaveAddr | SLAVE_ENABLE);
-                for (Index = 0; Index < SMB_SIZE; Index++)
-                {
-                    IoWrite8(IoSpaceBase + SMB_HST_STS, 0x1E);
-                    IoWrite8(IoSpaceBase + SMB_XMIT_SLVA, SlaveAddr | SLAVE_ENABLE);
-                    IoWrite8(IoSpaceBase + SMB_HST_CMD, (UINT8)Index);
-                    IoWrite8(IoSpaceBase + SMB_HST_CNT, 0x48);
-                    while (IoRead8(IoSpaceBase + SMB_HST_STS) & 0x01)
-                        ;
-                    DumpData[Index] = IoRead8(IoSpaceBase + SMB_HST_DAT_0);
-                    if ((Index + 1) % 0x10 == 0)
-                        Print(L"%02x\r\n", DumpData[Index]);
-                    else
-                        Print(L"%02x ", DumpData[Index]);
-                }
-                for (Index = 0; Index < SMB_SIZE; Index++)
-                {
-                    DumpData[Index] = 0;
-                }
+                IoWrite8(IoSpaceBase + SMB_HST_STS, 0x1E);
+                IoWrite8(IoSpaceBase + SMB_XMIT_SLVA, SlaveAddr | SLAVE_ENABLE);
+                IoWrite8(IoSpaceBase + SMB_HST_CMD, (UINT8)Index);
+                IoWrite8(IoSpaceBase + SMB_HST_CNT, 0x48);
+                while (IoRead8(IoSpaceBase + SMB_HST_STS) & 0x01)
+                    ;
+                DumpData[Index] = IoRead8(IoSpaceBase + SMB_HST_DAT_0);
+                if ((Index + 1) % 0x10 == 0)
+                    Print(L"%02x %02x\r\n", DumpData[Index], Index);
+                else
+                    Print(L"%02x ", DumpData[Index]);
             }
-            // UINTN SpaceSize = 2;
-            // Print(L"\nCall UefiShellCommandLib.c DumpHex()\n");
-            // DumpHex(SpaceSize, SMB_HST_DAT_0, SMB_SIZE, DumpData);
-
-            Continue = CheckContinue(Continue);
+            for (INT32 Index = 0; Index < SMB_SIZE; Index++)
+            {
+                DumpData[Index] = 0;
+            }
         }
-    }
-    else
-    {
-        Print(L"3.Can not find SMBus Io Space base\n");
-    }
+
+        // UINTN SpaceSize = 2;
+        // Print(L"\nCall UefiShellCommandLib.c DumpHex()\n");
+        // DumpHex(SpaceSize, SMB_HST_DAT_0, SMB_SIZE, DumpData);
+    } while (CheckContinue());
+
     return 0;
 }
