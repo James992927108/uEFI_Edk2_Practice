@@ -12,7 +12,7 @@ cd /D BaseTools
 call toolsetup.bat Rebuild
 cd /D ..
 
-echo Run edksetup.ba。t
+echo Run edksetup.bat
 @REM call edksetup.bat --nt32
 call edksetup.bat
 @REM call build cleanall
@@ -23,6 +23,9 @@ call build
 del /F z:\MySpdRead.efi 
 copy %CD%\Build\MyPkg\RELEASE_VS2015x86\X64\MySpdRead.efi  z:\
 
-set QEMU_HOME=E:\Qemu
-set PATH=%QEMU_HOME%;%PATH%
-call qemu-system-x86_64.exe -pflash E:\Qemu\OVMF.fd -hda fat:rw:Z:\ -net none
+del /F f:\MySpdRead.efi 
+copy %CD%\Build\MyPkg\RELEASE_VS2015x86\X64\MySpdRead.efi  f:\
+
+@REM set QEMU_HOME=E:\Qemu
+@REM set PATH=%QEMU_HOME%;%PATH%
+@REM call qemu-system-x86_64.exe -pflash E:\Qemu\OVMF.fd -hda fat:rw:Z:\ -net none

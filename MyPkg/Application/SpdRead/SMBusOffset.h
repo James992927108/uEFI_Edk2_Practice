@@ -19,5 +19,5 @@
 #define SMB_NTFY_DHIGH 0x017
 
 #define SLAVE_ENABLE 0x01
-
-#define SMB_SIZE 0x100
+// 0x200 = 128 bytes * 4 blocks = 512 (0x200)
+#define SMB_SIZE 0x200
