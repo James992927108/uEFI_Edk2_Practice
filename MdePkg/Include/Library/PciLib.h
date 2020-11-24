@@ -1,4 +1,4 @@
-/** @file
+﻿/** @file
   Provides services to access PCI Configuration Space.
   
   These functions perform PCI configuration cycles using the default PCI configuration 

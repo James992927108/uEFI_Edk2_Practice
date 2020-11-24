@@ -18,6 +18,10 @@
 #define SMB_NTFY_DLOW 0x016
 #define SMB_NTFY_DHIGH 0x017
 
-#define SLAVE_ENABLE 0x01
-// 0x200 = 128 bytes * 4 blocks = 512 (0x200)
-#define SMB_SIZE 0x200
+#define SLAVE_READ_ENABLE 0x01
+// DDR4 0x200 = 128 bytes * 4 blocks = 512 (0x200)
+// DDR3 0x100 = 256 bytes
+
+#define SPD_DDR4_SIZE 0x200
+// DDR4 Base Config 0 ~ 127 (0x00 ~ 0x80) 
+#define SPD_BASE_CONF_SIZE 0x80

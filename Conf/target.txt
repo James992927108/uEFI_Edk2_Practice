@@ -27,7 +27,8 @@
 # ACTIVE_PLATFORM       = Nt32Pkg/Nt32Pkg.dsc
 # ACTIVE_PLATFORM       = OvmfPkg/OvmfPkgX64.dsc
 # ACTIVE_PLATFORM       = AppPkg/AppPkg.dsc
-ACTIVE_PLATFORM       = MyPkg/MyPkg.dsc
+# ACTIVE_PLATFORM       = MyPkg/MyPkg.dsc
+ACTIVE_PLATFORM       = UefiCpuPkg/UefiCpuPkg.dsc
 
 #  TARGET                List       Optional    Zero or more of the following: DEBUG, RELEASE, NOOPT
 #                                               UserDefined; separated by a space character.
