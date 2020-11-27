@@ -238,10 +238,12 @@ CpuidVersionInfo (
   PRINT_BIT_FIELD (Eax, ProcessorType);
   PRINT_BIT_FIELD (Eax, ExtendedModelId);
   PRINT_BIT_FIELD (Eax, ExtendedFamilyId);
+
   PRINT_BIT_FIELD (Ebx, BrandIndex);
   PRINT_BIT_FIELD (Ebx, CacheLineSize);
   PRINT_BIT_FIELD (Ebx, MaximumAddressableIdsForLogicalProcessors);
   PRINT_BIT_FIELD (Ebx, InitialLocalApicId);
+
   PRINT_BIT_FIELD (Ecx, SSE3);
   PRINT_BIT_FIELD (Ecx, PCLMULQDQ);
   PRINT_BIT_FIELD (Ecx, DTES64);
@@ -271,6 +273,7 @@ CpuidVersionInfo (
   PRINT_BIT_FIELD (Ecx, AVX);
   PRINT_BIT_FIELD (Ecx, F16C);
   PRINT_BIT_FIELD (Ecx, RDRAND);
+  
   PRINT_BIT_FIELD (Edx, FPU);
   PRINT_BIT_FIELD (Edx, VME);
   PRINT_BIT_FIELD (Edx, DE);
