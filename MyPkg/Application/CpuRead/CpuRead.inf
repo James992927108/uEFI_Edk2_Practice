@@ -32,6 +32,8 @@
 #
 
 [Sources]
+  main.c
+  Mtrr.c
   CpuRead.c
 
 [Packages]

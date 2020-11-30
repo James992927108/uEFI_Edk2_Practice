@@ -83,8 +83,8 @@
   # $(MYPAKG_PATH)/PciScan/IO/PciScan_v1.inf
   # $(MYPAKG_PATH)/PciScan/MMIO/PciScan_v3.inf
   # $(MYPAKG_PATH)/SpdRead/SpdRead.inf
-  # $(MYPAKG_PATH)/CpuRead/CpuRead.inf
-  $(MYPAKG_PATH)/CpuRead/Lib/CpuReadbyLib.inf
+  $(MYPAKG_PATH)/CpuRead/CpuRead.inf
+  # $(MYPAKG_PATH)/CpuRead/Lib/CpuReadByLib.inf
   
 #### A simple fuzzer for OrderedCollectionLib, in particular for
 #### BaseOrderedCollectionRedBlackTreeLib.
