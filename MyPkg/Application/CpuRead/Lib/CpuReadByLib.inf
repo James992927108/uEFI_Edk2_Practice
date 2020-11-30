@@ -19,7 +19,7 @@
 
 [Defines]
   INF_VERSION                    = 0x00010005
-  BASE_NAME                      = MyCpuRead
+  BASE_NAME                      = MyCpuReadbyLib
   FILE_GUID                      = 4AE7E1E8-9DFE-4e3e-85B4-A5F6ABD470FB
   MODULE_TYPE                    = UEFI_APPLICATION
   VERSION_STRING                 = 0.5

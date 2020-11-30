@@ -2698,10 +2698,11 @@ typedef union {
   ///
   struct {
     ///
-    /// [Bits 2:0] Default Memory Type.
+    /// [Bits 7:0] Default Memory Type.
     ///
-    UINT32  Type:3;
-    UINT32  Reserved1:7;
+    UINT32  Type:8;
+    // [8:9]
+    UINT32  Reserved1:2;
     ///
     /// [Bit 10] Fixed Range MTRR Enable.
     ///
@@ -2710,7 +2711,9 @@ typedef union {
     /// [Bit 11] MTRR Enable.
     ///
     UINT32  E:1;
+    // [12:31]
     UINT32  Reserved2:20;
+    // [32:63]
     UINT32  Reserved3:32;
   } Bits;
   ///

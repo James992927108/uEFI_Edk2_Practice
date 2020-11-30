@@ -23,13 +23,3 @@
 [Guids]
   gMyPkgTokenSpaceGuid          = { 0xd9d7b49a, 0x1290, 0x48b9, { 0x92, 0x5a, 0x5f, 0x2, 0xc1, 0x16, 0x8f, 0xda } }
 
-[PcdsFixedAtBuild]
-  gMyPkgTokenSpaceGuid.DataSource_Port|1234|UINT16|0
-  gMyPkgTokenSpaceGuid.Tftp_AckLogBase|4|UINT32|1
-  gMyPkgTokenSpaceGuid.Tftp_AckMultiplier|4|UINT32|2
-  gMyPkgTokenSpaceGuid.Tftp_Bandwidth|0|BOOLEAN|3
-  gMyPkgTokenSpaceGuid.Tftp_HighSpeed|0|BOOLEAN|4
-  gMyPkgTokenSpaceGuid.Tftp_MaxRetry|10|UINT32|5
-  gMyPkgTokenSpaceGuid.Tftp_MaxTimeoutInSec|3|UINT32|6
-  gMyPkgTokenSpaceGuid.WebServer_HttpPort|80|UINT16|7
-

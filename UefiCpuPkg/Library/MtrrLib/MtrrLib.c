@@ -153,7 +153,7 @@ MtrrDebugPrintAllMtrrsWorker (
   @return Variable MTRR count
 
 **/
-UINT32
+UINT32 EFIAPI
 GetVariableMtrrCountWorker (
   VOID
   )

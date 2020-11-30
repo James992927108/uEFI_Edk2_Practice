@@ -55,11 +55,15 @@
   PciCf8Lib|MdePkg/Library/BasePciCf8Lib/BasePciCf8Lib.inf
   SynchronizationLib|MdePkg/Library/BaseSynchronizationLib/BaseSynchronizationLib.inf
   UefiRuntimeLib|MdePkg/Library/UefiRuntimeLib/UefiRuntimeLib.inf
+  HobLib|MdePkg/Library/DxeHobLib/DxeHobLib.inf
+  FileHandleLib|MdePkg/Library/UefiFileHandleLib/UefiFileHandleLib.inf
+  CacheMaintenanceLib|MdePkg/Library/BaseCacheMaintenanceLib/BaseCacheMaintenanceLib.inf
+  # add for CpuRead.inf
+  CpuLib|MdePkg/Library/BaseCpuLib/BaseCpuLib.inf
+  
   HiiLib|MdeModulePkg/Library/UefiHiiLib/UefiHiiLib.inf
   UefiHiiServicesLib|MdeModulePkg/Library/UefiHiiServicesLib/UefiHiiServicesLib.inf
   PerformanceLib|MdeModulePkg/Library/DxePerformanceLib/DxePerformanceLib.inf
-  HobLib|MdePkg/Library/DxeHobLib/DxeHobLib.inf
-  FileHandleLib|MdePkg/Library/UefiFileHandleLib/UefiFileHandleLib.inf
   SortLib|MdeModulePkg/Library/UefiSortLib/UefiSortLib.inf
 
   ShellLib|ShellPkg/Library/UefiShellLib/UefiShellLib.inf
@@ -67,8 +71,8 @@
   ShellCommandLib|ShellPkg/Library/UefiShellCommandLib/UefiShellCommandLib.inf
   HandleParsingLib|ShellPkg/Library/UefiHandleParsingLib/UefiHandleParsingLib.inf
   # 
-  CacheMaintenanceLib|MdePkg/Library/BaseCacheMaintenanceLib/BaseCacheMaintenanceLib.inf
-
+  # add for CpuRead.inf
+  MtrrLib|UefiCpuPkg/Library/MtrrLib/MtrrLib.inf
 [Components]
 
   DEFINE MYPAKG_PATH = MyPkg/Application
@@ -79,7 +83,8 @@
   # $(MYPAKG_PATH)/PciScan/IO/PciScan_v1.inf
   # $(MYPAKG_PATH)/PciScan/MMIO/PciScan_v3.inf
   # $(MYPAKG_PATH)/SpdRead/SpdRead.inf
-  $(MYPAKG_PATH)/CpuRead/CpuRead.inf
+  # $(MYPAKG_PATH)/CpuRead/CpuRead.inf
+  $(MYPAKG_PATH)/CpuRead/Lib/CpuReadbyLib.inf
   
 #### A simple fuzzer for OrderedCollectionLib, in particular for
 #### BaseOrderedCollectionRedBlackTreeLib.

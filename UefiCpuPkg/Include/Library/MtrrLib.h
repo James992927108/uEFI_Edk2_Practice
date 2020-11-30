@@ -412,4 +412,46 @@ MtrrSetMemoryAttributesInMtrrSettings (
   IN     CONST MTRR_MEMORY_RANGE *Ranges,
   IN     UINTN                   RangeCount
   );
+// --> for MtrrPrintAllMtrrsWorker() in other file
+UINT32 EFIAPI
+GetVariableMtrrCountWorker (
+  VOID
+);
+
+VOID
+MtrrLibInitializeMtrrMask (
+  OUT UINT64 *MtrrValidBitsMask,
+  OUT UINT64 *MtrrValidAddressMask
+);
+
+MTRR_MEMORY_CACHE_TYPE
+MtrrGetDefaultMemoryTypeWorker (
+  IN MTRR_SETTINGS      *MtrrSetting
+);
+
+UINT32 MtrrLibGetRawVariableRanges (
+  IN  MTRR_VARIABLE_SETTINGS  *VariableSettings,
+  IN  UINTN                   VariableMtrrCount,
+  IN  UINT64                  MtrrValidBitsMask,
+  IN  UINT64                  MtrrValidAddressMask,
+  OUT MTRR_MEMORY_RANGE       *VariableMtrr
+);
+
+RETURN_STATUS
+MtrrLibApplyVariableMtrrs (
+  IN     CONST MTRR_MEMORY_RANGE *VariableMtrr,
+  IN     UINT32                  VariableMtrrCount,
+  IN OUT MTRR_MEMORY_RANGE       *Ranges,
+  IN     UINTN                   RangeCapacity,
+  IN OUT UINTN                   *RangeCount
+);
+
+RETURN_STATUS
+MtrrLibApplyFixedMtrrs (
+  IN     MTRR_FIXED_SETTINGS  *Fixed,
+  IN OUT MTRR_MEMORY_RANGE    *Ranges,
+  IN     UINTN                RangeCapacity,
+  IN OUT UINTN                *RangeCount
+);
+// <-- for MtrrPrintAllMtrrsWorker() in other file
 #endif // _MTRR_LIB_H_

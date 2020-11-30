@@ -87,7 +87,7 @@ VERIFY_SIZE_OF (__VERIFY_UINT16_ENUM_SIZE, 4);
 VERIFY_SIZE_OF (__VERIFY_UINT32_ENUM_SIZE, 4);
 
 //
-// The Microsoft* C compiler can removed references to unreferenced data items
+//  The Microsoft* C compiler can removed references to unreferenced data items
 //  if the /OPT:REF linker option is used. We defined a macro as this is a
 //  a non standard extension
 //
@@ -100,7 +100,7 @@ VERIFY_SIZE_OF (__VERIFY_UINT32_ENUM_SIZE, 4);
   #define GLOBAL_REMOVE_IF_UNREFERENCED __declspec(selectany)
 #else
   ///
-  /// Remove the global variable from the linked image if there are no references
+  ///  Remove the global variable from the linked image if there are no references
   ///  to it after all compiler and linker optimizations have been performed.
   ///
   ///
