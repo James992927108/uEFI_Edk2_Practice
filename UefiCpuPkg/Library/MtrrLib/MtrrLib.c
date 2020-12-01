@@ -57,80 +57,6 @@ typedef struct {
   UINT16                 Previous;
 } MTRR_LIB_ADDRESS;
 
-//
-// This table defines the offset, base and length of the fixed MTRRs
-//
-CONST FIXED_MTRR  mMtrrLibFixedMtrrTable[] = {
-  {
-    MSR_IA32_MTRR_FIX64K_00000,
-    0,
-    SIZE_64KB
-  },
-  {
-    MSR_IA32_MTRR_FIX16K_80000,
-    0x80000,
-    SIZE_16KB
-  },
-  {
-    MSR_IA32_MTRR_FIX16K_A0000,
-    0xA0000,
-    SIZE_16KB
-  },
-  {
-    MSR_IA32_MTRR_FIX4K_C0000,
-    0xC0000,
-    SIZE_4KB
-  },
-  {
-    MSR_IA32_MTRR_FIX4K_C8000,
-    0xC8000,
-    SIZE_4KB
-  },
-  {
-    MSR_IA32_MTRR_FIX4K_D0000,
-    0xD0000,
-    SIZE_4KB
-  },
-  {
-    MSR_IA32_MTRR_FIX4K_D8000,
-    0xD8000,
-    SIZE_4KB
-  },
-  {
-    MSR_IA32_MTRR_FIX4K_E0000,
-    0xE0000,
-    SIZE_4KB
-  },
-  {
-    MSR_IA32_MTRR_FIX4K_E8000,
-    0xE8000,
-    SIZE_4KB
-  },
-  {
-    MSR_IA32_MTRR_FIX4K_F0000,
-    0xF0000,
-    SIZE_4KB
-  },
-  {
-    MSR_IA32_MTRR_FIX4K_F8000,
-    0xF8000,
-    SIZE_4KB
-  }
-};
-
-//
-// Lookup table used to print MTRRs
-//
-GLOBAL_REMOVE_IF_UNREFERENCED CONST CHAR8 *mMtrrMemoryCacheTypeShortName[] = {
-  "UC",  // CacheUncacheable
-  "WC",  // CacheWriteCombining
-  "R*",  // Invalid
-  "R*",  // Invalid
-  "WT",  // CacheWriteThrough
-  "WP",  // CacheWriteProtected
-  "WB",  // CacheWriteBack
-  "R*"   // Invalid
-};
 
 
 /**
@@ -311,7 +237,7 @@ MtrrLibPreMtrrChange (
   // Disable MTRRs
   //
   DefType.Uint64 = AsmReadMsr64 (MSR_IA32_MTRR_DEF_TYPE);
-  DefType.Bits.E = 0;
+  DefType.Bits.EN = 0;
   AsmWriteMsr64 (MSR_IA32_MTRR_DEF_TYPE, DefType.Uint64);
 }
 
@@ -369,7 +295,7 @@ MtrrLibPostMtrrChange (
   // Enable Cache MTRR
   //
   DefType.Uint64 = AsmReadMsr64 (MSR_IA32_MTRR_DEF_TYPE);
-  DefType.Bits.E = 1;
+  DefType.Bits.EN = 1;
   DefType.Bits.FE = 1;
   AsmWriteMsr64 (MSR_IA32_MTRR_DEF_TYPE, DefType.Uint64);
 
@@ -875,7 +801,7 @@ MtrrGetMemoryAttributeByAddressWorker (
     DefType.Uint64 = MtrrSetting->MtrrDefType;
   }
 
-  if (DefType.Bits.E == 0) {
+  if (DefType.Bits.EN == 0) {
     return CacheUncacheable;
   }
 
@@ -2477,7 +2403,7 @@ MtrrSetMemoryAttributesInMtrrSettings (
   }
 
   if (MtrrSetting != NULL) {
-    ((MSR_IA32_MTRR_DEF_TYPE_REGISTER *)&MtrrSetting->MtrrDefType)->Bits.E = 1;
+    ((MSR_IA32_MTRR_DEF_TYPE_REGISTER *)&MtrrSetting->MtrrDefType)->Bits.EN = 1;
     ((MSR_IA32_MTRR_DEF_TYPE_REGISTER *)&MtrrSetting->MtrrDefType)->Bits.FE = 1;
   } else {
     if (MtrrContextValid) {

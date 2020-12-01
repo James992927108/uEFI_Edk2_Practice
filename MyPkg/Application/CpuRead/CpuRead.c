@@ -1,17 +1,23 @@
 #include "CpuRead.h"
 
-VOID VendorIdAndMaxBasicFunction(IN OUT UINT32 *gMaxBasicFunc)
+
+UINT32 GetLargestStanardFunction()
 {
-  UINT32 Eax, Ebx, Ecx, Edx;
-  CHAR8 VendorId[13];
-
-  UINT32 FunctionNum = *gMaxBasicFunc;
-  Print(L"FUNCTION (Leaf %08x)\n", FunctionNum);
-
-  AsmCpuid(FunctionNum, &Eax, &Ebx, &Ecx, &Edx);
-  Print(L"  EAX:%08x  EBX:%08x  ECX:%08x  EDX:%08x\n", Eax, Ebx, Ecx, Edx);
+  UINT32 Eax;
+  Print(L"FUNCTION (Leaf %08x)\n", CPUID_STANDARD_FUNCTION_ADDR);
+  AsmCpuid(CPUID_STANDARD_FUNCTION_ADDR, &Eax, 0, 0, 0);
+  Print(L"  EAX:%08x  EBX:%08x  ECX:%08x  EDX:%08x\n", Eax, 0, 0, 0);
   PRINT_VALUE(Eax, MaximumBasicFunction);
-  *gMaxBasicFunc = Eax;
+  return Eax;
+}
+
+VOID PrintVendorId()
+{
+  UINT32 Ebx, Ecx, Edx;
+  CHAR8 VendorId[4 * 3 + 1];
+
+  AsmCpuid(CPUID_STANDARD_FUNCTION_ADDR, 0, &Ebx, &Ecx, &Edx);
+  Print(L"  EAX:%08x  EBX:%08x  ECX:%08x  EDX:%08x\n", 0, Ebx, Ecx, Edx);
 
   // The order of the register cannot be swapped
   *(UINT32 *)(VendorId + 0) = Ebx;
@@ -21,7 +27,7 @@ VOID VendorIdAndMaxBasicFunction(IN OUT UINT32 *gMaxBasicFunc)
   Print(L"  VendorId = %a\n", VendorId);
 }
 
-VOID GetCpuFeatureInfo(IN UINT32 gMaxBasicFunc)
+VOID PrintCpuFeatureInfo()
 {
   // Processor Signature
   CPUID_VERSION_INFO_EAX Eax;
@@ -35,12 +41,11 @@ VOID GetCpuFeatureInfo(IN UINT32 gMaxBasicFunc)
   UINT32 DisplayFamily;
   UINT32 DisplayModel;
 
-  UINT32 FunctionNum = CPUID_VERSION_INFO;
-  Print(L"FUNCTION (Leaf %08x)\n", FunctionNum);
-  if (FunctionNum > gMaxBasicFunc)
+  Print(L"FUNCTION (Leaf %08x)\n", CPUID_VERSION_INFO);
+  if (CPUID_VERSION_INFO > GetLargestStanardFunction())
     return;
 
-  AsmCpuid(FunctionNum, &Eax.Uint32, &Ebx.Uint32, &Ecx.Uint32, &Edx.Uint32);
+  AsmCpuid(CPUID_VERSION_INFO, &Eax.Uint32, &Ebx.Uint32, &Ecx.Uint32, &Edx.Uint32);
 
   Print(L"  EAX:%08x  EBX:%08x  ECX:%08x  EDX:%08x\n", Eax.Uint32, Ebx.Uint32, Ecx.Uint32, Edx.Uint32);
 
@@ -57,25 +62,20 @@ VOID GetCpuFeatureInfo(IN UINT32 gMaxBasicFunc)
   {
     DisplayModel |= (Eax.Bits.ExtendedModelId << 4);
   }
-
   Print(L"  Type = %x  Family = %x  Model = %x  Stepping = %x\n", Eax.Bits.ProcessorType, DisplayFamily, DisplayModel, Eax.Bits.SteppingId);
 }
 
-VOID CpuidExtendedFunction(IN OUT UINT32 *gMaxExtendedFunc)
+UINT32 GetLargestExtendedFunction()
 {
   UINT32 Eax;
-
-  UINT32 FunctionNum = *gMaxExtendedFunc;
-  Print(L"FUNCTION (Leaf %08x)\n", FunctionNum);
-
-  AsmCpuid(CPUID_EXTENDED_FUNCTION, &Eax, NULL, NULL, NULL);
+  Print(L"FUNCTION (Leaf %08x)\n", CPUID_EXTENDED_FUNCTION_ADDR);
+  AsmCpuid(CPUID_EXTENDED_FUNCTION_ADDR, &Eax, NULL, NULL, NULL);
   Print(L"  EAX:%08x  EBX:%08x  ECX:%08x  EDX:%08x\n", Eax, 0, 0, 0);
-
   PRINT_VALUE(Eax, MaximumExtendedFunction);
-  *gMaxExtendedFunc = Eax;
+  return Eax;
 }
 
-VOID GetCpuBrandString(IN UINT32 gMaxExtendedFunc)
+VOID PrintCpuBrandString()
 {
   CPUID_BRAND_STRING_DATA Eax;
   CPUID_BRAND_STRING_DATA Ebx;
@@ -87,10 +87,10 @@ VOID GetCpuBrandString(IN UINT32 gMaxExtendedFunc)
   // null terminate the string.
   //
   UINT32 BrandString[3 * 4 + 1];
-  UINT32 CpuidBrandStr1 = EXTENTED_FUNC_ADDR | 0x02;
-  UINT32 CpuidBrandStr2 = EXTENTED_FUNC_ADDR | 0x03;
-  UINT32 CpuidBrandStr3 = EXTENTED_FUNC_ADDR | 0x04;
-
+  UINT32 CpuidBrandStr1 = CPUID_EXTENDED_FUNCTION_ADDR | 0x02;
+  UINT32 CpuidBrandStr2 = CPUID_EXTENDED_FUNCTION_ADDR | 0x03;
+  UINT32 CpuidBrandStr3 = CPUID_EXTENDED_FUNCTION_ADDR | 0x04;
+  UINT32 gMaxExtendedFunc = GetLargestExtendedFunction();
   if (CpuidBrandStr1 <= gMaxExtendedFunc)
   {
     AsmCpuid(CpuidBrandStr1, &Eax.Uint32, &Ebx.Uint32, &Ecx.Uint32, &Edx.Uint32);
@@ -129,13 +129,13 @@ VOID GetCpuBrandString(IN UINT32 gMaxExtendedFunc)
   Print(L"Brand String = %a\n", (CHAR8 *)BrandString);
 }
 
-void GetMicroCodeVersion()
+void PrintMicroCodeVersion()
 {
   MSR_IA32_BIOS_SIGN_ID_REGISTER BiosSignIdMsr;
   AsmWriteMsr64(MSR_IA32_BIOS_SIGN_ID, 0);
   AsmCpuid(CPUID_VERSION_INFO, NULL, NULL, NULL, NULL);
   BiosSignIdMsr.Uint64 = AsmReadMsr64(MSR_IA32_BIOS_SIGN_ID);
-  BiosSignIdMsr.Bits.Reserved = (UINT32)BiosSignIdMsr.Uint64;
-  BiosSignIdMsr.Bits.MicrocodeUpdateSignature = (UINT32)RShiftU64(BiosSignIdMsr.Uint64, 32);
+  // BiosSignIdMsr.Bits.Reserved = (UINT32)BiosSignIdMsr.Uint64;
+  // BiosSignIdMsr.Bits.MicrocodeUpdateSignature = (UINT32)RShiftU64(BiosSignIdMsr.Uint64, 32);
   Print(L"MicroCodeVersion 0x%08x\n", BiosSignIdMsr.Bits.MicrocodeUpdateSignature);
 }

@@ -350,7 +350,7 @@ MemoryTypeRegistersPage (
       }
       Status = HttpSendAnsiString ( SocketFD,
                                     pPort,
-                                    ( 0 != DefType.Bits.E )
+                                    ( 0 != DefType.Bits.EN )
                                     ? "Enabled"
                                     : "Disabled" );
       if ( EFI_ERROR ( Status )) {
@@ -395,7 +395,7 @@ MemoryTypeRegistersPage (
       //
       //  Determine if MTRRs are enabled
       //
-      if ( 0 == DefType.Bits.E ) {
+      if ( 0 == DefType.Bits.EN ) {
         Status = HttpSendAnsiString ( SocketFD,
                                       pPort,
                                       "<p>All memory is uncached!</p>\r\n" );

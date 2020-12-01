@@ -1,6 +1,6 @@
 #ifndef __CPUREAD_H__
 #define __CPUREAD_H__
-
+#include <Uefi.h>
 // MdePkg/Include
 #include <Library/BaseLib.h>
 #include <Library/UefiLib.h>
@@ -13,13 +13,13 @@
 
 #define PRINT_VALUE(Variable, Description) \
   Print (L"%5a%42a: %x\n", #Variable, #Description, Variable);
-#define BASIC_FUNC_ADDR 0x00000000
-#define EXTENTED_FUNC_ADDR 0x80000000
+  
+#define CPUID_STANDARD_FUNCTION_ADDR 0x00000000
+#define CPUID_EXTENDED_FUNCTION_ADDR 0x80000000
 
-VOID VendorIdAndMaxBasicFunction(IN OUT UINT32 *gMaxBasicFunc);
-VOID GetCpuFeatureInfo(IN UINT32 gMaxBasicFunc);
-VOID CpuidExtendedFunction(IN OUT UINT32 *gMaxExtendedFunc);
-VOID GetCpuBrandString(IN UINT32 gMaxExtendedFunc);
-VOID GetMicroCodeVersion();
+VOID PrintVendorId();
+VOID PrintCpuFeatureInfo();
+VOID PrintCpuBrandString();
+VOID PrintMicroCodeVersion();
 
 #endif

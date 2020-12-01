@@ -32,7 +32,7 @@
 #
 
 [Sources]
-  main.c
+  Main.c
   Mtrr.c
   CpuRead.c
 
@@ -44,5 +44,8 @@
   UefiApplicationEntryPoint
   BaseLib
   UefiLib
-
-  MtrrLib
+  # MtrrLib
+  BaseMemoryLib # for use Mem
+  
+[BuildOptions]
+  MSFT:*_*_X64_CC_FLAGS = /FAcs /Od
