@@ -127,6 +127,7 @@ typedef struct {
   BOOLEAN Valid;
   BOOLEAN Used;
 } VARIABLE_MTRR;
+// -->
 
 //
 // Structure to hold base and mask pair for variable MTRR register

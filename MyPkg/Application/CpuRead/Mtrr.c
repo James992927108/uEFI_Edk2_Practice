@@ -8,7 +8,6 @@ BOOLEAN IsMtrrSupported(VOID)
   if (Edx.Bits.MTRR)
   {
     Print(L"Support MTRR\n");
-
     return TRUE;
   }
   else
@@ -28,7 +27,7 @@ VOID GetMttrCap(OUT UINT32 *VCNT, OUT UINT32 *FIX)
   *FIX = MtrrCap.Bits.FIX;
 }
 
-MTRR_FIXED_SETTINGS MtrrGetFixedMtrrWorker()
+MTRR_FIXED_SETTINGS LoadFixedMtrrTable()
 {
   MTRR_FIXED_SETTINGS FixedSettings;
   for (UINT32 Index = 0; Index < MTRR_NUMBER_OF_FIXED_MTRR; Index++)
@@ -38,13 +37,12 @@ MTRR_FIXED_SETTINGS MtrrGetFixedMtrrWorker()
   return FixedSettings;
 }
 
-MTRR_VARIABLE_SETTINGS MtrrGetVariableMtrrWorker(IN UINT32 NumOfVarRangeRegs)
+MTRR_VARIABLE_SETTINGS MtrrGetVariableMtrrWorker(IN UINT32 VCNT)
 {
   MTRR_VARIABLE_SETTINGS VariableSettings;
-  ASSERT(NumOfVarRangeRegs <= ARRAY_SIZE(VariableSettings.Mtrr));
-
-  for (UINT32 Index = 0; Index < NumOfVarRangeRegs; Index++)
+  for (UINT32 Index = 0; Index < VCNT; Index++)
   {
+    // Print(L"--> %x %x\n", MSR_IA32_MTRR_PHYSMASK0 + (Index << 1), MSR_IA32_MTRR_PHYSBASE0 + (Index << 1));
     VariableSettings.Mtrr[Index].Mask = AsmReadMsr64(MSR_IA32_MTRR_PHYSMASK0 + (Index << 1));
     // Skip to read the Base MSR when the Mask.V is not set.
     if (((MSR_IA32_MTRR_PHYSMASK_REGISTER *)&VariableSettings.Mtrr[Index].Mask)->Bits.V != 0)
@@ -55,7 +53,7 @@ MTRR_VARIABLE_SETTINGS MtrrGetVariableMtrrWorker(IN UINT32 NumOfVarRangeRegs)
   return VariableSettings;
 }
 
-VOID DumpMTRRContent(MTRR_SETTINGS *Mtrrs, UINT32 NumOfVarRangeRegs)
+VOID DumpMTRRContent(MTRR_SETTINGS *Mtrrs, UINT32 VCNT)
 {
   Print(L"MTRR Settings:\n");
   Print(L"=============\n");
@@ -78,7 +76,7 @@ VOID DumpMTRRContent(MTRR_SETTINGS *Mtrrs, UINT32 NumOfVarRangeRegs)
     Print(L"Fixed MTRR[%02d]   : %016lx\n", Index, Mtrrs->Fixed.Mtrr[Index]);
   }
 
-  for (UINTN Index = 0; Index < NumOfVarRangeRegs; Index++)
+  for (UINTN Index = 0; Index < VCNT; Index++)
   {
     if (((MSR_IA32_MTRR_PHYSMASK_REGISTER *)&Mtrrs->Variables.Mtrr[Index].Mask)->Bits.V)
     {
@@ -117,7 +115,7 @@ VOID InitializeMtrrMask(OUT UINT64 *MtrrValidBitsMask, OUT UINT64 *MtrrValidAddr
 
 UINT32 GetRawVariableRanges(
     IN MTRR_VARIABLE_SETTINGS *VariableSettings,
-    IN UINTN NumOfVarRangeRegs,
+    IN UINTN VCNT,
     IN UINT64 MtrrValidBitsMask,
     IN UINT64 MtrrValidAddressMask,
     OUT MTRR_MEMORY_RANGE *VariableMtrr)
@@ -125,7 +123,7 @@ UINT32 GetRawVariableRanges(
   UINTN Index;
   UINT32 UsedMtrr;
   ZeroMem(VariableMtrr, sizeof(MTRR_MEMORY_RANGE) * ARRAY_SIZE(VariableSettings->Mtrr));
-  for (Index = 0, UsedMtrr = 0; Index < NumOfVarRangeRegs; Index++)
+  for (Index = 0, UsedMtrr = 0; Index < VCNT; Index++)
   {
     if (((MSR_IA32_MTRR_PHYSMASK_REGISTER *)&VariableSettings->Mtrr[Index].Mask)->Bits.V != 0)
     {
@@ -255,7 +253,7 @@ RETURN_STATUS SetMemoryType(
 
 RETURN_STATUS ApplyVariableMtrrs(
     IN CONST MTRR_MEMORY_RANGE *VariableMtrr,
-    IN UINT32 NumOfVarRangeRegs,
+    IN UINT32 VCNT,
     IN UINTN RangeCapacity,
     IN OUT MTRR_MEMORY_RANGE *Ranges,
     IN OUT UINTN *RangeCount)
@@ -272,7 +270,7 @@ RETURN_STATUS ApplyVariableMtrrs(
   //
   // 1. Set WB
   //
-  for (Index = 0; Index < NumOfVarRangeRegs; Index++)
+  for (Index = 0; Index < VCNT; Index++)
   {
     if ((VariableMtrr[Index].Length != 0) && (VariableMtrr[Index].Type == CacheWriteBack))
     {
@@ -289,7 +287,7 @@ RETURN_STATUS ApplyVariableMtrrs(
   //
   // 2. Set other types than WB or UC
   //
-  for (Index = 0; Index < NumOfVarRangeRegs; Index++)
+  for (Index = 0; Index < VCNT; Index++)
   {
     if ((VariableMtrr[Index].Length != 0) &&
         (VariableMtrr[Index].Type != CacheWriteBack) && (VariableMtrr[Index].Type != CacheUncacheable))
@@ -307,7 +305,7 @@ RETURN_STATUS ApplyVariableMtrrs(
   //
   // 3. Set UC
   //
-  for (Index = 0; Index < NumOfVarRangeRegs; Index++)
+  for (Index = 0; Index < VCNT; Index++)
   {
     if (VariableMtrr[Index].Length != 0 && VariableMtrr[Index].Type == CacheUncacheable)
     {
@@ -354,7 +352,7 @@ RETURN_STATUS ApplyFixedMtrrs(
   return RETURN_SUCCESS;
 }
 
-void DumpMTRRSetting(MTRR_SETTINGS *Mtrrs, UINT32 NumOfVarRangeRegs)
+void DumpMTRRSetting(MTRR_SETTINGS *Mtrrs, UINT32 VCNT)
 {
   Print(L"Memory Ranges:\n");
   Print(L"====================================\n");
@@ -374,9 +372,9 @@ void DumpMTRRSetting(MTRR_SETTINGS *Mtrrs, UINT32 NumOfVarRangeRegs)
 
   MTRR_MEMORY_RANGE RawVariableRanges[ARRAY_SIZE(Mtrrs->Variables.Mtrr)];
 
-  UINT32 UsedMtrr = GetRawVariableRanges(&Mtrrs->Variables, NumOfVarRangeRegs, MtrrValidBitsMask, MtrrValidAddressMask, RawVariableRanges);
+  UINT32 UsedMtrr = GetRawVariableRanges(&Mtrrs->Variables, VCNT, MtrrValidBitsMask, MtrrValidAddressMask, RawVariableRanges);
   Print(L"UsedMtrr %d\n", UsedMtrr);
-  ApplyVariableMtrrs(RawVariableRanges, NumOfVarRangeRegs, ARRAY_SIZE(Ranges), Ranges, &RangeCount);
+  ApplyVariableMtrrs(RawVariableRanges, VCNT, ARRAY_SIZE(Ranges), Ranges, &RangeCount);
 
   ApplyFixedMtrrs(&Mtrrs->Fixed, Ranges, ARRAY_SIZE(Ranges), &RangeCount);
 
@@ -400,14 +398,14 @@ VOID PrintAllMtrrsWorker()
 
   if (!FIX)
   {
-    Print(L"MTRRs not support FIX");
+    Print(L"MTRRs not support FIX\n");
     return;
   }
   else
   {
-    Print(L"MTRRs support FIX");
+    Print(L"MTRRs support FIX\n");
     // Get fixed MTRRs
-    Mtrrs->Fixed = MtrrGetFixedMtrrWorker();
+    Mtrrs->Fixed = LoadFixedMtrrTable();
     // Get variable MTRRs
     Mtrrs->Variables = MtrrGetVariableMtrrWorker(VCNT);
     // Get MTRR_DEF_TYPE value
