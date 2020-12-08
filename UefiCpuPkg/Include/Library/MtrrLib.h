@@ -44,6 +44,7 @@ typedef struct {
 //
 // This table defines the offset, base and length of the fixed MTRRs
 //
+// According to 3A Table 11-9
 CONST FIXED_MTRR  mMtrrLibFixedMtrrTable[] = {
   {
     MSR_IA32_MTRR_FIX64K_00000,
@@ -135,6 +136,9 @@ typedef struct {
 typedef struct _MTRR_VARIABLE_SETTING_ {
   UINT64    Base;
   UINT64    Mask;
+  // use AsmReadMsr64 to get value, return 64 bit, can not use struct
+  // MSR_IA32_MTRR_PHYSBASE_REGISTER    PhyBase;
+  // MSR_IA32_MTRR_PHYSMASK_REGISTER    PhyMask;
 } MTRR_VARIABLE_SETTING;
 
 //
