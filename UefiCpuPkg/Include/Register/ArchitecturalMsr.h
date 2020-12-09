@@ -2710,7 +2710,7 @@ typedef union {
     ///
     /// [Bit 11] MTRR Enable.
     ///
-    UINT32  EN:1;
+    UINT32  E:1;
     // [12:31]
     UINT32  Reserved2:20;
     // [32:63]

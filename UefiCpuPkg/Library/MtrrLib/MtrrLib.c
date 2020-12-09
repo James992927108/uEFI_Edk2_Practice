@@ -237,7 +237,7 @@ MtrrLibPreMtrrChange (
   // Disable MTRRs
   //
   DefType.Uint64 = AsmReadMsr64 (MSR_IA32_MTRR_DEF_TYPE);
-  DefType.Bits.EN = 0;
+  DefType.Bits.E = 0;
   AsmWriteMsr64 (MSR_IA32_MTRR_DEF_TYPE, DefType.Uint64);
 }
 
@@ -295,7 +295,7 @@ MtrrLibPostMtrrChange (
   // Enable Cache MTRR
   //
   DefType.Uint64 = AsmReadMsr64 (MSR_IA32_MTRR_DEF_TYPE);
-  DefType.Bits.EN = 1;
+  DefType.Bits.E = 1;
   DefType.Bits.FE = 1;
   AsmWriteMsr64 (MSR_IA32_MTRR_DEF_TYPE, DefType.Uint64);
 
@@ -801,7 +801,7 @@ MtrrGetMemoryAttributeByAddressWorker (
     DefType.Uint64 = MtrrSetting->MtrrDefType;
   }
 
-  if (DefType.Bits.EN == 0) {
+  if (DefType.Bits.E == 0) {
     return CacheUncacheable;
   }
 
@@ -2403,7 +2403,7 @@ MtrrSetMemoryAttributesInMtrrSettings (
   }
 
   if (MtrrSetting != NULL) {
-    ((MSR_IA32_MTRR_DEF_TYPE_REGISTER *)&MtrrSetting->MtrrDefType)->Bits.EN = 1;
+    ((MSR_IA32_MTRR_DEF_TYPE_REGISTER *)&MtrrSetting->MtrrDefType)->Bits.E = 1;
     ((MSR_IA32_MTRR_DEF_TYPE_REGISTER *)&MtrrSetting->MtrrDefType)->Bits.FE = 1;
   } else {
     if (MtrrContextValid) {

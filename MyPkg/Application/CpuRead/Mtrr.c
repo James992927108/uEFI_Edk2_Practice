@@ -74,7 +74,7 @@ VOID DumpInitMTRRContent(MTRR_SETTINGS *Mtrrs, UINT32 VCNT)
     Print(L"Define Fix MTRR Enable\n");
   }
 
-  if (MtrrDefType->Bits.EN)
+  if (MtrrDefType->Bits.E)
   {
     Print(L"Define MTRR Enable\n");
   }
@@ -118,13 +118,9 @@ VOID InitializeMtrrMask(OUT UINT64 *MtrrValidBitsMask, OUT UINT64 *MtrrValidAddr
     VirPhyAddressSize.Bits.PhysicalAddressBits = 36;
   }
   Print(L"VirPhyAddressSize: %08x\n", VirPhyAddressSize.Uint32);
-
-  Print(L"Phy Address Bits %08x\n", VirPhyAddressSize.Bits.PhysicalAddressBits);
-  Print(L"2-> %016lx\n", LShiftU64(1, VirPhyAddressSize.Bits.PhysicalAddressBits));
   *MtrrValidBitsMask = LShiftU64(1, VirPhyAddressSize.Bits.PhysicalAddressBits) - 1;
-  Print(L"3-> %016lx\n", *MtrrValidBitsMask);
+  // [0:11]->0 [12:63]-> 1
   *MtrrValidAddressMask = *MtrrValidBitsMask & 0xfffffffffffff000ULL;
-  Print(L"4-> %016lx\n", *MtrrValidAddressMask);
 }
 
 UINT32 GetRawVariableRanges(
@@ -372,6 +368,8 @@ void DumpMTRRSetting(MTRR_SETTINGS *Mtrrs, UINT32 VCNT)
   UINT64 MtrrValidAddressMask;
   
   InitializeMtrrMask(&MtrrValidBitsMask, &MtrrValidAddressMask);
+  Print(L"MtrrValidBitsMask: %016lx\n", MtrrValidBitsMask);
+  Print(L"MtrrValidAddressMask: %016lx\n", MtrrValidAddressMask);
 
   UINTN RangeCount;
   MTRR_MEMORY_RANGE Ranges[ARRAY_SIZE(mMtrrLibFixedMtrrTable) * sizeof(UINT64) + 2 * ARRAY_SIZE(Mtrrs->Variables.Mtrr) + 1];
@@ -443,6 +441,5 @@ VOID PrintAllMtrrsWorker()
     DumpInitMTRRContent(&Mtrrs, VCNT);
     // Dump MTRR setting in ranges
     DumpMTRRSetting(&Mtrrs, VCNT);
-    Print(L"test\n");
   }
 }

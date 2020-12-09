@@ -49,19 +49,13 @@ VOID PrintCpuFeatureInfo()
 
   Print(L"  EAX:%08x  EBX:%08x  ECX:%08x  EDX:%08x\n", Eax.Uint32, Ebx.Uint32, Ecx.Uint32, Edx.Uint32);
 
+  //CPUID201205-5.1.2.2
   DisplayFamily = Eax.Bits.FamilyId;
-  // 0000 1111
-  if (Eax.Bits.FamilyId == 0x0F)
-  {
-    DisplayFamily |= (Eax.Bits.ExtendedFamilyId << 4);
-  }
-
+  DisplayFamily |= (Eax.Bits.ExtendedFamilyId << 4);
+  
   DisplayModel = Eax.Bits.Model;
-  // 0000 0110 || 0000 1111
-  if (Eax.Bits.FamilyId == 0x06 || Eax.Bits.FamilyId == 0x0f)
-  {
-    DisplayModel |= (Eax.Bits.ExtendedModelId << 4);
-  }
+  DisplayModel |= (Eax.Bits.ExtendedModelId << 4);
+  
   Print(L"  Type = %x  Family = %x  Model = %x  Stepping = %x\n", Eax.Bits.ProcessorType, DisplayFamily, DisplayModel, Eax.Bits.SteppingId);
 }
 
@@ -125,7 +119,6 @@ VOID PrintCpuBrandString()
   }
 
   BrandString[12] = 0;
-
   Print(L"Brand String = %a\n", (CHAR8 *)BrandString);
 }
 
