@@ -267,6 +267,7 @@ StartupAllAPs (
   OUT UINTN                     **FailedCpuList         OPTIONAL
   )
 {
+  Print(L"StartupAllAPs\n");
   return MpInitLibStartupAllAPs (
            Procedure,
            SingleThread,

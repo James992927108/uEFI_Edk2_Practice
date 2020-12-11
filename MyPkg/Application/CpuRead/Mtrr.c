@@ -1,5 +1,307 @@
 #include "Mtrr.h"
 
+/**
+  This function will fill the exchange info structure.
+
+  @param[in] CpuMpData          Pointer to CPU MP Data
+
+**/
+VOID FillExchangeInfoData(
+    IN CPU_MP_DATA *CpuMpData)
+{
+  volatile MP_CPU_EXCHANGE_INFO *ExchangeInfo;
+  UINTN Size;
+  IA32_SEGMENT_DESCRIPTOR *Selector;
+
+  ExchangeInfo->Lock = 0;
+  ExchangeInfo->StackStart = CpuMpData->Buffer;
+  ExchangeInfo->StackSize = CpuMpData->CpuApStackSize;
+  ExchangeInfo->BufferStart = CpuMpData->WakeupBuffer;
+  ExchangeInfo->ModeOffset = CpuMpData->AddressMap.ModeEntryOffset;
+
+  ExchangeInfo->CodeSegment = AsmReadCs();
+  ExchangeInfo->DataSegment = AsmReadDs();
+
+  ExchangeInfo->Cr3 = AsmReadCr3();
+
+  // ExchangeInfo->CFunction       = (UINTN) ApWakeupFunction;
+  ExchangeInfo->ApIndex = 0;
+  ExchangeInfo->NumApsExecuting = 0;
+  ExchangeInfo->InitFlag = (UINTN)CpuMpData->InitFlag;
+  ExchangeInfo->CpuInfo = (CPU_INFO_IN_HOB *)(UINTN)CpuMpData->CpuInfoInHob;
+  ExchangeInfo->CpuMpData = CpuMpData;
+
+  // ExchangeInfo->EnableExecuteDisable = IsBspExecuteDisableEnabled ();
+
+  // ExchangeInfo->InitializeFloatingPointUnitsAddress = (UINTN)InitializeFloatingPointUnits;
+
+  //
+  // Get the BSP's data of GDT and IDT
+  //
+  AsmReadGdtr((IA32_DESCRIPTOR *)&ExchangeInfo->GdtrProfile);
+  AsmReadIdtr((IA32_DESCRIPTOR *)&ExchangeInfo->IdtrProfile);
+
+  //
+  // Find a 32-bit code segment
+  //
+  Selector = (IA32_SEGMENT_DESCRIPTOR *)ExchangeInfo->GdtrProfile.Base;
+  Size = ExchangeInfo->GdtrProfile.Limit + 1;
+  while (Size > 0)
+  {
+    if (Selector->Bits.L == 0 && Selector->Bits.Type >= 8)
+    {
+      ExchangeInfo->ModeTransitionSegment =
+          (UINT16)((UINTN)Selector - ExchangeInfo->GdtrProfile.Base);
+      break;
+    }
+    Selector += 1;
+    Size -= sizeof(IA32_SEGMENT_DESCRIPTOR);
+  }
+
+  //
+  // Copy all 32-bit code and 64-bit code into memory with type of
+  // EfiBootServicesCode to avoid page fault if NX memory protection is enabled.
+  //
+  if (CpuMpData->WakeupBufferHigh != 0)
+  {
+    Size = CpuMpData->AddressMap.RendezvousFunnelSize -
+           CpuMpData->AddressMap.ModeTransitionOffset;
+    CopyMem(
+        (VOID *)CpuMpData->WakeupBufferHigh,
+        CpuMpData->AddressMap.RendezvousFunnelAddress +
+            CpuMpData->AddressMap.ModeTransitionOffset,
+        Size);
+
+    ExchangeInfo->ModeTransitionMemory = (UINT32)CpuMpData->WakeupBufferHigh;
+  }
+  else
+  {
+    ExchangeInfo->ModeTransitionMemory = (UINT32)(ExchangeInfo->BufferStart + CpuMpData->AddressMap.ModeTransitionOffset);
+  }
+
+  ExchangeInfo->ModeHighMemory = ExchangeInfo->ModeTransitionMemory +
+                                 (UINT32)ExchangeInfo->ModeOffset -
+                                 (UINT32)CpuMpData->AddressMap.ModeTransitionOffset;
+  ExchangeInfo->ModeHighSegment = (UINT16)ExchangeInfo->CodeSegment;
+}
+
+/**
+  Detect whether Mwait-monitor feature is supported.
+
+  @retval TRUE    Mwait-monitor feature is supported.
+  @retval FALSE   Mwait-monitor feature is not supported.
+**/
+BOOLEAN
+IsMwaitSupport (
+  VOID
+  )
+{
+  CPUID_VERSION_INFO_ECX        VersionInfoEcx;
+
+  AsmCpuid (CPUID_VERSION_INFO, NULL, NULL, &VersionInfoEcx.Uint32, NULL);
+  return (VersionInfoEcx.Bits.MONITOR == 1) ? TRUE : FALSE;
+}
+
+/**
+  Get AP loop mode.
+
+  @param[out] MonitorFilterSize  Returns the largest monitor-line size in bytes.
+
+  @return The AP loop mode.
+**/
+UINT8
+GetApLoopMode (
+  OUT UINT32     *MonitorFilterSize
+  )
+{
+  UINT8                         ApLoopMode;
+  CPUID_MONITOR_MWAIT_EBX       MonitorMwaitEbx;
+
+  ASSERT (MonitorFilterSize != NULL);
+
+  ApLoopMode = PcdGet8 (PcdCpuApLoopMode);
+  ASSERT (ApLoopMode >= ApInHltLoop && ApLoopMode <= ApInRunLoop);
+  if (ApLoopMode == ApInMwaitLoop) {
+    if (!IsMwaitSupport ()) {
+      //
+      // If processor does not support MONITOR/MWAIT feature,
+      // force AP in Hlt-loop mode
+      //
+      ApLoopMode = ApInHltLoop;
+    }
+  }
+
+  if (ApLoopMode != ApInMwaitLoop) {
+    *MonitorFilterSize = sizeof (UINT32);
+  } else {
+    //
+    // CPUID.[EAX=05H]:EBX.BIT0-15: Largest monitor-line size in bytes
+    // CPUID.[EAX=05H].EDX: C-states supported using MWAIT
+    //
+    AsmCpuid (CPUID_MONITOR_MWAIT, NULL, &MonitorMwaitEbx.Uint32, NULL, NULL);
+    *MonitorFilterSize = MonitorMwaitEbx.Bits.LargestMonitorLineSize;
+  }
+
+  return ApLoopMode;
+}
+
+/**
+  Set the Application Processors state.
+
+  @param[in]   CpuData    The pointer to CPU_AP_DATA of specified AP
+  @param[in]   State      The AP status
+**/
+VOID
+SetApState (
+  IN  CPU_AP_DATA     *CpuData,
+  IN  CPU_STATE       State
+  )
+{
+  AcquireSpinLock (&CpuData->ApLock);
+  CpuData->State = State;
+  ReleaseSpinLock (&CpuData->ApLock);
+}
+
+/**
+  Initialize CPU AP Data when AP is wakeup at the first time.
+
+  @param[in, out] CpuMpData        Pointer to PEI CPU MP Data
+  @param[in]      ProcessorNumber  The handle number of processor
+  @param[in]      BistData         Processor BIST data
+  @param[in]      ApTopOfStack     Top of AP stack
+
+**/
+VOID
+InitializeApData (
+  IN OUT CPU_MP_DATA      *CpuMpData,
+  IN     UINTN            ProcessorNumber,
+  IN     UINT32           BistData,
+  IN     UINT64           ApTopOfStack
+  )
+{
+  CPU_INFO_IN_HOB          *CpuInfoInHob;
+
+  CpuInfoInHob = (CPU_INFO_IN_HOB *) (UINTN) CpuMpData->CpuInfoInHob;
+  CpuInfoInHob[ProcessorNumber].InitialApicId = GetInitialApicId ();
+  CpuInfoInHob[ProcessorNumber].ApicId        = GetApicId ();
+  CpuInfoInHob[ProcessorNumber].Health        = BistData;
+  CpuInfoInHob[ProcessorNumber].ApTopOfStack  = ApTopOfStack;
+
+  CpuMpData->CpuData[ProcessorNumber].Waiting    = FALSE;
+  CpuMpData->CpuData[ProcessorNumber].CpuHealthy = (BistData == 0) ? TRUE : FALSE;
+  if (CpuInfoInHob[ProcessorNumber].InitialApicId >= 0xFF) {
+    //
+    // Set x2APIC mode if there are any logical processor reporting
+    // an Initial APIC ID of 255 or greater.
+    //
+    AcquireSpinLock(&CpuMpData->MpLock);
+    CpuMpData->X2ApicEnable = TRUE;
+    ReleaseSpinLock(&CpuMpData->MpLock);
+  }
+
+  InitializeSpinLock(&CpuMpData->CpuData[ProcessorNumber].ApLock);
+  SetApState (&CpuMpData->CpuData[ProcessorNumber], CpuStateIdle);
+}
+
+VOID ForWakeUpAP()
+{
+  // CPU_INFO_IN_HOB *CpuInfoInHob;
+  UINT32 MaxLogicalProcessorNumber;
+  UINT32 ApStackSize;
+  MP_ASSEMBLY_ADDRESS_MAP AddressMap;
+  UINTN BufferSize;
+  UINT32 MonitorFilterSize;
+  VOID *MpBuffer;
+  UINTN Buffer;
+  CPU_MP_DATA *CpuMpData;
+  UINT8 ApLoopMode;
+  UINT8 *MonitorBuffer;
+  UINTN Index;
+  UINTN ApResetVectorSize;
+  UINTN BackupBufferAddr;
+
+  MaxLogicalProcessorNumber = PcdGet32(PcdCpuMaxLogicalProcessorNumber);
+
+  ASSERT(MaxLogicalProcessorNumber != 0);
+
+  // AsmGetAddressMap(&AddressMap);
+  ApResetVectorSize = AddressMap.RendezvousFunnelSize + sizeof(MP_CPU_EXCHANGE_INFO);
+  ApStackSize = PcdGet32(PcdCpuApStackSize);
+  ApLoopMode = GetApLoopMode(&MonitorFilterSize);
+
+  BufferSize = ApStackSize * MaxLogicalProcessorNumber;
+  BufferSize += MonitorFilterSize * MaxLogicalProcessorNumber;
+  BufferSize += sizeof(CPU_MP_DATA);
+  BufferSize += ApResetVectorSize;
+  BufferSize += (sizeof(CPU_AP_DATA) + sizeof(CPU_INFO_IN_HOB)) * MaxLogicalProcessorNumber;
+  MpBuffer = AllocatePages(EFI_SIZE_TO_PAGES(BufferSize));
+  ASSERT(MpBuffer != NULL);
+  ZeroMem(MpBuffer, BufferSize);
+  Buffer = (UINTN)MpBuffer;
+
+  MonitorBuffer = (UINT8 *)(Buffer + ApStackSize * MaxLogicalProcessorNumber);
+  BackupBufferAddr = (UINTN)MonitorBuffer + MonitorFilterSize * MaxLogicalProcessorNumber;
+  CpuMpData = (CPU_MP_DATA *)(BackupBufferAddr + ApResetVectorSize);
+  CpuMpData->Buffer = Buffer;
+  CpuMpData->CpuApStackSize = ApStackSize;
+  CpuMpData->BackupBuffer = BackupBufferAddr;
+  CpuMpData->BackupBufferSize = ApResetVectorSize;
+  CpuMpData->WakeupBuffer = (UINTN)-1;
+  CpuMpData->CpuCount = 1;
+  CpuMpData->BspNumber = 0;
+  CpuMpData->WaitEvent = NULL;
+  CpuMpData->SwitchBspFlag = FALSE;
+  CpuMpData->CpuData = (CPU_AP_DATA *)(CpuMpData + 1);
+  CpuMpData->CpuInfoInHob = (UINT64)(UINTN)(CpuMpData->CpuData + MaxLogicalProcessorNumber);
+  CpuMpData->MicrocodePatchAddress = PcdGet64(PcdCpuMicrocodePatchAddress);
+  CpuMpData->MicrocodePatchRegionSize = PcdGet64(PcdCpuMicrocodePatchRegionSize);
+  InitializeSpinLock(&CpuMpData->MpLock);
+  //
+  // Save BSP's Control registers to APs
+  //
+  // SaveVolatileRegisters(&CpuMpData->CpuData[0].VolatileRegisters);
+  //
+  // Set BSP basic information
+  //
+  InitializeApData(CpuMpData, 0, 0, CpuMpData->Buffer + ApStackSize);
+  //
+  // Save assembly code information
+  //
+  CopyMem(&CpuMpData->AddressMap, &AddressMap, sizeof(MP_ASSEMBLY_ADDRESS_MAP));
+  //
+  // Finally set AP loop mode
+  //
+  CpuMpData->ApLoopMode = ApLoopMode;
+  DEBUG((DEBUG_INFO, "AP Loop Mode is %d\n", CpuMpData->ApLoopMode));
+  //
+  // Set up APs wakeup signal buffer
+  //
+  for (Index = 0; Index < MaxLogicalProcessorNumber; Index++)
+  {
+    CpuMpData->CpuData[Index].StartupApSignal =
+        (UINT32 *)(MonitorBuffer + MonitorFilterSize * Index);
+  }
+  //
+  // Load Microcode on BSP
+  //
+  // MicrocodeDetect(CpuMpData);
+  // CPU_AP_DATA *CpuData;
+
+  FillExchangeInfoData(CpuMpData);
+
+  // ExchangeInfo = CpuMpData->MpCpuExchangeInfo;
+  
+  // SendInitSipiSipiAllExcludingSelf ((UINT32) ExchangeInfo->BufferStart);
+  // for (UINTN Index = 0; Index < CpuMpData->CpuCount; Index++)
+  // {
+  //   CpuData = &CpuMpData->CpuData[Index];
+  //   if (Index != CpuMpData->BspNumber)
+  //   {
+  //     WaitApWakeup(CpuData->StartupApSignal);
+  //   }
+  // }
+}
+
 BOOLEAN IsMtrrSupported(VOID)
 {
   CPUID_VERSION_INFO_EDX Edx;
@@ -366,7 +668,7 @@ void DumpMTRRSetting(MTRR_SETTINGS *Mtrrs, UINT32 VCNT)
 
   UINT64 MtrrValidBitsMask;
   UINT64 MtrrValidAddressMask;
-  
+
   InitializeMtrrMask(&MtrrValidBitsMask, &MtrrValidAddressMask);
   Print(L"MtrrValidBitsMask: %016lx\n", MtrrValidBitsMask);
   Print(L"MtrrValidAddressMask: %016lx\n", MtrrValidAddressMask);

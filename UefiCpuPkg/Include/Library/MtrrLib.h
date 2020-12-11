@@ -42,82 +42,6 @@ typedef struct {
 } FIXED_MTRR;
 
 //
-// This table defines the offset, base and length of the fixed MTRRs
-//
-// According to 3A Table 11-9
-CONST FIXED_MTRR  mMtrrLibFixedMtrrTable[] = {
-  {
-    MSR_IA32_MTRR_FIX64K_00000,
-    0,
-    SIZE_64KB
-  },
-  {
-    MSR_IA32_MTRR_FIX16K_80000,
-    0x80000,
-    SIZE_16KB
-  },
-  {
-    MSR_IA32_MTRR_FIX16K_A0000,
-    0xA0000,
-    SIZE_16KB
-  },
-  {
-    MSR_IA32_MTRR_FIX4K_C0000,
-    0xC0000,
-    SIZE_4KB
-  },
-  {
-    MSR_IA32_MTRR_FIX4K_C8000,
-    0xC8000,
-    SIZE_4KB
-  },
-  {
-    MSR_IA32_MTRR_FIX4K_D0000,
-    0xD0000,
-    SIZE_4KB
-  },
-  {
-    MSR_IA32_MTRR_FIX4K_D8000,
-    0xD8000,
-    SIZE_4KB
-  },
-  {
-    MSR_IA32_MTRR_FIX4K_E0000,
-    0xE0000,
-    SIZE_4KB
-  },
-  {
-    MSR_IA32_MTRR_FIX4K_E8000,
-    0xE8000,
-    SIZE_4KB
-  },
-  {
-    MSR_IA32_MTRR_FIX4K_F0000,
-    0xF0000,
-    SIZE_4KB
-  },
-  {
-    MSR_IA32_MTRR_FIX4K_F8000,
-    0xF8000,
-    SIZE_4KB
-  }
-};
-
-//
-// Lookup table used to print MTRRs
-//
-GLOBAL_REMOVE_IF_UNREFERENCED CONST CHAR8 *mMtrrMemoryCacheTypeShortName[] = {
-  "UC",  // CacheUncacheable
-  "WC",  // CacheWriteCombining
-  "R*",  // Invalid
-  "R*",  // Invalid
-  "WT",  // CacheWriteThrough
-  "WP",  // CacheWriteProtected
-  "WB",  // CacheWriteBack
-  "R*"   // Invalid
-};
-
-//
 // Structure to describe a variable MTRR
 //
 typedef struct {
@@ -128,7 +52,6 @@ typedef struct {
   BOOLEAN Valid;
   BOOLEAN Used;
 } VARIABLE_MTRR;
-// -->
 
 //
 // Structure to hold base and mask pair for variable MTRR register
@@ -136,9 +59,6 @@ typedef struct {
 typedef struct _MTRR_VARIABLE_SETTING_ {
   UINT64    Base;
   UINT64    Mask;
-  // use AsmReadMsr64 to get value, return 64 bit, can not use struct
-  // MSR_IA32_MTRR_PHYSBASE_REGISTER    PhyBase;
-  // MSR_IA32_MTRR_PHYSMASK_REGISTER    PhyMask;
 } MTRR_VARIABLE_SETTING;
 
 //
@@ -492,47 +412,4 @@ MtrrSetMemoryAttributesInMtrrSettings (
   IN     CONST MTRR_MEMORY_RANGE *Ranges,
   IN     UINTN                   RangeCount
   );
-// --> for MtrrPrintAllMtrrsWorker() in other file
-UINT32 EFIAPI
-GetVariableMtrrCountWorker (
-  VOID
-);
-
-VOID
-MtrrLibInitializeMtrrMask (
-  OUT UINT64 *MtrrValidBitsMask,
-  OUT UINT64 *MtrrValidAddressMask
-);
-
-MTRR_MEMORY_CACHE_TYPE
-MtrrGetDefaultMemoryTypeWorker (
-  IN MTRR_SETTINGS      *MtrrSetting
-);
-
-UINT32 MtrrLibGetRawVariableRanges (
-  IN  MTRR_VARIABLE_SETTINGS  *VariableSettings,
-  IN  UINTN                   VariableMtrrCount,
-  IN  UINT64                  MtrrValidBitsMask,
-  IN  UINT64                  MtrrValidAddressMask,
-  OUT MTRR_MEMORY_RANGE       *VariableMtrr
-);
-
-RETURN_STATUS
-MtrrLibApplyVariableMtrrs (
-  IN     CONST MTRR_MEMORY_RANGE *VariableMtrr,
-  IN     UINT32                  VariableMtrrCount,
-  IN OUT MTRR_MEMORY_RANGE       *Ranges,
-  IN     UINTN                   RangeCapacity,
-  IN OUT UINTN                   *RangeCount
-);
-
-RETURN_STATUS
-MtrrLibApplyFixedMtrrs (
-  IN     MTRR_FIXED_SETTINGS  *Fixed,
-  IN OUT MTRR_MEMORY_RANGE    *Ranges,
-  IN     UINTN                RangeCapacity,
-  IN OUT UINTN                *RangeCount
-);
-// <-- for MtrrPrintAllMtrrsWorker() in other file
-
 #endif // _MTRR_LIB_H_

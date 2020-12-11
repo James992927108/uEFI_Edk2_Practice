@@ -3,12 +3,15 @@
     "files.associations": {
         "*.mak": "makefile",
         "*.sdl": "makefile",
+        "*.inc": "edk2_dsc",
+        "*.mof": "asl",
         "xlocale": "c",
         "xiosbase": "c",
         "initializer_list": "c",
         "type_traits": "c",
         "vector": "c",
         "xstring": "c",
-        "xutility": "c"
+        "xutility": "c",
+        "registercpufeatures.h": "c"
     }
 }

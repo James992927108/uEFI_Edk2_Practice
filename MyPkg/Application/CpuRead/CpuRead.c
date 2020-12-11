@@ -56,7 +56,16 @@ VOID PrintCpuFeatureInfo()
   DisplayModel = Eax.Bits.Model;
   DisplayModel |= (Eax.Bits.ExtendedModelId << 4);
   
-  Print(L"  Type = %x  Family = %x  Model = %x  Stepping = %x\n", Eax.Bits.ProcessorType, DisplayFamily, DisplayModel, Eax.Bits.SteppingId);
+  Print(L"EAX:  Type = 0x%x  Family = 0x%x  Model = 0x%x  Stepping = 0x%x\n", Eax.Bits.ProcessorType, DisplayFamily, DisplayModel, Eax.Bits.SteppingId);
+  
+  Print(L"EBX:  APIC ID = 0x%x\n", Ebx.Bits.InitialLocalApicId);
+  if(Edx.Bits.HTT == 1){
+    Print(L"EBX:  MaxLogicalProcessors(per package)= 0x%x\n", Ebx.Bits.MaximumAddressableIdsForLogicalProcessors);
+  }
+  
+  // AsmCpuid(CPUID_CACHE_PARAMS, &Eax.Uint32, &Ebx.Uint32, &Ecx.Uint32, &Edx.Uint32);
+
+  
 }
 
 UINT32 GetLargestExtendedFunction()
@@ -125,8 +134,8 @@ VOID PrintCpuBrandString()
 void PrintMicroCodeVersion()
 {
   MSR_IA32_BIOS_SIGN_ID_REGISTER BiosSignIdMsr;
-  AsmWriteMsr64(MSR_IA32_BIOS_SIGN_ID, 0);
-  AsmCpuid(CPUID_VERSION_INFO, NULL, NULL, NULL, NULL);
+  // AsmWriteMsr64(MSR_IA32_BIOS_SIGN_ID, 0);
+  // AsmCpuid(CPUID_VERSION_INFO, NULL, NULL, NULL, NULL);
   BiosSignIdMsr.Uint64 = AsmReadMsr64(MSR_IA32_BIOS_SIGN_ID);
   // BiosSignIdMsr.Bits.Reserved = (UINT32)BiosSignIdMsr.Uint64;
   // BiosSignIdMsr.Bits.MicrocodeUpdateSignature = (UINT32)RShiftU64(BiosSignIdMsr.Uint64, 32);

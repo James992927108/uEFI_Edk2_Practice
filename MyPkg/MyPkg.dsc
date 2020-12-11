@@ -8,21 +8,6 @@
   BUILD_TARGETS                  = DEBUG|RELEASE|NOOPT
   SKUID_IDENTIFIER               = DEFAULT
 
-#
-#  Debug output control
-#
-  DEFINE DEBUG_ENABLE_OUTPUT      = FALSE       # Set to TRUE to enable debug output
-  DEFINE DEBUG_PRINT_ERROR_LEVEL  = 0x80000040  # Flags to control amount of debug output
-  DEFINE DEBUG_PROPERTY_MASK      = 0
-
-[PcdsFeatureFlag]
-
-[PcdsFixedAtBuild]
-  gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|$(DEBUG_PROPERTY_MASK)
-  gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|$(DEBUG_PRINT_ERROR_LEVEL)
-
-[PcdsFixedAtBuild.IPF]
-
 [LibraryClasses]
   #
   # Entry Point Libraries
@@ -73,6 +58,9 @@
   # 
   # add for CpuRead.inf
   MtrrLib|UefiCpuPkg/Library/MtrrLib/MtrrLib.inf
+
+  LocalApicLib|UefiCpuPkg/Library/BaseXApicX2ApicLib/BaseXApicX2ApicLib.inf
+  TimerLib|MdePkg/Library/BaseTimerLibNullTemplate/BaseTimerLibNullTemplate.inf
 [Components]
 
   DEFINE MYPAKG_PATH = MyPkg/Application
@@ -83,32 +71,8 @@
   # $(MYPAKG_PATH)/PciScan/IO/PciScan_v1.inf
   # $(MYPAKG_PATH)/PciScan/MMIO/PciScan_v3.inf
   # $(MYPAKG_PATH)/SpdRead/SpdRead.inf
-  $(MYPAKG_PATH)/CpuRead/CpuRead.inf
-  # $(MYPAKG_PATH)/CpuRead/Lib/CpuReadByLib.inf
-  
-#### A simple fuzzer for OrderedCollectionLib, in particular for
-#### BaseOrderedCollectionRedBlackTreeLib.
-  AppPkg/Applications/OrderedCollectionTest/OrderedCollectionTest.inf {
-    <LibraryClasses>
-      OrderedCollectionLib|MdePkg/Library/BaseOrderedCollectionRedBlackTreeLib/BaseOrderedCollectionRedBlackTreeLib.inf
-      DebugLib|MdePkg/Library/UefiDebugLibConOut/UefiDebugLibConOut.inf
-      DebugPrintErrorLevelLib|MdePkg/Library/BaseDebugPrintErrorLevelLib/BaseDebugPrintErrorLevelLib.inf
-    <PcdsFeatureFlag>
-      gEfiMdePkgTokenSpaceGuid.PcdValidateOrderedCollection|TRUE
-    <PcdsFixedAtBuild>
-      gEfiMdePkgTokenSpaceGuid.PcdDebugPropertyMask|0x2F
-      gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0x80400040
-  }
-
-#### Un-comment the following line to build Python 2.7.2.
-#  AppPkg/Applications/Python/PythonCore.inf
-
-#### Un-comment the following line to build Python 2.7.10.
-# AppPkg/Applications/Python/Python-2.7.10/Python2710.inf
-
-#### Un-comment the following line to build Lua.
-#  AppPkg/Applications/Lua/Lua.inf
-
+  # $(MYPAKG_PATH)/CpuRead/CpuRead.inf
+  $(MYPAKG_PATH)/MpProtocol/MpProtocol.inf
 
 ##############################################################################
 #

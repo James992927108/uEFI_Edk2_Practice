@@ -47,5 +47,16 @@
   # MtrrLib
   BaseMemoryLib # for use Mem
   
+  MemoryAllocationLib
+  SynchronizationLib
+  LocalApicLib
+
+[Pcd]
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuMaxLogicalProcessorNumber 
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuApStackSize
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuMicrocodePatchAddress
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuMicrocodePatchRegionSize
+  gUefiCpuPkgTokenSpaceGuid.PcdCpuApLoopMode
+
 [BuildOptions]
   MSFT:*_*_X64_CC_FLAGS = /FAcs /Od
