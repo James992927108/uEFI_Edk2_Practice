@@ -20,11 +20,11 @@ call build
 @REM call build -q -s
 @REM call build run
 @REM MyCpuRead
-del /F z:\MyMpProtocol.efi 
-copy %CD%\Build\MyPkg\RELEASE_VS2015x86\X64\MyMpProtocol.efi  z:\
+del /F z:\MySpdRead.efi.efi 
+copy %CD%\Build\MyPkg\RELEASE_VS2015x86\X64\MySpdRead.efi  z:\
 
-del /F f:\MyMpProtocol.efi 
-copy %CD%\Build\MyPkg\RELEASE_VS2015x86\X64\MyMpProtocol.efi  f:\
+del /F f:\MySpdRead.efi.efi 
+copy %CD%\Build\MyPkg\RELEASE_VS2015x86\X64\MySpdRead.efi  f:\
 
 @REM set QEMU_HOME=E:\Qemu
 @REM set PATH=%QEMU_HOME%;%PATH%

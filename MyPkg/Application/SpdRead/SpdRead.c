@@ -26,6 +26,7 @@ BOOLEAN GetSMBusIoSpaceBase(UINT32 *IoSpaceBase)
                     continue;
                 // Print(L"Vender ID 0x%04x, Device ID 0x%04x\n", 0x0000FFFF & Val, Val >> 16);
                 PciAddress = PciAddress | PCI_CLASSCODE_OFFSET; //read class code
+                // PciAddress = 0x8000FC09;
                 IoWrite32(PCI_CONFIG_ADDRESS, PciAddress);
                 Val = IoRead32(PCI_CONFIG_DATA);
                 // 0B 0A 09 08 ->  0000 0000 0000 0000 0000 | 0000 0000
@@ -33,6 +34,7 @@ BOOLEAN GetSMBusIoSpaceBase(UINT32 *IoSpaceBase)
                 // read [9:B]
                 if ((Val & 0xFFFFFF00) == 0x0C050000) // 0x0C0500 is SMBus
                 {
+                    // Print(L"->%x %x %x %x\n",BusNum << 16, DevNum << 11, FunNum << 8, PciAddress);
                     PciAddress -= PCI_CLASSCODE_OFFSET;
                     //18.1 PCI configuration Register -> SMBus Base Address offset is 20h ~ 23h
                     IoWrite32(PCI_CONFIG_ADDRESS, PciAddress + PCI_BAR_IDX4);

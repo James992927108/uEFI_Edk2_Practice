@@ -65,7 +65,6 @@ VOID PrintCpuFeatureInfo()
   
   // AsmCpuid(CPUID_CACHE_PARAMS, &Eax.Uint32, &Ebx.Uint32, &Ecx.Uint32, &Edx.Uint32);
 
-  
 }
 
 UINT32 GetLargestExtendedFunction()
@@ -134,8 +133,8 @@ VOID PrintCpuBrandString()
 void PrintMicroCodeVersion()
 {
   MSR_IA32_BIOS_SIGN_ID_REGISTER BiosSignIdMsr;
-  // AsmWriteMsr64(MSR_IA32_BIOS_SIGN_ID, 0);
-  // AsmCpuid(CPUID_VERSION_INFO, NULL, NULL, NULL, NULL);
+  AsmWriteMsr64(MSR_IA32_BIOS_SIGN_ID, 0);
+  AsmCpuid(CPUID_VERSION_INFO, NULL, NULL, NULL, NULL);
   BiosSignIdMsr.Uint64 = AsmReadMsr64(MSR_IA32_BIOS_SIGN_ID);
   // BiosSignIdMsr.Bits.Reserved = (UINT32)BiosSignIdMsr.Uint64;
   // BiosSignIdMsr.Bits.MicrocodeUpdateSignature = (UINT32)RShiftU64(BiosSignIdMsr.Uint64, 32);
