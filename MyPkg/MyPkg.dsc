@@ -70,9 +70,9 @@
   # $(MYPAKG_PATH)/PciScan/Protocol/PciScan_v2.inf
   # $(MYPAKG_PATH)/PciScan/IO/PciScan_v1.inf
   # $(MYPAKG_PATH)/PciScan/MMIO/PciScan_v3.inf
-  $(MYPAKG_PATH)/SpdRead/SpdRead.inf
-  # $(MYPAKG_PATH)/CpuRead/CpuRead.inf
-  $(MYPAKG_PATH)/MpProtocol/MpProtocol.inf
+  # $(MYPAKG_PATH)/SpdRead/SpdRead.inf
+  $(MYPAKG_PATH)/CpuRead/CpuRead.inf
+  # $(MYPAKG_PATH)/MpProtocol/MpProtocol.inf
 
 ##############################################################################
 #

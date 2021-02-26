@@ -4,11 +4,11 @@
 #include "Mtrr.h"
 EFI_STATUS EFIAPI UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
 {
-  PrintCpuFeatureInfo();
+  // PrintCpuFeatureInfo();
   PrintCpuBrandString();
-  PrintMicroCodeVersion();
+  // PrintMicroCodeVersion();
 
-  PrintAllMtrrsWorker();
+  // PrintAllMtrrsWorker();
   
   return EFI_SUCCESS;
 }

@@ -33,7 +33,7 @@
 
 [Sources]
   Main.c
-  Mtrr.c
+  # Mtrr.c
   CpuRead.c
 
 [Packages]
