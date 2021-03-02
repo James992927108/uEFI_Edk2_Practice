@@ -37,6 +37,7 @@ BOOLEAN GetSMBusIoSpaceBase(UINT32 *IoSpaceBase)
                     // Print(L"->%x %x %x %x\n",BusNum << 16, DevNum << 11, FunNum << 8, PciAddress);
                     PciAddress -= PCI_CLASSCODE_OFFSET;
                     //18.1 PCI configuration Register -> SMBus Base Address offset is 20h ~ 23h
+                    Print(L"PciAddress %08x\n", PciAddress + PCI_BAR_IDX4);
                     IoWrite32(PCI_CONFIG_ADDRESS, PciAddress + PCI_BAR_IDX4);
                     // SMB_Base default is 0000 0001h ->BAR bit [0] is 1 -> always is IO, [1] return 0 for read.
                     // so Mark = 1 1 1 1  1 1 1111 1100

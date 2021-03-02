@@ -19,13 +19,12 @@ call edksetup.bat
 call build
 @REM call build -q -s
 @REM call build run
-@REM MyCpuRead
-del /F z:\MyCpuRead.efi 
-copy %CD%\Build\MyPkg\RELEASE_VS2015x86\X64\MyCpuRead.efi  z:\
+del /F z:\MySpdRead.efi 
+copy %CD%\Build\MyPkg\RELEASE_VS2015x86\X64\MySpdRead.efi  z:\
 
-del /F f:\MyCpuRead.efi
-copy %CD%\Build\MyPkg\RELEASE_VS2015x86\X64\MyCpuRead.efi  f:\
+del /F f:\MySpdRead.efi
+copy %CD%\Build\MyPkg\RELEASE_VS2015x86\X64\MySpdRead.efi  f:\
 
 @REM set QEMU_HOME=E:\Qemu
 @REM set PATH=%QEMU_HOME%;%PATH%
-call qemu-system-x86_64.exe -pflash E:\Qemu\OVMF.fd -hda fat:rw:Z:\ -net none
+@REM call qemu-system-x86_64.exe -pflash E:\Qemu\OVMF.fd -hda fat:rw:Z:\ -net none
