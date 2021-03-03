@@ -120,7 +120,6 @@ VOID PrintCpuBrandString()
     BrandString[6] = Ecx.Uint32;
     Print(L"2. Brand String = %a\n", (CHAR8 *)BrandString);
     BrandString[7] = Edx.Uint32;
-    test
     Print(L"2. Brand String = %a\n", (CHAR8 *)BrandString);
   }
 
