@@ -58,9 +58,12 @@
   # 
   # add for CpuRead.inf
   MtrrLib|UefiCpuPkg/Library/MtrrLib/MtrrLib.inf
-
   LocalApicLib|UefiCpuPkg/Library/BaseXApicX2ApicLib/BaseXApicX2ApicLib.inf
   TimerLib|MdePkg/Library/BaseTimerLibNullTemplate/BaseTimerLibNullTemplate.inf
+  # 
+  #add for AhciReadWrite.inf 
+  PciSegmentLib|MdePkg/Library/BasePciSegmentLibPci/BasePciSegmentLibPci.inf
+
 [Components]
 
   DEFINE MYPAKG_PATH = MyPkg/Application

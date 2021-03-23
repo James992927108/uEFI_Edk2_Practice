@@ -38,14 +38,10 @@
   MdePkg/MdePkg.dec
 
 [LibraryClasses]
-  #
-  # Entry Point Libraries
-  #
   UefiApplicationEntryPoint # MdePkg/MdePkg.dec
-  #
-  # Common Libraries
-  #
+  
   UefiLib
-  BaseMemoryLib # for use Mem 
-  MemoryAllocationLib
-  IoLib
+  # BaseMemoryLib # for use Mem 
+  # MemoryAllocationLib
+  # IoLib
+  PciSegmentLib

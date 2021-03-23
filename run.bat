@@ -22,8 +22,8 @@ call build
 del /F z:\MyAhciReadWrite.efi 
 copy %CD%\Build\MyPkg\RELEASE_VS2015x86\X64\MyAhciReadWrite.efi  z:\
 
-@REM del /F f:\MyAhciReadWrite.efi
-@REM copy %CD%\Build\MyPkg\RELEASE_VS2015x86\X64\MyAhciReadWrite.efi  f:\
+del /F f:\MyAhciReadWrite.efi
+copy %CD%\Build\MyPkg\RELEASE_VS2015x86\X64\MyAhciReadWrite.efi  f:\
 
 @REM set QEMU_HOME=E:\Qemu
 @REM set PATH=%QEMU_HOME%;%PATH%
