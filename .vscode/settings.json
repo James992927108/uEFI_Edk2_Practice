@@ -5,6 +5,9 @@
         "*.sdl": "makefile",
         "*.inc": "edk2_dsc",
         "*.mof": "asl",
+        "*.aslc": "asl",
+        "*.xdl": "asl",
+        "*.build": "c",
         "xlocale": "c",
         "xiosbase": "c",
         "initializer_list": "c",
@@ -12,6 +15,8 @@
         "vector": "c",
         "xstring": "c",
         "xutility": "c",
-        "registercpufeatures.h": "c"
+        "registercpufeatures.h": "c",
+        "spdread.h": "c",
+        "uefi.h": "c"
     }
 }
