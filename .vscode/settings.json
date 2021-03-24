@@ -17,6 +17,20 @@
         "xutility": "c",
         "registercpufeatures.h": "c",
         "spdread.h": "c",
-        "uefi.h": "c"
+        "uefi.h": "c",
+        "ataatapipassthru.h": "c",
+        "ahcimode.h": "c",
+        "pciio.h": "c",
+        "ahcireadwrite.h": "c",
+        "iolib.h": "c",
+        "debuglib.h": "c",
+        "pciscan_v2.h": "c",
+        "pci22.h": "c",
+        "pci.h": "c",
+        "pciexpress21.h": "c",
+        "pci30.h": "c",
+        "pci23.h": "c",
+        "pcicodeid.h": "c",
+        "pciexpress30.h": "c"
     }
 }

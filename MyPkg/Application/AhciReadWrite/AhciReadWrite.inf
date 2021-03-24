@@ -41,7 +41,10 @@
   UefiApplicationEntryPoint # MdePkg/MdePkg.dec
   
   UefiLib
-  # BaseMemoryLib # for use Mem 
-  # MemoryAllocationLib
-  # IoLib
+  
+  IoLib
   PciSegmentLib
+  DebugLib # use ASSERT
+  
+[Protocols]
+  gEfiPciIoProtocolGuid                         ## TO_START
