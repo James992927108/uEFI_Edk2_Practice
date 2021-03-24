@@ -39,12 +39,10 @@
 
 [LibraryClasses]
   UefiApplicationEntryPoint # MdePkg/MdePkg.dec
-  
   UefiLib
-  
   IoLib
   PciSegmentLib
   DebugLib # use ASSERT
-  
+  BaseMemoryLib
 [Protocols]
   gEfiPciIoProtocolGuid                         ## TO_START

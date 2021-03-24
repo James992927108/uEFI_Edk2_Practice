@@ -24,6 +24,8 @@
 #include <Library/PciSegmentLib.h>
 #include <Library/DebugLib.h>
 #include <IndustryStandard/Pci.h>
+#include <Library/BaseMemoryLib.h>
+
 // #include <Include/IndustryStandard/Pci22.h>  // Note: Include <Pci.h> for use #define PCI_XXXXX_OFFSET
 
 ///
