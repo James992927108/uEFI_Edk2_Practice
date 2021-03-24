@@ -29,7 +29,7 @@ AhciReadReg(
       &Data);
   if (EFI_ERROR(Status))
   {
-    Print(L"Error Mem.Read Status -> [%x]\n", Status);
+    Print(L"Mem.Read Error Status -> [%x]\n", Status);
   }
   Print(L"Data %x\n", Data);
   return Data;
@@ -42,7 +42,7 @@ AhciCreateTransferDescriptor(
     IN OUT EFI_AHCI_REGISTERS *AhciRegisters)
 {
   EFI_STATUS Status;
-  UINTN Bytes;
+  // UINTN Bytes;
   VOID *Buffer;
 
   UINT32 Capability;
@@ -97,34 +97,6 @@ AhciCreateTransferDescriptor(
   AhciRegisters->AhciRFis = Buffer;
   AhciRegisters->MaxReceiveFisSize = MaxReceiveFisSize;
 
-  // Bytes = (UINTN)MaxReceiveFisSize;
-  // Status = PciIo->Map(
-  //     PciIo,
-  //     EfiPciIoOperationBusMasterCommonBuffer,
-  //     Buffer,
-  //     &Bytes,
-  //     &AhciRFisPciAddr,
-  //     &AhciRegisters->MapRFis);
-
-  // if (EFI_ERROR(Status) || (Bytes != MaxReceiveFisSize))
-  // {
-  //   //
-  //   // Map error or unable to map the whole RFis buffer into a contiguous region.
-  //   //
-  //   Status = EFI_OUT_OF_RESOURCES;
-  //   goto Error6;
-  // }
-
-  // if ((!Support64Bit) && (AhciRFisPciAddr > 0x100000000ULL))
-  // {
-  //   //
-  //   // The AHCI HBA doesn't support 64bit addressing, so should not get a >4G pci bus master address.
-  //   //
-  //   Status = EFI_DEVICE_ERROR;
-  //   goto Error5;
-  // }
-  // AhciRegisters->AhciRFisPciAddr = (EFI_AHCI_RECEIVED_FIS *)(UINTN)AhciRFisPciAddr;
-  
   AhciRFisPciAddr = AhciReadReg(PciIo, EFI_AHCI_PORT_START + EFI_AHCI_PORT_FB);
   AhciRegisters->AhciRFisPciAddr = (EFI_AHCI_RECEIVED_FIS *)(UINTN)AhciRFisPciAddr;
 
@@ -155,39 +127,15 @@ AhciCreateTransferDescriptor(
 
   AhciRegisters->AhciCmdList = Buffer;
   AhciRegisters->MaxCommandListSize = MaxCommandListSize;
-  Bytes = (UINTN)MaxCommandListSize;
 
-  Status = PciIo->Map(
-      PciIo,
-      EfiPciIoOperationBusMasterCommonBuffer,
-      Buffer,
-      &Bytes,
-      &AhciCmdListPciAddr,
-      &AhciRegisters->MapCmdList);
-
-  if (EFI_ERROR(Status) || (Bytes != MaxCommandListSize))
-  {
-    //
-    // Map error or unable to map the whole cmd list buffer into a contiguous region.
-    //
-    Status = EFI_OUT_OF_RESOURCES;
-    goto Error4;
-  }
-
-  if ((!Support64Bit) && (AhciCmdListPciAddr > 0x100000000ULL))
-  {
-    //
-    // The AHCI HBA doesn't support 64bit addressing, so should not get a >4G pci bus master address.
-    //
-    Status = EFI_DEVICE_ERROR;
-    goto Error3;
-  }
+  AhciCmdListPciAddr = AhciReadReg(PciIo, EFI_AHCI_PORT_START + EFI_AHCI_PORT_CLB);
   AhciRegisters->AhciCmdListPciAddr = (EFI_AHCI_COMMAND_LIST *)(UINTN)AhciCmdListPciAddr;
 
   //
   // Allocate memory for command table
   // According to AHCI 1.3 spec, a PRD table can contain maximum 65535 entries.
   //
+
   Buffer = NULL;
   MaxCommandTableSize = sizeof(EFI_AHCI_COMMAND_TABLE);
 
@@ -198,7 +146,6 @@ AhciCreateTransferDescriptor(
       EFI_SIZE_TO_PAGES((UINTN)MaxCommandTableSize),
       &Buffer,
       0);
-
   if (EFI_ERROR(Status))
   {
     //
@@ -207,71 +154,43 @@ AhciCreateTransferDescriptor(
     Status = EFI_OUT_OF_RESOURCES;
     goto Error3;
   }
-
   ZeroMem(Buffer, (UINTN)MaxCommandTableSize);
 
   AhciRegisters->AhciCommandTable = Buffer;
   AhciRegisters->MaxCommandTableSize = MaxCommandTableSize;
-  Bytes = (UINTN)MaxCommandTableSize;
-
-  Status = PciIo->Map(
-      PciIo,
-      EfiPciIoOperationBusMasterCommonBuffer,
-      Buffer,
-      &Bytes,
-      &AhciCommandTablePciAddr,
-      &AhciRegisters->MapCommandTable);
-
-  if (EFI_ERROR(Status) || (Bytes != MaxCommandTableSize))
-  {
-    //
-    // Map error or unable to map the whole cmd list buffer into a contiguous region.
-    //
-    Status = EFI_OUT_OF_RESOURCES;
-    goto Error2;
-  }
-
-  if ((!Support64Bit) && (AhciCommandTablePciAddr > 0x100000000ULL))
-  {
-    //
-    // The AHCI HBA doesn't support 64bit addressing, so should not get a >4G pci bus master address.
-    //
-    Status = EFI_DEVICE_ERROR;
-    goto Error1;
-  }
+  AhciCommandTablePciAddr = AhciCmdListPciAddr + (UINT64)0x80;
   AhciRegisters->AhciCommandTablePciAddr = (EFI_AHCI_COMMAND_TABLE *)(UINTN)AhciCommandTablePciAddr;
-
   return EFI_SUCCESS;
   //
   // Map error or unable to map the whole CmdList buffer into a contiguous region.
   //
-Error1:
-  PciIo->Unmap(
-      PciIo,
-      AhciRegisters->MapCommandTable);
-Error2:
-  PciIo->FreeBuffer(
-      PciIo,
-      EFI_SIZE_TO_PAGES((UINTN)MaxCommandTableSize),
-      AhciRegisters->AhciCommandTable);
+// Error1:
+//   PciIo->Unmap(
+//       PciIo,
+//       AhciRegisters->MapCommandTable);
+// Error2:
+//   PciIo->FreeBuffer(
+//       PciIo,
+//       EFI_SIZE_TO_PAGES((UINTN)MaxCommandTableSize),
+//       AhciRegisters->AhciCommandTable);
 Error3:
   PciIo->Unmap(
       PciIo,
       AhciRegisters->MapCmdList);
-Error4:
-  PciIo->FreeBuffer(
-      PciIo,
-      EFI_SIZE_TO_PAGES((UINTN)MaxCommandListSize),
-      AhciRegisters->AhciCmdList);
+// Error4:
+//   PciIo->FreeBuffer(
+//       PciIo,
+//       EFI_SIZE_TO_PAGES((UINTN)MaxCommandListSize),
+//       AhciRegisters->AhciCmdList);
 Error5:
   PciIo->Unmap(
       PciIo,
       AhciRegisters->MapRFis);
-// Error6:
-//   PciIo->FreeBuffer(
-//       PciIo,
-//       EFI_SIZE_TO_PAGES((UINTN)MaxReceiveFisSize),
-//       AhciRegisters->AhciRFis);
+  // Error6:
+  //   PciIo->FreeBuffer(
+  //       PciIo,
+  //       EFI_SIZE_TO_PAGES((UINTN)MaxReceiveFisSize),
+  //       AhciRegisters->AhciRFis);
 
   return Status;
 }
@@ -302,12 +221,12 @@ EFI_STATUS UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
     Status = gBS->HandleProtocol(PciIoHandleBuffer[index], &gEfiPciIoProtocolGuid, &PciIo);
     if (EFI_ERROR(Status))
     {
-      Print(L"Error gBS->HandleProtocol Status -> [%x]\n", Status);
+      Print(L"gBS->HandleProtocol Error Status -> [%x]\n", Status);
     }
     // Status = PciIo->GetLocation(PciIo, &SegmentNumber, &BusNumber, &DeviceNumber, &FunctionNumber);
     // if (EFI_ERROR(Status))
     // {
-    //   Print(L"Error PciIo->GetLocation Status -> [%x]\n", Status);
+    //   Print(L"PciIo->GetLocation Error Status -> [%x]\n", Status);
     // }
     // Print(L"SegmentNumber %x, BusNumber %x, DeviceNumber %x, FunctionNumber %x\n",
     //       SegmentNumber, BusNumber, DeviceNumber, FunctionNumber);
@@ -325,7 +244,19 @@ EFI_STATUS UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
     }
   }
 
+  //
+  // Initialize FIS Base Address Register and Command List Base Address Register for use.
+  //
   Status = AhciCreateTransferDescriptor(PciIo, AhciRegisters);
+  if (EFI_ERROR(Status))
+  {
+    Print(L"AhciCreateTransferDescriptor Error Status -> [%x]\n", Status);
+  }
+
+  Print(L"AhciCmdListPciAd,dr: %x, AhciRFisPciAddr: %x, AhciCommandTablePciAddr: %x\n",
+        AhciRegisters->AhciCmdListPciAddr,
+        AhciRegisters->AhciRFisPciAddr,
+        AhciRegisters->AhciCommandTablePciAddr);
 
   if (PciIoHandleBuffer != NULL)
   {
