@@ -80,8 +80,8 @@
   # $(MYPAKG_PATH)/SpdRead/SpdRead.inf
   # $(MYPAKG_PATH)/CpuRead/CpuRead.inf
   # $(MYPAKG_PATH)/MpProtocol/MpProtocol.inf
-  # $(MYPAKG_PATH)/AhciReadWrite/AhciReadWrite.inf
-  $(MYPAKG_PATH)/AhciExample/AHCI.inf
+  $(MYPAKG_PATH)/AhciReadWrite/AhciReadWrite.inf
+  # $(MYPAKG_PATH)/AhciExample/AHCI.inf
 
 ##############################################################################
 #

@@ -34,6 +34,15 @@
         "pciexpress30.h": "c",
         "basememorylib.h": "c",
         "memoryallocationlib.h": "c",
-        "atapi.h": "c"
+        "atapi.h": "c",
+        "uefiapplicationentrypoint.h": "c",
+        "uefibasetype.h": "c",
+        "uefispec.h": "c",
+        "devicepath.h": "c",
+        "base.h": "c",
+        "processorbind.h": "c",
+        "uefilib.h": "c",
+        "atapassthru.h": "c",
+        "idemode.h": "c"
     }
 }

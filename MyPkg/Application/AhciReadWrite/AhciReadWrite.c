@@ -9,47 +9,58 @@
 
 EFI_STATUS UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
 {
-  UINT32 AhciBar;
-  UINTN PciSataRegBase;
-  UINT32 PxCLB;
-  UINT32 PxFB;
+  HBA_MEM *ABar;
+  UINTN AhciPciAddr;
 
-  EFI_AHCI_COMMAND_FIS          CFis;
-  EFI_AHCI_COMMAND_LIST         CmdList;
+  UINT8 *TmpBuffer;
 
-  PciSataRegBase = PCI_SEGMENT_LIB_ADDRESS(
+  HBA_CMD_HEADER *CmdList;
+  HBA_CMD_TBL *CmdTbl;
+  FIS_REG_H2D *Fis;
+
+  AhciPciAddr = PCI_SEGMENT_LIB_ADDRESS(
       DEFAULT_PCI_SEGMENT_NUMBER_PCH,
       DEFAULT_PCI_BUS_NUMBER_PCH,
       PCI_DEVICE_NUMBER_PCH_SATA,
       PCI_FUNCTION_NUMBER_PCH_SATA,
       0);
-  Print(L"PciSataRegBase %x\n", PciSataRegBase);
-  
-  AhciBar = PciSegmentRead32(PciSataRegBase + R_SATA_CFG_AHCI_BAR) & 0xFFFFF800;
-  Print(L"AhciBar %x\n", AhciBar);
+  Print(L"AHCI controller address: %x\n", AhciPciAddr);
 
-  PxCLB = MmioRead32(AhciBar + R_SATA_MEM_AHCI_P0CLB);
-  Print(L"PxCLB %x\n", PxCLB);
+  ABar = (HBA_MEM *)(PciSegmentRead32(AhciPciAddr + R_SATA_CFG_AHCI_BAR) & 0xFFFFF800);
+  Print(L"AHCI bar: %x\n", ABar);
 
-  PxFB = MmioRead32(AhciBar + R_SATA_MEM_AHCI_P0FB);
-  Print(L"PxFB %x\n", PxFB);
+  //allocate buffer for read return data
+  TmpBuffer = AllocateZeroPool(sizeof(UINT8) * 512);
 
+  //allocate align memory address for command list, PxCLB bit9:0 is reserved
+  CmdList = AllocatePages(sizeof(HBA_CMD_HEADER));
+  ZeroMem(CmdList, sizeof(HBA_CMD_HEADER));
 
-  // Read First
-  ZeroMem (&CmdList, sizeof (EFI_AHCI_COMMAND_LIST));
+  //allocate alignment memory for command table
+  CmdTbl = AllocatePages(sizeof(HBA_CMD_TBL));
+  ZeroMem(CmdTbl, sizeof(HBA_CMD_TBL));
 
-  CmdList.AhciCmdCfl = 0x5;
-  CmdList.AhciCmdW   = 0x0;
-  CmdList.AhciCmdPrdtl = 0x1;
+  //allocate h2d FIS
+  Fis = AllocateZeroPool(sizeof(FIS_REG_H2D));
 
-  CmdList.AhciCmdPrdbc = 0x200;
+  Fis->fis_type = FIS_TYPE_REG_H2D;
+  Fis->command = ATA_CMD_IDENTIFY; // 0xEC
+  Fis->device = 0;                 // Master device
+  Fis->c = 1;                      // Write command register
 
-  DATA_64    Data64;
-
-  Data64.Uint64 = (UINTN) (AhciRegisters->AhciRFis) + sizeof (EFI_AHCI_RECEIVED_FIS) * Port;
-
-
-  
-
+  UINT32 Pi;
+  UINTN Index, PortAddr;
+  for (Pi = ABar->pi, Index = 0; Pi > 0; Pi >>= 1, Index++)
+  {
+    if (Pi & 1)
+    {
+      PortAddr = (UINTN)ABar + 0x100 + 0x80 * Index;
+      Print(L"\nport: %d, address: %x\n", Index, PortAddr);
+      if(ABar->ports_ctl_reg[0].ssts.det == 0x03)
+      {
+        Print(L" Device Detection (DET) = 0x03 n");
+      }
+    }
+  }
   return 0;
 }

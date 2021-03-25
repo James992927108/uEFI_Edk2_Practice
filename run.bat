@@ -19,11 +19,11 @@ call edksetup.bat
 call build
 @REM call build -q -s
 @REM call build run
-del /F z:\AHCI.efi 
-copy %CD%\Build\MyPkg\RELEASE_VS2015x86\X64\AHCI.efi  z:\
+del /F z:\MyAhciReadWrite.efi 
+copy %CD%\Build\MyPkg\RELEASE_VS2015x86\X64\MyAhciReadWrite.efi  z:\
 
-del /F f:\AHCI.efi
-copy %CD%\Build\MyPkg\RELEASE_VS2015x86\X64\AHCI.efi  f:\
+del /F f:\MyAhciReadWrite.efi
+copy %CD%\Build\MyPkg\RELEASE_VS2015x86\X64\MyAhciReadWrite.efi  f:\
 
 @REM set QEMU_HOME=E:\Qemu
 @REM set PATH=%QEMU_HOME%;%PATH%

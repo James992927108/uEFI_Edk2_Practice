@@ -19,11 +19,17 @@
 
 [Defines]
   INF_VERSION                    = 0x00010005
-  BASE_NAME                      = MyAhciReadWrite
-  FILE_GUID                      = EA230F2A-71CE-4502-A1B9-E13330B9BE9F
+  BASE_NAME                      = MyAhciReadWriteProtocol
+  FILE_GUID                      = A3F998AC-FDE9-418f-A47C-44870D3AC467
   MODULE_TYPE                    = UEFI_APPLICATION
   VERSION_STRING                 = 0.5
   ENTRY_POINT                    = UefiMain
+
+#
+# The following information is for reference only and not required by the build tools.
+#
+#  VALID_ARCHITECTURES           = IA32 X64
+#
 
 [Sources]
   AhciReadWrite.c
@@ -36,7 +42,7 @@
   UefiLib
   IoLib
   PciSegmentLib
+  DebugLib # use ASSERT
   BaseMemoryLib
-  MemoryAllocationLib
-  
 [Protocols]
+  gEfiPciIoProtocolGuid                         ## TO_START
