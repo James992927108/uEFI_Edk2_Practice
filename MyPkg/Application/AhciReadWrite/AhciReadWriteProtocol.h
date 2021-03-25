@@ -372,5 +372,72 @@ typedef struct {
   VOID                      *MapCommandTable;
 } EFI_AHCI_REGISTERS;
 
+// /**
+//   This function is used to send out ATAPI commands conforms to the Packet Command 
+//   with PIO Protocol.
+
+//   @param PciIo              The PCI IO protocol instance.
+//   @param AhciRegisters      The pointer to the EFI_AHCI_REGISTERS.
+//   @param Port               The number of port.     
+//   @param PortMultiplier     The number of port multiplier.
+//   @param Packet             A pointer to EFI_EXT_SCSI_PASS_THRU_SCSI_REQUEST_PACKET structure.
+
+//   @retval EFI_SUCCESS       send out the ATAPI packet command successfully
+//                             and device sends data successfully.
+//   @retval EFI_DEVICE_ERROR  the device failed to send data.
+
+// **/
+// EFI_STATUS
+// EFIAPI
+// AhciPacketCommandExecute (
+//   IN  EFI_PCI_IO_PROTOCOL                           *PciIo,
+//   IN  EFI_AHCI_REGISTERS                            *AhciRegisters,
+//   IN  UINT8                                         Port,
+//   IN  UINT8                                         PortMultiplier,
+//   IN  EFI_EXT_SCSI_PASS_THRU_SCSI_REQUEST_PACKET    *Packet
+//   );
+
+/**
+  Start command for give slot on specific port.
+    
+  @param  PciIo              The PCI IO protocol instance.
+  @param  Port               The number of port.
+  @param  CommandSlot        The number of CommandSlot.
+  @param  Timeout            The timeout value of start, uses 100ns as a unit.
+   
+  @retval EFI_DEVICE_ERROR   The command start unsuccessfully.
+  @retval EFI_TIMEOUT        The operation is time out.
+  @retval EFI_SUCCESS        The command start successfully.
+
+**/
+EFI_STATUS
+EFIAPI
+AhciStartCommand (
+  IN  EFI_PCI_IO_PROTOCOL       *PciIo,
+  IN  UINT8                     Port,
+  IN  UINT8                     CommandSlot,
+  IN  UINT64                    Timeout
+  );
+
+/**
+  Stop command running for giving port
+    
+  @param  PciIo              The PCI IO protocol instance.
+  @param  Port               The number of port.
+  @param  Timeout            The timeout value of stop, uses 100ns as a unit.
+   
+  @retval EFI_DEVICE_ERROR   The command stop unsuccessfully.
+  @retval EFI_TIMEOUT        The operation is time out.
+  @retval EFI_SUCCESS        The command stop successfully.
+
+**/
+EFI_STATUS
+EFIAPI
+AhciStopCommand (
+  IN  EFI_PCI_IO_PROTOCOL       *PciIo,
+  IN  UINT8                     Port,
+  IN  UINT64                    Timeout
+  );
+
 #endif
 

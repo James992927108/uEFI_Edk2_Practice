@@ -63,7 +63,11 @@
   # 
   #add for AhciReadWrite.inf 
   PciSegmentLib|MdePkg/Library/BasePciSegmentLibPci/BasePciSegmentLibPci.inf
-
+  
+  # MyPkgLib
+  #
+  AppFrameWorkLib|MyPkg/Library/AppFrameWorkLib/AppFrameWorkLib.inf
+  AppCommonLib|MyPkg/Library/AppCommonLib/AppCommonLib.inf
 [Components]
 
   DEFINE MYPAKG_PATH = MyPkg/Application
@@ -76,7 +80,8 @@
   # $(MYPAKG_PATH)/SpdRead/SpdRead.inf
   # $(MYPAKG_PATH)/CpuRead/CpuRead.inf
   # $(MYPAKG_PATH)/MpProtocol/MpProtocol.inf
-  $(MYPAKG_PATH)/AhciReadWrite/AhciReadWrite.inf
+  # $(MYPAKG_PATH)/AhciReadWrite/AhciReadWrite.inf
+  $(MYPAKG_PATH)/AhciExample/AHCI.inf
 
 ##############################################################################
 #

@@ -33,6 +33,7 @@
         "pcicodeid.h": "c",
         "pciexpress30.h": "c",
         "basememorylib.h": "c",
-        "memoryallocationlib.h": "c"
+        "memoryallocationlib.h": "c",
+        "atapi.h": "c"
     }
 }
