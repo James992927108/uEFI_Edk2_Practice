@@ -14,15 +14,18 @@
 #ifndef __AHCI_READ_WRITE_H__
 #define __AHCI_READ_WRITE_H__
 
+#include "AhciMode.h"
+
 #include <Uefi.h>
 #include <Library/UefiBootServicesTableLib.h>
 #include <Library/UefiLib.h>
 #include <Library/UefiApplicationEntryPoint.h>
-
+#include <IndustryStandard/Atapi.h>
 #include <IndustryStandard/Pci.h>
 #include <IndustryStandard/Atapi.h>
 #include <Protocol/PciIo.h>
 #include <Library/PciSegmentLib.h>
+#include <Library/IoLib.h>
 #include <Library/DebugLib.h>
 #include <Library/BaseMemoryLib.h>
 // #include <Include/IndustryStandard/Pci22.h>  // Note: Include <Pci.h> for use #define PCI_XXXXX_OFFSET
@@ -42,24 +45,9 @@
 //
 #define R_SATA_CFG_AHCI_BAR 0x24
 
-#define ATA_CMD_IDENTIFY 0xEC
-#define ATAPI_CMD_IDENTIFY 0xA1
-
 //define signature
 #define ATADRIVE 0x00000101
 #define ATAPIDRIVE 0xEB140101
-
-typedef struct
-{
-  UINT32 Lower32;
-  UINT32 Upper32;
-} DATA_32;
-
-typedef union
-{
-  DATA_32 Uint32;
-  UINT64 Uint64;
-} DATA_64;
 
 typedef struct
 {
@@ -150,30 +138,19 @@ typedef struct tagHBA_CMD_HEADER
 //Command Table
 typedef struct tagHBA_PRDT_ENTRY
 {
+  // DW0
   UINT32 dba;  // Data base address
+  // DW1
   UINT32 dbau; // Data base address upper 32 bits
+  // DW2
   UINT32 rsv0; // Reserved
 
   // DW3
-  UINT32 dbc : 22; // UINT8 count, 4M max
-  UINT32 rsv1 : 9; // Reserved
-  UINT32 i : 1;    // Interrupt on completion
+  UINT32 dbc : 22; // 21:00 UINT8 count, 4M max
+  UINT32 rsv1 : 9; // 30:22 Reserved
+  UINT32 i : 1;    // 31:30 Interrupt on completion
 } HBA_PRDT_ENTRY;
 
-typedef struct tagHBA_CMD_TBL
-{
-  // 0x00
-  UINT8 cfis[64]; // Command FIS
-
-  // 0x40
-  UINT8 acmd[16]; // ATAPI command, 12 or 16 UINT8s
-
-  // 0x50
-  UINT8 rsv[48]; // Reserved
-
-  // 0x80
-  HBA_PRDT_ENTRY prdt_entry[1]; // Physical region descriptor table entries, 0 ~ 65535
-} HBA_CMD_TBL;
 
 typedef enum
 {
@@ -200,25 +177,40 @@ typedef struct tagFIS_REG_H2D
   UINT8 featurel; // Feature register, 7:0
 
   // UINT32 1
-  UINT8 lba0;   // LBA low register, 7:0
-  UINT8 lba1;   // LBA mid register, 15:8
-  UINT8 lba2;   // LBA high register, 23:16
+  UINT8 lba_low;   // LBA low register, 7:0
+  UINT8 lba_mid;   // LBA mid register, 15:8
+  UINT8 lba_high;   // LBA high register, 23:16
   UINT8 device; // Device register
 
   // UINT32 2
-  UINT8 lba3;     // LBA register, 31:24
-  UINT8 lba4;     // LBA register, 39:32
-  UINT8 lba5;     // LBA register, 47:40
-  UINT8 featureh; // Feature register, 15:8
+  UINT8 lba_low_ex;     // LBA register, 31:24
+  UINT8 lba_mid_ex;     // LBA register, 39:32
+  UINT8 lba_high_ex;     // LBA register, 47:40
+  UINT8 featurel_ex; // Feature register, 15:8
 
   // UINT32 3
-  UINT8 countl;  // Count register, 7:0
-  UINT8 counth;  // Count register, 15:8
-  UINT8 icc;     // Isochronous command completion
+  UINT8 sector_count;  // Count register, 7:0
+  UINT8 sector_count_ex;  // Count register, 15:8
+  UINT8 rsv1;     // Isochronous command completion
   UINT8 control; // Control register
 
   // UINT32 4
-  UINT8 rsv1[4]; // Reserved
+  UINT8 rsv2[4]; // Reserved
 } FIS_REG_H2D;
+
+typedef struct tagHBA_CMD_TBL
+{
+  // 0x00
+  UINT8 cfis[64]; // Command FIS (2 to 16 Dwords)
+
+  // 0x40
+  UINT8 acmd[16]; // ATAPI command, 12 or 16 UINT8s
+
+  // 0x50
+  UINT8 rsv[48]; // Reserved
+
+  // 0x80
+  HBA_PRDT_ENTRY prdt_entry[1]; // Physical region descriptor table entries, 0 ~ 65535
+} HBA_CMD_TBL;
 
 #endif

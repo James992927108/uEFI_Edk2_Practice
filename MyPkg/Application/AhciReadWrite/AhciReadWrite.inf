@@ -38,5 +38,4 @@
   PciSegmentLib
   BaseMemoryLib
   MemoryAllocationLib
-  
 [Protocols]
