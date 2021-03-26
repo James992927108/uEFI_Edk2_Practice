@@ -95,15 +95,19 @@ VOID BuildH2DFis(
 
 EFI_STATUS
 StartCmd(
-    HBA_PORT *port,
-    UINT32 cmdslot)
+    HBA_PORT *port)
 {
   UINTN i;
   EFI_STATUS Status = EFI_SUCCESS;
+  // Print(L"[DEBUG] TempPortAddr 0x%x\n", port);
+  // clear 0x18 cmd bit 0 start
+  if (port->cmd & BIT0)
+  {
+    port->cmd &= ~BIT0;
+  }
+  //make sure 0x18 cmd, FIS Receive Enable (FRE)
+  port->cmd |= BIT4;
 
-  //make sure bit0 Start set to enable process cmd list
-  if (!(port->cmd & 1))
-    port->cmd |= BIT0 | BIT4;
   //clear status
   port->serr = port->serr;
   port->is = port->is;
@@ -117,9 +121,14 @@ StartCmd(
     port->cmd |= BIT0 | BIT3 | BIT4;
     port->is = port->is;
   }
-
-  port->ci = cmdslot;
-
+  // Print(L"[DEBUG] Before ci 0x%08x\n", MmioRead8((UINT32)(UINTN)port + EFI_AHCI_PORT_CI));
+  MmioWrite8((UINT32)(UINTN)port + EFI_AHCI_PORT_CI, 1);
+  // port->ci = 1;
+  // Print(L"[DEBUG] after ci 0x%08x\n", MmioRead8((UINT32)(UINTN)port + EFI_AHCI_PORT_CI));
+  // start
+  // Print(L"[DEBUG] Befor cmd 0x%08x\n", port->cmd);
+  port->cmd |= BIT0;
+  // Print(L"[DEBUG] after cmd 0x%08x\n", port->cmd);
   //wait cmd
   for (i = 0; i < 100; i++)
   {
@@ -149,6 +158,7 @@ EFI_STATUS UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
   UINT8 *PortList;
   UINT32 Length;
 
+  HBA_PORT *TempPortAddr = NULL;
   DATA_64 Data64;
 
   AhciPciAddr = PCI_SEGMENT_LIB_ADDRESS(
@@ -206,23 +216,22 @@ EFI_STATUS UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
       CmdList->ctba = (UINT32)(UINTN)CmdTbl;
       Print(L"[INFO] Cmd Tbl Base Addr: 0x%08x \n", CmdList->ctba);
 
-      HBA_PORT *TempPortAddr;
-      // TempPortAddr = (HBA_PORT *)((UINT32)ABar + EFI_AHCI_PORT_START + EFI_AHCI_PORT_REG_WIDTH * PortList[Index]);
+      // pointer to port address
+      TempPortAddr = (HBA_PORT *)((UINT32)ABar + EFI_AHCI_PORT_START + EFI_AHCI_PORT_REG_WIDTH * PortList[Index]);
       // Print(L"[DEBUG] TempPortAddr 0x%x\n", TempPortAddr);
-
       Data64.Uint64 = (UINTN)CmdList;
       TempPortAddr->clb = Data64.Uint32.Lower32;
       TempPortAddr->clbu = Data64.Uint32.Upper32;
       Print(L"[INFO] Cmd List Base Add: 0x%08x \n", TempPortAddr->clb);
 
-      Status = StartCmd(TempPortAddr, BIT0);
+      Status = StartCmd(TempPortAddr);
       if (EFI_ERROR(Status))
       {
         Print(L"Issue cmd fail! Need to Kick AHCI engine\n");
         continue;
       }
 
-      Print(L"data is 0x%08x \n", MmioRead32((UINT32)(UINTN)TmpBuffer));
+      Print(L"[Read] -> data is 0x%08x \n", MmioRead32((UINT32)(UINTN)TmpBuffer));
     }
   }
 
