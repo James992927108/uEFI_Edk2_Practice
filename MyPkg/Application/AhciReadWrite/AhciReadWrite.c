@@ -121,14 +121,14 @@ StartCmd(
     port->cmd |= BIT0 | BIT3 | BIT4;
     port->is = port->is;
   }
-  // Print(L"[DEBUG] Before ci 0x%08x\n", MmioRead8((UINT32)(UINTN)port + EFI_AHCI_PORT_CI));
+  Print(L"[DEBUG] Before ci 0x%08x\n", MmioRead8((UINT32)(UINTN)port + EFI_AHCI_PORT_CI));
   MmioWrite8((UINT32)(UINTN)port + EFI_AHCI_PORT_CI, 1);
   // port->ci = 1;
-  // Print(L"[DEBUG] after ci 0x%08x\n", MmioRead8((UINT32)(UINTN)port + EFI_AHCI_PORT_CI));
+  Print(L"[DEBUG] after ci 0x%08x\n", MmioRead8((UINT32)(UINTN)port + EFI_AHCI_PORT_CI));
   // start
-  // Print(L"[DEBUG] Befor cmd 0x%08x\n", port->cmd);
+  Print(L"[DEBUG] Befor cmd 0x%08x\n", port->cmd);
   port->cmd |= BIT0;
-  // Print(L"[DEBUG] after cmd 0x%08x\n", port->cmd);
+  Print(L"[DEBUG] after cmd 0x%08x\n", port->cmd);
   //wait cmd
   for (i = 0; i < 100; i++)
   {
@@ -150,6 +150,7 @@ EFI_STATUS UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
   UINTN AhciPciAddr;
 
   UINT8 *TmpBuffer;
+  UINT8 Result;
 
   HBA_CMD_HEADER *CmdList;
   HBA_CMD_TBL *CmdTbl;
@@ -227,11 +228,46 @@ EFI_STATUS UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
       Status = StartCmd(TempPortAddr);
       if (EFI_ERROR(Status))
       {
-        Print(L"Issue cmd fail! Need to Kick AHCI engine\n");
+        Print(L"Issue cmd fail!\n");
         continue;
       }
 
-      Print(L"[Read] -> data is 0x%08x \n", MmioRead32((UINT32)(UINTN)TmpBuffer));
+      Print(L"[Read] -> data is 0x%08x \n", MmioRead32((UINTN)TmpBuffer));
+
+      //write value to date base address
+      Result = MmioRead8((UINTN)TmpBuffer) + 1;
+      Print(L"[DEBUG] Result value = 0x%08x \n", Result);
+      MmioWrite8((UINTN)CmdTbl->prdt_entry[0].dba, (UINT8)Result);
+      Print(L"[DEBUG] dba value = 0x%08x \n", MmioRead32((UINTN)CmdTbl->prdt_entry[0].dba));
+
+      BuildH2DFis(FisH2D, ATA_CMD_WRITE_DMA_EXT);
+      CopyMem(CmdTbl->cfis, FisH2D, sizeof(FIS_REG_H2D));
+      Print(L"[DEBUG] cfis value = 0x%08x \n", MmioRead32((UINTN)CmdList->ctba));
+
+       // DW3 0x80000001
+      CmdTbl->prdt_entry[0].dbc = 0x01; // Read 1 Byte， Max 512 (0x1ff)bytes
+      CmdTbl->prdt_entry[0].i = 1;
+
+      // DW0 0x00010005
+      CmdList->cfl = 5;
+      CmdList->prdtl = 1;
+      CmdList->w = 1;
+      // DW1 0x200
+      CmdList->prdbc = 0x200;
+      // DW2 Command Table Base Address
+      CmdList->ctba = (UINT32)(UINTN)CmdTbl;
+      Print(L"[DEBUG] cmd list header value = 0x%08x \n", MmioRead32((UINTN)TempPortAddr->clb));
+
+      // Status = StartCmd(TempPortAddr);
+      MmioWrite8((UINTN)TempPortAddr + EFI_AHCI_PORT_CMD, 0x16);
+      MmioWrite8((UINTN)TempPortAddr + EFI_AHCI_PORT_CI, 0x01);
+      MmioWrite8((UINTN)TempPortAddr + EFI_AHCI_PORT_CMD, 0x17);
+
+      // if (EFI_ERROR(Status))
+      // {
+      //   Print(L"Issue cmd fail!\n");
+      //   continue;
+      // }
     }
   }
 
