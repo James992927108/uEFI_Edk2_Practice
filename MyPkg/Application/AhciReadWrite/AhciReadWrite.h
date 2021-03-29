@@ -58,7 +58,7 @@ typedef struct
 } SATA_Status;
 
 //Port Ctrl Register
-typedef volatile struct tagSM_PORT
+typedef struct tagSM_PORT
 {
   UINT32 clb;       // 0x00, command list base address, 1K-UINT8 aligned
   UINT32 clbu;      // 0x04, command list base address upper 32 bits
@@ -82,7 +82,7 @@ typedef volatile struct tagSM_PORT
 } SM_PORT;
 
 //HBA Memory Registers
-typedef volatile struct tagSM_MEM
+typedef struct tagSM_MEM
 {
   // 0x00 - 0x2B, Generic Host Control
   UINT32 cap;     // 0x00, Host capability
@@ -103,7 +103,7 @@ typedef volatile struct tagSM_MEM
   // 0xA0 - 0xFF, Vendor specific registers
   UINT8 vendor[0x100 - 0xA0];
 
-  // 0x100 - 0x10FF, Port control registers
+  // 0x100 - 0x10FF, Port control registers, SM_CMD_LIST
   SM_PORT ports_ctl_reg[1]; // 1 ~ 32
 } SM_MEM;
 
@@ -205,7 +205,7 @@ typedef struct tagSM_CMD_LIST
   UINT16 prdtl; // Physical region descriptor table length in entries
 
   // DW1
-  volatile UINT32 prdbc; // Physical region descriptor UINT8 count transferred
+  UINT32 prdbc; // Physical region descriptor UINT8 count transferred
 
   // DW2, 3
   UINT32 ctba;  // Command table descriptor base address
