@@ -58,7 +58,7 @@ typedef struct
 } SATA_Status;
 
 //Port Ctrl Register
-typedef volatile struct tagHBA_PORT
+typedef volatile struct tagSM_PORT
 {
   UINT32 clb;       // 0x00, command list base address, 1K-UINT8 aligned
   UINT32 clbu;      // 0x04, command list base address upper 32 bits
@@ -79,10 +79,10 @@ typedef volatile struct tagHBA_PORT
   UINT32 fbs;       // 0x40, FIS-based switch control
   UINT32 rsv1[11];  // 0x44 ~ 0x6F, Reserved
   UINT32 vendor[4]; // 0x70 ~ 0x7F, vendor specific
-} HBA_PORT;
+} SM_PORT;
 
 //HBA Memory Registers
-typedef volatile struct tagHBA_MEM
+typedef volatile struct tagSM_MEM
 {
   // 0x00 - 0x2B, Generic Host Control
   UINT32 cap;     // 0x00, Host capability
@@ -104,52 +104,8 @@ typedef volatile struct tagHBA_MEM
   UINT8 vendor[0x100 - 0xA0];
 
   // 0x100 - 0x10FF, Port control registers
-  HBA_PORT ports_ctl_reg[1]; // 1 ~ 32
-} HBA_MEM;
-
-//Port Command List
-typedef struct tagHBA_CMD_HEADER
-{
-  // DW0
-  UINT8 cfl : 5; // Command FIS length in UINT32S, 2 ~ 16
-  UINT8 a : 1;   // ATAPI
-  UINT8 w : 1;   // Write, 1: H2D, 0: D2H
-  UINT8 p : 1;   // Prefetchable
-
-  UINT8 r : 1;    // Reset
-  UINT8 b : 1;    // BIST
-  UINT8 c : 1;    // Clear busy upon R_OK
-  UINT8 rsv0 : 1; // Reserved
-  UINT8 pmp : 4;  // Port multiplier port
-
-  UINT16 prdtl; // Physical region descriptor table length in entries
-
-  // DW1
-  volatile UINT32 prdbc; // Physical region descriptor UINT8 count transferred
-
-  // DW2, 3
-  UINT32 ctba;  // Command table descriptor base address
-  UINT32 ctbau; // Command table descriptor base address upper 32 bits
-
-  // DW4 - 7
-  UINT32 rsv1[4]; // Reserved
-} HBA_CMD_HEADER;
-
-//Command Table
-typedef struct tagHBA_PRDT_ENTRY
-{
-  // DW0
-  UINT32 dba;  // Data base address
-  // DW1
-  UINT32 dbau; // Data base address upper 32 bits
-  // DW2
-  UINT32 rsv0; // Reserved
-
-  // DW3
-  UINT32 dbc : 22; // 21:00 UINT8 count, 4M max
-  UINT32 rsv1 : 9; // 30:22 Reserved
-  UINT32 i : 1;    // 31:30 Interrupt on completion
-} HBA_PRDT_ENTRY;
+  SM_PORT ports_ctl_reg[1]; // 1 ~ 32
+} SM_MEM;
 
 
 typedef enum
@@ -164,7 +120,7 @@ typedef enum
   FIS_TYPE_DEV_BITS = 0xA1,  // Set device bits FIS - device to host
 } FIS_TYPE;
 
-typedef struct tagFIS_REG_H2D
+typedef struct tagCFIS_REG
 {
   // UINT32 0
   UINT8 fis_type; // FIS_TYPE_REG_H2D
@@ -196,11 +152,28 @@ typedef struct tagFIS_REG_H2D
 
   // UINT32 4
   UINT8 rsv2[4]; // Reserved
-} FIS_REG_H2D;
+} CFIS_REG;
 
-typedef struct tagHBA_CMD_TBL
+
+//Command Table
+typedef struct tagPRDT_REG
 {
-  // 0x00
+  // DW0
+  UINT32 dba;  // Data base address
+  // DW1
+  UINT32 dbau; // Data base address upper 32 bits
+  // DW2
+  UINT32 rsv0; // Reserved
+
+  // DW3
+  UINT32 dbc : 22; // 21:00 UINT8 count, 4M max
+  UINT32 rsv1 : 9; // 30:22 Reserved
+  UINT32 i : 1;    // 31:30 Interrupt on completion
+} PRDT_REG;
+
+typedef struct tagSM_CMD_TBL
+{
+  // 0x00 -> CFIS_REG
   UINT8 cfis[64]; // Command FIS (2 to 16 Dwords)
 
   // 0x40
@@ -210,7 +183,36 @@ typedef struct tagHBA_CMD_TBL
   UINT8 rsv[48]; // Reserved
 
   // 0x80
-  HBA_PRDT_ENTRY prdt_entry[1]; // Physical region descriptor table entries, 0 ~ 65535
-} HBA_CMD_TBL;
+  PRDT_REG prdt[1]; // Physical region descriptor table entries, 0 ~ 65535
+} SM_CMD_TBL;
+
+
+//Port Command List
+typedef struct tagSM_CMD_LIST
+{
+  // DW0
+  UINT8 cfl : 5; // Command FIS length in UINT32S, 2 ~ 16
+  UINT8 a : 1;   // ATAPI
+  UINT8 w : 1;   // Write, 1: H2D, 0: D2H
+  UINT8 p : 1;   // Prefetchable
+
+  UINT8 r : 1;    // Reset
+  UINT8 b : 1;    // BIST
+  UINT8 c : 1;    // Clear busy upon R_OK
+  UINT8 rsv0 : 1; // Reserved
+  UINT8 pmp : 4;  // Port multiplier port
+
+  UINT16 prdtl; // Physical region descriptor table length in entries
+
+  // DW1
+  volatile UINT32 prdbc; // Physical region descriptor UINT8 count transferred
+
+  // DW2, 3
+  UINT32 ctba;  // Command table descriptor base address
+  UINT32 ctbau; // Command table descriptor base address upper 32 bits
+
+  // DW4 - 7
+  UINT32 rsv1[4]; // Reserved
+} SM_CMD_LIST;
 
 #endif
