@@ -119,6 +119,8 @@ VOID BuildPrdt(
     Result = MmioRead8((UINTN)Address) + 1;
     Print(L"[DEBUG] Result value = 0x%08x \n", Result);
     MmioWrite8((UINTN)Prdt->dba, (UINT8)Result);
+    // 0x000001FF
+    Prdt->i = 0;
   }
 }
 
@@ -179,7 +181,6 @@ EFI_STATUS UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
   UINTN AhciPciAddr;
 
   UINT8 *TmpBuffer;
-  UINT8 Result;
 
   SM_CMD_LIST *CmdList;
 
@@ -282,18 +283,8 @@ EFI_STATUS UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
       BuildCfis(Cfis, ATA_CMD_WRITE_DMA_EXT);
       CopyMem(CmdTbl->cfis, Cfis, sizeof(CFIS_REG));
 
-      // Command Table 0x80 -> PRDT (Physical Region Descriptor Table)
-      // -> DW0, Data Base Address, read data in DBA and write back value with plus 1.
-      Result = MmioRead8((UINTN)TmpBuffer) + 1;
-      Print(L"[DEBUG] Result value = 0x%08x \n", Result);
-      MmioWrite8((UINTN)CmdTbl->prdt[0].dba, (UINT8)Result);
-
       BuildPrdt(Prdt, (UINT32)TmpBuffer, FALSE);
       CopyMem(CmdTbl->prdt, Prdt, sizeof(PRDT_REG));
-
-      // Command Table 0x80 -> PRDT -> DW3, DBC: Byte Count
-      // 0x000001FF,
-      CmdTbl->prdt[0].dbc = 0x1FF; // Read 1 Byte， Max 512 (0x1ff)bytes
 
       Print(L"[DEBUG] Write -> Data Base Addr: 0x%08x, Value = 0x%08x\n", CmdTbl->prdt[0].dba, MmioRead32((UINTN)(CmdTbl->prdt[0].dba)));
 
