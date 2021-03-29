@@ -100,27 +100,26 @@ VOID BuildPrdt(
 {
   UINT8 Result;
 
+  // 31: Interrupt on Completion
+  // 30:22 Reserved
+  // 21:00 Data Byte Count
+  // Command Table 0x80 -> PRDT -> DW3, DBC: Byte Count
+  Prdt->dbc = 0x1FF;
   if (Read)
   {
     // set DBA
     Prdt->dba = Address;
-    // Print(L"[DEBUG] Data Base Addr: 0x%08x, value = 0x%08x\n", (UINTN)(Prdt->dba), MmioRead32((UINTN)(Prdt->dba)));
-
-    // Command Table 0x80 -> PRDT
-    // -> DW3, DBC: Byte Count
-    // 31: Interrupt on Completion
-    // 30:22 Reserved
-    // 21:00 Data Byte Count
     // 0x800001FF,
     Prdt->i = 1;
   }
   else
   {
+    // Command Table 0x80 -> PRDT (Physical Region Descriptor Table)
+    // -> DW0, Data Base Address, read data in DBA and write back value with plus 1.
     Result = MmioRead8((UINTN)Address) + 1;
     Print(L"[DEBUG] Result value = 0x%08x \n", Result);
     MmioWrite8((UINTN)Prdt->dba, (UINT8)Result);
   }
-  Prdt->dbc = 0x1FF; // Read 1 Byte， Max 512 (0x1ff)bytes
 }
 
 EFI_STATUS
@@ -217,6 +216,7 @@ EFI_STATUS UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
   Cfis = AllocateZeroPool(sizeof(CFIS_REG));
   Prdt = CmdTbl->prdt;
 
+  PortList = AllocatePool(sizeof(UINT8) * 0x200);
   Status = AhciCheckWhichPortUsed(ABar, PortList, &Length);
   if (EFI_ERROR(Status))
   {
@@ -235,22 +235,15 @@ EFI_STATUS UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
       // Command Table 0x00 -> CFIS
       BuildCfis(Cfis, ATA_CMD_READ_DMA_EXT);
       CopyMem(CmdTbl->cfis, Cfis, sizeof(CFIS_REG));
-      Print(L"[DEBUG] CmdTbl->cfis Address 0x%08x \n", &(CmdTbl->cfis));
 
       // Command Table 0x80 -> PRDT (Physical Region Descriptor Table)
       // -> DW0, Data Base Address, allocate buffer for read return data
       // max 512 bytes
       TmpBuffer = AllocateZeroPool(sizeof(UINT8) * 0x200);
 
+      // set DBA
       BuildPrdt(Prdt, (UINT32)TmpBuffer, TRUE);
       CopyMem(CmdTbl->prdt, Prdt, sizeof(PRDT_REG));
-
-      // // set DBA
-      // CmdTbl->prdt[0].dba = (UINT32)TmpBuffer;
-      // // Command Table 0x80 -> PRDT -> DW3, DBC: Byte Count
-      // // 0x800001FF,
-      // CmdTbl->prdt[0].i = 1;
-      // CmdTbl->prdt[0].dbc = 0x1FF; // Read 1 Byte， Max 512 (0x1ff)bytes
 
       Print(L"[DEBUG] Read -> Data Base Addr: 0x%08x, value = 0x%08x\n", CmdTbl->prdt[0].dba, MmioRead32((UINTN)(CmdTbl->prdt[0].dba)));
       // Command List Structure
@@ -293,11 +286,11 @@ EFI_STATUS UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
       // -> DW0, Data Base Address, read data in DBA and write back value with plus 1.
       Result = MmioRead8((UINTN)TmpBuffer) + 1;
       Print(L"[DEBUG] Result value = 0x%08x \n", Result);
-
-      // BuildPrdt(Prdt, (UINT32)TmpBuffer, FALSE);
-      // CopyMem(CmdTbl->prdt, Prdt, sizeof(PRDT_REG));
-
       MmioWrite8((UINTN)CmdTbl->prdt[0].dba, (UINT8)Result);
+
+      BuildPrdt(Prdt, (UINT32)TmpBuffer, FALSE);
+      CopyMem(CmdTbl->prdt, Prdt, sizeof(PRDT_REG));
+
       // Command Table 0x80 -> PRDT -> DW3, DBC: Byte Count
       // 0x000001FF,
       CmdTbl->prdt[0].dbc = 0x1FF; // Read 1 Byte， Max 512 (0x1ff)bytes
