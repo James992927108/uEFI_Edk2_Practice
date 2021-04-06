@@ -44,6 +44,7 @@
         "uefilib.h": "c",
         "atapassthru.h": "c",
         "idemode.h": "c",
-        "pcisegmentlib.h": "c"
+        "pcisegmentlib.h": "c",
+        "istream": "c"
     }
 }

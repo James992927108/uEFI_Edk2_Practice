@@ -63,7 +63,8 @@ AhciCheckWhichPortUsed(
 
 VOID BuildCfis(
     IN OUT CFIS_REG *Cfis,
-    IN UINT8 cmd)
+    IN UINT8 cmd,
+    IN UINT8 lba)
 {
   //  initial H2D FIS (Serial ATA Revision 2.6 specification)
   //  +-+-------------+--------------+----------------+---------------+
@@ -85,7 +86,7 @@ VOID BuildCfis(
 
   Cfis->device = 0x40;
   // Read or Write on lba5 (Homework ask)
-  Cfis->lba_low = 0x04;
+  Cfis->lba_low = lba;
   Cfis->sector_count = 1;
 }
 
@@ -143,7 +144,7 @@ StartCmd(
 {
   UINTN i;
   EFI_STATUS Status = EFI_SUCCESS;
-  // Print(L"[DEBUG] TempPortAddr 0x%x\n", port);
+  // Print(L"[DEBUG] PortAddr 0x%x\n", port);
   // clear 0x18 cmd bit 0 start
   if (port->cmd & BIT0)
   {
@@ -192,8 +193,8 @@ EFI_STATUS UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
   EFI_STATUS Status;
 
   SM_MEM *ABar;
-  SM_PORT *TempPortAddr = NULL;
-  TempPortAddr = AllocatePool(sizeof(SM_PORT));
+  SM_PORT *PortAddr = NULL;
+  PortAddr = AllocatePool(sizeof(SM_PORT));
 
   DATA_64 Data64;
   UINTN AhciPciAddr;
@@ -221,25 +222,26 @@ EFI_STATUS UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
   ABar = (SM_MEM *)(PciSegmentRead32(AhciPciAddr + R_SATA_CFG_AHCI_BAR));
   Print(L"[INFO] AHCI bar: %x\n", ABar);
 
-  //select slot
-  UINT32 Slot = 7;
   //allocate align memory address for command list, PxCLB bit9:0 is reserved, Max support 32 command slot
   CmdList = AllocatePages(sizeof(SM_CMD_LIST) * 32);
   ZeroMem(CmdList, sizeof(SM_CMD_LIST) * 32);
-
   Print(L"[DEBUG] CmdList -> %x \n", CmdList);
+
+  //select slot
+  UINT32 Slot = 7;
   CmdList = (SM_CMD_LIST *)((UINT32)CmdList + 0x20 * Slot);
   Print(L"[DEBUG] CmdList += 0x20 * 0x%x -> %x \n", Slot, CmdList);
   //allocate alignment memory for command table
   CmdTbl = AllocatePages(sizeof(SM_CMD_TBL));
   ZeroMem(CmdTbl, sizeof(SM_CMD_TBL));
-
-  //allocate Command FIS & Physical region descriptor table
+  //allocate Command FIS
   Cfis = AllocateZeroPool(sizeof(CFIS_REG));
-  Prdt = CmdTbl->prdt;
+  //allocate buffer for read return data, max 512 bytes
+  Dba = AllocateZeroPool(sizeof(UINT8) * 0x200);
 
   PortList = AllocatePool(sizeof(UINT8) * 0x200);
   Status = AhciCheckWhichPortUsed(ABar, PortList, &Length);
+  UINT8 Lba = 0x04;
   if (EFI_ERROR(Status))
   {
     Print(L"No activity port used\n");
@@ -250,17 +252,21 @@ EFI_STATUS UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
     {
       UINT32 PortNum = PortList[Index];
       Print(L"[INFO] Port %x in use\n", PortNum);
+      PortAddr = (SM_PORT *)((UINT32)ABar + EFI_AHCI_PORT_START + EFI_AHCI_PORT_REG_WIDTH * PortNum);
+      Print(L"[INFO] PortAddr %x\n", (UINT32)PortAddr);
+
       // Read
       // --------------------------------
+
       // Command Tables
-      // Set Cfis
-      // Command Table 0x00 -> CFIS, Read -> 0x00258027
-      BuildCfis(Cfis, ATA_CMD_READ_DMA_EXT);
+      // Set Cfis, Command Table 0x00 -> CFIS, Read -> 0x00258027
+      BuildCfis(Cfis, ATA_CMD_READ_DMA_EXT, Lba);
       CopyMem(CmdTbl->cfis, Cfis, sizeof(CFIS_REG));
+
+      // Physical region descriptor table
+      Prdt = CmdTbl->prdt;
       // Set DBA
-      // Command Table 0x80 -> PRDT (Physical Region Descriptor Table)
-      // -> DW0, Data Base Address, allocate buffer for read return data, max 512 bytes
-      Dba = AllocateZeroPool(sizeof(UINT8) * 0x200);
+      // Command Table 0x80 -> PRDT (Physical Region Descriptor Table) -> DW0, Data Base Address
       BuildPrdt(Prdt, (UINT32)Dba, TRUE);
       CopyMem(CmdTbl->prdt, Prdt, sizeof(PRDT_REG));
       Print(L"[DEBUG] Read -> Data Base Addr: 0x%08x, value = 0x%08x\n", CmdTbl->prdt[0].dba, MmioRead32((UINTN)(CmdTbl->prdt[0].dba)));
@@ -271,15 +277,14 @@ EFI_STATUS UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
       Print(L"[INFO] Command List Base Addr + slot: 0x%08x, 0x%08x\n", (UINT32)CmdList, MmioRead32((UINTN)CmdList));
 
       // pointer to port address，can put in Abar.ports_ctl_reg
-      TempPortAddr = (SM_PORT *)((UINT32)ABar + EFI_AHCI_PORT_START + EFI_AHCI_PORT_REG_WIDTH * PortNum);
       Data64.Uint64 = (UINTN)CmdList;
       // Print(L"0x%08x, 0x%08x\n", Data64.Uint32.Lower32, Data64.Uint32.Upper32);
-      TempPortAddr->clb = Data64.Uint32.Lower32;
-      TempPortAddr->clbu = Data64.Uint32.Upper32;
-      // Print(L"0x%08x, 0x%08x\n", TempPortAddr->clb, TempPortAddr->clbu);
-      // Print(L"[INFO] Command List Base Addr: 0x%08x, 0x%08x\n", TempPortAddr->clb, MmioRead32((UINTN)(TempPortAddr->clb)));
+      PortAddr->clb = Data64.Uint32.Lower32;
+      PortAddr->clbu = Data64.Uint32.Upper32;
+      // Print(L"0x%08x, 0x%08x\n", PortAddr->clb, PortAddr->clbu);
+      // Print(L"[INFO] Command List Base Addr: 0x%08x, 0x%08x\n", PortAddr->clb, MmioRead32((UINTN)(PortAddr->clb)));
 
-      Status = StartCmd(TempPortAddr, Slot);
+      Status = StartCmd(PortAddr, Slot);
       if (EFI_ERROR(Status))
       {
         Print(L"Issue Command Fail!\n");
@@ -295,7 +300,7 @@ EFI_STATUS UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
       // write
       // --------------------------------
       // Command Table 0x00 -> CFIS, Write -> 0x00358027
-      BuildCfis(Cfis, ATA_CMD_WRITE_DMA_EXT);
+      BuildCfis(Cfis, ATA_CMD_WRITE_DMA_EXT, Lba);
       CopyMem(CmdTbl->cfis, Cfis, sizeof(CFIS_REG));
 
       BuildPrdt(Prdt, (UINT32)Dba, FALSE);
@@ -306,15 +311,14 @@ EFI_STATUS UefiMain(IN EFI_HANDLE ImageHandle, IN EFI_SYSTEM_TABLE *SystemTable)
       Print(L"[INFO] Command Table Base Addr: 0x%08x, 0x%08x\n", CmdList->ctba, MmioRead32((UINTN)(CmdList->ctba)));
       Print(L"[INFO] Command List Base Addr + slot: 0x%08x, 0x%08x\n", (UINT32)CmdList, MmioRead32((UINTN)CmdList));
 
-      TempPortAddr = (SM_PORT *)((UINT32)ABar + EFI_AHCI_PORT_START + EFI_AHCI_PORT_REG_WIDTH * PortList[Index]);
       Data64.Uint64 = (UINTN)CmdList;
       // Print(L"0x%08x, 0x%08x\n", Data64.Uint32.Lower32, Data64.Uint32.Upper32);
-      TempPortAddr->clb = Data64.Uint32.Lower32;
-      TempPortAddr->clbu = Data64.Uint32.Upper32;
-      // Print(L"0x%08x, 0x%08x\n", TempPortAddr->clb, TempPortAddr->clbu);
-      // Print(L"[INFO] Command List Base Addr: 0x%08x, 0x%08x\n", TempPortAddr->clb, MmioRead32((UINTN)(TempPortAddr->clb)));
+      PortAddr->clb = Data64.Uint32.Lower32;
+      PortAddr->clbu = Data64.Uint32.Upper32;
+      // Print(L"0x%08x, 0x%08x\n", PortAddr->clb, PortAddr->clbu);
+      // Print(L"[INFO] Command List Base Addr: 0x%08x, 0x%08x\n", PortAddr->clb, MmioRead32((UINTN)(PortAddr->clb)));
 
-      Status = StartCmd(TempPortAddr, Slot);
+      Status = StartCmd(PortAddr, Slot);
       if (EFI_ERROR(Status))
       {
         Print(L"Issue Command Fail!\n");
